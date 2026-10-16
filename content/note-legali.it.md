@@ -2,24 +2,23 @@
 date: 2026-10-16
 title: "Note legali"
 seotitolo: "Note legali · Verba Manent IA"
-description: "Note legali del sito Verba Manent IA: chi lo gestisce, diritti su testi e video, marchi citati, cookie e responsabilità sui contenuti delle guide."
+description: "Note legali di Verba Manent IA: chi gestisce il sito, stato del progetto, diritti su testi e video, marchi citati, responsabilità e legge applicabile."
 slug: "note-legali"
 ---
 
-<div class="bozza"><b>Bozza.</b> Questa pagina va completata con i dati di chi vende il programma (ragione sociale, partita IVA, sede) e fatta rileggere da un professionista prima della pubblicazione.</div>
-
 ## Chi gestisce il sito
 
-Il sito e il programma Verba Manent IA sono un progetto di [Punto Web Ferrara](https://puntowebferrara.com/).
+Il sito e il programma Verba Manent IA sono gestiti da **Sara Boldrini**, che opera con il nome commerciale **[Punto Web Ferrara](https://puntowebferrara.com/)**, con sede operativa a Ostellato, in provincia di Ferrara.
 
-- **Titolare:** [da completare: nome o ragione sociale]
-- **Partita IVA:** [da completare]
-- **Sede:** [da completare: indirizzo completo], Ostellato (FE), Italia
-- **Email:** [info@puntowebferrara.com](mailto:info@puntowebferrara.com)
+Contatti: [info@puntowebferrara.com](mailto:info@puntowebferrara.com)
+
+## Stato del progetto
+
+Verba Manent IA è in fase di sviluppo e **non è ancora in vendita**. Questo sito ne presenta le funzioni e raccoglie l'interesse di chi vuole essere avvisato all'uscita. Quando il programma sarà in vendita, in questa pagina verranno indicati i dati fiscali di chi lo vende.
 
 ## Diritti su testi, immagini e video
 
-Testi, guide, immagini, video e grafica di questo sito appartengono al titolare, salvo dove indicato diversamente. Puoi citarne brevi parti indicando la fonte con un collegamento alla pagina; per riprodurli in altro modo serve un permesso scritto.
+Testi, guide, immagini, video, grafica e codice di questo sito sono opera del titolare, salvo dove indicato diversamente. Puoi citarne brevi parti indicando la fonte con un collegamento alla pagina; per riprodurli in altro modo serve un permesso scritto.
 
 Il nome e il logo **Verba Manent IA** identificano il programma e non possono essere usati per altri prodotti o servizi senza autorizzazione.
 
@@ -33,7 +32,11 @@ Le guide hanno uno scopo informativo. Sono scritte con cura e citano le loro fon
 
 ## Collegamenti esterni
 
-Il sito contiene collegamenti a siti di altri. Non controlliamo il loro contenuto e non ne siamo responsabili.
+Il sito rimanda a risorse esterne, come documentazione ufficiale, normative e ricerche, sulle quali il titolare non ha alcun controllo. La presenza di un collegamento non implica la condivisione dei contenuti della pagina di destinazione né responsabilità sulla loro disponibilità o esattezza.
+
+## Limitazione di responsabilità
+
+Il titolare non risponde di eventuali danni derivanti dall'uso o dall'impossibilità di uso di questo sito o delle informazioni in esso contenute, salvo i casi di dolo o colpa grave e salvo quanto inderogabilmente previsto dalla legge a tutela dei consumatori.
 
 ## Cookie
 
@@ -41,4 +44,8 @@ Questo sito non usa cookie di profilazione né cookie pubblicitari. Per come ven
 
 ## Legge applicabile
 
-Il sito è gestito dall'Italia ed è regolato dalla legge italiana.
+Il sito e i rapporti che ne derivano sono regolati dalla legge italiana. Per le controversie con chi agisce come consumatore resta competente il foro di residenza o domicilio del consumatore, se situato in Italia.
+
+## Segnalazioni
+
+Per segnalare un errore in una pagina, un contenuto che ritieni improprio o una richiesta su questi contenuti: [info@puntowebferrara.com](mailto:info@puntowebferrara.com).

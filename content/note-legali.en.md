@@ -2,24 +2,23 @@
 date: 2026-10-16
 title: "Legal notice"
 seotitolo: "Legal notice · Verba Manent IA"
-description: "Legal notice for the Verba Manent IA website: who runs it, rights to texts and videos, third-party trademarks, cookies and liability for guide content."
+description: "Legal notice for Verba Manent IA: who runs the website, project status, rights to texts and videos, third-party trademarks, liability and governing law."
 slug: "legal-notice"
 ---
 
-<div class="bozza"><b>Draft.</b> This page must be completed with the seller's details (company name, VAT number, address) and reviewed by a professional before publication.</div>
-
 ## Who runs this website
 
-The Verba Manent IA website and app are a project by [Punto Web Ferrara](https://puntowebferrara.com/).
+The Verba Manent IA website and app are run by **Sara Boldrini**, trading as **[Punto Web Ferrara](https://puntowebferrara.com/)**, based in Ostellato, in the province of Ferrara, Italy.
 
-- **Owner:** [to be completed: name or company name]
-- **VAT number:** [to be completed]
-- **Address:** [to be completed: full address], Ostellato (FE), Italy
-- **Email:** [info@puntowebferrara.com](mailto:info@puntowebferrara.com)
+Contact: [info@puntowebferrara.com](mailto:info@puntowebferrara.com)
+
+## Project status
+
+Verba Manent IA is under development and **not yet on sale**. This website presents its features and collects the interest of people who want to be notified at launch. When the app goes on sale, the seller's tax details will be added to this page.
 
 ## Rights to texts, images and videos
 
-Texts, guides, images, videos and graphics on this website belong to the owner unless stated otherwise. You may quote short passages if you credit the source with a link to the page; any other reproduction requires written permission.
+Texts, guides, images, videos, graphics and code on this website are the work of the owner unless stated otherwise. You may quote short passages if you credit the source with a link to the page; any other reproduction requires written permission.
 
 The name and logo **Verba Manent IA** identify the app and may not be used for other products or services without permission.
 
@@ -33,7 +32,11 @@ The guides are for information only. They are written with care and cite their s
 
 ## External links
 
-This website links to sites run by others. We do not control their content and are not responsible for it.
+This website links to external resources, such as official documentation, regulations and research, over which the owner has no control. A link does not imply endorsement of the destination page or responsibility for its availability or accuracy.
+
+## Limitation of liability
+
+The owner is not liable for any damage arising from the use of, or inability to use, this website or the information it contains, except in cases of wilful misconduct or gross negligence and without prejudice to mandatory consumer protection law.
 
 ## Cookies
 
@@ -41,4 +44,8 @@ This website does not use profiling or advertising cookies. For how personal dat
 
 ## Governing law
 
-This website is run from Italy and is governed by Italian law.
+This website and any relationship arising from it are governed by Italian law. For disputes with consumers, the court of the consumer's place of residence or domicile remains competent, where located in Italy.
+
+## Reports
+
+To report an error on a page, content you consider inappropriate or a request about this content: [info@puntowebferrara.com](mailto:info@puntowebferrara.com).

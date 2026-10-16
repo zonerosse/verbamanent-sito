@@ -4,7 +4,7 @@ title: "Privacy"
 description: "Come Verba Manent tratta i tuoi dati: le registrazioni restano sul tuo computer, nessun dato biometrico, nessun addestramento di intelligenza artificiale."
 ---
 
-<div class="bozza"><b>Bozza.</b> Questo testo va completato con i dati di chi vende il programma e fatto rileggere da un esperto di privacy prima della pubblicazione.</div>
+<div class="bozza"><b>Bozza.</b> Questo testo va fatto rileggere da un esperto di privacy prima della pubblicazione.</div>
 
 <div class="evid">
 
@@ -18,7 +18,9 @@ description: "Come Verba Manent tratta i tuoi dati: le registrazioni restano sul
 
 ## Chi è il titolare del trattamento
 
-[Da completare: nome, indirizzo, partita IVA ed email di contatto di chi vende Verba Manent.]
+Sara Boldrini, che opera con il nome commerciale Punto Web Ferrara  
+Ostellato (FE), Italia  
+Email: [info@puntowebferrara.com](mailto:info@puntowebferrara.com)
 
 ## Cosa resta sul tuo computer
 
@@ -46,4 +48,4 @@ Se ti iscrivi alla lista d'attesa conserviamo la tua email e l'uso che indichi, 
 
 ## I tuoi diritti
 
-Puoi chiedere in ogni momento di vedere, correggere o cancellare i dati che ti riguardano, e puoi presentare reclamo al Garante per la protezione dei dati personali. [Da completare: email per le richieste.]
+Puoi chiedere in ogni momento di vedere, correggere o cancellare i dati che ti riguardano, e puoi presentare reclamo al Garante per la protezione dei dati personali. Per le richieste scrivi a [info@puntowebferrara.com](mailto:info@puntowebferrara.com).

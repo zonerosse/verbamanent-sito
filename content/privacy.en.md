@@ -4,7 +4,7 @@ title: "Privacy"
 description: "How Verba Manent handles your data: recordings stay on your computer, no biometric data, no AI training."
 ---
 
-<div class="bozza"><b>Draft.</b> This text must be completed with the seller's details and reviewed by a privacy expert before publication.</div>
+<div class="bozza"><b>Draft.</b> This text must be reviewed by a privacy expert before publication.</div>
 
 <div class="evid">
 
@@ -18,7 +18,9 @@ description: "How Verba Manent handles your data: recordings stay on your comput
 
 ## Data controller
 
-[To be completed: name, address, VAT number and contact email of the seller of Verba Manent.]
+Sara Boldrini, trading as Punto Web Ferrara  
+Ostellato (FE), Italy  
+Email: [info@puntowebferrara.com](mailto:info@puntowebferrara.com)
 
 ## What stays on your computer
 
@@ -46,4 +48,4 @@ If you join the waiting list we keep your email and the use you select, only to 
 
 ## Your rights
 
-You can ask at any time to access, correct or delete your data, and you can lodge a complaint with your data protection authority. [To be completed: email for requests.]
+You can ask at any time to access, correct or delete your data, and you can lodge a complaint with your data protection authority. For requests, write to [info@puntowebferrara.com](mailto:info@puntowebferrara.com).
