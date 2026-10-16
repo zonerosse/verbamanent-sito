@@ -9,6 +9,8 @@ disableKinds = ["taxonomy", "term", "RSS"]
   # true = sito di prova: niente Google (noindex + robots.txt chiuso) e fascia "Versione di prova".
   # Per la pubblicazione vera: mettere false (e impostare baseURL sul dominio scelto).
   prova = true
+  # fascia gialla "Versione di prova" in cima alle pagine (tolta su richiesta, ottobre 2026)
+  fascia = false
   marchio = "Punto Web Ferrara"
   marchioUrl = "https://puntowebferrara.com/"
   # Dati di contatto pubblici di Verba Manent (scheda Organization e pagina Contatti)
