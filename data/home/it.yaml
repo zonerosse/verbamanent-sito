@@ -64,7 +64,9 @@ nonfa:
 come:
   kicker: "Come funziona"
   h2: "Tre passi, nessuna fatica"
-  p: "Premi play: sono i video della guida dentro il programma."
+  p: "Premi play: sono i video della guida dentro il programma. Alla fine di uno parte da solo il successivo."
+  avvia: "Avvia il video"
+  schermo: "Schermo intero"
   passi:
     - { v: "registrare", t: "Premi Registra", p: "Scegli lezione, riunione o webinar, online o in aula, e la lingua di chi parla." }
     - { v: "durante", t: "Ascolta tranquillo", p: "Verba Manent registra e trascrive mentre segui. Ogni ora prepara già un pezzo di appunti." }

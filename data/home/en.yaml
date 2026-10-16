@@ -64,7 +64,9 @@ nonfa:
 come:
   kicker: "How it works"
   h2: "Three steps, no effort"
-  p: "Press play: these are the guide videos built into the app."
+  p: "Press play: these are the guide videos built into the app. When one ends, the next one starts on its own."
+  avvia: "Play the video"
+  schermo: "Full screen"
   passi:
     - { v: "registrare", t: "Press Record", p: "Choose lecture, meeting or webinar, online or in class, and the speaker's language." }
     - { v: "durante", t: "Just listen", p: "Verba Manent records and transcribes while you follow along. Every hour it already prepares part of your notes." }

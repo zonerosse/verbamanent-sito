@@ -87,16 +87,21 @@
       <h2>{{ $t.come.h2 }}</h2>
       <p>{{ $t.come.p }}</p>
     </div>
-    <div class="steps">
-      {{- range $t.come.passi }}
-      <div class="step">
-        <video class="vid" controls preload="none" playsinline
-          poster="{{ printf "img/%s-%s.webp" .v $lang | relURL }}"
-          title="{{ .t }}">
-          <source src="{{ printf "video/%s-%s.webm" .v $lang | relURL }}" type="video/webm">
-        </video>
-        <h3>{{ .t }}</h3><p>{{ .p }}</p>
-      </div>
+    {{- $primo := index $t.come.passi 0 }}
+    <div class="player" id="pl">
+      <video id="vd" playsinline preload="metadata" poster="{{ printf "img/%s-%s.webp" $primo.v $lang | relURL }}">
+        <source src="{{ printf "video/%s-%s.webm" $primo.v $lang | relURL }}" type="video/webm">
+      </video>
+      <button class="play" type="button" aria-label="{{ $t.come.avvia }}"><span aria-hidden="true">▶</span></button>
+    </div>
+    <div class="sotto"><button type="button" id="fs">⛶ {{ $t.come.schermo }}</button></div>
+    <div class="passi">
+      {{- range $i, $p := $t.come.passi }}
+      <button class="ps{{ if eq $i 0 }} on{{ end }}" type="button"
+        data-v="{{ printf "video/%s-%s.webm" $p.v $lang | relURL }}"
+        data-p="{{ printf "img/%s-%s.webp" $p.v $lang | relURL }}">
+        <span class="n">{{ add $i 1 }}</span><span><b>{{ $p.t }}</b><small>{{ $p.p }}</small></span><span class="bar" aria-hidden="true"><i></i></span>
+      </button>
       {{- end }}
     </div>
   </div>
@@ -177,6 +182,26 @@
 {{ dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $q | jsonify | safeJS }}
 </script>
 <script>
+// Come funziona: un video alla volta, nessuna barra sopra le scritte, poi parte il successivo.
+(function () {
+  var v = document.getElementById('vd'), pl = document.getElementById('pl');
+  var bs = Array.prototype.slice.call(document.querySelectorAll('.ps')), cur = 0;
+  function vai(i, parti) {
+    cur = i;
+    bs.forEach(function (b, k) { b.classList.toggle('on', k === i); b.querySelector('.bar i').style.width = '0'; });
+    v.poster = bs[i].dataset.p; v.src = bs[i].dataset.v; v.load();
+    if (parti) v.play();
+  }
+  pl.addEventListener('click', function () { v.paused ? v.play() : v.pause(); });
+  v.addEventListener('play', function () { pl.classList.add('va'); });
+  v.addEventListener('pause', function () { pl.classList.remove('va'); });
+  v.addEventListener('timeupdate', function () { if (v.duration) bs[cur].querySelector('.bar i').style.width = (v.currentTime / v.duration * 100) + '%'; });
+  v.addEventListener('ended', function () { if (cur < bs.length - 1) vai(cur + 1, true); else pl.classList.remove('va'); });
+  bs.forEach(function (b, i) { b.addEventListener('click', function () { vai(i, true); }); });
+  document.getElementById('fs').addEventListener('click', function () {
+    var f = pl.requestFullscreen || pl.webkitRequestFullscreen; if (f) f.call(pl);
+  });
+})();
 // Lista d'attesa: nel sito di prova non invia niente, mostra solo il messaggio.
 document.getElementById('modulo-attesa').addEventListener('submit', function (e) {
   e.preventDefault();
