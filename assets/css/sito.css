@@ -154,12 +154,12 @@ footer a{color:#cfe3f5;text-decoration:none;margin-right:18px}
 .pagina td{padding:12px 14px;border-top:1px solid var(--line);vertical-align:top}
 @media (max-width:600px){.pagina table{display:block;overflow-x:auto}}
 /* Come funziona: lettore unico */
-.player{position:relative;max-width:1060px;margin:0 auto;border-radius:18px;overflow:hidden;background:#0b1f36;box-shadow:0 24px 60px rgba(13,66,117,.22);aspect-ratio:53/35;cursor:pointer}
+.player{position:relative;width:min(100%,1060px,calc((100vh - 190px) * 1.514));margin:0 auto;border-radius:18px;overflow:hidden;background:#0b1f36;box-shadow:0 24px 60px rgba(13,66,117,.22);aspect-ratio:53/35;cursor:pointer}
 .player video{display:block;width:100%;height:100%;object-fit:contain;background:#0b1f36}
 .play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(6,30,54,.25);transition:opacity .2s;border:0;width:100%;cursor:pointer}
 .play span{width:84px;height:84px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--blue);font-size:30px;padding-left:6px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
 .player.va .play{opacity:0;pointer-events:none}
-.sotto{max-width:1060px;margin:10px auto 0;display:flex;justify-content:flex-end}
+.sotto{width:min(100%,1060px,calc((100vh - 190px) * 1.514));margin:10px auto 0;display:flex;justify-content:flex-end}
 .sotto button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font:inherit;font-size:14px;color:var(--navy);cursor:pointer}
 .passi{max-width:1060px;margin:18px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .ps{position:relative;display:flex;gap:12px;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:16px;padding:16px 16px 20px;font:inherit;color:var(--txt);cursor:pointer;overflow:hidden}
@@ -172,3 +172,5 @@ footer a{color:#cfe3f5;text-decoration:none;margin-right:18px}
 .ps.on .bar{background:#e0f2fe}
 .ps .bar i{display:block;height:100%;width:0;background:var(--sky)}
 @media (max-width:860px){.passi{grid-template-columns:1fr}}
+.player:fullscreen{width:100%;height:100%;border-radius:0;aspect-ratio:auto}
+section[id]{scroll-margin-top:64px}
