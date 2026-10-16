@@ -74,6 +74,7 @@
   <div class="wrap">
     <span>{{ if eq site.Language.Lang "it" }}Aggiornato il{{ else }}Updated{{ end }} <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod | time.Format ":date_long" }}</time> · © {{ now.Year }} Verba Manent IA · by <a href="{{ site.Params.marchioUrl }}" style="margin:0">{{ site.Params.marchio }}</a></span>
     <span>
+      {{- with site.GetPage "/contatti" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
       {{- with site.GetPage "/privacy" }}<a href="{{ .RelPermalink }}">{{ $t.piede.privacy }}</a>{{ end }}
     </span>
   </div>

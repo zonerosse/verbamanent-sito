@@ -12,7 +12,7 @@
   "brand" (dict "@type" "Brand" "name" "Verba Manent IA")
   "parentOrganization" (dict "@type" "Organization" "name" site.Params.marchio "url" site.Params.marchioUrl)
 -}}
-{{- with site.Params.email }}{{ $org = merge $org (dict "email" .) }}{{ end }}
+{{- with site.Params.email }}{{ $org = merge $org (dict "email" . "contactPoint" (dict "@type" "ContactPoint" "contactType" "customer support" "email" . "availableLanguage" (slice "Italian" "English"))) }}{{ end }}
 {{- with site.Params.telefono }}{{ $org = merge $org (dict "telephone" .) }}{{ end }}
 {{- with site.Params.indirizzo }}{{ $org = merge $org (dict "address" (merge (dict "@type" "PostalAddress") .)) }}{{ end }}
 {{- with site.Params.sameAs }}{{ $org = merge $org (dict "sameAs" .) }}{{ end }}
@@ -22,7 +22,7 @@
 -}}
 {{- $autore := dict "@type" "Organization" "@id" $orgId "name" "Verba Manent IA" -}}
 {{- $tipo := "WebPage" -}}
-{{- if and (eq .Section "guide") .IsPage }}{{ $tipo = "Article" }}{{ else if and (eq .Section "guide") (not .IsPage) }}{{ $tipo = "CollectionPage" }}{{ end -}}
+{{- if eq .Params.tipo "contatti" }}{{ $tipo = "ContactPage" }}{{ else if and (eq .Section "guide") .IsPage }}{{ $tipo = "Article" }}{{ else if and (eq .Section "guide") (not .IsPage) }}{{ $tipo = "CollectionPage" }}{{ end -}}
 {{- $pagina := dict
   "@type" $tipo "@id" (print .Permalink "#pagina") "url" .Permalink
   "name" (cond .IsHome (.Params.titolo | default site.Title) .Title)

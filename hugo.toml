@@ -11,6 +11,13 @@ disableKinds = ["taxonomy", "term", "RSS"]
   prova = true
   marchio = "Punto Web Ferrara"
   marchioUrl = "https://puntowebferrara.com/"
+  # Dati di contatto pubblici di Verba Manent (scheda Organization e pagina Contatti)
+  email = "info@puntowebferrara.com"
+  [params.indirizzo]
+    addressLocality = "Ostellato"
+    addressRegion = "FE"
+    postalCode = "44020"
+    addressCountry = "IT"
 
 [languages]
   [languages.it]
