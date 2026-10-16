@@ -1,4 +1,5 @@
 ---
+date: 2026-10-16
 title: "Contact"
 seotitolo: "Contact · Verba Manent IA"
 description: "How to contact Verba Manent IA: write to us with questions about the app, to try it before launch or to report a problem. We reply in English and Italian."

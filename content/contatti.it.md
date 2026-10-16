@@ -1,4 +1,5 @@
 ---
+date: 2026-10-16
 title: "Contatti"
 seotitolo: "Contatti · Verba Manent IA"
 description: "Come contattare Verba Manent IA: scrivici per domande sul programma, per provarlo in anteprima o per segnalare un problema. Rispondiamo in italiano e in inglese."

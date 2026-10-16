@@ -1,4 +1,5 @@
 ---
+date: 2026-10-16
 title: "Privacy"
 description: "How Verba Manent handles your data: recordings stay on your computer, no biometric data, no AI training."
 ---

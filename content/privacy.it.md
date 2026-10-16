@@ -1,4 +1,5 @@
 ---
+date: 2026-10-16
 title: "Privacy"
 description: "Come Verba Manent tratta i tuoi dati: le registrazioni restano sul tuo computer, nessun dato biometrico, nessun addestramento di intelligenza artificiale."
 ---
