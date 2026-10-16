@@ -60,6 +60,7 @@
       {{- range $t.menu }}
       <a href="{{ $home }}#{{ .id }}">{{ .t }}</a>
       {{- end }}
+      {{- with site.GetPage "/guide" }}<a href="{{ .RelPermalink }}">Guide</a>{{ end }}
     </nav>
     <div class="lang">
       {{- $cur := .Language.Lang }}

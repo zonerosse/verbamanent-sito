@@ -174,3 +174,21 @@ footer a{color:#cfe3f5;text-decoration:none;margin-right:18px}
 @media (max-width:860px){.passi{grid-template-columns:1fr}}
 .player:fullscreen{width:100%;height:100%;border-radius:0;aspect-ratio:auto}
 section[id]{scroll-margin-top:64px}
+/* guide */
+.intro{font-size:18px;color:var(--mut);margin:0 0 28px}
+.elenco{display:grid;gap:16px}
+.card.art{display:block;text-decoration:none;color:inherit}
+.card.art h2{font-size:21px;margin:0 0 6px}
+.leggi{display:inline-block;margin-top:10px;color:var(--blue);font-weight:600;font-size:15px}
+.briciole{font-size:14px;color:var(--mut);margin-bottom:14px}
+.briciole a{color:var(--mut)}
+.meta{color:var(--mut);font-size:14px;margin:0 0 24px}
+.articolo p,.articolo li{font-size:17.5px;line-height:1.7}
+.articolo h2{font-size:26px;margin:40px 0 12px}
+.articolo h3{font-size:20px;margin:28px 0 8px}
+.articolo blockquote{margin:20px 0;padding:14px 20px;border-left:4px solid var(--sky);background:var(--soft);border-radius:0 12px 12px 0}
+.articolo .fonti{font-size:14.5px;color:var(--mut);border-top:1px solid var(--line);margin-top:40px;padding-top:16px}
+.articolo .fonti li{font-size:14.5px}
+.cta-art{margin-top:44px;padding:28px;border-radius:20px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#e0f2fe}
+.cta-art b{color:#fff;font-size:21px;display:block;margin-bottom:6px}
+.cta-art p{color:#cde6fb!important;margin:0 0 18px}

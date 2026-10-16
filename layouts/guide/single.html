@@ -1,0 +1,21 @@
+{{ define "main" }}
+{{- $it := eq site.Language.Lang "it" }}
+<article class="pagina articolo">
+  <div class="wrap">
+    <nav class="briciole" aria-label="{{ if $it }}Percorso{{ else }}Breadcrumb{{ end }}">
+      <a href="{{ site.Home.RelPermalink }}">Verba Manent</a> › <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a>
+    </nav>
+    <h1>{{ .Title }}</h1>
+    <p class="meta">{{ if $it }}Aggiornato il{{ else }}Updated{{ end }} {{ .Lastmod | time.Format ":date_long" }} · {{ .ReadingTime }} min</p>
+    {{ .Content }}
+    <aside class="cta-art">
+      <b>{{ if $it }}Verba Manent fa gli appunti al posto tuo{{ else }}Verba Manent takes the notes for you{{ end }}</b>
+      <p>{{ if $it }}Registra la lezione, la sbobina sul tuo PC e ti dà appunti Cornell, Formato Esame e flashcard. Tu ascolti e capisci.{{ else }}It records the lecture, transcribes it on your computer and gives you Cornell notes, exam-ready notes and flashcards. You listen and understand.{{ end }}</p>
+      <a class="btn btn-p" href="{{ site.Home.RelPermalink }}#attesa">{{ if $it }}Avvisami quando esce{{ else }}Notify me at launch{{ end }}</a>
+    </aside>
+  </div>
+</article>
+<script type="application/ld+json">
+{{ dict "@context" "https://schema.org" "@type" "Article" "headline" .Title "description" .Description "datePublished" (.Date.Format "2006-01-02") "dateModified" (.Lastmod.Format "2006-01-02") "inLanguage" site.Language.Lang "author" (dict "@type" "Organization" "name" "Verba Manent IA") "publisher" (dict "@type" "Organization" "name" site.Params.marchio "url" site.Params.marchioUrl) "mainEntityOfPage" .Permalink | jsonify | safeJS }}
+</script>
+{{ end }}

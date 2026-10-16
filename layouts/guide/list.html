@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="pagina">
+  <div class="wrap">
+    <h1>{{ .Title }}</h1>
+    <p class="intro">{{ .Description }}</p>
+    <div class="elenco">
+      {{- range .Pages.ByDate.Reverse }}
+      <a class="card art" href="{{ .RelPermalink }}">
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Description }}</p>
+        <span class="leggi">{{ if eq site.Language.Lang "it" }}Leggi la guida →{{ else }}Read the guide →{{ end }}</span>
+      </a>
+      {{- end }}
+    </div>
+  </div>
+</div>
+{{ end }}
