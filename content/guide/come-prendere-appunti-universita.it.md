@@ -46,7 +46,7 @@ La pagina si divide in tre zone:
 | **Parole chiave e domande** | Colonna stretta a sinistra | Le parole chiave e le domande a cui rispondono gli appunti | Subito dopo |
 | **Sintesi** | Riga in fondo alla pagina | Il succo della pagina in due o tre frasi | Subito dopo |
 
-Il trucco sta nella colonna di sinistra: quando ripassi copri gli appunti, leggi solo le domande e provi a rispondere a voce. È un'interrogazione che ti fai da solo.
+Il trucco sta nella colonna di sinistra: quando ripassi copri gli appunti, leggi solo le domande e provi a rispondere a voce. È un'interrogazione che ti fai da solo. Trovi tutto il metodo, con un esempio completo, nella guida al [metodo Cornell](/guide/metodo-cornell/).
 
 ## Dopo la lezione: le 24 ore che contano
 
