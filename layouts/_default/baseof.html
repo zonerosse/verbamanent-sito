@@ -76,6 +76,7 @@
     <span>
       {{- with site.GetPage "/contatti" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
       {{- with site.GetPage "/privacy" }}<a href="{{ .RelPermalink }}">{{ $t.piede.privacy }}</a>{{ end }}
+      {{- with site.GetPage "/note-legali" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
     </span>
   </div>
 </footer>
