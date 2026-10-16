@@ -2,12 +2,16 @@
 title: "Flashcard: come usarle per studiare davvero (e ricordare all'esame)"
 description: "Cosa sono le flashcard, perché funzionano, come scriverle bene e come ripassarle con il sistema Leitner. Una guida pratica per l'università, con le ricerche che lo dimostrano."
 date: 2026-10-16
+vm: "flashcard"
 slug: "flashcard-come-usarle-per-studiare"
 ---
 
 Le flashcard sono uno degli strumenti di studio più semplici che esistano: un cartoncino con una domanda davanti e la risposta dietro. Eppure sono anche tra i più efficaci, a patto di usarle nel modo giusto.
 
 Sono il passo che segue gli appunti (se ti serve partire da lì, leggi [come prendere appunti all'università](/guide/come-prendere-appunti-universita/)). In questa guida trovi perché funzionano, come scriverle bene e come organizzare il ripasso perché quello che studi oggi sia ancora lì il giorno dell'esame.
+
+
+{{< vm-flusso tema="flashcard" >}}
 
 ## Perché le flashcard funzionano
 
@@ -61,6 +65,10 @@ Tutte e due funzionano.
 
 La scelta migliore è quella che userai davvero ogni giorno.
 
+{{< vm-confronto tema="flashcard" >}}
+
+{{< vm-nota >}}le carte sbagliate tornano finché non le sai, come nelle scatole di Leitner: tocchi «Da rivedere» o «La sapevo» e al resto pensa il programma.{{< /vm-nota >}}
+
 ## Gli errori più comuni
 
 - **Girare la carta troppo presto**: se non provi davvero a rispondere, l'effetto svanisce.
@@ -73,11 +81,8 @@ La scelta migliore è quella che userai davvero ogni giorno.
 
 Le flashcard sono fortissime dove c'è molto da memorizzare: definizioni giuridiche, termini medici, anatomia, date, formule, vocaboli di lingue straniere, articoli di legge. Funzionano bene anche per le materie di ragionamento, se le domande sono del tipo "perché" e "cosa succede se".
 
-## Come può aiutarti Verba Manent
+{{< vm-schermata img="domande-esame" didascalia="In Verba Manent le domande più probabili di tutto il corso, con le stelle e le lezioni in cui sono state spiegate." >}}
 
-Scrivere le flashcard richiede tempo, ed è spesso il motivo per cui si rinuncia. Verba Manent, a fine lezione, prepara da solo le domande e le risposte più importanti di quello che ha detto il docente, insieme agli appunti.
-
-Un consiglio onesto: usale come **punto di partenza**. Rileggile, correggi quelle che non ti convincono e riscrivi con parole tue le più difficili. Il lavoro di scriverle lo risparmi; quello di ripassarle resta tuo.
 
 <div class="fonti">
 

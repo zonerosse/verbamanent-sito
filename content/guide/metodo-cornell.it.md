@@ -2,12 +2,16 @@
 title: "Il metodo Cornell per prendere appunti: spiegazione ed esempio"
 description: "Il metodo Cornell spiegato passo per passo: come dividere la pagina, le 5 R per studiare, un esempio completo di appunti Cornell e come usarlo su carta, al computer e sul tablet."
 date: 2026-10-16
+vm: "cornell"
 slug: "metodo-cornell"
 ---
 
 Il metodo Cornell è un modo di prendere appunti che trasforma la pagina in uno strumento di studio. Non serve solo a scrivere durante la lezione: è costruito apposta per ripassare e interrogarsi.
 
 L'ha ideato **Walter Pauk**, professore alla Cornell University, che lo ha descritto nel suo libro *How to Study in College*. Ancora oggi è uno dei metodi più usati nelle università di tutto il mondo.
+
+
+{{< vm-flusso tema="cornell" >}}
 
 ## Come si divide la pagina
 
@@ -70,6 +74,8 @@ Nota alcune cose:
 - le domande a sinistra sono **domande vere**, a cui si può rispondere a voce;
 - la sintesi **non ripete gli appunti**: li riassume in poche righe, con parole nuove.
 
+{{< vm-confronto tema="cornell" >}}
+
 ## Su carta, al computer o sul tablet
 
 Il metodo funziona su qualsiasi supporto.
@@ -91,12 +97,6 @@ Il metodo funziona su qualsiasi supporto.
 Il Cornell dà il meglio nelle materie teoriche, dove ci sono concetti, definizioni e collegamenti: diritto, storia, biologia, economia, medicina, filosofia. Nelle materie molto tecniche, con tanti esercizi, conviene usarlo per la teoria e tenere gli esercizi su fogli a parte.
 
 Per il ripasso, le domande della colonna di sinistra si possono trasformare facilmente in [flashcard](/guide/flashcard-come-usarle-per-studiare/). E se vuoi un metodo completo per prima, durante e dopo la lezione, c'è la guida su [come prendere appunti all'università](/guide/come-prendere-appunti-universita/).
-
-## Come lo fa Verba Manent
-
-Verba Manent prepara appunti in formato Cornell direttamente dalla lezione: parole chiave e domande a sinistra, appunti a destra, sintesi in fondo, con le slide del docente al posto giusto. In un PDF pronto da stampare o da leggere sul tablet.
-
-Il lavoro di scrittura lo fa lui; quello di interrogarti con le domande resta tuo, ed è proprio la parte che ti fa passare l'esame.
 
 <div class="fonti">
 

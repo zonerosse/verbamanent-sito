@@ -218,3 +218,57 @@ section[id]{scroll-margin-top:64px}
 .verbale-es td{padding:8px 10px;border-top:1px solid var(--line)}
 @media (max-width:600px){.verbale-es table{display:block;overflow-x:auto}}
 pre.modello{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:16px 18px;white-space:pre-wrap;font-size:14.5px;line-height:1.6;color:var(--ink)}
+/* ===== blocchi Verba Manent nelle guide ===== */
+.vm-badge{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:#fff;font-size:12px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.vm-badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--cyan)}
+.vm-badge.chiaro{background:rgba(34,211,238,.15);color:var(--cyan)}
+.vm-flusso{position:relative;display:flex;align-items:stretch;gap:8px;margin:28px 0;padding:34px 16px 18px;border-radius:18px;background:linear-gradient(135deg,#f0f9ff,#ecfeff);border:1px solid #bae6fd}
+.vm-flusso .vm-badge{position:absolute;top:-12px;left:16px}
+.vm-passo{flex:1;background:#fff;border-radius:14px;padding:14px 12px;text-align:center;box-shadow:0 6px 16px rgba(13,66,117,.08)}
+.vm-passo .vm-ic{display:grid;place-items:center;width:46px;height:46px;margin:0 auto 8px;border-radius:50%;background:var(--soft);font-size:22px}
+.vm-passo b{display:block;color:var(--ink);font-size:15.5px;line-height:1.3}
+.vm-passo small{display:block;color:var(--mut);font-size:13.5px;line-height:1.4;margin-top:4px}
+.vm-freccia{align-self:center;color:var(--sky);font-size:22px;font-weight:700}
+.vm-confronto{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
+.vm-col{border-radius:16px;padding:18px 20px}
+.vm-col b{display:block;font-size:16px;margin-bottom:8px}
+.vm-col ul{margin:0;padding:0;list-style:none}
+.vm-col li{position:relative;padding:5px 0 5px 28px;font-size:15.5px!important;line-height:1.5!important}
+.vm-col.senza{background:#fff7ed;border:1px solid #fed7aa}
+.vm-col.senza b{color:#9a3412}
+.vm-col.senza li::before{content:"✕";position:absolute;left:4px;color:#ea580c;font-weight:800}
+.vm-col.con{background:#ecfdf5;border:1px solid #a7f3d0}
+.vm-col.con b{color:#065f46}
+.vm-col.con li::before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:800}
+.vm-schermata{margin:26px 0;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 44px rgba(13,66,117,.16);background:#fff}
+.vm-schermata img{display:block;width:100%;height:auto}
+.vm-cornice{display:flex;gap:6px;padding:9px 12px;background:#e8eef5}
+.vm-cornice span{width:10px;height:10px;border-radius:50%;background:#cbd5e1}
+.vm-cornice span:first-child{background:#fb7185}.vm-cornice span:nth-child(2){background:#fbbf24}.vm-cornice span:nth-child(3){background:#34d399}
+.vm-schermata figcaption{padding:10px 14px;font-size:14px;color:var(--mut);background:#fff;border-top:1px solid var(--line)}
+.vm-nota{display:flex;gap:14px;margin:22px 0;padding:16px 18px;border-radius:14px;background:#f5f3ff;border:1px solid #ddd6fe}
+.vm-nota-ic{font-size:22px;line-height:1.3}
+.vm-nota b{color:#5b21b6}
+.vm-nota div{font-size:16px;line-height:1.6}
+.vm-nota p{display:inline;margin:0}
+.vm-finale{margin-top:48px;padding:32px 28px;border-radius:24px;background:linear-gradient(180deg,var(--navy-dd),#0a2a4a);color:#cfe3f5}
+.vm-finale h2{color:#fff!important;font-size:clamp(24px,3vw,30px)!important;margin:12px 0 20px!important}
+.vm-schede{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.vm-scheda{padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
+.vm-scheda .vm-ic{font-size:24px}
+.vm-scheda b{display:block;color:#fff;font-size:16.5px;margin:6px 0 4px}
+.vm-scheda p{margin:0!important;color:#a9c4de!important;font-size:15px!important;line-height:1.5!important}
+.vm-schermata.scura{border-color:rgba(255,255,255,.15);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.vm-schermata.scura .vm-cornice{background:#1e3a5f}
+.vm-schermata.scura figcaption{background:#0f2a47;color:#a9c4de;border-color:rgba(255,255,255,.1)}
+.vm-privacy{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.vm-privacy span{background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.35);color:#cffafe;border-radius:999px;padding:6px 14px;font-size:14px}
+@media (max-width:760px){
+  .vm-flusso{flex-direction:column;padding-top:30px}
+  .vm-freccia{transform:rotate(90deg)}
+  .vm-passo{display:grid;grid-template-columns:46px 1fr;gap:2px 12px;text-align:left;align-items:center}
+  .vm-passo .vm-ic{grid-row:1/3;margin:0}
+  .vm-passo small{margin:0}
+  .vm-confronto,.vm-schede{grid-template-columns:1fr}
+  .vm-finale{padding:26px 18px}
+}

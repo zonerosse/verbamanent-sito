@@ -2,12 +2,16 @@
 title: "Come prendere appunti all'università: il metodo che funziona davvero"
 description: "Come prendere appunti all'università senza perdere pezzi: cosa fare prima, durante e dopo la lezione, il metodo Cornell e come ripassare. Con le ricerche che lo dimostrano."
 date: 2026-10-16
+vm: "appunti"
 slug: "come-prendere-appunti-universita"
 ---
 
 Due ore di lezione, il docente che corre, le slide che cambiano prima che tu finisca la frase. A fine giornata hai tre pagine di appunti e la sensazione di aver perso proprio il passaggio importante. Succede a quasi tutti, soprattutto al primo anno.
 
 Prendere appunti all'università non vuol dire scrivere tutto quello che si sente. Vuol dire **capire durante la lezione e fissare dopo**. Qui trovi un metodo semplice, diviso in tre momenti: prima, durante e dopo la lezione.
+
+
+{{< vm-flusso tema="appunti" >}}
 
 ## Prima della lezione: dieci minuti che cambiano tutto
 
@@ -34,6 +38,8 @@ Durante la lezione quindi:
 
 Se ti perdi un pezzo, lascia uno spazio e prosegui. Lo recuperi dopo.
 
+{{< vm-confronto tema="appunti" >}}
+
 ## Il metodo Cornell: la pagina divisa in tre
 
 Il metodo Cornell è stato ideato da Walter Pauk, professore alla Cornell University, e descritto nel suo libro *How to Study in College*. È ancora uno dei metodi più usati al mondo. Funziona perché costringe a rielaborare.
@@ -48,6 +54,9 @@ La pagina si divide in tre zone:
 
 Il trucco sta nella colonna di sinistra: quando ripassi copri gli appunti, leggi solo le domande e provi a rispondere a voce. È un'interrogazione che ti fai da solo. Trovi tutto il metodo, con un esempio completo, nella guida al [metodo Cornell](/guide/metodo-cornell/).
 
+{{< vm-schermata img="appunti-pronti" didascalia="Verba Manent a fine lezione: gli appunti Cornell sono già pronti da aprire." >}}
+
+
 ## Dopo la lezione: le 24 ore che contano
 
 Quello che non si ripassa si dimentica in fretta: lo ha mostrato già Hermann Ebbinghaus alla fine dell'Ottocento con la sua "curva dell'oblio". Per questo il momento migliore per sistemare gli appunti è **lo stesso giorno**, quando la lezione è ancora fresca.
@@ -55,6 +64,8 @@ Quello che non si ripassa si dimentica in fretta: lo ha mostrato già Hermann Eb
 1. **Rileggi e completa**: riempi gli spazi lasciati vuoti e risolvi i punti con il "?", con il libro o chiedendo a un compagno.
 2. **Scrivi le domande** nella colonna di sinistra e la **sintesi** in fondo.
 3. **Trasforma i concetti chiave in flashcard**: domanda da una parte, risposta dall'altra. Qui trovi [come scrivere e ripassare le flashcard](/guide/flashcard-come-usarle-per-studiare/).
+
+{{< vm-nota >}}a fine lezione trovi già appunti in ordine e flashcard pronte: il lavoro di sistemazione si riduce a rileggere, correggere e aggiungere le tue note.{{< /vm-nota >}}
 
 ## Ripassare: interrogarsi batte rileggere
 
@@ -81,12 +92,6 @@ Un'avvertenza: prima di registrare una lezione verifica le regole della tua univ
 - Non rileggere gli appunti fino alla sessione d'esame.
 - Ripassare solo rileggendo, senza mai interrogarsi.
 - Tenere appunti di materie diverse mescolati, senza data e titolo.
-
-## Dove può aiutarti Verba Manent
-
-Verba Manent registra la lezione, la trascrive sul tuo computer e prepara appunti in formato Cornell, appunti per l'esame e flashcard. Così durante la lezione puoi fare la cosa più importante: **ascoltare e capire**, segnando solo i tuoi dubbi e le cose da ricordare.
-
-La parte che nessun programma può fare al posto tuo resta tua: rielaborare, interrogarti, spiegare. Verba Manent ti toglie il lavoro di copiare, non quello di studiare.
 
 <div class="fonti">
 

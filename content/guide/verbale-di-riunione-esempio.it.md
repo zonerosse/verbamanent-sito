@@ -2,12 +2,16 @@
 title: "Verbale di riunione: esempio pronto e modello da copiare"
 description: "Come scrivere un verbale di riunione chiaro e utile: cosa deve contenere, un esempio completo, un modello vuoto da copiare e gli errori da evitare."
 date: 2026-10-16
+vm: "verbale"
 slug: "verbale-di-riunione-esempio"
 ---
 
 Una riunione senza verbale è una riunione che, dopo una settimana, nessuno ricorda allo stesso modo. Il verbale serve a fissare **cosa si è deciso, chi deve fare cosa ed entro quando**. Se è fatto bene, si legge in due minuti e fa risparmiare la riunione successiva.
 
 Qui trovi cosa deve contenere, un esempio completo e un modello vuoto da copiare.
+
+
+{{< vm-flusso tema="verbale" >}}
 
 ## Cosa deve contenere un verbale
 
@@ -60,6 +64,9 @@ Ecco un verbale di una riunione di lavoro tra colleghi. I nomi e l'azienda sono 
 </div>
 <p class="didascalia">Un verbale breve, ma completo: chi lo legge sa subito cosa è cambiato e cosa deve fare.</p>
 
+{{< vm-schermata img="tipo-riunione" didascalia="In Verba Manent scegli il tipo di riunione: il verbale avrà le parti giuste." >}}
+
+
 ## Modello vuoto da copiare
 
 Copia questo schema in un documento e compilalo durante o subito dopo la riunione.
@@ -97,15 +104,11 @@ PROSSIMA RIUNIONE
 - **Mandalo a tutti**, assenti compresi, e chiedi di segnalare eventuali correzioni entro un termine.
 - **Riparti dal verbale** alla riunione successiva: la prima cosa da fare è controllare le azioni della volta prima.
 
+{{< vm-confronto tema="verbale" >}}
+
 ## Verbali formali: quando ci sono regole precise
 
 Il verbale di una riunione di lavoro tra colleghi è libero: basta che sia chiaro. Ci sono però riunioni in cui il verbale è previsto dalla legge e ha regole precise, per esempio le **assemblee di condominio** e le **assemblee dei soci** di una società, regolate dal Codice civile. In questi casi contano anche le maggioranze, le firme e la conservazione, e conviene seguire le indicazioni dell'amministratore o di un professionista.
-
-## Come lo fa Verba Manent
-
-Durante una riunione su Meet, Teams o Zoom, chi verbalizza fa due lavori insieme: ascoltare e scrivere. Verba Manent registra la riunione, la trascrive sul tuo computer distinguendo chi parla e prepara il verbale con **decisioni prese, cose da fare, chi le fa ed entro quando**, pronto da controllare e inviare.
-
-A ogni registrazione Verba Manent propone anche un messaggio pronto per **avvisare i partecipanti** che la riunione viene registrata: è corretto verso i colleghi, e in molti casi è doveroso. Le registrazioni restano sul tuo computer e non vengono usate per addestrare nessuna intelligenza artificiale.
 
 Se lavori anche con la trascrizione di audio, leggi la guida su [come trascrivere audio in testo](/guide/trascrivere-audio-in-testo/).
 

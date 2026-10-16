@@ -1,0 +1,108 @@
+# Blocchi "Verba Manent" dentro le guide. Un tema per guida.
+flussi:
+  sbobine:
+    - { ic: "🎙️", t: "Registra", p: "Online o in aula, schermo e audio insieme" }
+    - { ic: "💻", t: "Sbobina sul PC", p: "Trascrizione parola per parola, l'audio non va su internet" }
+    - { ic: "🗣️", t: "Distingue le voci", p: "Docente e studenti separati" }
+    - { ic: "📚", t: "Appunti pronti", p: "Cornell, Formato Esame e flashcard" }
+  appunti:
+    - { ic: "🎙️", t: "Tu ascolti", p: "Verba Manent registra e trascrive" }
+    - { ic: "⭐", t: "Segni i punti chiave", p: "Due parole o una stella nel momento giusto" }
+    - { ic: "📚", t: "Appunti a fine lezione", p: "Cornell o Formato Esame, con le slide" }
+    - { ic: "🃏", t: "Ripassi", p: "Flashcard e domande d'esame pronte" }
+  flashcard:
+    - { ic: "🎙️", t: "Lezione registrata", p: "Online o in aula" }
+    - { ic: "🃏", t: "Flashcard automatiche", p: "Domande e risposte dalla lezione" }
+    - { ic: "⭐", t: "Le più importanti", p: "Stelle per le domande più probabili all'esame" }
+    - { ic: "✅", t: "Ripasso", p: "Gira la carta: «la sapevo» o «da rivedere»" }
+  trascrivere:
+    - { ic: "🎙️", t: "Registra o importa", p: "Una lezione, una riunione o un file che hai già" }
+    - { ic: "💻", t: "Trascrive sul PC", p: "Nessun file caricato su internet" }
+    - { ic: "🗣️", t: "Chi parla", p: "Le voci separate, i nomi li dai tu" }
+    - { ic: "📄", t: "Testo e molto di più", p: "Appunti, sintesi o verbale" }
+  cornell:
+    - { ic: "🎙️", t: "Registra la lezione", p: "Tu ascolti e segni solo i dubbi" }
+    - { ic: "❓", t: "Domande a sinistra", p: "Le parole chiave e le domande" }
+    - { ic: "📝", t: "Appunti a destra", p: "Concetti, esempi e slide al posto giusto" }
+    - { ic: "📌", t: "Sintesi in fondo", p: "Il succo in poche righe, in PDF" }
+  verbale:
+    - { ic: "📣", t: "Avvisa i partecipanti", p: "Messaggio pronto da incollare in chat" }
+    - { ic: "🎙️", t: "Registra la riunione", p: "Meet, Teams, Zoom o in sala" }
+    - { ic: "🗣️", t: "Chi ha detto cosa", p: "Le voci separate e con i nomi" }
+    - { ic: "📋", t: "Verbale pronto", p: "Decisioni e cose da fare con chi e entro quando" }
+
+confronti:
+  sbobine:
+    senza: ["Ore di lavoro per ogni ora di lezione", "Pausa, riascolta, scrivi, riparti", "Turni da organizzare con i compagni", "Alla fine hai solo un testo lungo da rileggere"]
+    con: ["La trascrizione si fa da sola mentre segui", "Docente e studenti già separati", "La sbobina è tua, subito dopo la lezione", "In più: appunti, flashcard e domande d'esame"]
+  appunti:
+    senza: ["Scrivi di corsa e perdi i passaggi", "Testa sul quaderno invece che sul docente", "Gli appunti vanno sistemati da capo a casa"]
+    con: ["Ascolti e capisci, scrivi solo i tuoi dubbi", "Niente passaggi persi: c'è tutta la lezione", "A fine lezione gli appunti sono già in ordine"]
+  flashcard:
+    senza: ["Ore per scrivere le carte a mano", "Rischio di dimenticare argomenti", "Nessuna idea di cosa chiederanno"]
+    con: ["Le carte sono pronte a fine lezione", "Coprono tutta la lezione, con la slide di riferimento", "Le domande più probabili segnate con le stelle"]
+  trascrivere:
+    senza: ["File caricati sui server di altri", "Solo testo: da rileggere tutto", "Limiti di minuti e abbonamenti a tempo"]
+    con: ["Trascrizione sul tuo computer", "Dal testo, appunti o verbale già pronti", "Le registrazioni restano tue"]
+  cornell:
+    senza: ["Disegnare la pagina ogni volta", "Scrivere domande e sintesi a mano dopo la lezione", "Pagine diverse da una lezione all'altra"]
+    con: ["Pagina Cornell già impostata", "Domande e sintesi scritte per te", "Lo stesso formato per tutto il corso, in PDF"]
+  verbale:
+    senza: ["Chi verbalizza ascolta a metà", "Il verbale arriva giorni dopo", "Azioni senza nome né scadenza"]
+    con: ["Tutti partecipano, nessuno scrive", "Verbale pronto a fine riunione", "Ogni azione con chi e entro quando"]
+
+finali:
+  sbobine:
+    t: "Verba Manent sbobina la lezione al posto tuo"
+    schede:
+      - { ic: "💻", t: "Sbobina sul tuo PC", p: "La trascrizione avviene sul computer: l'audio non va su internet." }
+      - { ic: "🗣️", t: "Chi parla", p: "Distingue il docente dalle domande degli studenti." }
+      - { ic: "📚", t: "Appunti, non solo testo", p: "Dalla sbobina prepara appunti Cornell e Formato Esame." }
+      - { ic: "🏫", t: "Anche in aula", p: "Registra dal microfono del portatile quando il docente è lì davanti." }
+    img: "chi-parla"
+    didascalia: "La trascrizione con le voci separate: i nomi li dai tu, oppure li suggerisce l'IA."
+  appunti:
+    t: "Verba Manent prende gli appunti al posto tuo"
+    schede:
+      - { ic: "⭐", t: "Le tue note durante la lezione", p: "Due parole o una stella: la nota prende il minuto esatto della registrazione." }
+      - { ic: "💬", t: "Chiedi durante la lezione", p: "Ti sei perso? Chiedi di cosa si sta parlando e rispondi in pochi secondi." }
+      - { ic: "📚", t: "Appunti pronti", p: "Cornell o Formato Esame, con le slide del docente al posto giusto." }
+      - { ic: "🃏", t: "Flashcard", p: "Le domande della lezione pronte per il ripasso." }
+    img: "note-durante"
+    didascalia: "Durante la registrazione: le tue note con il minuto esatto e il riquadro per fare domande."
+  flashcard:
+    t: "Verba Manent prepara le flashcard da ogni lezione"
+    schede:
+      - { ic: "🃏", t: "Carte pronte", p: "Domande e risposte ricavate da quello che ha detto il docente." }
+      - { ic: "⭐", t: "Le più probabili", p: "Le stelle indicano le domande più importanti per l'esame." }
+      - { ic: "🔁", t: "«La sapevo» o «Da rivedere»", p: "Le carte sbagliate tornano finché non le sai." }
+      - { ic: "🎯", t: "Simulazione d'esame", p: "Domande, risposta scritta e voto in trentesimi." }
+    img: "flashcard"
+    didascalia: "Il ripasso con le flashcard: tocchi la carta per girarla, poi dici se la sapevi."
+  trascrivere:
+    t: "Verba Manent trascrive lezioni e riunioni sul tuo PC"
+    schede:
+      - { ic: "💻", t: "Niente upload", p: "L'audio viene trascritto sul tuo computer, non sui server di altri." }
+      - { ic: "📂", t: "Anche file che hai già", p: "Importa una registrazione e ottieni testo e appunti." }
+      - { ic: "🗣️", t: "Chi parla", p: "Le voci separate, con i nomi che scegli tu." }
+      - { ic: "📋", t: "Oltre il testo", p: "Appunti per studiare o verbale con le cose da fare." }
+    img: "chi-parla"
+    didascalia: "Una trascrizione in Verba Manent: ogni frase con chi l'ha detta e il minuto."
+  cornell:
+    t: "Verba Manent ti dà gli appunti Cornell già fatti"
+    schede:
+      - { ic: "📝", t: "Formato Cornell", p: "Parole chiave e domande, appunti e sintesi, pagina dopo pagina." }
+      - { ic: "🖼️", t: "Con le slide", p: "Le slide del docente inserite al punto giusto della lezione." }
+      - { ic: "📄", t: "PDF pronto", p: "Da stampare o da leggere sul tablet." }
+      - { ic: "🎯", t: "Anche Formato Esame", p: "Un secondo formato pensato per ripassare, anche insieme al Cornell." }
+    img: "appunti-pronti"
+    didascalia: "A fine lezione: «I primi appunti sono pronti», in formato Cornell."
+  verbale:
+    t: "Verba Manent scrive il verbale al posto tuo"
+    schede:
+      - { ic: "📋", t: "Verbale pronto", p: "Decisioni, cose da fare, chi le fa ed entro quando." }
+      - { ic: "✅", t: "Cose da fare", p: "Tutte le azioni di tutti i verbali in un elenco, da spuntare." }
+      - { ic: "🧩", t: "Tipi di riunione", p: "Commerciale, colloquio, condominio, consiglio di classe e altri: il verbale ha le parti giuste." }
+      - { ic: "📣", t: "Avvisa i partecipanti", p: "Un messaggio pronto per dire che la riunione viene registrata." }
+    img: "cose-da-fare"
+    didascalia: "Le cose da fare raccolte da tutti i verbali, con chi e entro quando."

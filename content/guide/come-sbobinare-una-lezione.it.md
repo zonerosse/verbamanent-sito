@@ -2,12 +2,16 @@
 title: "Come sbobinare una lezione (anche con l'IA): guida per universitari"
 description: "Cos'è una sbobina, come sbobinare una lezione a mano o con l'intelligenza artificiale, come organizzare le sbobine di gruppo e cosa dice la legge. Guida pratica per studenti universitari."
 date: 2026-10-16
+vm: "sbobine"
 slug: "come-sbobinare-una-lezione"
 ---
 
 Chi studia in un'università italiana prima o poi sente parlare di **sbobine**: le lezioni registrate e trascritte parola per parola, spesso divise tra compagni di corso. Sono una tradizione soprattutto a Medicina, Giurisprudenza e nelle facoltà con lezioni lunghe e tanti argomenti.
 
 In questa guida vediamo come si sbobina una lezione, come farlo in poco tempo con l'intelligenza artificiale, come organizzarsi in gruppo e a cosa fare attenzione.
+
+
+{{< vm-flusso tema="sbobine" >}}
 
 ## Cos'è una sbobina
 
@@ -33,6 +37,8 @@ Oggi la parte più lunga, cioè scrivere quello che si sente, la può fare l'int
 2. **fai trascrivere l'audio** da un programma di riconoscimento vocale, impostando la lingua del docente;
 3. **controlla i punti critici**: nomi propri, termini tecnici, numeri, formule. Sono gli errori più frequenti;
 4. **sistema e struttura**: titoli, elenchi, slide al posto giusto.
+
+{{< vm-confronto tema="sbobine" >}}
 
 Per le opzioni disponibili, dai servizi online ai programmi che lavorano sul tuo PC, trovi un confronto nella guida su [come trascrivere audio in testo](/guide/trascrivere-audio-in-testo/).
 
@@ -62,12 +68,6 @@ Due aspetti da conoscere prima di registrare e sbobinare.
 
 - **Il permesso.** Molte università regolano la registrazione delle lezioni nei loro regolamenti, e diversi docenti chiedono di essere avvisati. La cosa più corretta è chiedere sempre.
 - **I diritti del docente.** La legge italiana sul diritto d'autore protegge anche le opere didattiche in forma orale, quindi anche le lezioni. Registrare e sbobinare per il proprio studio è una cosa; **vendere le sbobine** o pubblicarle online senza il consenso del docente è un'altra, e può violare i suoi diritti.
-
-## Come può aiutarti Verba Manent
-
-Verba Manent fa in automatico la parte lunga della sbobina: registra la lezione, online o in aula, e la trascrive **sul tuo computer**, distinguendo il docente dagli studenti. Poi va oltre la sbobina: prepara appunti Cornell, appunti per l'esame e flashcard, con le slide al posto giusto.
-
-Tu durante la lezione puoi concentrarti sull'ascolto, segnando solo i punti che ti sembrano importanti o poco chiari.
 
 <div class="fonti">
 

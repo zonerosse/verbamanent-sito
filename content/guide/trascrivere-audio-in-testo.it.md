@@ -2,12 +2,16 @@
 title: "Trascrivere audio in testo: tutti i modi, dai vocali alle lezioni"
 description: "Come trascrivere un audio in testo: messaggi vocali WhatsApp, file audio, lezioni e riunioni. Strumenti gratuiti, online e sul PC, a confronto, con consigli per una trascrizione precisa e attenzione alla privacy."
 date: 2026-10-16
+vm: "trascrivere"
 slug: "trascrivere-audio-in-testo"
 ---
 
 Trascrivere un audio in testo oggi non vuol dire più passare ore a premere pausa e riscrivere. L'intelligenza artificiale lo fa in pochi minuti, spesso gratis. Ma non tutti gli strumenti vanno bene per tutto: un vocale di trenta secondi, una lezione di due ore e una riunione di lavoro sono tre problemi diversi.
 
 Qui trovi tutti i modi per trascrivere un audio, quando usare ciascuno e a cosa fare attenzione.
+
+
+{{< vm-flusso tema="trascrivere" >}}
 
 ## In breve: quale strumento per quale audio
 
@@ -58,6 +62,8 @@ Una lezione o una riunione non è un file da trascrivere e basta. Ci sono tre pr
 
 Per questo, per lezioni e riunioni, la sola trascrizione non basta: serve qualcosa che dal testo ricavi **appunti, sintesi o verbale**.
 
+{{< vm-confronto tema="trascrivere" >}}
+
 ## Come ottenere una trascrizione precisa
 
 La qualità della trascrizione dipende soprattutto dalla qualità dell'audio. Qualche accorgimento fa una differenza enorme.
@@ -75,12 +81,6 @@ E una regola che vale sempre: **rileggi i punti importanti**. Anche la migliore 
 ## Attenzione al permesso di registrare
 
 Prima di registrare e trascrivere una conversazione con altre persone, chiediti se hai il permesso di farlo. Per le lezioni molte università hanno regole precise e il docente ha diritti sulla sua lezione. Per le riunioni è buona educazione, oltre che più corretto, avvisare i partecipanti all'inizio.
-
-## Come lo fa Verba Manent
-
-Verba Manent è pensato proprio per lezioni e riunioni. Registra lo schermo e l'audio del computer, oppure il microfono in aula, e trascrive **sul tuo PC**: l'audio non viene mandato su internet. Poi dal testo prepara appunti Cornell, appunti per l'esame, flashcard o il verbale della riunione, distinguendo chi parla. Può anche trascrivere un file audio che hai già.
-
-Le registrazioni restano sul tuo computer, non vengono usate per addestrare nessuna intelligenza artificiale e Verba Manent non conserva impronte della voce.
 
 Se ti interessa lo studio, continua con le guide su [come prendere appunti all'università](/guide/come-prendere-appunti-universita/) e su [come usare le flashcard](/guide/flashcard-come-usarle-per-studiare/).
 

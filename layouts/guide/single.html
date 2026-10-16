@@ -8,11 +8,12 @@
     <h1>{{ .Title }}</h1>
     <p class="meta">{{ if $it }}Aggiornato il{{ else }}Updated{{ end }} {{ .Lastmod | time.Format ":date_long" }} · {{ .ReadingTime }} min</p>
     {{ .Content }}
+    {{- if .Params.vm }}{{ partial "vm-finale.html" . }}{{ else }}
     <aside class="cta-art">
       <b>{{ if $it }}Verba Manent fa gli appunti al posto tuo{{ else }}Verba Manent takes the notes for you{{ end }}</b>
       <p>{{ if $it }}Registra la lezione, la sbobina sul tuo PC e ti dà appunti Cornell, Formato Esame e flashcard. Tu ascolti e capisci.{{ else }}It records the lecture, transcribes it on your computer and gives you Cornell notes, exam-ready notes and flashcards. You listen and understand.{{ end }}</p>
       <a class="btn btn-p" href="{{ site.Home.RelPermalink }}#attesa">{{ if $it }}Avvisami quando esce{{ else }}Notify me at launch{{ end }}</a>
-    </aside>
+    </aside>{{ end }}
   </div>
 </article>
 <script type="application/ld+json">

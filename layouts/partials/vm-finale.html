@@ -1,0 +1,24 @@
+{{- $it := eq site.Language.Lang "it" -}}
+{{- $d := index hugo.Data.vm site.Language.Lang -}}
+{{- with index $d.finali .Params.vm }}
+<section class="vm-finale" aria-label="Verba Manent">
+  <span class="vm-badge chiaro">Verba Manent IA</span>
+  <h2>{{ .t }}</h2>
+  <div class="vm-schede">
+    {{- range .schede }}
+    <div class="vm-scheda"><span class="vm-ic" aria-hidden="true">{{ .ic }}</span><b>{{ .t }}</b><p>{{ .p }}</p></div>
+    {{- end }}
+  </div>
+  <figure class="vm-schermata scura">
+    <div class="vm-cornice"><span></span><span></span><span></span></div>
+    <img src="{{ printf "img/schermate/%s.webp" .img | relURL }}" alt="{{ .didascalia }}" width="1060" height="620" loading="lazy">
+    <figcaption>{{ .didascalia }}</figcaption>
+  </figure>
+  <div class="vm-privacy">
+    <span>🔒 {{ if $it }}Le registrazioni restano sul tuo PC{{ else }}Recordings stay on your computer{{ end }}</span>
+    <span>🚫 {{ if $it }}Nessuna impronta della voce{{ else }}No voiceprints{{ end }}</span>
+    <span>🤖 {{ if $it }}Non addestra nessuna IA{{ else }}Never trains any AI{{ end }}</span>
+  </div>
+  <a class="btn btn-p" href="{{ site.Home.RelPermalink }}#attesa">{{ if $it }}Avvisami quando esce{{ else }}Notify me at launch{{ end }}</a>
+</section>
+{{- end }}

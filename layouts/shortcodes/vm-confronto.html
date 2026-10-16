@@ -1,0 +1,7 @@
+{{- $d := index hugo.Data.vm site.Language.Lang -}}
+{{- $c := index $d.confronti (.Get "tema") -}}
+{{- $it := eq site.Language.Lang "it" -}}
+<div class="vm-confronto">
+  <div class="vm-col senza"><b>{{ .Get "senza" | default (cond $it "A mano" "By hand") }}</b><ul>{{ range $c.senza }}<li>{{ . }}</li>{{ end }}</ul></div>
+  <div class="vm-col con"><b>{{ cond $it "Con Verba Manent" "With Verba Manent" }}</b><ul>{{ range $c.con }}<li>{{ . }}</li>{{ end }}</ul></div>
+</div>

@@ -1,0 +1,5 @@
+<figure class="vm-schermata">
+  <div class="vm-cornice"><span></span><span></span><span></span></div>
+  <img src="{{ printf "img/schermate/%s.webp" (.Get "img") | relURL }}" alt="{{ .Get "alt" | default (.Get "didascalia") }}" width="1060" height="620" loading="lazy">
+  {{- with .Get "didascalia" }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>

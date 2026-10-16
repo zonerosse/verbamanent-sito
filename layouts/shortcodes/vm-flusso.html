@@ -1,0 +1,9 @@
+{{- $d := index hugo.Data.vm site.Language.Lang -}}
+{{- $passi := index $d.flussi (.Get "tema") -}}
+<div class="vm-flusso" role="list" aria-label="Verba Manent">
+  <span class="vm-badge">Verba Manent</span>
+  {{- range $i, $p := $passi }}
+  {{- if $i }}<span class="vm-freccia" aria-hidden="true">→</span>{{ end }}
+  <div class="vm-passo" role="listitem"><span class="vm-ic" aria-hidden="true">{{ $p.ic }}</span><b>{{ $p.t }}</b><small>{{ $p.p }}</small></div>
+  {{- end }}
+</div>
