@@ -54,7 +54,7 @@ Quello che non si ripassa si dimentica in fretta: lo ha mostrato già Hermann Eb
 
 1. **Rileggi e completa**: riempi gli spazi lasciati vuoti e risolvi i punti con il "?", con il libro o chiedendo a un compagno.
 2. **Scrivi le domande** nella colonna di sinistra e la **sintesi** in fondo.
-3. **Trasforma i concetti chiave in flashcard**: domanda da una parte, risposta dall'altra.
+3. **Trasforma i concetti chiave in flashcard**: domanda da una parte, risposta dall'altra. Qui trovi [come scrivere e ripassare le flashcard](/guide/flashcard-come-usarle-per-studiare/).
 
 ## Ripassare: interrogarsi batte rileggere
 
