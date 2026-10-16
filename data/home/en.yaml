@@ -8,10 +8,10 @@ avvisami: "Notify me"
 prova: "Preview version of the site: not yet public."
 
 hero:
-  pill: "🎓 For students and professionals"
+  pill: "🎓 The note-taking app for students and professionals"
   h1a: "Words fly away."
   h1b: "Notes remain."
-  lead: "Verba Manent records lectures and meetings and turns them into clear, organised notes, ready to study or to share with your colleagues. You listen, it does the rest."
+  lead: "Verba Manent records the lecture, transcribes it and turns it into clear, organised notes, ready to study. You listen, it does the rest."
   cta1: "Notify me at launch"
   cta2: "See how it works"
   trust:

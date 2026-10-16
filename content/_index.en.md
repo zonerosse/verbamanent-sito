@@ -1,4 +1,4 @@
 ---
-titolo: "Verba Manent IA · Record lectures and meetings, get ready-made notes"
-description: "Verba Manent records lectures and meetings and turns them into Cornell notes, exam-ready notes and minutes. Recordings stay on your computer, no voiceprints."
+titolo: "AI note-taking app · Verba Manent: record, transcribe and study"
+description: "The note-taking app that records your lecture, transcribes it on your computer and gives you Cornell notes, flashcards and meeting minutes. Your recordings stay yours."
 ---
