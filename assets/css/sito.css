@@ -48,7 +48,7 @@ header .btn{padding:9px 16px;font-size:14px}
 @keyframes pulse{50%{opacity:.3}}
 .demo .body{display:grid;grid-template-columns:1fr 1fr}
 .wave{padding:18px;border-right:1px solid var(--line);background:linear-gradient(180deg,#f8fbff,#fff)}
-.wave h4,.notes h4{margin:0 0 10px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--mut)}
+.wave .dh,.notes .dh{margin:0 0 10px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--mut)}
 .bars{display:flex;gap:4px;align-items:center;height:70px}
 .bars i{display:block;width:6px;border-radius:3px;background:linear-gradient(var(--cyan),var(--sky));animation:w 1.2s ease-in-out infinite}
 @keyframes w{50%{transform:scaleY(.4)}}

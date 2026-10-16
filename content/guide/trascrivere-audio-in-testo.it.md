@@ -1,6 +1,7 @@
 ---
+seotitolo: "Trascrivere audio in testo: tutti i modi"
 title: "Trascrivere audio in testo: tutti i modi, dai vocali alle lezioni"
-description: "Come trascrivere un audio in testo: messaggi vocali WhatsApp, file audio, lezioni e riunioni. Strumenti gratuiti, online e sul PC, a confronto, con consigli per una trascrizione precisa e attenzione alla privacy."
+description: "Come trascrivere un audio in testo: vocali WhatsApp, file audio, lezioni e riunioni. Strumenti gratuiti, online e sul PC a confronto, con attenzione alla privacy."
 date: 2026-10-16
 vm: "trascrivere"
 slug: "trascrivere-audio-in-testo"

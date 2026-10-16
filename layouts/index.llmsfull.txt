@@ -1,0 +1,36 @@
+{{- $it := eq site.Language.Lang "it" -}}
+{{- $t := index hugo.Data.home site.Language.Lang -}}
+# Verba Manent IA — {{ if $it }}testo completo del sito{{ else }}full site text{{ end }}
+
+URL: {{ .Permalink }}
+
+{{ .Description }}
+
+## {{ $t.fa.h2 }}
+{{ range $t.fa.voci }}
+- **{{ .t }}**: {{ .p | plainify }}
+{{- end }}
+
+## {{ $t.nonfa.h2 }}
+{{ range $t.nonfa.voci }}
+- **{{ .t }}**: {{ .p }}
+{{- end }}
+- **{{ $t.nonfa.lock_t }}** {{ $t.nonfa.lock_p }}
+
+## {{ $t.domande.h2 }}
+{{ range $t.domande.voci }}
+### {{ .q }}
+{{ .a }}
+{{ end }}
+{{- with site.GetPage "/guide" }}
+{{- range .Pages.ByDate }}
+
+---
+
+# {{ .Title }}
+
+URL: {{ .Permalink }}
+
+{{ .RawContent | replaceRE `\{\{<[^>]*>\}\}` "" | replaceRE `<[^>]+>` "" }}
+{{- end }}
+{{- end }}

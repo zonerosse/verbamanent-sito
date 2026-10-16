@@ -3,5 +3,6 @@ User-agent: *
 Disallow: /
 {{- else }}
 Allow: /
-Sitemap: {{ "sitemap.xml" | absURL }}
 {{- end }}
+
+Sitemap: {{ "sitemap.xml" | absURL }}

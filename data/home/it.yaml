@@ -39,7 +39,7 @@ fa:
     - { ic: "🎙️", t: "Registra audio e video", p: "Lezioni e riunioni su Google Meet, Teams o Zoom: schermo, audio del PC e slide sincronizzati in un solo file." }
     - { ic: "🏫", t: "Anche in aula", p: "Il docente è lì davanti? Verba Manent registra dal microfono del portatile." }
     - { ic: "📝", t: "Trascrive parola per parola", p: "Tutto il parlato diventa testo, direttamente sul tuo computer, in italiano, inglese e altre lingue." }
-    - { ic: "📚", t: "Appunti Cornell", p: "Il metodo usato nelle università di tutto il mondo: concetti chiave, spiegazioni e sintesi finale." }
+    - { ic: "📚", t: "Appunti Cornell", p: "Il metodo nato alla [Cornell University](https://lsc.cornell.edu/how-to-study/taking-notes/cornell-note-taking-system/) e usato in tutto il mondo: concetti chiave, spiegazioni e sintesi finale." }
     - { ic: "🎯", t: "Formato Esame", p: "Appunti pensati per ripassare: domande probabili, definizioni da sapere, collegamenti tra gli argomenti." }
     - { ic: "🃏", t: "Flashcard", p: "Le domande e risposte della lezione, pronte per ripassare anche dal telefono." }
     - { ic: "🗣️", t: "Chi parla", p: "Distingue le voci: sai cosa ha detto il docente e cosa hanno chiesto i compagni." }

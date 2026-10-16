@@ -1,0 +1,54 @@
+{{- /* Grafo JSON-LD unico per ogni pagina: chi c'è dietro, il sito, la pagina, il percorso. */ -}}
+{{- $it := eq site.Language.Lang "it" -}}
+{{- $base := site.Home.Permalink -}}
+{{- $orgId := print (absURL "") "#organizzazione" -}}
+{{- $sitoId := print $base "#sito" -}}
+{{- $org := dict
+  "@type" "Organization"
+  "@id" $orgId
+  "name" "Verba Manent IA"
+  "url" (absURL "")
+  "logo" (dict "@type" "ImageObject" "url" (absURL "img/logo-512.png") "width" 512 "height" 512)
+  "brand" (dict "@type" "Brand" "name" "Verba Manent IA")
+  "parentOrganization" (dict "@type" "Organization" "name" site.Params.marchio "url" site.Params.marchioUrl)
+-}}
+{{- with site.Params.email }}{{ $org = merge $org (dict "email" .) }}{{ end }}
+{{- with site.Params.telefono }}{{ $org = merge $org (dict "telephone" .) }}{{ end }}
+{{- with site.Params.indirizzo }}{{ $org = merge $org (dict "address" (merge (dict "@type" "PostalAddress") .)) }}{{ end }}
+{{- with site.Params.sameAs }}{{ $org = merge $org (dict "sameAs" .) }}{{ end }}
+{{- $sito := dict
+  "@type" "WebSite" "@id" $sitoId "url" $base "name" "Verba Manent IA"
+  "inLanguage" site.Language.Locale "publisher" (dict "@id" $orgId)
+-}}
+{{- $autore := dict "@type" "Organization" "@id" $orgId "name" "Verba Manent IA" -}}
+{{- $tipo := "WebPage" -}}
+{{- if and (eq .Section "guide") .IsPage }}{{ $tipo = "Article" }}{{ else if and (eq .Section "guide") (not .IsPage) }}{{ $tipo = "CollectionPage" }}{{ end -}}
+{{- $pagina := dict
+  "@type" $tipo "@id" (print .Permalink "#pagina") "url" .Permalink
+  "name" (cond .IsHome (.Params.titolo | default site.Title) .Title)
+  "description" .Description "inLanguage" site.Language.Locale
+  "isPartOf" (dict "@id" $sitoId) "publisher" (dict "@id" $orgId) "author" $autore
+  "datePublished" (.Date.Format "2006-01-02") "dateModified" (.Lastmod.Format "2006-01-02")
+  "breadcrumb" (dict "@id" (print .Permalink "#percorso"))
+  "image" (absURL "img/condivisione.png")
+-}}
+{{- if eq $tipo "Article" }}{{ $pagina = merge $pagina (dict "headline" .Title "mainEntityOfPage" .Permalink) }}{{ end -}}
+{{- if .IsHome }}{{ $pagina = merge $pagina (dict "about" (dict "@id" (print $base "#programma"))) }}{{ end -}}
+{{- /* percorso */ -}}
+{{- $voci := slice (dict "@type" "ListItem" "position" 1 "name" "Verba Manent" "item" $base) -}}
+{{- if not .IsHome }}
+  {{- with .Parent }}{{ if not .IsHome }}{{ $voci = $voci | append (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink) }}{{ end }}{{ end }}
+  {{- $voci = $voci | append (dict "@type" "ListItem" "position" (add (len $voci) 1) "name" .Title "item" .Permalink) }}
+{{- end -}}
+{{- $percorso := dict "@type" "BreadcrumbList" "@id" (print .Permalink "#percorso") "itemListElement" $voci -}}
+{{- $grafo := slice $org $sito $pagina $percorso -}}
+{{- if .IsHome }}
+  {{- $grafo = $grafo | append (dict
+    "@type" "SoftwareApplication" "@id" (print $base "#programma") "name" "Verba Manent IA"
+    "applicationCategory" "EducationalApplication" "operatingSystem" "Windows"
+    "inLanguage" (slice "it" "en") "description" .Description "url" $base
+    "publisher" (dict "@id" $orgId) "image" (absURL "img/condivisione.png")) }}
+{{- end }}
+<script type="application/ld+json">
+{{ dict "@context" "https://schema.org" "@graph" $grafo | jsonify | safeJS }}
+</script>

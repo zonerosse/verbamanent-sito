@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://verbamanent-sito.pages.dev/"
 title = "Verba Manent IA"
 defaultContentLanguage = "it"
 defaultContentLanguageInSubdir = false
@@ -27,3 +27,24 @@ disableKinds = ["taxonomy", "term", "RSS"]
 
 [sitemap]
   changeFreq = "monthly"
+
+# Le virgolette negli attributi restano: senza, alcuni strumenti di analisi
+# (e Sottosopra) non riconoscono canonical, lingua, JSON-LD e collegamenti.
+[minify.tdewolff.html]
+  keepQuotes = true
+  keepDocumentTags = true
+  keepEndTags = true
+
+[outputFormats.llms]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
+[outputFormats.llmsfull]
+  mediaType = "text/plain"
+  baseName = "llms-full"
+  isPlainText = true
+  notAlternative = true
+
+[outputs]
+  home = ["html", "llms", "llmsfull"]

@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{{ if .IsHome }}{{ .Params.titolo }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+<title>{{ with .Params.seotitolo }}{{ . }}{{ else }}{{ if .IsHome }}{{ .Params.titolo }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}{{ end }}</title>
 <meta name="description" content="{{ .Description }}">
 {{- if site.Params.prova }}
 <meta name="robots" content="noindex, nofollow">
@@ -16,33 +16,27 @@
 {{- range .AllTranslations }}{{ if eq .Language.Lang "it" }}
 <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
 {{- end }}{{ end }}
-<meta property="og:type" content="website">
+<meta property="og:type" content="{{ if and (eq .Section "guide") .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:site_name" content="Verba Manent IA">
 <meta property="og:title" content="{{ if .IsHome }}{{ .Params.titolo }}{{ else }}{{ .Title }}{{ end }}">
 <meta property="og:description" content="{{ .Description }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:image" content="{{ "img/condivisione.png" | absURL }}">
 <meta property="og:locale" content="{{ replace site.Language.Locale "-" "_" }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Verba Manent IA">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ if .IsHome }}{{ .Params.titolo }}{{ else }}{{ .Title }}{{ end }}">
+<meta name="twitter:description" content="{{ .Description }}">
+<meta name="twitter:image" content="{{ "img/condivisione.png" | absURL }}">
 <meta name="theme-color" content="#061e36">
 <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="icon" href="{{ "img/logo-512.png" | relURL }}" type="image/png" sizes="512x512">
+<link rel="apple-touch-icon" href="{{ "img/logo-512.png" | relURL }}">
 {{- $css := resources.Get "css/sito.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
-{{- if .IsHome }}
-<script type="application/ld+json">
-{{- $schema := dict
-  "@context" "https://schema.org"
-  "@type" "SoftwareApplication"
-  "name" "Verba Manent IA"
-  "applicationCategory" "EducationalApplication"
-  "operatingSystem" "Windows"
-  "inLanguage" (slice "it" "en")
-  "description" .Description
-  "url" .Permalink
-  "publisher" (dict "@type" "Organization" "name" site.Params.marchio "url" site.Params.marchioUrl)
-}}
-{{ $schema | jsonify | safeJS }}
-</script>
-{{- end }}
+{{ partial "schema.html" . }}
 </head>
 <body>
 <a class="skip" href="#contenuto">{{ if eq site.Language.Lang "it" }}Vai al contenuto{{ else }}Skip to content{{ end }}</a>
@@ -78,7 +72,7 @@
 
 <footer>
   <div class="wrap">
-    <span>© {{ now.Year }} Verba Manent IA · by <a href="{{ site.Params.marchioUrl }}" style="margin:0">{{ site.Params.marchio }}</a></span>
+    <span>{{ if eq site.Language.Lang "it" }}Aggiornato il{{ else }}Updated{{ end }} <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod | time.Format ":date_long" }}</time> · © {{ now.Year }} Verba Manent IA · by <a href="{{ site.Params.marchioUrl }}" style="margin:0">{{ site.Params.marchio }}</a></span>
     <span>
       {{- with site.GetPage "/privacy" }}<a href="{{ .RelPermalink }}">{{ $t.piede.privacy }}</a>{{ end }}
     </span>

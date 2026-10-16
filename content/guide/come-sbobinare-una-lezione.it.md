@@ -1,6 +1,7 @@
 ---
+seotitolo: "Come sbobinare una lezione, anche con l'IA"
 title: "Come sbobinare una lezione (anche con l'IA): guida per universitari"
-description: "Cos'è una sbobina, come sbobinare una lezione a mano o con l'intelligenza artificiale, come organizzare le sbobine di gruppo e cosa dice la legge. Guida pratica per studenti universitari."
+description: "Cos'è una sbobina, come sbobinare una lezione a mano o con l'intelligenza artificiale, come organizzare le sbobine di gruppo e cosa dice la legge."
 date: 2026-10-16
 vm: "sbobine"
 slug: "come-sbobinare-una-lezione"

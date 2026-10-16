@@ -1,6 +1,7 @@
 ---
+seotitolo: "Come prendere appunti all'università: il metodo"
 title: "Come prendere appunti all'università: il metodo che funziona davvero"
-description: "Come prendere appunti all'università senza perdere pezzi: cosa fare prima, durante e dopo la lezione, il metodo Cornell e come ripassare. Con le ricerche che lo dimostrano."
+description: "Come prendere appunti all'università senza perdere pezzi: cosa fare prima, durante e dopo la lezione, il metodo Cornell e come ripassare, con le ricerche."
 date: 2026-10-16
 vm: "appunti"
 slug: "come-prendere-appunti-universita"

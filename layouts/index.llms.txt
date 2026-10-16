@@ -1,0 +1,24 @@
+{{- $it := eq site.Language.Lang "it" -}}
+# Verba Manent IA
+
+> {{ if $it }}App per prendere appunti con l'intelligenza artificiale: registra lezioni e riunioni, le trascrive sul computer dell'utente e prepara appunti Cornell, appunti per l'esame, flashcard e verbali di riunione. Le registrazioni restano sul computer dell'utente, nessuna impronta della voce viene conservata e i contenuti non sono usati per addestrare alcuna IA. Un prodotto di {{ site.Params.marchio }}.{{ else }}AI note-taking app: records lectures and meetings, transcribes them on the user's computer and prepares Cornell notes, exam-ready notes, flashcards and meeting minutes. Recordings stay on the user's computer, no voiceprint is kept and content is never used to train any AI. A product by {{ site.Params.marchio }}.{{ end }}
+
+## {{ if $it }}Pagine principali{{ else }}Main pages{{ end }}
+
+- [{{ if $it }}Verba Manent IA: cosa fa e cosa non fa{{ else }}Verba Manent IA: what it does and doesn't do{{ end }}]({{ .Permalink }}): {{ .Description }}
+{{- with site.GetPage "/privacy" }}
+- [Privacy]({{ .Permalink }}): {{ .Description }}
+{{- end }}
+{{- with site.GetPage "/guide" }}
+
+## {{ .Title }}
+
+{{ range .Pages.ByTitle }}- [{{ .Title }}]({{ .Permalink }}): {{ .Description }}
+{{ end }}
+{{- end }}
+{{- range .Translations }}
+
+## {{ if $it }}Altre lingue{{ else }}Other languages{{ end }}
+
+- [{{ .Language.Label }}]({{ .Permalink }}llms.txt)
+{{- end }}

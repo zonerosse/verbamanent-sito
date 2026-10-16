@@ -6,7 +6,7 @@
       <a href="{{ site.Home.RelPermalink }}">Verba Manent</a> › <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a>
     </nav>
     <h1>{{ .Title }}</h1>
-    <p class="meta">{{ if $it }}Aggiornato il{{ else }}Updated{{ end }} {{ .Lastmod | time.Format ":date_long" }} · {{ .ReadingTime }} min</p>
+    <p class="meta">{{ if $it }}A cura della redazione di{{ else }}By the team at{{ end }} Verba Manent IA · {{ if $it }}aggiornato il{{ else }}updated{{ end }} <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod | time.Format ":date_long" }}</time> · {{ .ReadingTime }} min</p>
     {{ .Content }}
     {{- if .Params.vm }}{{ partial "vm-finale.html" . }}{{ else }}
     <aside class="cta-art">
@@ -16,7 +16,4 @@
     </aside>{{ end }}
   </div>
 </article>
-<script type="application/ld+json">
-{{ dict "@context" "https://schema.org" "@type" "Article" "headline" .Title "description" .Description "datePublished" (.Date.Format "2006-01-02") "dateModified" (.Lastmod.Format "2006-01-02") "inLanguage" site.Language.Lang "author" (dict "@type" "Organization" "name" "Verba Manent IA") "publisher" (dict "@type" "Organization" "name" site.Params.marchio "url" site.Params.marchioUrl) "mainEntityOfPage" .Permalink | jsonify | safeJS }}
-</script>
 {{ end }}

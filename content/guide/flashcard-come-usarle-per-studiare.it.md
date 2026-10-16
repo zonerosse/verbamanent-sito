@@ -1,6 +1,7 @@
 ---
+seotitolo: "Flashcard: come usarle per studiare davvero"
 title: "Flashcard: come usarle per studiare davvero (e ricordare all'esame)"
-description: "Cosa sono le flashcard, perché funzionano, come scriverle bene e come ripassarle con il sistema Leitner. Una guida pratica per l'università, con le ricerche che lo dimostrano."
+description: "Perché le flashcard funzionano, come scriverle bene e come ripassarle con il sistema Leitner. Guida pratica per l'università, con le ricerche."
 date: 2026-10-16
 vm: "flashcard"
 slug: "flashcard-come-usarle-per-studiare"

@@ -1,4 +1,5 @@
 ---
+seotitolo: "Verbale di riunione: esempio e modello"
 title: "Verbale di riunione: esempio pronto e modello da copiare"
 description: "Come scrivere un verbale di riunione chiaro e utile: cosa deve contenere, un esempio completo, un modello vuoto da copiare e gli errori da evitare."
 date: 2026-10-16

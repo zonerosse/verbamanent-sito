@@ -1,6 +1,7 @@
 ---
+seotitolo: "Metodo Cornell: spiegazione ed esempio"
 title: "Il metodo Cornell per prendere appunti: spiegazione ed esempio"
-description: "Il metodo Cornell spiegato passo per passo: come dividere la pagina, le 5 R per studiare, un esempio completo di appunti Cornell e come usarlo su carta, al computer e sul tablet."
+description: "Il metodo Cornell spiegato passo per passo: come dividere la pagina, le 5 R per studiare, un esempio completo e come usarlo su carta, PC e tablet."
 date: 2026-10-16
 vm: "cornell"
 slug: "metodo-cornell"
