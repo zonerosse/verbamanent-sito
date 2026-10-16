@@ -3,7 +3,8 @@ e le idee collegate ai semi in seo/semi.txt. Scrive seo/volumi.csv e seo/idee.cs
 Credenziali dai segreti del repository: DATAFORSEO_LOGIN e DATAFORSEO_PASSWORD."""
 import base64, csv, json, os, sys, urllib.error, urllib.request
 
-LOGIN, PWD = os.environ.get("DATAFORSEO_LOGIN"), os.environ.get("DATAFORSEO_PASSWORD")
+LOGIN = (os.environ.get("DATAFORSEO_LOGIN") or "").strip()
+PWD = (os.environ.get("DATAFORSEO_PASSWORD") or "").strip()
 def errore(msg):
     open(os.path.join("seo", "errore.txt"), "w", encoding="utf-8").write(msg + "\n")
     sys.exit(msg)
@@ -23,7 +24,7 @@ def chiama(endpoint, corpo):
         with urllib.request.urlopen(req, timeout=120) as r:
             d = json.load(r)
     except urllib.error.HTTPError as e:
-        errore(f"DataForSEO HTTP {e.code}: {e.read()[:500]!r}")
+        errore(f"DataForSEO HTTP {e.code}: {e.read()[:500]!r} (login usato: {LOGIN[:3]}...{LOGIN[-4:]}, lunghezza password: {len(PWD)})")
     t = d["tasks"][0]
     if t["status_code"] != 20000:
         errore(f"DataForSEO: {t['status_code']} {t['status_message']}")
