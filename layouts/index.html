@@ -1,0 +1,186 @@
+{{ define "main" }}
+{{- $t := index hugo.Data.home site.Language.Lang -}}
+{{- $lang := site.Language.Lang -}}
+
+<!-- APERTURA -->
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="pill">{{ $t.hero.pill }}</span>
+      <h1>{{ $t.hero.h1a }}<br><em>{{ $t.hero.h1b }}</em></h1>
+      <p class="lead">{{ $t.hero.lead }}</p>
+      <div class="cta">
+        <a class="btn btn-p" href="#attesa">{{ $t.hero.cta1 }}</a>
+        <a class="btn btn-g" href="#come">{{ $t.hero.cta2 }}</a>
+      </div>
+      <div class="trust">
+        {{- range $t.hero.trust }}<span>{{ . }}</span>{{ end }}
+      </div>
+    </div>
+
+    {{- with $t.hero.demo }}
+    <div class="demo" aria-hidden="true">
+      <div class="bar"><span class="dot"></span> {{ .bar }}</div>
+      <div class="body">
+        <div class="wave">
+          <h4>{{ .ascolta }}</h4>
+          <div class="bars">
+            {{- range $i, $h := slice 30 70 45 90 55 80 35 65 50 85 40 60 }}<i style="height:{{ $h }}%;animation-delay:{{ div (float $i) 10 }}s"></i>{{ end }}
+          </div>
+          <div class="line"><b>{{ .docente }}:</b> {{ .riga }}</div>
+        </div>
+        <div class="notes">
+          <h4>{{ .studia }}</h4>
+          <div class="cornell">
+            <div class="k">{{ .k1 }}</div><div>{{ .v1 }}</div>
+            <div class="k">{{ .k2 }}</div><div>{{ .v2 }}</div>
+            <div class="s"><b>{{ .sintesi }}</b> {{ .sv }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{- end }}
+  </div>
+</div>
+
+<!-- COSA FA -->
+<section id="fa">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="kicker">{{ $t.fa.kicker }}</div>
+      <h2>{{ $t.fa.h2 }}</h2>
+      <p>{{ $t.fa.p }}</p>
+    </div>
+    <div class="grid3">
+      {{- range $t.fa.voci }}
+      <div class="card"><div class="ic" aria-hidden="true">{{ .ic }}</div><h3>{{ .t }}</h3><p>{{ .p }}</p></div>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<!-- COSA NON FA -->
+<section id="nonfa" class="non">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="kicker">{{ $t.nonfa.kicker }}</div>
+      <h2>{{ $t.nonfa.h2 }}</h2>
+      <p>{{ $t.nonfa.p }}</p>
+    </div>
+    <div class="nl">
+      {{- range $t.nonfa.voci }}
+      <div class="ni"><span class="x" aria-hidden="true">✕</span><div><h3>{{ .t }}</h3><p>{{ .p }}</p></div></div>
+      {{- end }}
+    </div>
+    <div class="lock">
+      <span class="big" aria-hidden="true">🔒</span>
+      <div><b>{{ $t.nonfa.lock_t }}</b><span>{{ $t.nonfa.lock_p }}</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- COME FUNZIONA -->
+<section id="come">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="kicker">{{ $t.come.kicker }}</div>
+      <h2>{{ $t.come.h2 }}</h2>
+      <p>{{ $t.come.p }}</p>
+    </div>
+    <div class="steps">
+      {{- range $t.come.passi }}
+      <div class="step">
+        <video class="vid" controls preload="none" playsinline
+          poster="{{ printf "img/%s-%s.webp" .v $lang | relURL }}"
+          title="{{ .t }}">
+          <source src="{{ printf "video/%s-%s.webm" .v $lang | relURL }}" type="video/webm">
+        </video>
+        <h3>{{ .t }}</h3><p>{{ .p }}</p>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<!-- PER CHI -->
+<section id="chi" class="who">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="kicker">{{ $t.chi.kicker }}</div>
+      <h2>{{ $t.chi.h2 }}</h2>
+    </div>
+    <div class="two">
+      {{- with $t.chi.studenti }}
+      <div class="card">
+        <span class="tag" style="background:#e0f2fe;color:#075985">{{ .tag }}</span>
+        <h3>{{ .t }}</h3>
+        <ul>{{ range .voci }}<li>{{ . }}</li>{{ end }}</ul>
+      </div>
+      {{- end }}
+      {{- with $t.chi.pro }}
+      <div class="card">
+        <span class="tag" style="background:#ede9fe;color:#5b21b6">{{ .tag }}</span>
+        <h3>{{ .t }}</h3>
+        <ul>{{ range .voci }}<li>{{ . }}</li>{{ end }}</ul>
+      </div>
+      {{- end }}
+    </div>
+    <h3 style="margin:40px 0 6px;font-size:19px">{{ $t.chi.disponibile }}</h3>
+    <div class="plat">
+      <div class="pl"><span aria-hidden="true">🪟</span> Windows <small class="ok">{{ $t.chi.ok }}</small></div>
+      <div class="pl"><span aria-hidden="true">🤖</span> Android <small class="soon">{{ $t.chi.presto }}</small></div>
+      <div class="pl"><span aria-hidden="true">🍎</span> Mac <small class="soon">{{ $t.chi.presto }}</small></div>
+      <div class="pl"><span aria-hidden="true">📱</span> iPhone <small class="soon">{{ $t.chi.presto }}</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- LISTA D'ATTESA -->
+<section id="attesa">
+  <div class="wrap">
+    <div class="wait">
+      <div>
+        <h2>{{ $t.attesa.h2 }}</h2>
+        <p>{{ $t.attesa.p }}</p>
+      </div>
+      <form id="modulo-attesa">
+        <label class="skip" for="email-attesa">{{ $t.attesa.email }}</label>
+        <input id="email-attesa" type="email" name="email" placeholder="{{ $t.attesa.email }}" autocomplete="email" required>
+        <label class="skip" for="uso-attesa">{{ index $t.attesa.uso 0 }}</label>
+        <select id="uso-attesa" name="uso">
+          {{- range $t.attesa.uso }}<option>{{ . }}</option>{{ end }}
+        </select>
+        <button class="btn btn-p" type="submit">{{ $t.attesa.bottone }}</button>
+        <span class="small">{{ $t.attesa.nota }}</span>
+        <div class="msg" role="status">✓ {{ $t.attesa.grazie }}</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- DOMANDE -->
+<section id="domande" style="padding-top:20px">
+  <div class="wrap" style="max-width:820px">
+    <div class="sec-h">
+      <div class="kicker">{{ $t.domande.kicker }}</div>
+      <h2>{{ $t.domande.h2 }}</h2>
+    </div>
+    {{- range $t.domande.voci }}
+    <details><summary>{{ .q }}</summary><p>{{ .a }}</p></details>
+    {{- end }}
+  </div>
+</section>
+
+<script type="application/ld+json">
+{{- $q := slice }}
+{{- range $t.domande.voci }}{{ $q = $q | append (dict "@type" "Question" "name" .q "acceptedAnswer" (dict "@type" "Answer" "text" .a)) }}{{ end }}
+{{ dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $q | jsonify | safeJS }}
+</script>
+<script>
+// Lista d'attesa: nel sito di prova non invia niente, mostra solo il messaggio.
+document.getElementById('modulo-attesa').addEventListener('submit', function (e) {
+  e.preventDefault();
+  this.querySelector('.msg').style.display = 'block';
+});
+</script>
+{{ end }}

@@ -1,0 +1,109 @@
+menu:
+  - { id: fa, t: "Features" }
+  - { id: nonfa, t: "What it won't do" }
+  - { id: come, t: "How it works" }
+  - { id: chi, t: "Who it's for" }
+  - { id: domande, t: "FAQ" }
+avvisami: "Notify me"
+prova: "Preview version of the site: not yet public."
+
+hero:
+  pill: "🎓 For students and professionals"
+  h1a: "Words fly away."
+  h1b: "Notes remain."
+  lead: "Verba Manent records lectures and meetings and turns them into clear, organised notes, ready to study or to share with your colleagues. You listen, it does the rest."
+  cta1: "Notify me at launch"
+  cta2: "See how it works"
+  trust:
+    - "Recordings stay on your computer"
+    - "No voiceprints"
+    - "In English and Italian"
+  demo:
+    bar: "Recording · Contract Law · 00:42:17"
+    ascolta: "You listen"
+    studia: "You study"
+    riga: "“A contract is an agreement between two or more parties…”"
+    docente: "Lecturer"
+    k1: "Contract"
+    v1: "A legally binding agreement between two or more parties"
+    k2: "Elements"
+    v2: "Offer, acceptance, consideration, intention"
+    sintesi: "In short:"
+    sv: "without all four elements there is no valid contract."
+
+fa:
+  kicker: "Features"
+  h2: "Everything you need, from the first minute of class to exam day"
+  p: "Start recording and just listen. When the lecture ends, your notes are ready."
+  voci:
+    - { ic: "🎙️", t: "Records audio and video", p: "Lectures and meetings on Google Meet, Teams or Zoom: screen, computer audio and slides in sync, in a single file." }
+    - { ic: "🏫", t: "In the classroom too", p: "Lecturer right in front of you? Verba Manent records through your laptop microphone." }
+    - { ic: "📝", t: "Word-for-word transcript", p: "Everything that is said becomes text, right on your computer, in English, Italian and other languages." }
+    - { ic: "📚", t: "Cornell notes", p: "The note-taking method used by universities worldwide: key ideas, explanations and a final summary." }
+    - { ic: "🎯", t: "Exam Format", p: "Notes built for revision: likely questions, definitions to know, links between topics." }
+    - { ic: "🃏", t: "Flashcards", p: "Questions and answers from the lecture, ready for revision, even on your phone." }
+    - { ic: "🗣️", t: "Who's speaking", p: "Tells voices apart: you know what the lecturer said and what your classmates asked." }
+    - { ic: "💼", t: "Meeting minutes", p: "Decisions made, action items, who does what and by when. Ready to send." }
+    - { ic: "🎤", t: "Webinars and courses", p: "Key points, chapters and a summary of webinars and training courses." }
+    - { ic: "📅", t: "Calendar", p: "Connect Google or Outlook: Verba Manent knows when class starts and reminds you to record." }
+    - { ic: "📂", t: "Import recordings", p: "Already have a file or a Meet recording? Load it and get your notes anyway." }
+    - { ic: "💬", t: "Ask the lecture", p: "Missed a point? Ask your question and the answer comes from what the lecturer actually said." }
+
+nonfa:
+  kicker: "What it won't do"
+  h2: "What others do, and we don't"
+  p: "Your lectures and meetings belong to you. Here is what Verba Manent will never do."
+  voci:
+    - { t: "It never sends us your recordings", p: "Audio and video stay on your computer. We don't receive them and we don't keep them." }
+    - { t: "It never sends audio over the internet", p: "Transcription happens on your computer. To create your notes, the AI only receives text." }
+    - { t: "It never trains any AI", p: "Your lectures are never used to train artificial intelligence. Not ours, not anyone else's." }
+    - { t: "It never records in secret", p: "Every time you record, it offers a ready-made message to let the other participants know." }
+  lock_t: "No biometric data. Ever."
+  lock_p: "“Who's speaking” tells voices apart only while it works, then deletes every trace. Verba Manent keeps no voiceprint."
+
+come:
+  kicker: "How it works"
+  h2: "Three steps, no effort"
+  p: "Press play: these are the guide videos built into the app."
+  passi:
+    - { v: "registrare", t: "Press Record", p: "Choose lecture, meeting or webinar, online or in class, and the speaker's language." }
+    - { v: "durante", t: "Just listen", p: "Verba Manent records and transcribes while you follow along. Every hour it already prepares part of your notes." }
+    - { v: "fine", t: "Study your notes", p: "When the lecture ends you get organised notes as a PDF, with slides, summary and revision questions." }
+
+chi:
+  kicker: "Who it's for"
+  h2: "Built for students, useful to anyone who spends their day in meetings"
+  studenti:
+    tag: "🎓 Students"
+    t: "Follow the lecture, not your pen"
+    voci: ["Online and in-class lectures", "Cornell notes and Exam Format", "Flashcards and questions on the lecture", "Lecturer's slides inside your notes"]
+  pro:
+    tag: "💼 Professionals"
+    t: "Minutes that write themselves"
+    voci: ["Meetings on Meet, Teams and Zoom", "Decisions and action items with deadlines", "Who said what", "Ready to share with your team"]
+  disponibile: "Available for"
+  ok: "Available"
+  presto: "Coming soon"
+
+attesa:
+  h2: "Want to be among the first?"
+  p: "Leave your email and we'll let you know as soon as Verba Manent is available."
+  email: "Your email"
+  uso: ["I'd use it for: studying", "I'd use it for: work and meetings", "I'd use it for: both"]
+  bottone: "Notify me"
+  nota: "No marketing: just one email at launch. Unsubscribe anytime."
+  grazie: "Thank you! This is a preview of the site: sign-up is not active yet."
+
+domande:
+  kicker: "FAQ"
+  h2: "Frequently asked questions"
+  voci:
+    - { q: "Can I record any lecture?", a: "It depends on your university and your lecturer: many universities have rules about recording lectures. Verba Manent reminds you, but getting permission is up to you." }
+    - { q: "Do I need an internet connection?", a: "Not to record and transcribe: everything happens on your computer. You do to create the notes, because the text is processed by artificial intelligence." }
+    - { q: "Where do my recordings go?", a: "Into a folder on your computer that you choose. We never see them." }
+    - { q: "Does it recognise people by their voice?", a: "No. It only tells voices apart within the same recording and deletes every trace of the voice when it's done. You give the voices their names." }
+    - { q: "How much does it cost?", a: "We'll announce it at launch: people on the waiting list will be the first to know." }
+
+piede:
+  privacy: "Privacy"
+  licenze: "Licences"

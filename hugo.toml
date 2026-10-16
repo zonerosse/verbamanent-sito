@@ -1,0 +1,29 @@
+baseURL = "/"
+title = "Verba Manent IA"
+defaultContentLanguage = "it"
+defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[params]
+  # true = sito di prova: niente Google (noindex + robots.txt chiuso) e fascia "Versione di prova".
+  # Per la pubblicazione vera: mettere false (e impostare baseURL sul dominio scelto).
+  prova = true
+  marchio = "Punto Web Ferrara"
+  marchioUrl = "https://puntowebferrara.com/"
+
+[languages]
+  [languages.it]
+    locale = "it-IT"
+    label = "IT"
+    weight = 1
+  [languages.en]
+    locale = "en"
+    label = "EN"
+    weight = 2
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[sitemap]
+  changeFreq = "monthly"

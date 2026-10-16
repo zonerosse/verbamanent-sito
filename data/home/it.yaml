@@ -1,0 +1,109 @@
+menu:
+  - { id: fa, t: "Cosa fa" }
+  - { id: nonfa, t: "Cosa non fa" }
+  - { id: come, t: "Come funziona" }
+  - { id: chi, t: "Per chi" }
+  - { id: domande, t: "Domande" }
+avvisami: "Avvisami"
+prova: "Versione di prova del sito: non è ancora online per il pubblico."
+
+hero:
+  pill: "🎓 Per chi studia e per chi lavora"
+  h1a: "Le parole volano."
+  h1b: "Gli appunti restano."
+  lead: "Verba Manent registra lezioni e riunioni e le trasforma in appunti ordinati, pronti per studiare o da mandare ai colleghi. Tu ascolti, al resto pensa lui."
+  cta1: "Avvisami quando esce"
+  cta2: "Guarda come funziona"
+  trust:
+    - "Le registrazioni restano sul tuo PC"
+    - "Nessuna impronta della voce"
+    - "In italiano e inglese"
+  demo:
+    bar: "Registrazione in corso · Diritto privato · 00:42:17"
+    ascolta: "Si ascolta"
+    studia: "Si studia"
+    riga: "«Il contratto è l'accordo di due o più parti…»"
+    docente: "Docente"
+    k1: "Contratto"
+    v1: "Accordo tra due o più parti per un rapporto patrimoniale (art. 1321 c.c.)"
+    k2: "Requisiti"
+    v2: "Accordo, causa, oggetto, forma"
+    sintesi: "In sintesi:"
+    sv: "senza uno dei 4 requisiti il contratto è nullo."
+
+fa:
+  kicker: "Cosa fa"
+  h2: "Tutto quello che serve, dall'inizio della lezione al giorno dell'esame"
+  p: "Avvii la registrazione e pensi solo ad ascoltare. A lezione finita trovi gli appunti già pronti."
+  voci:
+    - { ic: "🎙️", t: "Registra audio e video", p: "Lezioni e riunioni su Google Meet, Teams o Zoom: schermo, audio del PC e slide sincronizzati in un solo file." }
+    - { ic: "🏫", t: "Anche in aula", p: "Il docente è lì davanti? Verba Manent registra dal microfono del portatile." }
+    - { ic: "📝", t: "Trascrive parola per parola", p: "Tutto il parlato diventa testo, direttamente sul tuo computer, in italiano, inglese e altre lingue." }
+    - { ic: "📚", t: "Appunti Cornell", p: "Il metodo usato nelle università di tutto il mondo: concetti chiave, spiegazioni e sintesi finale." }
+    - { ic: "🎯", t: "Formato Esame", p: "Appunti pensati per ripassare: domande probabili, definizioni da sapere, collegamenti tra gli argomenti." }
+    - { ic: "🃏", t: "Flashcard", p: "Le domande e risposte della lezione, pronte per ripassare anche dal telefono." }
+    - { ic: "🗣️", t: "Chi parla", p: "Distingue le voci: sai cosa ha detto il docente e cosa hanno chiesto i compagni." }
+    - { ic: "💼", t: "Verbale di riunione", p: "Decisioni prese, cose da fare, chi le fa ed entro quando. Pronto da inviare." }
+    - { ic: "🎤", t: "Webinar e corsi", p: "Punti chiave, capitoli e riassunto di webinar e corsi di formazione." }
+    - { ic: "📅", t: "Calendario", p: "Collega Google o Outlook: Verba Manent sa quando inizia la lezione e ti ricorda di registrare." }
+    - { ic: "📂", t: "Importa registrazioni", p: "Hai già un file o la registrazione di Meet? Caricala e ottieni gli appunti lo stesso." }
+    - { ic: "💬", t: "Chiedi alla lezione", p: "Non hai capito un passaggio? Fai la domanda e la risposta arriva da quello che ha detto il docente." }
+
+nonfa:
+  kicker: "Cosa NON fa"
+  h2: "Quello che gli altri fanno, e noi no"
+  p: "Le tue lezioni e le tue riunioni sono tue. Ecco cosa Verba Manent non farà mai."
+  voci:
+    - { t: "Non ci manda le tue registrazioni", p: "Audio e video restano sul tuo computer. Noi non li riceviamo e non li conserviamo." }
+    - { t: "Non manda l'audio su internet", p: "La trascrizione avviene sul tuo PC. Per creare gli appunti, all'intelligenza artificiale arriva solo il testo." }
+    - { t: "Non addestra nessuna IA", p: "Le tue lezioni non vengono usate per addestrare l'intelligenza artificiale. Né la nostra, né quella di altri." }
+    - { t: "Non registra di nascosto", p: "A ogni registrazione ti propone un messaggio pronto per avvisare i partecipanti." }
+  lock_t: "Nessun dato biometrico. Mai."
+  lock_p: "“Chi parla” distingue le voci solo mentre lavora, poi cancella ogni traccia. Verba Manent non conserva nessuna impronta della voce."
+
+come:
+  kicker: "Come funziona"
+  h2: "Tre passi, nessuna fatica"
+  p: "Premi play: sono i video della guida dentro il programma."
+  passi:
+    - { v: "registrare", t: "Premi Registra", p: "Scegli lezione, riunione o webinar, online o in aula, e la lingua di chi parla." }
+    - { v: "durante", t: "Ascolta tranquillo", p: "Verba Manent registra e trascrive mentre segui. Ogni ora prepara già un pezzo di appunti." }
+    - { v: "fine", t: "Studia gli appunti", p: "A fine lezione hai appunti ordinati in PDF, con slide, sintesi e domande per il ripasso." }
+
+chi:
+  kicker: "Per chi"
+  h2: "Nato per gli studenti, utile a chiunque passi le giornate in riunione"
+  studenti:
+    tag: "🎓 Studenti"
+    t: "Segui la lezione, non la penna"
+    voci: ["Lezioni online e in aula", "Appunti Cornell e Formato Esame", "Flashcard e domande sulla lezione", "Slide del docente dentro gli appunti"]
+  pro:
+    tag: "💼 Professionisti"
+    t: "Il verbale si scrive da solo"
+    voci: ["Riunioni su Meet, Teams e Zoom", "Decisioni e cose da fare con scadenze", "Chi ha detto cosa", "Pronto da condividere con il team"]
+  disponibile: "Disponibile per"
+  ok: "Disponibile"
+  presto: "In arrivo"
+
+attesa:
+  h2: "Vuoi essere tra i primi?"
+  p: "Lasciaci la tua email: ti avvisiamo appena Verba Manent è disponibile."
+  email: "La tua email"
+  uso: ["Lo userei per: studiare", "Lo userei per: lavoro e riunioni", "Lo userei per: tutti e due"]
+  bottone: "Avvisami"
+  nota: "Nessuna pubblicità: una sola email quando esce. Puoi cancellarti quando vuoi."
+  grazie: "Grazie! Questa è la versione di prova del sito: l'iscrizione non è ancora attiva."
+
+domande:
+  kicker: "Domande"
+  h2: "Domande frequenti"
+  voci:
+    - { q: "Posso registrare qualsiasi lezione?", a: "Dipende dalla tua università e dal docente: molte università hanno regole sulla registrazione delle lezioni. Verba Manent te lo ricorda, ma il permesso devi averlo tu." }
+    - { q: "Serve internet?", a: "Per registrare e trascrivere no: avviene tutto sul tuo PC. Per creare gli appunti sì, perché il testo viene elaborato dall'intelligenza artificiale." }
+    - { q: "Dove finiscono le mie registrazioni?", a: "In una cartella del tuo computer, scelta da te. Noi non le vediamo mai." }
+    - { q: "Riconosce le persone dalla voce?", a: "No. Distingue le voci solo dentro la stessa registrazione e a fine lavoro cancella ogni traccia della voce. I nomi alle voci li dai tu." }
+    - { q: "Quanto costa?", a: "Lo diremo al lancio: chi è nella lista d'attesa lo saprà per primo." }
+
+piede:
+  privacy: "Privacy"
+  licenze: "Licenze"
