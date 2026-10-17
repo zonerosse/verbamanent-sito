@@ -32,7 +32,7 @@ Registrazioni audio e video, trascrizioni, appunti, flashcard, nomi che dai alle
 |---|---|---|
 | Il **testo** della trascrizione (mai l'audio) | Anthropic, che fornisce l'intelligenza artificiale Claude | Per creare gli appunti. Con l'abbonamento il testo passa dal nostro server, che lo inoltra e **non lo conserva** |
 | Codice di attivazione e un identificativo del computer | Il servizio che gestisce le vendite | Per verificare che la licenza sia valida |
-| Rapporti tecnici sugli errori, **solo se acconsenti** | Il servizio che raccoglie i rapporti di errore | Per correggere i problemi. Non contengono mai registrazioni, trascrizioni o chiavi |
+| Rapporti tecnici sugli errori, **solo se acconsenti** (puoi cambiare idea in Impostazioni › Privacy) | Sentry, con i dati in Europa (Germania) | Per correggere i problemi. Contengono solo il punto del programma in cui è successo l'errore, la versione e il tipo di computer. Mai registrazioni, trascrizioni, appunti, nomi di file o di persone, chiavi |
 
 ## “Chi parla” e la tua voce
 

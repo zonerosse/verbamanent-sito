@@ -32,7 +32,7 @@ Audio and video recordings, transcripts, notes, flashcards, the names you give t
 |---|---|---|
 | The **text** of the transcript (never the audio) | Anthropic, provider of the Claude AI | To create your notes. With a subscription, the text passes through our server, which forwards it and **does not keep it** |
 | Activation code and a computer identifier | The service that handles sales | To check that your licence is valid |
-| Technical error reports, **only if you agree** | The service that collects error reports | To fix problems. They never contain recordings, transcripts or keys |
+| Technical error reports, **only if you agree** (you can change your mind in Settings › Privacy) | Sentry, with data in Europe (Germany) | To fix problems. They only contain where in the program the error happened, the version and the type of computer. Never recordings, transcripts, notes, file or people names, keys |
 
 ## “Who's speaking” and your voice
 
