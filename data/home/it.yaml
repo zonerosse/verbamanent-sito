@@ -67,8 +67,74 @@ nonfa:
 
 vetrina:
   kicker: "Punti di forza"
-  h2: "Fatto con rispetto, per chi registra e per chi viene registrato"
-  p: "Le cose che fanno la differenza, viste dal vero dentro il programma."
+  h2: "Da una lezione o una riunione, tutto questo"
+  p: "Registri una volta e Verba Manent ti consegna materiale pronto per studiare o per lavorare. Queste sono schermate vere."
+  voci:
+    - img: "cornell"
+      t: "Appunti Cornell"
+      p: "Il metodo di studio più usato al mondo: domande e parole chiave a sinistra, appunti a destra, riassunto in fondo. Con le slide del docente al punto giusto e il minuto della registrazione."
+      punti: ["PDF pronto da stampare o leggere sul tablet", "Formulario con simboli e articoli", "«Da controllare» dove l'audio era incerto"]
+      alt: "Pagina di appunti in formato Cornell: domande a sinistra, appunti a destra."
+    - img: "formato-esame"
+      t: "Formato Esame"
+      p: "Le domande più probabili, ordinate con le stelle, ognuna con lo schema della risposta, le parole chiave da dire e l'errore da evitare."
+      punti: ["★★★ quando il docente ci ha insistito", "Schema della risposta punto per punto", "E se vuoi, un formato descritto da te"]
+      alt: "Pagina in Formato Esame con le domande probabili, le stelle e lo schema della risposta."
+    - img: "mappa-mentale"
+      t: "Mappa mentale"
+      p: "Tutta la lezione in un colpo d'occhio: il tema al centro, gli argomenti intorno, i concetti da ricordare su ogni ramo."
+      punti: ["Si crea con un tocco dalla lezione", "Da salvare in PDF o stampare", "Perfetta per il ripasso veloce"]
+      alt: "Mappa mentale della lezione sul contratto, con sei rami colorati."
+    - img: "infografica"
+      t: "Infografica in una pagina"
+      p: "I concetti chiave in grande, i passi da seguire, l'attenzione da tenere all'esame e la lezione in numeri. Una pagina sola, da tenere sulla scrivania."
+      punti: ["Il concetto più importante evidenziato", "Passi e trappole d'esame", "Salvabile in PDF"]
+      alt: "Infografica della lezione: concetti chiave, passi, attenzione e numeri."
+    - img: "flashcard"
+      t: "Flashcard e Ripassa"
+      p: "Le domande della lezione diventano carte da girare. Dici «La sapevo» o «Da rivedere» e quelle sbagliate tornano finché non le sai."
+      punti: ["Prima quelle da rivedere, poi le altre", "Anche dal telefono", "Ripassi tutta la materia, non solo una lezione"]
+      alt: "Il ripasso con le flashcard: la domanda, «Da rivedere» e «La sapevo»."
+    - img: "domande-esame"
+      t: "Preparati all'esame"
+      p: "Le domande più probabili di tutto il corso, con le lezioni in cui sono state spiegate, e un piano di studio giorno per giorno fino all'esame."
+      punti: ["Classifica delle domande del corso", "Piano di studio da mettere in calendario", "Si aggiorna a ogni lezione nuova"]
+      alt: "Le domande più probabili del corso e il piano di studio fino all'esame."
+    - img: "simulazione-esame"
+      t: "Simulazione d'esame con il voto"
+      p: "Rispondi per iscritto come all'esame vero: ogni risposta riceve un punteggio, cosa hai detto bene e cosa manca. Alla fine il voto."
+      punti: ["Punteggio per ogni domanda", "Cosa manca nella tua risposta", "I voti restano: vedi se migliori"]
+      alt: "Simulazione d'esame con le risposte scritte e il punteggio di ognuna."
+    - img: "chiedi"
+      t: "Le tue note, al minuto giusto"
+      p: "Durante la lezione scrivi due parole o tocchi «Importante», «Da chiarire», «Cosa da fare»: la nota prende il minuto esatto e Claude la usa negli appunti. E se ti sei perso, chiedi «di cosa sta parlando?»."
+      punti: ["Una stella nel momento che conta", "I tuoi dubbi finiscono negli appunti", "«Chiedi adesso» mentre registri"]
+      alt: "Le note scritte durante la registrazione, ognuna con il suo minuto."
+    - img: "chi-parla"
+      t: "Trascrizione con chi parla"
+      p: "Tutto il parlato, parola per parola, con il nome di chi parla e il minuto. Cerchi una parola e ascolti il punto esatto."
+      punti: ["Voci separate, i nomi li dai tu", "Capitoli e ricerca nelle parole dette", "Spezzoni audio da inviare"]
+      alt: "Trascrizione di una riunione con i nomi di chi parla e i minuti."
+    - img: "verbale"
+      t: "Verbale di riunione"
+      p: "In breve, decisioni, cose da fare con chi ed entro quando, cosa resta da decidere e la prossima riunione. Pronto da mandare."
+      punti: ["Modelli per commerciale, condominio, colloquio…", "Email, Word, Google Docs, calendario", "Ogni decisione con il minuto"]
+      alt: "Verbale di riunione con in breve, decisioni e la tabella delle cose da fare."
+    - img: "cose-da-fare"
+      t: "Cose da fare, da tutti i verbali"
+      p: "Gli impegni presi in ogni riunione finiscono in un unico elenco, con chi e entro quando. Alla riunione dopo si spuntano da soli quando qualcuno dice che sono fatti."
+      punti: ["Filtri per persona e stato", "Scadenze in calendario", "Si spuntano dal verbale successivo"]
+      alt: "L'elenco delle cose da fare raccolte dai verbali."
+    - img: "riunione-ripresa"
+      t: "Ogni riunione riparte dall'ultima"
+      p: "Quando inizi una riunione, Verba Manent ricorda le cose ancora aperte dalla volta prima. Se oggi qualcuno dice che sono fatte, nel verbale risultano chiuse."
+      punti: ["Le cose aperte sempre sotto gli occhi", "Si chiudono da sole quando sono fatte", "Il verbale dice cosa è cambiato"]
+      alt: "Riquadro «Dall'ultima volta» con le cose ancora aperte all'inizio di una riunione."
+
+inpiu:
+  kicker: "E in più"
+  h2: "Rispettoso e comodo"
+  p: "Le attenzioni che fanno la differenza, per te e per chi registri."
   voci:
     - img: "avvisa"
       t: "Avvisa i partecipanti, in un tocco"

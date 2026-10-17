@@ -79,26 +79,29 @@
   </div>
 </section>
 
-<!-- PUNTI DI FORZA (schermate vere del programma) -->
-<section id="vetrina">
+<!-- PUNTI DI FORZA: cosa si ottiene (schermate vere) e, sotto, le attenzioni in più -->
+{{- range $k := slice "vetrina" "inpiu" }}
+{{- $s := index $t $k }}
+<section id="{{ $k }}"{{ if eq $k "inpiu" }} class="inpiu"{{ end }}>
   <div class="wrap">
     <div class="sec-h">
-      <div class="kicker">{{ $t.vetrina.kicker }}</div>
-      <h2>{{ $t.vetrina.h2 }}</h2>
-      <p>{{ $t.vetrina.p }}</p>
+      <div class="kicker">{{ $s.kicker }}</div>
+      <h2>{{ $s.h2 }}</h2>
+      <p>{{ $s.p }}</p>
     </div>
-    {{- range $i, $v := $t.vetrina.voci }}
-    <div class="vt{{ if modBool $i 2 }}{{ else }} inv{{ end }}">
-      <figure class="vm-schermata"><div class="vm-cornice"><span></span><span></span><span></span></div><img src="{{ printf "img/schermate/%s.webp" $v.img | relURL }}" alt="{{ $v.alt }}" width="1060" height="620" loading="lazy"></figure>
-      <div class="vt-t">
-        <h3>{{ $v.t }}</h3>
-        <p>{{ $v.p }}</p>
-        <ul>{{ range $v.punti }}<li>{{ . }}</li>{{ end }}</ul>
-      </div>
+    <div class="vc-griglia">
+      {{- range $s.voci }}
+      <article class="vc">
+        <figure class="vm-schermata"><div class="vm-cornice"><span></span><span></span><span></span></div><img src="{{ printf "img/schermate/%s.webp" .img | relURL }}" alt="{{ .alt }}" width="1060" height="620" loading="lazy"></figure>
+        <h3>{{ .t }}</h3>
+        <p>{{ .p }}</p>
+        <ul>{{ range .punti }}<li>{{ . }}</li>{{ end }}</ul>
+      </article>
+      {{- end }}
     </div>
-    {{- end }}
   </div>
 </section>
+{{- end }}
 
 <!-- COME FUNZIONA -->
 <section id="come">

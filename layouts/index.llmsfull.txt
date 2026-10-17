@@ -23,6 +23,12 @@ URL: {{ .Permalink }}
 {{ .p }}
 {{ range .punti }}- {{ . }}
 {{ end }}{{ end }}
+## {{ $t.inpiu.h2 }}
+{{ range $t.inpiu.voci }}
+### {{ .t }}
+{{ .p }}
+{{ range .punti }}- {{ . }}
+{{ end }}{{ end }}
 ## {{ $t.domande.h2 }}
 {{ range $t.domande.voci }}
 ### {{ .q }}

@@ -67,8 +67,74 @@ nonfa:
 
 vetrina:
   kicker: "Highlights"
-  h2: "Built with respect, for whoever records and whoever is recorded"
-  p: "The things that make the difference, shown for real inside the program."
+  h2: "From one lecture or meeting, all of this"
+  p: "Record once and Verba Manent hands you material ready for studying or working. These are real screenshots."
+  voci:
+    - img: "cornell"
+      t: "Cornell notes"
+      p: "The world's most widely used study method: questions and keywords on the left, notes on the right, summary at the bottom. With the lecturer's slides in the right place and the minute of the recording."
+      punti: ["PDF ready to print or read on a tablet", "Formula sheet with symbols and articles", "«To check» where the audio was unclear"]
+      alt: "A page of Cornell notes: questions on the left, notes on the right."
+    - img: "formato-esame"
+      t: "Exam-ready format"
+      p: "The most likely questions, ranked with stars, each with an answer outline, the keywords to mention and the mistake to avoid."
+      punti: ["★★★ when the lecturer insisted on it", "Answer outline point by point", "And if you like, a format you describe yourself"]
+      alt: "Exam-ready page with likely questions, stars and answer outlines."
+    - img: "mappa-mentale"
+      t: "Mind map"
+      p: "The whole lecture at a glance: the topic in the centre, the subjects around it, the concepts to remember on each branch."
+      punti: ["Created from the lecture in one tap", "Save as PDF or print", "Perfect for quick review"]
+      alt: "Mind map of the lecture on contracts, with six coloured branches."
+    - img: "infografica"
+      t: "One-page infographic"
+      p: "The key concepts in large type, the steps to follow, what to watch out for in the exam and the lecture in numbers. A single page to keep on your desk."
+      punti: ["The most important concept highlighted", "Steps and exam traps", "Save as PDF"]
+      alt: "Lecture infographic: key concepts, steps, warnings and numbers."
+    - img: "flashcard"
+      t: "Flashcards and review"
+      p: "The lecture's questions become cards to flip. You say «I knew it» or «Review again», and the ones you miss come back until you know them."
+      punti: ["The ones to review first, then the rest", "On your phone too", "Review the whole subject, not just one lecture"]
+      alt: "Reviewing with flashcards: the question, «Review again» and «I knew it»."
+    - img: "domande-esame"
+      t: "Get ready for the exam"
+      p: "The most likely questions of the whole course, with the lectures where they were explained, and a day-by-day study plan up to the exam."
+      punti: ["Ranking of the course's questions", "Study plan to put in your calendar", "Updated with every new lecture"]
+      alt: "The course's most likely questions and the study plan up to the exam."
+    - img: "simulazione-esame"
+      t: "Mock exam with a grade"
+      p: "Answer in writing as in the real exam: each answer gets a score, what you got right and what's missing. A grade at the end."
+      punti: ["Score for every question", "What your answer is missing", "Grades are kept: see if you improve"]
+      alt: "Mock exam with written answers and the score for each."
+    - img: "chiedi"
+      t: "Your notes, at the right minute"
+      p: "During the lecture type a couple of words or tap «Important», «To clarify», «To do»: the note takes the exact minute and Claude uses it in your notes. And if you lose the thread, ask «what are they talking about?»."
+      punti: ["A star at the moment that matters", "Your doubts end up in your notes", "«Ask now» while recording"]
+      alt: "Notes written during the recording, each with its minute."
+    - img: "chi-parla"
+      t: "Transcript with who's speaking"
+      p: "Every word, with the name of who said it and the minute. Search for a word and listen to the exact moment."
+      punti: ["Voices kept apart, you choose the names", "Chapters and search in what was said", "Audio clips to send"]
+      alt: "Meeting transcript with speaker names and minutes."
+    - img: "verbale"
+      t: "Meeting minutes"
+      p: "Summary, decisions, action items with owners and deadlines, what's still to decide and the next meeting. Ready to send."
+      punti: ["Templates for sales, residents' associations, interviews…", "Email, Word, Google Docs, calendar", "Every decision with its minute"]
+      alt: "Meeting minutes with summary, decisions and the action items table."
+    - img: "cose-da-fare"
+      t: "Action items from all your minutes"
+      p: "The commitments made in every meeting end up in one list, with owners and deadlines. At the next meeting they tick themselves off when someone says they're done."
+      punti: ["Filters by person and status", "Deadlines in your calendar", "Ticked off by the next minutes"]
+      alt: "The list of action items gathered from the minutes."
+    - img: "riunione-ripresa"
+      t: "Every meeting picks up from the last"
+      p: "When you start a meeting, Verba Manent recalls what was still open from last time. If someone says today that it's done, the minutes show it as closed."
+      punti: ["Open items always in view", "They close themselves when done", "The minutes say what changed"]
+      alt: "The «Since last time» box with open items at the start of a meeting."
+
+inpiu:
+  kicker: "And more"
+  h2: "Respectful and convenient"
+  p: "The details that make the difference, for you and for the people you record."
   voci:
     - img: "avvisa"
       t: "Notify participants in one tap"
