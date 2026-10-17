@@ -94,7 +94,9 @@ attesa:
   uso: ["I'd use it for: studying", "I'd use it for: work and meetings", "I'd use it for: both"]
   bottone: "Notify me"
   nota: "No marketing: just one email at launch. Unsubscribe anytime."
-  grazie: "Thank you! This is a preview of the site: sign-up is not active yet."
+  grazie: "Done! We'll email you just once, when Verba Manent is available."
+  errore: "That didn't work: check your email and try again shortly."
+  privacy: "How we handle your email"
 
 domande:
   kicker: "FAQ"

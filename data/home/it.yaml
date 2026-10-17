@@ -94,7 +94,9 @@ attesa:
   uso: ["Lo userei per: studiare", "Lo userei per: lavoro e riunioni", "Lo userei per: tutti e due"]
   bottone: "Avvisami"
   nota: "Nessuna pubblicità: una sola email quando esce. Puoi cancellarti quando vuoi."
-  grazie: "Grazie! Questa è la versione di prova del sito: l'iscrizione non è ancora attiva."
+  grazie: "Fatto! Ti scriveremo una sola volta, quando Verba Manent è disponibile."
+  errore: "Non è andata: controlla l'email e riprova tra poco."
+  privacy: "Come trattiamo la tua email"
 
 domande:
   kicker: "Domande"

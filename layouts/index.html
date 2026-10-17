@@ -155,9 +155,10 @@
         <select id="uso-attesa" name="uso">
           {{- range $t.attesa.uso }}<option>{{ . }}</option>{{ end }}
         </select>
+        <input type="text" name="sito" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <button class="btn btn-p" type="submit">{{ $t.attesa.bottone }}</button>
-        <span class="small">{{ $t.attesa.nota }}</span>
-        <div class="msg" role="status">✓ {{ $t.attesa.grazie }}</div>
+        <span class="small">{{ $t.attesa.nota }} {{ with site.GetPage "/privacy" }}<a href="{{ .RelPermalink }}">{{ $t.attesa.privacy }}</a>{{ end }}</span>
+        <div class="msg" role="status" data-ok="✓ {{ $t.attesa.grazie }}" data-no="{{ $t.attesa.errore }}"></div>
       </form>
     </div>
   </div>
@@ -205,7 +206,14 @@
 // Lista d'attesa: nel sito di prova non invia niente, mostra solo il messaggio.
 document.getElementById('modulo-attesa').addEventListener('submit', function (e) {
   e.preventDefault();
-  this.querySelector('.msg').style.display = 'block';
+  var f = this, msg = f.querySelector('.msg'), bt = f.querySelector('button');
+  bt.disabled = true;
+  fetch('/api/attesa', {method: 'POST', headers: {'content-type': 'application/json'},
+    body: JSON.stringify({email: f.email.value, uso: f.uso.value, sito: f.sito.value, lingua: document.documentElement.lang})})
+    .then(function (r) { return r.json(); })
+    .then(function (d) { if (!d.ok) throw 0; msg.textContent = msg.dataset.ok; msg.classList.remove('no'); f.email.value = ''; })
+    .catch(function () { msg.textContent = msg.dataset.no; msg.classList.add('no'); bt.disabled = false; })
+    .then(function () { msg.style.display = 'block'; });
 });
 </script>
 {{ end }}

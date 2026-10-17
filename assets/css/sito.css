@@ -114,6 +114,7 @@ form{display:flex;flex-direction:column;gap:10px}
 input,select{width:100%;padding:14px 16px;border-radius:12px;border:0;font:inherit;font-size:16px}
 .small{font-size:13px;color:#b6d6f2}
 .msg{display:none;background:rgba(255,255,255,.15);padding:12px 14px;border-radius:12px;color:#fff}
+.msg.no{background:rgba(254,226,226,.95);color:#991b1b}
 
 /* domande */
 details{border-bottom:1px solid var(--line);padding:18px 0}
