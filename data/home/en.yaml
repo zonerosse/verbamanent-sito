@@ -46,7 +46,7 @@ fa:
     - { ic: "💼", t: "Meeting minutes", p: "Decisions made, action items, who does what and by when. Ready to send." }
     - { ic: "🎤", t: "Webinars and courses", p: "Key points, chapters and a summary of webinars and training courses." }
     - { ic: "📅", t: "Calendar", p: "Connect Google or Outlook: Verba Manent knows when class starts and reminds you to record." }
-    - { ic: "📂", t: "Import recordings", p: "Already have a file or a Meet recording? Load it and get your notes anyway." }
+    - { ic: "📂", t: "Import what you already have", p: "A video or audio file, a link (Drive, OneDrive, Dropbox, Zoom…) or a transcript in PDF or Word: you still get your notes." }
     - { ic: "💬", t: "Ask the lecture", p: "Missed a point? Ask your question and the answer comes from what the lecturer actually said." }
 
 nonfa:
@@ -55,7 +55,7 @@ nonfa:
   p: "Your lectures and meetings belong to you. Here is what Verba Manent will never do."
   voci:
     - { t: "It never sends us your recordings", p: "Audio and video stay on your computer. We don't receive them and we don't keep them." }
-    - { t: "It never sends audio over the internet", p: "Transcription happens on your computer. To create your notes, the AI only receives text." }
+    - { t: "It never sends audio over the internet", p: "Transcription happens on your computer or phone. To create your notes, the AI only receives text. Only if you choose fast transcription on your own server does the audio go there, and it is deleted when the work is done." }
     - { t: "It never trains any AI", p: "Your lectures are never used to train artificial intelligence. Not ours, not anyone else's." }
     - { t: "It never records in secret", p: "Every time you record, it offers a ready-made message to let the other participants know." }
   lock_t: "No biometric data. Ever."
@@ -69,7 +69,7 @@ come:
   schermo: "Full screen"
   passi:
     - { v: "registrare", t: "Press Record", p: "Choose lecture, meeting or webinar, online or in class, and the speaker's language." }
-    - { v: "durante", t: "Just listen", p: "Verba Manent records and transcribes while you follow along. Every hour it already prepares part of your notes." }
+    - { v: "durante", t: "Just listen", p: "Verba Manent records and transcribes while you follow along, a few minutes at a time: your notes are ready shortly after the end." }
     - { v: "fine", t: "Study your notes", p: "When the lecture ends you get organised notes as a PDF, with slides, summary and revision questions." }
 
 chi:
@@ -103,7 +103,9 @@ domande:
   h2: "Frequently asked questions"
   voci:
     - { q: "Can I record any lecture?", a: "It depends on your university and your lecturer: many universities have rules about recording lectures. Verba Manent reminds you, but getting permission is up to you." }
-    - { q: "Do I need an internet connection?", a: "Not to record and transcribe: everything happens on your computer. You do to create the notes, because the text is processed by artificial intelligence." }
+    - { q: "Do I need an internet connection?", a: "Not to record and transcribe: everything happens on your computer or phone. You do to create the notes, because the text is processed by artificial intelligence." }
+    - { q: "Does it work on my phone?", a: "Yes, on Android: it records from the microphone (online lectures too, on speaker), transcribes on the phone and prepares the same notes as on the PC. Mac and iPhone versions are coming." }
+    - { q: "My PC is slow: will transcription take ages?", a: "By default it transcribes while you record, so little is left when the lecture ends. If you want even more speed you can connect your own pay-as-you-go transcription server (a few cents per hour): an hour of lecture in about a minute. It's optional, and if the server doesn't answer, transcription goes back to the PC." }
     - { q: "Where do my recordings go?", a: "Into a folder on your computer that you choose. We never see them." }
     - { q: "Does it recognise people by their voice?", a: "No. It only tells voices apart within the same recording and deletes every trace of the voice when it's done. You give the voices their names." }
     - { q: "How much does it cost?", a: "We'll announce it at launch: people on the waiting list will be the first to know." }

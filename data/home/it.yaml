@@ -46,7 +46,7 @@ fa:
     - { ic: "💼", t: "Verbale di riunione", p: "Decisioni prese, cose da fare, chi le fa ed entro quando. Pronto da inviare." }
     - { ic: "🎤", t: "Webinar e corsi", p: "Punti chiave, capitoli e riassunto di webinar e corsi di formazione." }
     - { ic: "📅", t: "Calendario", p: "Collega Google o Outlook: Verba Manent sa quando inizia la lezione e ti ricorda di registrare." }
-    - { ic: "📂", t: "Importa registrazioni", p: "Hai già un file o la registrazione di Meet? Caricala e ottieni gli appunti lo stesso." }
+    - { ic: "📂", t: "Importa quello che hai già", p: "Un video o un audio, un link (Drive, OneDrive, Dropbox, Zoom…) o una trascrizione in PDF o Word: ottieni gli appunti lo stesso." }
     - { ic: "💬", t: "Chiedi alla lezione", p: "Non hai capito un passaggio? Fai la domanda e la risposta arriva da quello che ha detto il docente." }
 
 nonfa:
@@ -55,7 +55,7 @@ nonfa:
   p: "Le tue lezioni e le tue riunioni sono tue. Ecco cosa Verba Manent non farà mai."
   voci:
     - { t: "Non ci manda le tue registrazioni", p: "Audio e video restano sul tuo computer. Noi non li riceviamo e non li conserviamo." }
-    - { t: "Non manda l'audio su internet", p: "La trascrizione avviene sul tuo PC. Per creare gli appunti, all'intelligenza artificiale arriva solo il testo." }
+    - { t: "Non manda l'audio su internet", p: "La trascrizione avviene sul tuo PC o sul telefono. Per creare gli appunti, all'intelligenza artificiale arriva solo il testo. Solo se scegli tu la trascrizione veloce sul tuo server, l'audio va lì e viene cancellato a lavoro finito." }
     - { t: "Non addestra nessuna IA", p: "Le tue lezioni non vengono usate per addestrare l'intelligenza artificiale. Né la nostra, né quella di altri." }
     - { t: "Non registra di nascosto", p: "A ogni registrazione ti propone un messaggio pronto per avvisare i partecipanti." }
   lock_t: "Nessun dato biometrico. Mai."
@@ -69,7 +69,7 @@ come:
   schermo: "Schermo intero"
   passi:
     - { v: "registrare", t: "Premi Registra", p: "Scegli lezione, riunione o webinar, online o in aula, e la lingua di chi parla." }
-    - { v: "durante", t: "Ascolta tranquillo", p: "Verba Manent registra e trascrive mentre segui. Ogni ora prepara già un pezzo di appunti." }
+    - { v: "durante", t: "Ascolta tranquillo", p: "Verba Manent registra e trascrive mentre segui, a pezzi di pochi minuti: gli appunti sono pronti poco dopo la fine." }
     - { v: "fine", t: "Studia gli appunti", p: "A fine lezione hai appunti ordinati in PDF, con slide, sintesi e domande per il ripasso." }
 
 chi:
@@ -103,7 +103,9 @@ domande:
   h2: "Domande frequenti"
   voci:
     - { q: "Posso registrare qualsiasi lezione?", a: "Dipende dalla tua università e dal docente: molte università hanno regole sulla registrazione delle lezioni. Verba Manent te lo ricorda, ma il permesso devi averlo tu." }
-    - { q: "Serve internet?", a: "Per registrare e trascrivere no: avviene tutto sul tuo PC. Per creare gli appunti sì, perché il testo viene elaborato dall'intelligenza artificiale." }
+    - { q: "Serve internet?", a: "Per registrare e trascrivere no: avviene tutto sul tuo PC o sul telefono. Per creare gli appunti sì, perché il testo viene elaborato dall'intelligenza artificiale." }
+    - { q: "Funziona anche sul telefono?", a: "Sì, su Android: registra dal microfono (anche le lezioni online, col vivavoce), trascrive sul telefono e prepara gli stessi appunti del PC. Le versioni per Mac e iPhone sono in arrivo." }
+    - { q: "Il mio PC è lento: la trascrizione ci mette tanto?", a: "Di serie trascrive mentre registri, quindi a fine lezione manca poco. Se vuoi ancora più velocità puoi collegare un tuo server di trascrizione a consumo (pochi centesimi l'ora): un'ora di lezione in circa un minuto. È facoltativo e, se il server non risponde, si torna a trascrivere sul PC." }
     - { q: "Dove finiscono le mie registrazioni?", a: "In una cartella del tuo computer, scelta da te. Noi non le vediamo mai." }
     - { q: "Riconosce le persone dalla voce?", a: "No. Distingue le voci solo dentro la stessa registrazione e a fine lavoro cancella ogni traccia della voce. I nomi alle voci li dai tu." }
     - { q: "Quanto costa?", a: "Lo diremo al lancio: chi è nella lista d'attesa lo saprà per primo." }

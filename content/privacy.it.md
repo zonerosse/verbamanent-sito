@@ -31,6 +31,7 @@ Registrazioni audio e video, trascrizioni, appunti, flashcard, nomi che dai alle
 | Cosa | Verso chi | Perché |
 |---|---|---|
 | Il **testo** della trascrizione (mai l'audio) | Anthropic, che fornisce l'intelligenza artificiale Claude | Per creare gli appunti. Con l'abbonamento il testo passa dal nostro server, che lo inoltra e **non lo conserva** |
+| L'**audio**, solo se scegli tu «Sul server» in Impostazioni › Dove trascrivo | Il tuo server di trascrizione su RunPod (il tuo conto, in Europa) | Per trascrivere più in fretta. L'audio viene cancellato dal server a lavoro finito. Di serie questa opzione è spenta e l'audio non esce dal computer |
 | Codice di attivazione e un identificativo del computer | Il servizio che gestisce le vendite | Per verificare che la licenza sia valida |
 | Rapporti tecnici sugli errori, **solo se acconsenti** (puoi cambiare idea in Impostazioni › Privacy) | Sentry, con i dati in Europa (Germania) | Per correggere i problemi. Contengono solo il punto del programma in cui è successo l'errore, la versione e il tipo di computer. Mai registrazioni, trascrizioni, appunti, nomi di file o di persone, chiavi |
 
