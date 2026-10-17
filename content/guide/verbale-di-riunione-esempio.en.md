@@ -14,6 +14,8 @@ Here's what they must include, a complete example and a blank template to copy.
 
 {{< vm-flusso tema="verbale" >}}
 
+{{< vm-schermata img="avvisa" didascalia="Before you start, Verba Manent offers the message to notify participants: paste it into the Meet, Teams or Zoom chat." >}}
+
 ## What meeting minutes should include
 
 | Section | What to write |

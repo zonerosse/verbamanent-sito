@@ -1,6 +1,7 @@
 menu:
   - { id: fa, t: "Cosa fa" }
   - { id: nonfa, t: "Cosa non fa" }
+  - { id: vetrina, t: "Punti di forza" }
   - { id: come, t: "Come funziona" }
   - { id: chi, t: "Per chi" }
   - { id: domande, t: "Domande" }
@@ -47,6 +48,9 @@ fa:
     - { ic: "🎤", t: "Webinar e corsi", p: "Punti chiave, capitoli e riassunto di webinar e corsi di formazione." }
     - { ic: "📅", t: "Calendario", p: "Collega Google o Outlook: Verba Manent sa quando inizia la lezione e ti ricorda di registrare." }
     - { ic: "📂", t: "Importa quello che hai già", p: "Un video o un audio, un link (Drive, OneDrive, Dropbox, Zoom…) o una trascrizione in PDF o Word: ottieni gli appunti lo stesso." }
+    - { ic: "⚡", t: "Pronta subito", p: "Trascrive mentre registri, a pezzi di pochi minuti: a fine lezione gli appunti arrivano in un attimo." }
+    - { ic: "📱", t: "Anche sul telefono", p: "L'app Android registra, trascrive sul telefono e prepara gli stessi appunti del PC." }
+    - { ic: "🚀", t: "Trascrizione veloce, se vuoi", p: "PC lento? Collega un tuo server a consumo: un'ora di lezione in circa un minuto, per pochi centesimi. È facoltativo." }
     - { ic: "💬", t: "Chiedi alla lezione", p: "Non hai capito un passaggio? Fai la domanda e la risposta arriva da quello che ha detto il docente." }
 
 nonfa:
@@ -60,6 +64,37 @@ nonfa:
     - { t: "Non registra di nascosto", p: "A ogni registrazione ti propone un messaggio pronto per avvisare i partecipanti." }
   lock_t: "Nessun dato biometrico. Mai."
   lock_p: "“Chi parla” distingue le voci solo mentre lavora, poi cancella ogni traccia. Verba Manent non conserva nessuna impronta della voce."
+
+vetrina:
+  kicker: "Punti di forza"
+  h2: "Fatto con rispetto, per chi registra e per chi viene registrato"
+  p: "Le cose che fanno la differenza, viste dal vero dentro il programma."
+  voci:
+    - img: "avvisa"
+      t: "Avvisa i partecipanti, in un tocco"
+      p: "A ogni registrazione Verba Manent ti propone un messaggio pronto: lo copi nella chat di Meet, Teams o Zoom, oppure lo leggi a voce in aula. Quando premi «Fatto, ho avvisato», l'ora resta annotata nella registrazione."
+      punti: ["Messaggio diverso per lezione, riunione, webinar e aula", "In italiano o in inglese, nella lingua della lezione", "L'ora dell'avviso resta con la registrazione"]
+      alt: "Il riquadro «Avvisa i partecipanti» durante una registrazione, con il messaggio pronto da copiare."
+    - img: "prima-di-iniziare"
+      t: "La privacy spiegata chiara, prima di cominciare"
+      p: "Al primo avvio un riquadro dice in quattro righe cosa resta sul tuo computer e cosa esce, e ti chiede di confermare che hai il permesso di registrare. Niente caratteri piccoli: lo rileggi quando vuoi in Impostazioni."
+      punti: ["Le registrazioni restano sul tuo computer", "Nessuna impronta della voce, mai", "Rapporti sugli errori solo se dici di sì, senza i tuoi contenuti"]
+      alt: "Il riquadro «Prima di iniziare» con i punti sulla privacy e la casella sul permesso di registrare."
+    - img: "importa"
+      t: "Hai già la lezione? Importala"
+      p: "Non serve registrare tutto da zero. Importi un video o un audio dal PC, un link di Drive, OneDrive, Dropbox o Zoom, oppure una trascrizione in PDF o Word: Verba Manent ne fa appunti, flashcard e domande d'esame."
+      punti: ["Video e audio: mp4, mov, mp3, m4a, note vocali…", "Link alle registrazioni già online", "Trascrizioni in PDF, Word o testo"]
+      alt: "La schermata Registra con i riquadri per importare un video, un audio o una trascrizione."
+    - img: "dove-trascrivo"
+      t: "Veloce anche su un PC lento"
+      p: "Di serie trascrive sul tuo PC, gratis, e l'audio non esce mai. Se il computer è lento puoi scegliere un tuo server di trascrizione a consumo: un'ora di lezione in circa un minuto, e l'audio viene cancellato a lavoro finito."
+      punti: ["Sul PC: gratis e senza internet", "Sul server: pochi centesimi l'ora, solo se lo scegli", "Se il server non risponde, si torna al PC da soli"]
+      alt: "Le impostazioni «Dove trascrivo» con le scelte Sul PC e Sul server."
+    - img: "telefono"
+      t: "Anche sul telefono Android"
+      p: "Le stesse funzioni del PC, in tasca: registri in aula o in riunione, avvisi i presenti, scrivi le tue note durante la lezione e ritrovi appunti, flashcard e domande d'esame in «Le mie lezioni»."
+      punti: ["Trascrizione sul telefono", "Avviso a voce per l'aula", "Appunti, ripasso e preparazione all'esame"]
+      alt: "Tre schermate dell'app Android: Registra, una registrazione in corso e Le mie lezioni."
 
 come:
   kicker: "Come funziona"

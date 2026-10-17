@@ -16,6 +16,8 @@ description: "How Verba Manent handles your data: recordings stay on your comput
 
 </div>
 
+{{< vm-schermata img="prima-di-iniziare" didascalia="On first start Verba Manent sums all this up in a box, which you can read again anytime in Settings › Privacy." >}}
+
 ## Data controller
 
 Sara Boldrini, trading as Punto Web Ferrara  

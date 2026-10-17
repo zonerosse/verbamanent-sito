@@ -14,6 +14,8 @@ Qui trovi cosa deve contenere, un esempio completo e un modello vuoto da copiare
 
 {{< vm-flusso tema="verbale" >}}
 
+{{< vm-schermata img="avvisa" didascalia="Prima di cominciare, Verba Manent propone il messaggio per avvisare i partecipanti: lo copi nella chat di Meet, Teams o Zoom." >}}
+
 ## Cosa deve contenere un verbale
 
 | Parte | Cosa scrivere |

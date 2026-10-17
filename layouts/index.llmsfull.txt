@@ -17,6 +17,12 @@ URL: {{ .Permalink }}
 {{- end }}
 - **{{ $t.nonfa.lock_t }}** {{ $t.nonfa.lock_p }}
 
+## {{ $t.vetrina.h2 }}
+{{ range $t.vetrina.voci }}
+### {{ .t }}
+{{ .p }}
+{{ range .punti }}- {{ . }}
+{{ end }}{{ end }}
 ## {{ $t.domande.h2 }}
 {{ range $t.domande.voci }}
 ### {{ .q }}

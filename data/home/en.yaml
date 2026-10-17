@@ -1,6 +1,7 @@
 menu:
   - { id: fa, t: "Features" }
   - { id: nonfa, t: "What it won't do" }
+  - { id: vetrina, t: "Highlights" }
   - { id: come, t: "How it works" }
   - { id: chi, t: "Who it's for" }
   - { id: domande, t: "FAQ" }
@@ -47,6 +48,9 @@ fa:
     - { ic: "🎤", t: "Webinars and courses", p: "Key points, chapters and a summary of webinars and training courses." }
     - { ic: "📅", t: "Calendar", p: "Connect Google or Outlook: Verba Manent knows when class starts and reminds you to record." }
     - { ic: "📂", t: "Import what you already have", p: "A video or audio file, a link (Drive, OneDrive, Dropbox, Zoom…) or a transcript in PDF or Word: you still get your notes." }
+    - { ic: "⚡", t: "Ready right away", p: "It transcribes while you record, a few minutes at a time: when the lecture ends, your notes arrive in moments." }
+    - { ic: "📱", t: "On your phone too", p: "The Android app records, transcribes on the phone and prepares the same notes as the PC." }
+    - { ic: "🚀", t: "Fast transcription, if you want", p: "Slow PC? Connect your own pay-as-you-go server: an hour of lecture in about a minute, for a few cents. It's optional." }
     - { ic: "💬", t: "Ask the lecture", p: "Missed a point? Ask your question and the answer comes from what the lecturer actually said." }
 
 nonfa:
@@ -60,6 +64,37 @@ nonfa:
     - { t: "It never records in secret", p: "Every time you record, it offers a ready-made message to let the other participants know." }
   lock_t: "No biometric data. Ever."
   lock_p: "“Who's speaking” tells voices apart only while it works, then deletes every trace. Verba Manent keeps no voiceprint."
+
+vetrina:
+  kicker: "Highlights"
+  h2: "Built with respect, for whoever records and whoever is recorded"
+  p: "The things that make the difference, shown for real inside the program."
+  voci:
+    - img: "avvisa"
+      t: "Notify participants in one tap"
+      p: "For every recording Verba Manent offers a ready-made message: paste it into the Meet, Teams or Zoom chat, or read it out loud in the classroom. When you press «Done, I've told them», the time is noted in the recording."
+      punti: ["A different message for lectures, meetings, webinars and classrooms", "In Italian or English, in the language of the lecture", "The time of the notice stays with the recording"]
+      alt: "The «Notify participants» card during a recording, with the ready-made message to copy."
+    - img: "prima-di-iniziare"
+      t: "Privacy explained clearly, before you start"
+      p: "On first start a box tells you in four lines what stays on your computer and what leaves, and asks you to confirm you have permission to record. No fine print: read it again anytime in Settings."
+      punti: ["Recordings stay on your computer", "No voiceprints, ever", "Error reports only if you say yes, without your content"]
+      alt: "The «Before you start» box with the privacy points and the permission-to-record checkbox."
+    - img: "importa"
+      t: "Already have the lecture? Import it"
+      p: "No need to record everything from scratch. Import a video or audio file, a Drive, OneDrive, Dropbox or Zoom link, or a transcript in PDF or Word: Verba Manent turns it into notes, flashcards and exam questions."
+      punti: ["Video and audio: mp4, mov, mp3, m4a, voice notes…", "Links to recordings already online", "Transcripts in PDF, Word or text"]
+      alt: "The Record screen with the boxes to import a video, an audio file or a transcript."
+    - img: "dove-trascrivo"
+      t: "Fast even on a slow PC"
+      p: "By default it transcribes on your PC, for free, and the audio never leaves it. If your computer is slow you can choose your own pay-as-you-go transcription server: an hour of lecture in about a minute, and the audio is deleted when the work is done."
+      punti: ["On the PC: free and offline", "On the server: a few cents per hour, only if you choose it", "If the server doesn't answer, it falls back to the PC by itself"]
+      alt: "The «Where I transcribe» settings with the On the PC and On the server options."
+    - img: "telefono"
+      t: "On Android phones too"
+      p: "The same features as the PC, in your pocket: record in class or in a meeting, notify the people present, write your notes during the lecture and find notes, flashcards and exam questions in «My lectures»."
+      punti: ["Transcription on the phone", "Spoken notice for the classroom", "Notes, review and exam preparation"]
+      alt: "Three screens of the Android app: Record, a recording in progress and My lectures."
 
 come:
   kicker: "How it works"

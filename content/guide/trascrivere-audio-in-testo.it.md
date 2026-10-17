@@ -65,6 +65,8 @@ Per questo, per lezioni e riunioni, la sola trascrizione non basta: serve qualco
 
 {{< vm-confronto tema="trascrivere" senza="Servizi online" >}}
 
+{{< vm-schermata img="importa" didascalia="In Verba Manent importi un video, un audio o un link, oppure una trascrizione in PDF o Word: ne escono appunti e flashcard." >}}
+
 ## Come ottenere una trascrizione precisa
 
 La qualità della trascrizione dipende soprattutto dalla qualità dell'audio. Qualche accorgimento fa una differenza enorme.

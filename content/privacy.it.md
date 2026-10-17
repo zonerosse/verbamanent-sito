@@ -16,6 +16,8 @@ description: "Come Verba Manent tratta i tuoi dati: le registrazioni restano sul
 
 </div>
 
+{{< vm-schermata img="prima-di-iniziare" didascalia="Al primo avvio Verba Manent riassume tutto questo in un riquadro, e lo rileggi quando vuoi in Impostazioni › Privacy." >}}
+
 ## Chi è il titolare del trattamento
 
 Sara Boldrini, che opera con il nome commerciale Punto Web Ferrara  

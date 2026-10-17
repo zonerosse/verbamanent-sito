@@ -65,6 +65,8 @@ That's why, for lectures and meetings, transcription alone isn't enough: you nee
 
 {{< vm-confronto tema="trascrivere" senza="Upload services" >}}
 
+{{< vm-schermata img="importa" didascalia="In Verba Manent you import a video, an audio file or a link, or a transcript in PDF or Word: out come notes and flashcards." >}}
+
 ## How to get an accurate transcript
 
 Transcript quality depends mostly on audio quality. A few precautions make a huge difference.
