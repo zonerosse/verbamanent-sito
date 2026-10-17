@@ -116,9 +116,9 @@ vetrina:
       punti: ["Voices kept apart, you choose the names", "Chapters and search in what was said", "Audio clips to send"]
       alt: "Meeting transcript with speaker names and minutes."
     - img: "verbale"
-      t: "Meeting minutes"
-      p: "Summary, decisions, action items with owners and deadlines, what's still to decide and the next meeting. Ready to send."
-      punti: ["Templates for sales, residents' associations, interviews…", "Email, Word, Google Docs, calendar", "Every decision with its minute"]
+      t: "Meeting minutes that write themselves"
+      p: "Minutes are the written record of a meeting. Record the meeting (on Meet, Teams, Zoom or in the room) and at the end Verba Manent hands them to you already written: what was decided, who has to do what and by when, what's still open and when you meet next. Nobody has to take notes anymore."
+      punti: ["Ready when the meeting ends, as a PDF", "Send them to participants in one tap: email, Word, Google Docs", "Tailored: sales meeting, residents' association, interview…"]
       alt: "Meeting minutes with summary, decisions and the action items table."
     - img: "cose-da-fare"
       t: "Action items from all your minutes"

@@ -116,9 +116,9 @@ vetrina:
       punti: ["Voci separate, i nomi li dai tu", "Capitoli e ricerca nelle parole dette", "Spezzoni audio da inviare"]
       alt: "Trascrizione di una riunione con i nomi di chi parla e i minuti."
     - img: "verbale"
-      t: "Verbale di riunione"
-      p: "In breve, decisioni, cose da fare con chi ed entro quando, cosa resta da decidere e la prossima riunione. Pronto da mandare."
-      punti: ["Modelli per commerciale, condominio, colloquio…", "Email, Word, Google Docs, calendario", "Ogni decisione con il minuto"]
+      t: "Il verbale della riunione, scritto da solo"
+      p: "Il verbale è il resoconto scritto di una riunione. Registri la riunione (su Meet, Teams, Zoom o in sala) e alla fine Verba Manent te lo consegna già scritto: cosa si è deciso, chi deve fare cosa ed entro quando, cosa resta in sospeso e quando ci si rivede. Nessuno deve più prendere appunti."
+      punti: ["Pronto a fine riunione, in PDF", "Da mandare ai partecipanti con un tocco: email, Word, Google Docs", "Su misura: riunione commerciale, di condominio, colloquio…"]
       alt: "Verbale di riunione con in breve, decisioni e la tabella delle cose da fare."
     - img: "cose-da-fare"
       t: "Cose da fare, da tutti i verbali"
