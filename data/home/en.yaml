@@ -44,7 +44,7 @@ fa:
     - { ic: "🎯", t: "Exam Format", p: "Notes built for revision: likely questions, definitions to know, links between topics." }
     - { ic: "🃏", t: "Flashcards", p: "Questions and answers from the lecture, ready for revision, even on your phone." }
     - { ic: "🗣️", t: "Who's speaking", p: "Tells voices apart: you know what the lecturer said and what your classmates asked." }
-    - { ic: "💼", t: "Meeting minutes", p: "Decisions made, action items, who does what and by when. Ready to send." }
+    - { ic: "💼", t: "Meeting minutes", p: "The written record of the meeting, ready at the end: decisions made, who does what and by when. Nobody has to take notes." }
     - { ic: "🎤", t: "Webinars and courses", p: "Key points, chapters and a summary of webinars and training courses." }
     - { ic: "📅", t: "Calendar", p: "Connect Google or Outlook: Verba Manent knows when class starts and reminds you to record." }
     - { ic: "📂", t: "Import what you already have", p: "A video or audio file, a link (Drive, OneDrive, Dropbox, Zoom…) or a transcript in PDF or Word: you still get your notes." }

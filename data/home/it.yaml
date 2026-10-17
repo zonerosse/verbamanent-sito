@@ -44,7 +44,7 @@ fa:
     - { ic: "🎯", t: "Formato Esame", p: "Appunti pensati per ripassare: domande probabili, definizioni da sapere, collegamenti tra gli argomenti." }
     - { ic: "🃏", t: "Flashcard", p: "Le domande e risposte della lezione, pronte per ripassare anche dal telefono." }
     - { ic: "🗣️", t: "Chi parla", p: "Distingue le voci: sai cosa ha detto il docente e cosa hanno chiesto i compagni." }
-    - { ic: "💼", t: "Verbale di riunione", p: "Decisioni prese, cose da fare, chi le fa ed entro quando. Pronto da inviare." }
+    - { ic: "💼", t: "Verbale di riunione", p: "Il resoconto scritto della riunione, pronto alla fine: decisioni prese, chi fa cosa ed entro quando. Nessuno deve prendere appunti." }
     - { ic: "🎤", t: "Webinar e corsi", p: "Punti chiave, capitoli e riassunto di webinar e corsi di formazione." }
     - { ic: "📅", t: "Calendario", p: "Collega Google o Outlook: Verba Manent sa quando inizia la lezione e ti ricorda di registrare." }
     - { ic: "📂", t: "Importa quello che hai già", p: "Un video o un audio, un link (Drive, OneDrive, Dropbox, Zoom…) o una trascrizione in PDF o Word: ottieni gli appunti lo stesso." }
