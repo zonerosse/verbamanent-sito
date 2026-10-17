@@ -59,7 +59,7 @@ finali:
       - { ic: "🗣️", t: "Who's speaking", p: "Tells the lecturer apart from students' questions." }
       - { ic: "📚", t: "Notes, not just text", p: "Turns the transcript into Cornell and exam-ready notes." }
       - { ic: "🏫", t: "In the classroom too", p: "Records from the laptop microphone when the lecturer is right in front of you." }
-    img: "chi-parla"
+    img: "chi-parla-en"
     didascalia: "The transcript with voices kept apart: you choose the names, or the AI suggests them."
   appunti:
     t: "Verba Manent takes the notes for you"
@@ -68,7 +68,7 @@ finali:
       - { ic: "💬", t: "Ask during class", p: "Lost the thread? Ask what's being discussed and get an answer in seconds." }
       - { ic: "📚", t: "Notes ready", p: "Cornell or exam-ready, with the lecturer's slides in the right place." }
       - { ic: "🃏", t: "Flashcards", p: "The lecture's questions ready for review." }
-    img: "note-durante"
+    img: "note-durante-en"
     didascalia: "While recording: your notes with the exact minute, and the box for asking questions."
   flashcard:
     t: "Verba Manent makes flashcards from every lecture"
@@ -77,7 +77,7 @@ finali:
       - { ic: "⭐", t: "The most likely ones", p: "Stars mark the questions that matter most for the exam." }
       - { ic: "🔁", t: "«I knew it» or «Review again»", p: "Cards you miss come back until you know them." }
       - { ic: "🎯", t: "Mock exam", p: "Questions, a written answer and a grade." }
-    img: "flashcard"
+    img: "flashcard-en"
     didascalia: "Reviewing with flashcards: tap the card to flip it, then say whether you knew it."
   trascrivere:
     t: "Verba Manent transcribes lectures and meetings on your PC"
@@ -86,7 +86,7 @@ finali:
       - { ic: "📂", t: "Files you already have", p: "Import a recording and get text and notes." }
       - { ic: "🗣️", t: "Who's speaking", p: "Voices kept apart, with the names you choose." }
       - { ic: "📋", t: "Beyond the text", p: "Study notes or meeting minutes with action items." }
-    img: "chi-parla"
+    img: "chi-parla-en"
     didascalia: "A transcript in Verba Manent: every sentence with who said it and the minute."
   cornell:
     t: "Verba Manent gives you Cornell notes ready-made"
@@ -95,7 +95,7 @@ finali:
       - { ic: "🖼️", t: "With the slides", p: "The lecturer's slides placed at the right point of the lecture." }
       - { ic: "📄", t: "PDF ready", p: "To print or to read on a tablet." }
       - { ic: "🎯", t: "Exam-ready format too", p: "A second format built for review, alongside Cornell if you like." }
-    img: "appunti-pronti"
+    img: "appunti-pronti-en"
     didascalia: "When the lecture ends: «Your first notes are ready», in Cornell format."
   verbale:
     t: "Verba Manent writes the minutes for you"
@@ -104,5 +104,5 @@ finali:
       - { ic: "✅", t: "Action items", p: "All the actions from all your minutes in one checklist." }
       - { ic: "🧩", t: "Meeting types", p: "Sales, job interview, residents' association, staff meeting and more: the minutes get the right sections." }
       - { ic: "📣", t: "Notify participants", p: "A ready-made message to say the meeting is being recorded." }
-    img: "cose-da-fare"
+    img: "cose-da-fare-en"
     didascalia: "Action items gathered from all your minutes, with owners and deadlines."

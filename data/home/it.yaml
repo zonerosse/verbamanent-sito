@@ -49,6 +49,7 @@ fa:
     - { ic: "📅", t: "Calendario", p: "Collega Google o Outlook: Verba Manent sa quando inizia la lezione e ti ricorda di registrare." }
     - { ic: "📂", t: "Importa quello che hai già", p: "Un video o un audio, un link (Drive, OneDrive, Dropbox, Zoom…) o una trascrizione in PDF o Word: ottieni gli appunti lo stesso." }
     - { ic: "⚡", t: "Pronta subito", p: "Trascrive mentre registri, a pezzi di pochi minuti: a fine lezione gli appunti arrivano in un attimo." }
+    - { ic: "☁️", t: "Copia nel cloud, se vuoi", p: "Appena una lezione è pronta, Verba Manent ne mette una copia nel tuo Google Drive o OneDrive: appunti e trascrizione li ritrovi anche dal telefono o da un altro computer." }
     - { ic: "📱", t: "Anche sul telefono", p: "L'app Android registra, trascrive sul telefono e prepara gli stessi appunti del PC." }
     - { ic: "🚀", t: "Trascrizione veloce, se vuoi", p: "PC lento? Collega un tuo server a consumo: un'ora di lezione in circa un minuto, per pochi centesimi. È facoltativo." }
     - { ic: "💬", t: "Chiedi alla lezione", p: "Non hai capito un passaggio? Fai la domanda e la risposta arriva da quello che ha detto il docente." }

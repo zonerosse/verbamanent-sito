@@ -49,6 +49,7 @@ fa:
     - { ic: "📅", t: "Calendar", p: "Connect Google or Outlook: Verba Manent knows when class starts and reminds you to record." }
     - { ic: "📂", t: "Import what you already have", p: "A video or audio file, a link (Drive, OneDrive, Dropbox, Zoom…) or a transcript in PDF or Word: you still get your notes." }
     - { ic: "⚡", t: "Ready right away", p: "It transcribes while you record, a few minutes at a time: when the lecture ends, your notes arrive in moments." }
+    - { ic: "☁️", t: "Cloud copy, if you want", p: "As soon as a lecture is ready, Verba Manent puts a copy in your Google Drive or OneDrive: you find notes and transcript from your phone or another computer too." }
     - { ic: "📱", t: "On your phone too", p: "The Android app records, transcribes on the phone and prepares the same notes as the PC." }
     - { ic: "🚀", t: "Fast transcription, if you want", p: "Slow PC? Connect your own pay-as-you-go server: an hour of lecture in about a minute, for a few cents. It's optional." }
     - { ic: "💬", t: "Ask the lecture", p: "Missed a point? Ask your question and the answer comes from what the lecturer actually said." }
@@ -70,57 +71,57 @@ vetrina:
   h2: "From one lecture or meeting, all of this"
   p: "Record once and Verba Manent hands you material ready for studying or working. These are real screenshots."
   voci:
-    - img: "cornell"
+    - img: "cornell-en"
       t: "Cornell notes"
       p: "The world's most widely used study method: questions and keywords on the left, notes on the right, summary at the bottom. With the lecturer's slides in the right place and the minute of the recording."
       punti: ["PDF ready to print or read on a tablet", "Formula sheet with symbols and articles", "«To check» where the audio was unclear"]
       alt: "A page of Cornell notes: questions on the left, notes on the right."
-    - img: "formato-esame"
+    - img: "formato-esame-en"
       t: "Exam-ready format"
       p: "The most likely questions, ranked with stars, each with an answer outline, the keywords to mention and the mistake to avoid."
       punti: ["★★★ when the lecturer insisted on it", "Answer outline point by point", "And if you like, a format you describe yourself"]
       alt: "Exam-ready page with likely questions, stars and answer outlines."
-    - img: "mappa-mentale"
+    - img: "mappa-mentale-en"
       t: "Mind map"
       p: "The whole lecture at a glance: the topic in the centre, the subjects around it, the concepts to remember on each branch."
       punti: ["Created from the lecture in one tap", "Save as PDF or print", "Perfect for quick review"]
       alt: "Mind map of the lecture on contracts, with six coloured branches."
-    - img: "infografica"
+    - img: "infografica-en"
       t: "One-page infographic"
       p: "The key concepts in large type, the steps to follow, what to watch out for in the exam and the lecture in numbers. A single page to keep on your desk."
       punti: ["The most important concept highlighted", "Steps and exam traps", "Save as PDF"]
       alt: "Lecture infographic: key concepts, steps, warnings and numbers."
-    - img: "flashcard"
+    - img: "flashcard-en"
       t: "Flashcards and review"
       p: "The lecture's questions become cards to flip. You say «I knew it» or «Review again», and the ones you miss come back until you know them."
       punti: ["The ones to review first, then the rest", "On your phone too", "Review the whole subject, not just one lecture"]
       alt: "Reviewing with flashcards: the question, «Review again» and «I knew it»."
-    - img: "domande-esame"
+    - img: "domande-esame-en"
       t: "Get ready for the exam"
       p: "The most likely questions of the whole course, with the lectures where they were explained, and a day-by-day study plan up to the exam."
       punti: ["Ranking of the course's questions", "Study plan to put in your calendar", "Updated with every new lecture"]
       alt: "The course's most likely questions and the study plan up to the exam."
-    - img: "simulazione-esame"
+    - img: "simulazione-esame-en"
       t: "Mock exam with a grade"
       p: "Answer in writing as in the real exam: each answer gets a score, what you got right and what's missing. A grade at the end."
       punti: ["Score for every question", "What your answer is missing", "Grades are kept: see if you improve"]
       alt: "Mock exam with written answers and the score for each."
-    - img: "chiedi"
+    - img: "chiedi-en"
       t: "Your notes, at the right minute"
       p: "During the lecture type a couple of words or tap «Important», «To clarify», «To do»: the note takes the exact minute and Claude uses it in your notes. And if you lose the thread, ask «what are they talking about?»."
       punti: ["A star at the moment that matters", "Your doubts end up in your notes", "«Ask now» while recording"]
       alt: "Notes written during the recording, each with its minute."
-    - img: "chi-parla"
+    - img: "chi-parla-en"
       t: "Transcript with who's speaking"
       p: "Every word, with the name of who said it and the minute. Search for a word and listen to the exact moment."
       punti: ["Voices kept apart, you choose the names", "Chapters and search in what was said", "Audio clips to send"]
       alt: "Meeting transcript with speaker names and minutes."
-    - img: "verbale"
+    - img: "verbale-en"
       t: "Meeting minutes that write themselves"
       p: "Minutes are the written record of a meeting. Record the meeting (on Meet, Teams, Zoom or in the room) and at the end Verba Manent hands them to you already written: what was decided, who has to do what and by when, what's still open and when you meet next. Nobody has to take notes anymore."
       punti: ["Ready when the meeting ends, as a PDF", "Send them to participants in one tap: email, Word, Google Docs", "Tailored: sales meeting, residents' association, interview…"]
       alt: "Meeting minutes with summary, decisions and the action items table."
-    - img: "cose-da-fare"
+    - img: "cose-da-fare-en"
       t: "Action items from all your minutes"
       p: "The commitments made in every meeting end up in one list, with owners and deadlines. At the next meeting they tick themselves off when someone says they're done."
       punti: ["Filters by person and status", "Deadlines in your calendar", "Ticked off by the next minutes"]
@@ -136,27 +137,27 @@ inpiu:
   h2: "Respectful and convenient"
   p: "The details that make the difference, for you and for the people you record."
   voci:
-    - img: "avvisa"
+    - img: "avvisa-en"
       t: "Notify participants in one tap"
       p: "For every recording Verba Manent offers a ready-made message: paste it into the Meet, Teams or Zoom chat, or read it out loud in the classroom. When you press «Done, I've told them», the time is noted in the recording."
       punti: ["A different message for lectures, meetings, webinars and classrooms", "In Italian or English, in the language of the lecture", "The time of the notice stays with the recording"]
       alt: "The «Notify participants» card during a recording, with the ready-made message to copy."
-    - img: "prima-di-iniziare"
+    - img: "prima-di-iniziare-en"
       t: "Privacy explained clearly, before you start"
       p: "On first start a box tells you in four lines what stays on your computer and what leaves, and asks you to confirm you have permission to record. No fine print: read it again anytime in Settings."
       punti: ["Recordings stay on your computer", "No voiceprints, ever", "Error reports only if you say yes, without your content"]
       alt: "The «Before you start» box with the privacy points and the permission-to-record checkbox."
-    - img: "importa"
+    - img: "importa-en"
       t: "Already have the lecture? Import it"
       p: "No need to record everything from scratch. Import a video or audio file, a Drive, OneDrive, Dropbox or Zoom link, or a transcript in PDF or Word: Verba Manent turns it into notes, flashcards and exam questions."
       punti: ["Video and audio: mp4, mov, mp3, m4a, voice notes…", "Links to recordings already online", "Transcripts in PDF, Word or text"]
       alt: "The Record screen with the boxes to import a video, an audio file or a transcript."
-    - img: "dove-trascrivo"
+    - img: "dove-trascrivo-en"
       t: "Fast even on a slow PC"
       p: "By default it transcribes on your PC, for free, and the audio never leaves it. If your computer is slow you can choose your own pay-as-you-go transcription server: an hour of lecture in about a minute, and the audio is deleted when the work is done."
       punti: ["On the PC: free and offline", "On the server: a few cents per hour, only if you choose it", "If the server doesn't answer, it falls back to the PC by itself"]
       alt: "The «Where I transcribe» settings with the On the PC and On the server options."
-    - img: "telefono"
+    - img: "telefono-en"
       t: "On Android phones too"
       p: "The same features as the PC, in your pocket: record in class or in a meeting, notify the people present, write your notes during the lecture and find notes, flashcards and exam questions in «My lectures»."
       punti: ["Transcription on the phone", "Spoken notice for the classroom", "Notes, review and exam preparation"]

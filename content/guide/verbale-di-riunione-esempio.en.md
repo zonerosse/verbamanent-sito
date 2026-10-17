@@ -14,7 +14,7 @@ Here's what they must include, a complete example and a blank template to copy.
 
 {{< vm-flusso tema="verbale" >}}
 
-{{< vm-schermata img="avvisa" didascalia="Before you start, Verba Manent offers the message to notify participants: paste it into the Meet, Teams or Zoom chat." >}}
+{{< vm-schermata img="avvisa-en" didascalia="Before you start, Verba Manent offers the message to notify participants: paste it into the Meet, Teams or Zoom chat." >}}
 
 ## What meeting minutes should include
 
@@ -67,7 +67,7 @@ Here are the minutes of a work meeting between colleagues. The names and the com
 </div>
 <p class="didascalia">Short minutes, but complete: readers see at once what changed and what they need to do.</p>
 
-{{< vm-schermata img="tipo-riunione" didascalia="In Verba Manent you choose the meeting type: the minutes get the right sections." >}}
+{{< vm-schermata img="tipo-riunione-en" didascalia="In Verba Manent you choose the meeting type: the minutes get the right sections." >}}
 
 
 ## Blank template to copy

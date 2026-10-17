@@ -55,7 +55,7 @@ The page is split into three areas:
 
 The trick is the left column: when you review, cover the notes, read only the questions and try to answer out loud. It's a quiz you give yourself. You'll find the whole method, with a full example, in the guide to the [Cornell method](/en/guides/cornell-note-taking-method/).
 
-{{< vm-schermata img="appunti-pronti" didascalia="Verba Manent at the end of the lecture: the Cornell notes are ready to open." >}}
+{{< vm-schermata img="appunti-pronti-en" didascalia="Verba Manent at the end of the lecture: the Cornell notes are ready to open." >}}
 
 
 ## After the lecture: the 24 hours that count

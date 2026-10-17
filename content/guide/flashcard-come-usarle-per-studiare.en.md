@@ -82,7 +82,7 @@ The best choice is the one you'll actually use every day.
 
 Flashcards are strongest wherever there's a lot to memorise: legal definitions, medical terms, anatomy, dates, formulas, foreign-language vocabulary, statutes. They also work for reasoning-heavy subjects if the questions are of the "why" and "what happens if" kind.
 
-{{< vm-schermata img="domande-esame" didascalia="In Verba Manent, the most likely questions of the whole course, with stars and the lectures where they were covered." >}}
+{{< vm-schermata img="domande-esame-en" didascalia="In Verba Manent, the most likely questions of the whole course, with stars and the lectures where they were covered." >}}
 
 
 <div class="fonti">
