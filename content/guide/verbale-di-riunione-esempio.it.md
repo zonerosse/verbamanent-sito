@@ -33,7 +33,7 @@ La regola d'oro: **le decisioni e le azioni sono la parte più importante**. Chi
 Ecco un verbale di una riunione di lavoro tra colleghi. I nomi e l'azienda sono inventati.
 
 <div class="verbale-es">
-  <div class="tit">Verbale della riunione: lancio del nuovo sito<small>Studio Grafico Esempio · martedì 14 ottobre 2026, 10:00–10:45 · Google Meet</small></div>
+  <div class="tit">Verbale della riunione: lancio del nuovo sito<small>Studio Grafico Esempio · martedì 13 ottobre 2026, 10:00–10:45 · Google Meet</small></div>
   <div class="blocco">
     <span class="etich">Partecipanti</span>
     <p><b>Presenti:</b> Laura Bianchi (presiede), Marco Verdi, Giulia Neri, Paolo Russo (verbalizza)<br><b>Assente giustificato:</b> Andrea Gallo</p>
@@ -53,14 +53,14 @@ Ecco un verbale di una riunione di lavoro tra colleghi. I nomi e l'azienda sono 
     <table>
       <tr><th>Chi</th><th>Cosa</th><th>Entro</th></tr>
       <tr><td>Marco</td><td>Consegnare le foto dei 12 lavori per la galleria</td><td>3 novembre</td></tr>
-      <tr><td>Giulia</td><td>Completare le 2 pagine mancanti e accorciare le altre 4</td><td>24 ottobre</td></tr>
-      <tr><td>Laura</td><td>Approvare i testi definitivi</td><td>28 ottobre</td></tr>
-      <tr><td>Paolo</td><td>Inviare il verbale a tutti, anche ad Andrea</td><td>14 ottobre</td></tr>
+      <tr><td>Giulia</td><td>Completare le 2 pagine mancanti e accorciare le altre 4</td><td>23 ottobre</td></tr>
+      <tr><td>Laura</td><td>Approvare i testi definitivi</td><td>27 ottobre</td></tr>
+      <tr><td>Paolo</td><td>Inviare il verbale a tutti, anche ad Andrea</td><td>13 ottobre</td></tr>
     </table>
   </div>
   <div class="blocco">
     <span class="etich">Prossima riunione</span>
-    <p>Martedì 28 ottobre, ore 10:00, su Google Meet. Argomento: approvazione dei testi e controllo finale prima della pubblicazione.</p>
+    <p>Martedì 27 ottobre, ore 10:00, su Google Meet. Argomento: approvazione dei testi e controllo finale prima della pubblicazione.</p>
   </div>
 </div>
 <p class="didascalia">Un verbale breve, ma completo: chi lo legge sa subito cosa è cambiato e cosa deve fare.</p>

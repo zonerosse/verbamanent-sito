@@ -1,0 +1,108 @@
+# "Verba Manent" blocks inside the English guides. One theme per guide.
+flussi:
+  sbobine:
+    - { ic: "🎙️", t: "Record", p: "Online or in the classroom, screen and audio together" }
+    - { ic: "💻", t: "Transcribe on your PC", p: "Word for word, the audio never goes online" }
+    - { ic: "🗣️", t: "Tells voices apart", p: "Lecturer and students kept separate" }
+    - { ic: "📚", t: "Notes ready", p: "Cornell, exam-ready notes and flashcards" }
+  appunti:
+    - { ic: "🎙️", t: "You listen", p: "Verba Manent records and transcribes" }
+    - { ic: "⭐", t: "Mark the key points", p: "A couple of words or a star at the right moment" }
+    - { ic: "📚", t: "Notes after class", p: "Cornell or exam-ready, with the slides" }
+    - { ic: "🃏", t: "Review", p: "Flashcards and likely exam questions ready" }
+  flashcard:
+    - { ic: "🎙️", t: "Recorded lecture", p: "Online or in the classroom" }
+    - { ic: "🃏", t: "Automatic flashcards", p: "Questions and answers from the lecture" }
+    - { ic: "⭐", t: "The important ones", p: "Stars for the questions most likely in the exam" }
+    - { ic: "✅", t: "Review", p: "Flip the card: «I knew it» or «Review again»" }
+  trascrivere:
+    - { ic: "🎙️", t: "Record or import", p: "A lecture, a meeting or a file you already have" }
+    - { ic: "💻", t: "Transcribes on your PC", p: "No file uploaded to the internet" }
+    - { ic: "🗣️", t: "Who's speaking", p: "Voices kept apart, you choose the names" }
+    - { ic: "📄", t: "Text and much more", p: "Notes, summary or meeting minutes" }
+  cornell:
+    - { ic: "🎙️", t: "Record the lecture", p: "You listen and only note your doubts" }
+    - { ic: "❓", t: "Questions on the left", p: "Keywords and questions" }
+    - { ic: "📝", t: "Notes on the right", p: "Concepts, examples and slides in the right place" }
+    - { ic: "📌", t: "Summary at the bottom", p: "The gist in a few lines, as a PDF" }
+  verbale:
+    - { ic: "📣", t: "Notify participants", p: "A ready-made message to paste in the chat" }
+    - { ic: "🎙️", t: "Record the meeting", p: "Meet, Teams, Zoom or in the room" }
+    - { ic: "🗣️", t: "Who said what", p: "Voices kept apart, with names" }
+    - { ic: "📋", t: "Minutes ready", p: "Decisions and action items with owners and deadlines" }
+
+confronti:
+  sbobine:
+    senza: ["Hours of work for every hour of lecture", "Pause, rewind, type, start again", "Shifts to organise with classmates", "In the end you only have a long text to reread"]
+    con: ["The transcript writes itself while you follow", "Lecturer and students already separated", "The transcript is yours right after class", "Plus notes, flashcards and exam questions"]
+  appunti:
+    senza: ["You write in a rush and miss steps", "Head in the notebook instead of on the lecturer", "Notes need rewriting from scratch at home"]
+    con: ["You listen and understand, writing only your doubts", "No missed steps: the whole lecture is there", "After class your notes are already in order"]
+  flashcard:
+    senza: ["Hours spent writing cards by hand", "Risk of leaving topics out", "No idea what the exam will ask"]
+    con: ["Cards are ready when the lecture ends", "They cover the whole lecture, with the matching slide", "The most likely questions marked with stars"]
+  trascrivere:
+    senza: ["Files uploaded to someone else's servers", "Just text: you have to reread it all", "Minute limits and time-based subscriptions"]
+    con: ["Transcription on your own computer", "From the text, notes or minutes ready to use", "Your recordings stay yours"]
+  cornell:
+    senza: ["Drawing the page layout every time", "Writing questions and summary by hand after class", "Pages that look different from one lecture to the next"]
+    con: ["Cornell page already laid out", "Questions and summary written for you", "The same format for the whole course, as a PDF"]
+  verbale:
+    senza: ["The note-taker only half listens", "The minutes arrive days later", "Action items with no owner or deadline"]
+    con: ["Everyone takes part, nobody takes notes", "Minutes ready when the meeting ends", "Every action with an owner and a deadline"]
+
+finali:
+  sbobine:
+    t: "Verba Manent transcribes the lecture for you"
+    schede:
+      - { ic: "💻", t: "Transcribes on your PC", p: "Transcription happens on your computer: the audio never goes online." }
+      - { ic: "🗣️", t: "Who's speaking", p: "Tells the lecturer apart from students' questions." }
+      - { ic: "📚", t: "Notes, not just text", p: "Turns the transcript into Cornell and exam-ready notes." }
+      - { ic: "🏫", t: "In the classroom too", p: "Records from the laptop microphone when the lecturer is right in front of you." }
+    img: "chi-parla"
+    didascalia: "The transcript with voices kept apart: you choose the names, or the AI suggests them."
+  appunti:
+    t: "Verba Manent takes the notes for you"
+    schede:
+      - { ic: "⭐", t: "Your notes during class", p: "A couple of words or a star: the note gets the exact minute of the recording." }
+      - { ic: "💬", t: "Ask during class", p: "Lost the thread? Ask what's being discussed and get an answer in seconds." }
+      - { ic: "📚", t: "Notes ready", p: "Cornell or exam-ready, with the lecturer's slides in the right place." }
+      - { ic: "🃏", t: "Flashcards", p: "The lecture's questions ready for review." }
+    img: "note-durante"
+    didascalia: "While recording: your notes with the exact minute, and the box for asking questions."
+  flashcard:
+    t: "Verba Manent makes flashcards from every lecture"
+    schede:
+      - { ic: "🃏", t: "Cards ready", p: "Questions and answers drawn from what the lecturer said." }
+      - { ic: "⭐", t: "The most likely ones", p: "Stars mark the questions that matter most for the exam." }
+      - { ic: "🔁", t: "«I knew it» or «Review again»", p: "Cards you miss come back until you know them." }
+      - { ic: "🎯", t: "Mock exam", p: "Questions, a written answer and a grade." }
+    img: "flashcard"
+    didascalia: "Reviewing with flashcards: tap the card to flip it, then say whether you knew it."
+  trascrivere:
+    t: "Verba Manent transcribes lectures and meetings on your PC"
+    schede:
+      - { ic: "💻", t: "No uploads", p: "Audio is transcribed on your computer, not on someone else's servers." }
+      - { ic: "📂", t: "Files you already have", p: "Import a recording and get text and notes." }
+      - { ic: "🗣️", t: "Who's speaking", p: "Voices kept apart, with the names you choose." }
+      - { ic: "📋", t: "Beyond the text", p: "Study notes or meeting minutes with action items." }
+    img: "chi-parla"
+    didascalia: "A transcript in Verba Manent: every sentence with who said it and the minute."
+  cornell:
+    t: "Verba Manent gives you Cornell notes ready-made"
+    schede:
+      - { ic: "📝", t: "Cornell format", p: "Keywords and questions, notes and summary, page after page." }
+      - { ic: "🖼️", t: "With the slides", p: "The lecturer's slides placed at the right point of the lecture." }
+      - { ic: "📄", t: "PDF ready", p: "To print or to read on a tablet." }
+      - { ic: "🎯", t: "Exam-ready format too", p: "A second format built for review, alongside Cornell if you like." }
+    img: "appunti-pronti"
+    didascalia: "When the lecture ends: «Your first notes are ready», in Cornell format."
+  verbale:
+    t: "Verba Manent writes the minutes for you"
+    schede:
+      - { ic: "📋", t: "Minutes ready", p: "Decisions, action items, who does them and by when." }
+      - { ic: "✅", t: "Action items", p: "All the actions from all your minutes in one checklist." }
+      - { ic: "🧩", t: "Meeting types", p: "Sales, job interview, residents' association, staff meeting and more: the minutes get the right sections." }
+      - { ic: "📣", t: "Notify participants", p: "A ready-made message to say the meeting is being recorded." }
+    img: "cose-da-fare"
+    didascalia: "Action items gathered from all your minutes, with owners and deadlines."

@@ -63,7 +63,7 @@ Una lezione o una riunione non è un file da trascrivere e basta. Ci sono tre pr
 
 Per questo, per lezioni e riunioni, la sola trascrizione non basta: serve qualcosa che dal testo ricavi **appunti, sintesi o verbale**.
 
-{{< vm-confronto tema="trascrivere" >}}
+{{< vm-confronto tema="trascrivere" senza="Servizi online" >}}
 
 ## Come ottenere una trascrizione precisa
 
