@@ -47,7 +47,7 @@ If you turn this on, you sign in with your Google or Microsoft account and give 
 - **Google Drive:** Verba Manent sees and manages **only the files it creates** (the «drive.file» permission), i.e. the «Verba Manent IA» folder. It does not see, read or change any other file in your Drive. It also reads your **email address**, only to show you which account is linked.
 - **OneDrive:** Verba Manent uses **only its own folder** (Apps › Verba Manent IA) and reads your user name or email for the same reason.
 
-What Verba Manent puts in your cloud: one zip per lesson and one for your study data, **encrypted with AES-256** using a password created on your device, plus a technical index (which zips changed) and an instructions file. The zip names are the lesson names.
+What Verba Manent puts in your cloud: one zip per lesson and one for your study data, **encrypted with AES-256** using a password created on your device, plus a list of lessons (also encrypted) and an instructions file. The zips have **a code instead of a name**: anyone looking at your Drive can't see which lessons you have.
 
 Access to your cloud stays **only on your devices**: we don't receive it and we have no servers that read your Drive or OneDrive. When you link your phone to your PC with the QR code, the PC hands over access and password directly, on your network. We don't use your cloud data for advertising, we don't sell it and we don't use it to train AI.
 
