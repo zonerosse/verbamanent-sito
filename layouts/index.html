@@ -43,18 +43,24 @@
   </div>
 </div>
 
-<!-- SCHEDE PRINCIPALI: ognuna apre la sua pagina (layouts/_default/scheda.html) -->
-{{- with $t.schede }}
-<section id="schede">
-  <div class="wrap">
-    <div class="sec-h">
-      <div class="kicker">{{ .kicker }}</div>
-      <h2>{{ .h2 }}</h2>
-      <p>{{ .p }}</p>
+<!-- GLI ARGOMENTI: una riga per argomento (schermata grande + testo), ognuna porta alla sua pagina -->
+{{- range $i, $s := $t.schede.voci }}
+{{- with site.GetPage $s.pag }}
+<section class="riga{{ if modBool $i 2 }} chiara{{ end }}" id="{{ $s.pag }}">
+  <div class="wrap riga-g{{ if not (modBool $i 2) }} inversa{{ end }}">
+    <a class="riga-img" href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
+      <figure class="vm-schermata"><div class="vm-cornice"><span></span><span></span><span></span></div><img src="{{ printf "img/schermate/%s.webp" $s.img | relURL }}" alt="" width="1060" height="620" loading="lazy"></figure>
+    </a>
+    <div class="riga-t">
+      <div class="kicker">{{ $s.ic }} {{ $s.t }}</div>
+      <h2>{{ $s.h2 }}</h2>
+      <p>{{ $s.testo }}</p>
+      <ul>{{ range $s.punti }}<li>{{ . }}</li>{{ end }}</ul>
+      <a class="riga-link" href="{{ .RelPermalink }}">{{ $s.link }} →</a>
     </div>
-    {{ partial "schede-griglia.html" (dict "t" $t) }}
   </div>
 </section>
+{{- end }}
 {{- end }}
 
 <!-- COME FUNZIONA -->

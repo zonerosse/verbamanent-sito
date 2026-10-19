@@ -73,12 +73,11 @@
 </section>
 {{- end }}
 {{- end }}
-<!-- in fondo: le altre schede e la lista d'attesa -->
+<!-- in fondo: torna alla home e lista d'attesa -->
 <section class="prossime">
-  <div class="wrap">
-    <div class="kicker">{{ $t.schede.altre }}</div>
-    {{ partial "schede-griglia.html" (dict "t" $t "senza" $pag) }}
-    <p style="margin-top:28px"><a class="btn btn-p" href="{{ site.Home.RelPermalink }}#attesa">{{ $t.hero.cta1 }}</a></p>
+  <div class="wrap fine-pag">
+    <a class="btn btn-torna" href="{{ site.Home.RelPermalink }}">← {{ $t.schede.torna }}</a>
+    <a class="btn btn-p" href="{{ site.Home.RelPermalink }}#attesa">{{ $t.hero.cta1 }}</a>
   </div>
 </section>
 {{ end }}

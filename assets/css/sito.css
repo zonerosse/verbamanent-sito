@@ -318,3 +318,19 @@ header .lang,header .btn,.brand{flex-shrink:0}
 .altri-g{margin-top:28px}
 .prossime{padding:0 0 70px}.prossime .grid3{margin-top:14px}
 nav a[aria-current="page"]{color:#fff;font-weight:600}
+
+/* Home: una riga per argomento, schermata grande e testo, alternate */
+.riga{padding:72px 0}.riga.chiara{background:var(--soft)}
+.riga-g{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center}
+.riga-g.inversa .riga-img{order:2}
+.riga-img{display:block}.riga-img .vm-schermata{margin:0}
+.riga-t h2{font-size:clamp(26px,3vw,34px);margin:8px 0 12px}
+.riga-t p{color:var(--mut);font-size:17.5px;margin:0 0 16px}
+.riga-t ul{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:8px}
+.riga-t li{padding-left:28px;position:relative}
+.riga-t li::before{content:"✓";position:absolute;left:0;top:3px;width:19px;height:19px;border-radius:50%;background:#dcfce7;color:#15803d;font-weight:800;font-size:11px;display:grid;place-items:center}
+.riga-link{font-weight:600;text-decoration:none;font-size:17px}
+.riga-link:hover{text-decoration:underline}
+@media (max-width:860px){.riga{padding:52px 0}.riga-g{grid-template-columns:1fr;gap:26px}.riga-g.inversa .riga-img{order:0}}
+.fine-pag{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;padding-top:20px}
+.btn-torna{background:var(--navy);color:#fff}.btn-torna:hover{background:var(--blue)}

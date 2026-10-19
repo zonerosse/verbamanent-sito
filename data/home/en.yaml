@@ -19,11 +19,11 @@ schede:
   home: "Home"
   altre: "The other tiles"
   voci:
-    - { pag: "per-studiare", ic: "🎓", t: "For studying", p: "Notes, flashcards, maps and exam preparation, from every lecture." }
-    - { pag: "dsa", ic: "⭐", t: "Dyslexia", p: "The DSA space: every assistive tool, in one place." }
-    - { pag: "riunioni", ic: "💼", t: "For meetings", p: "The minutes write themselves: decisions, action items, who and by when." }
-    - { pag: "pc-e-telefono", ic: "📱", t: "On PC and phone", p: "Windows and Android, import what you already have, fast even on a slow PC." }
-    - { pag: "la-tua-privacy", ic: "🔒", t: "Privacy", p: "Your recordings stay yours: no servers, no voiceprints." }
+    - { pag: "per-studiare", ic: "🎓", t: "For studying", p: "Notes, flashcards, maps and exam preparation, from every lecture.", img: "cornell-en", h2: "From the lecture to exam day", testo: "Record the lecture, online or in class. When it ends you have tidy notes, flashcards, a mind map and the most likely exam questions.", punti: ["Cornell and Exam Format notes, with the lecturer's slides", "Flashcards, maps and Daily review", "Mock exams with a mark"], link: "Everything for studying" }
+    - { pag: "dsa", ic: "⭐", t: "Dyslexia", p: "The DSA space: every assistive tool, in one place.", img: "spazio-dsa-en", h2: "The DSA space: every assistive tool in one place", testo: "Turn on Dyslexia mode and find what you need in order: in class, after the lecture, for the test and for your teacher.", punti: ["Lecture karaoke with the lecturer's real voice", "How I read best: font, spacing, background", "Test map and tests with 30% extra time"], link: "All about the DSA space" }
+    - { pag: "riunioni", ic: "💼", t: "For meetings", p: "The minutes write themselves: decisions, action items, who and by when.", img: "verbale-en", h2: "The minutes write themselves", testo: "Meet, Teams, Zoom or in the room: when the meeting ends you have the minutes with decisions, action items with who and by when, and who said what.", punti: ["Minutes ready as a PDF, shared in one tap", "Action items gathered from every meeting", "Each meeting picks up what was left open"], link: "Everything for meetings" }
+    - { pag: "pc-e-telefono", ic: "📱", t: "On PC and phone", p: "Windows and Android, import what you already have, fast even on a slow PC.", img: "telefono-en", h2: "On your PC and your phone", testo: "Record from your PC or Android phone, or import a video, audio file or transcript you already have. PC and phone stay in sync.", punti: ["Windows and Android, Mac and iPhone coming soon", "Import video, audio, links and transcripts", "Fast even on a slow PC"], link: "All about PC and phone" }
+    - { pag: "la-tua-privacy", ic: "🔒", t: "Privacy", p: "Your recordings stay yours: no servers, no voiceprints.", img: "prima-di-iniziare-en", h2: "Your recordings stay yours", testo: "Transcription happens on your PC or phone: we never receive your recordings and no AI is trained on your lectures.", punti: ["No voiceprints, ever", "A ready message to tell the people you record", "Privacy explained in four lines, on first launch"], link: "All about privacy" }
 
 pagine:
   per-studiare:
