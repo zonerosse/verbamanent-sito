@@ -303,6 +303,7 @@ async function salvaImpVendita(env, azione, f) {
     await salvaVendita(env, c);
     return 'Prezzi salvati.' + (c.attiva ? ' Sul sito si vedono subito.' : '');
   }
+  if (azione === 'vendita_codici') return prendiCodici(env, c);
   if (azione === 'vendita_spunta') {
     const quale = String(f.get('quale'));
     if (quale === 'condizioni' || quale === 'fiscale') c[quale] = !c[quale];
@@ -324,6 +325,35 @@ async function salvaImpVendita(env, azione, f) {
   return '';
 }
 
+// Lemon Squeezy: legge i 4 prodotti del negozio e mette da solo i codici (e i prezzi) di ogni piano.
+// Riconosce il piano dal nome («Plus» = Studente Plus) e il periodo dal rinnovo (mese / anno).
+async function prendiCodici(env, c) {
+  if (!env.LEMONSQUEEZY_API_KEY || !env.LEMONSQUEEZY_STORE_ID) return 'Prima metti in Cloudflare LEMONSQUEEZY_API_KEY e LEMONSQUEEZY_STORE_ID, poi riprova.';
+  let x;
+  try {
+    const r = await fetch('https://api.lemonsqueezy.com/v1/products?include=variants&page[size]=50&filter[store_id]=' + encodeURIComponent(env.LEMONSQUEEZY_STORE_ID),
+      { headers: { Accept: 'application/vnd.api+json', Authorization: 'Bearer ' + env.LEMONSQUEEZY_API_KEY } });
+    if (!r.ok) return `Lemon Squeezy ha risposto con errore ${r.status}: controlla la chiave e il numero del negozio in Cloudflare.`;
+    x = await r.json();
+  } catch (e) { return 'Lemon Squeezy non risponde: riprova tra poco.'; }
+  const nomi = Object.fromEntries((x.data || []).map(p => [String(p.id), String((p.attributes || {}).name || '')]));
+  const trovati = [];
+  for (const v of x.included || []) {
+    if (v.type !== 'variants') continue;
+    const a = v.attributes || {}, nome = nomi[String(a.product_id)] || '';
+    if (!nome || !a.is_subscription) continue;
+    const piano = /plus/i.test(nome) ? 'Studente Plus' : 'Studente', per = a.interval === 'year' ? 'anno' : a.interval === 'month' ? 'mese' : null;
+    if (!per) continue;
+    c.prezzi[piano][per === 'anno' ? 'codice_anno' : 'codice_mese'] = String(v.id);
+    if (+a.price > 0) c.prezzi[piano][per] = Math.round(+a.price) / 100;
+    trovati.push(`${piano} ${per === 'anno' ? 'annuale' : 'mensile'}`);
+  }
+  c.fornitore = 'lemonsqueezy';
+  await salvaVendita(env, c);
+  const mancano = PIANI_VENDITA.flatMap(p => [[p, 'mensile', 'codice_mese'], [p, 'annuale', 'codice_anno']]).filter(([p, , k]) => !c.prezzi[p][k]).map(([p, n]) => p + ' ' + n);
+  return `Codici presi da Lemon Squeezy: ${trovati.length ? trovati.join(', ') : 'nessuno'}.` + (mancano.length ? ` Mancano: ${mancano.join(', ')}.` : ' Tutti e 4 a posto, prezzi compresi.');
+}
+
 async function boxVendita(env, elenco, uso) {
   const c = await impostazioniVendita(env), ck = controlli(env, c), pronti = ck.every(x => x.ok), manca = ck.filter(x => !x.ok).length;
   const riga = x => `<div class="vck${x.ok ? ' ok' : ''}"><span class="vi">${x.ok ? '✓' : '✗'}</span><div><b>${esc(x.titolo)}</b><small>${esc(x.dettaglio)}</small></div>${x.auto ? '' :
@@ -341,7 +371,8 @@ async function boxVendita(env, elenco, uso) {
       <div class="vcod"><label>Servizio ${forn}</label>
       <table><tr><th>Piano</th><th>Codice mensile</th><th>Codice annuale</th></tr>${codici}</table>
       <p class="nota">I codici li trovi nel servizio di pagamento, nella scheda di ogni prodotto (Lemon Squeezy: «Variant ID»; Paddle: «Price ID»). Le chiavi segrete non vanno qui: le metti tu in Cloudflare. L'indirizzo per gli avvisi del servizio è <b>https://verbamanent.app/api/vendita/webhook</b>.</p></div></details>
-    <button class="bp2" style="margin-top:12px">Salva i prezzi</button></form>`;
+    <button class="bp2" style="margin-top:12px">Salva i prezzi</button></form>
+    ${c.fornitore === 'lemonsqueezy' ? `<form method="post" action="/privato/abbonati" style="margin-top:10px"><input type="hidden" name="azione" value="vendita_codici"><button class="bs">⟳ Prendi codici e prezzi da Lemon Squeezy</button></form>` : ''}`;
   let corpo;
   if (!c.attiva) {
     corpo = `<div class="azioni"><h3>Vendita</h3><span class="badge off">⏸ Spenta</span></div>
