@@ -55,9 +55,12 @@ export function dalCodice(c, codice) {
   return null;
 }
 
-export async function onRequestGet({ env }) {
+export async function onRequestGet({ request, env }) {
   if (!env.ATTESA) return json({ attiva: false });
   const c = await impostazioniVendita(env);
+  // ?prova=1: la prova del pagamento di Paolo (vendita spenta, solo la famiglia puo' arrivare a pagare, carta finta)
+  if (!c.attiva && new URL(request.url).searchParams.get('prova') === '1' && controlli(env, c)[0].ok)
+    return json({ attiva: true, prova: true, piani: PIANI_VENDITA.map(p => ({ piano: p, mese: c.prezzi[p].mese, anno: c.prezzi[p].anno, claude: c.prezzi[p].claude })) });
   if (!c.attiva) return json({ attiva: false });
   return new Response(JSON.stringify({ attiva: true, piani: PIANI_VENDITA.map(p => ({ piano: p, mese: c.prezzi[p].mese, anno: c.prezzi[p].anno, claude: c.prezzi[p].claude })) }),
     { headers: { ...PRIV, 'cache-control': 'public, max-age=60' } });

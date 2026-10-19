@@ -86,7 +86,7 @@ details summary{cursor:pointer;color:var(--blue);font-size:13.5px;margin-top:6px
 .pag{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:14px;flex-wrap:wrap}.pag b{color:var(--ink)}.pag span{color:var(--mut);font-size:13.5px}
 .prv{display:flex;gap:16px;align-items:center;flex-wrap:wrap}.prv select{border:1px solid #cbd5e1;border-radius:8px;padding:8px 10px;font:inherit;font-size:14px}.prv form{margin:0;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .t1{border:0;border-radius:10px;padding:10px 16px;font:inherit;font-weight:700;font-size:14px;cursor:pointer}.t1.on{background:#059669;color:#fff}.t1.off{background:#fff;color:#b91c1c;border:1px solid #fecaca}
-.vgr{display:grid;grid-template-columns:1fr 1.25fr;gap:22px;align-items:start}.vck{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #f1f5f9}.vck form{margin:0 0 0 auto}.vck .vi{width:24px;height:24px;border-radius:50%;background:#fee2e2;color:#b91c1c;display:grid;place-items:center;font-weight:800;font-size:13px;flex:none}.vck.ok .vi{background:#dcfce7;color:#15803d}.vck b{display:block;color:var(--ink);font-size:14px}.vck small{color:var(--mut);font-size:12.5px}
+.vgr{display:grid;grid-template-columns:1fr 1.25fr;gap:22px;align-items:start}.vck{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #f1f5f9}.vck form{margin:0 0 0 auto}.vck>a.bs{margin-left:auto;white-space:nowrap}.vck .vi{width:24px;height:24px;border-radius:50%;background:#fee2e2;color:#b91c1c;display:grid;place-items:center;font-weight:800;font-size:13px;flex:none}.vck.ok .vi{background:#dcfce7;color:#15803d}.vck b{display:block;color:var(--ink);font-size:14px}.vck small{color:var(--mut);font-size:12.5px}
 .vpz h3{margin:0 0 6px;font-size:15px;color:var(--ink)}.vpz input{border:1px solid #cbd5e1;border-radius:7px;padding:6px 8px;font:inherit;font-size:14px;width:84px}.vpz .vcod input{width:100%}.vcod{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-top:8px}.vcod label{font-size:13px;font-weight:600;display:flex;gap:10px;align-items:center;margin-bottom:6px}.vcod select{border:1px solid #cbd5e1;border-radius:7px;padding:6px 8px;font:inherit}
 .t1:disabled{opacity:.45;cursor:not-allowed}
 .msg{background:#dcfce7;color:#166534;border-radius:10px;padding:10px 14px;margin-bottom:14px;font-weight:600}
@@ -373,11 +373,14 @@ async function boxVendita(env, elenco, uso) {
       <p class="nota">I codici li trovi nel servizio di pagamento, nella scheda di ogni prodotto (Lemon Squeezy: «Variant ID»; Paddle: «Price ID»). Le chiavi segrete non vanno qui: le metti tu in Cloudflare. L'indirizzo per gli avvisi del servizio è <b>https://verbamanent.app/api/vendita/webhook</b>.</p></div></details>
     <button class="bp2" style="margin-top:12px">Salva i prezzi</button></form>
     ${c.fornitore === 'lemonsqueezy' ? `<form method="post" action="/privato/abbonati" style="margin-top:10px"><input type="hidden" name="azione" value="vendita_codici"><button class="bs">⟳ Prendi codici e prezzi da Lemon Squeezy</button></form>` : ''}`;
+  let avviso = null;
+  try { avviso = JSON.parse(await env.ATTESA.get('config:ultimo-avviso') || 'null'); } catch (e) {}
+  const prova = ck[0].ok ? `<div class="vck ok" style="border:0"><span class="vi">🧪</span><div><b>Prova il pagamento</b><small>Solo tu, carta finta: niente soldi veri e nessun abbonato nell'elenco.${avviso ? ` Ultimo avviso da ${esc(FORNITORI[c.fornitore] ? FORNITORI[c.fornitore].nome : 'servizio')}: ✓ ${esc(quando(avviso.quando))} (${esc(avviso.evento)}${avviso.test ? ', prova' : ''})` : ' Avvisi dal servizio: ancora nessuno.'}</small></div><a class="bs" href="/prezzi/?prova=1" target="_blank" rel="noopener">Apri la prova ›</a></div>` : '';
   let corpo;
   if (!c.attiva) {
     corpo = `<div class="azioni"><h3>Vendita</h3><span class="badge off">⏸ Spenta</span></div>
       <div class="vgr"><div>${ck.map(riga).join('')}
-        <form method="post" action="/privato/abbonati" style="margin-top:12px"><input type="hidden" name="azione" value="vendita_on"><button class="t1 on"${pronti ? '' : ' disabled'}>▶ Accendi la vendita${pronti ? '' : ' · ' + (manca === 1 ? 'manca 1 cosa' : 'mancano ' + manca + ' cose')}</button></form></div>
+        ${prova}<form method="post" action="/privato/abbonati" style="margin-top:12px"><input type="hidden" name="azione" value="vendita_on"><button class="t1 on"${pronti ? '' : ' disabled'}>▶ Accendi la vendita${pronti ? '' : ' · ' + (manca === 1 ? 'manca 1 cosa' : 'mancano ' + manca + ' cose')}</button></form></div>
         <div>${prezzi}</div></div>
       <p class="nota">Spenta: sul sito la pagina Prezzi dice «Verba Manent non è ancora uscito» e raccoglie le email; nel menu «Prezzi» non c'è. Gli abbonati che aggiungi tu qui sotto funzionano lo stesso.</p>`;
   } else {

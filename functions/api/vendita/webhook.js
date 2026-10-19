@@ -20,11 +20,17 @@ function uguali(a, b) {
 }
 const dopo = (d, ms) => d ? new Date(new Date(d).getTime() + ms).toISOString() : null;
 
+// l'ultimo avviso arrivato (firma giusta): il pannello lo mostra, cosi' si vede che il collegamento funziona
+async function ricevuto(env, evento, ev, test) {
+  await env.ATTESA.put('config:ultimo-avviso', JSON.stringify({ quando: new Date().toISOString(), evento: String(evento || ''), test,
+    email: ev ? String(ev.email || '') : '', stato: ev ? String(ev.stato || '') : '', codice: ev ? ev.codice : '', prova: !!(ev && ev.prova) }));
+}
+
 // Lemon Squeezy -> {email, sub, cliente, codice, stato, rinnovo, fine, carta}
 function daLemon(x) {
   if (!x.data || x.data.type !== 'subscriptions') return null;
   const a = x.data.attributes || {}, cu = (x.meta || {}).custom_data || {};
-  return { fornitore: 'lemonsqueezy', email: cu.email || a.user_email, sub: String(x.data.id), cliente: String(a.customer_id || ''),
+  return { fornitore: 'lemonsqueezy', prova: cu.prova === '1', email: cu.email || a.user_email, sub: String(x.data.id), cliente: String(a.customer_id || ''),
     codice: String(a.variant_id || ''), stato: a.status, rinnovo: a.renews_at || null, fine: a.ends_at || null,
     carta: a.card_last_four ? `${a.card_brand ? a.card_brand[0].toUpperCase() + a.card_brand.slice(1) : 'Carta'} •••• ${a.card_last_four}` : '' };
 }
@@ -35,7 +41,7 @@ function daPaddle(x) {
   const it = (d.items || [])[0] || {};
   const sc = d.scheduled_change && d.scheduled_change.action === 'cancel' ? d.scheduled_change.effective_at : null;
   const stato = d.status === 'canceled' ? 'expired' : sc ? 'cancelled' : d.status;
-  return { fornitore: 'paddle', email: cu.email, sub: String(d.id || ''), cliente: String(d.customer_id || ''), codice: String((it.price || {}).id || ''),
+  return { fornitore: 'paddle', prova: cu.prova === '1', email: cu.email, sub: String(d.id || ''), cliente: String(d.customer_id || ''), codice: String((it.price || {}).id || ''),
     stato, rinnovo: d.next_billed_at || null, fine: sc || (d.status === 'canceled' ? (d.canceled_at || (d.current_billing_period || {}).ends_at) : null), carta: '' };
 }
 
@@ -47,15 +53,20 @@ export async function onRequestPost({ request, env }) {
   try {
     if (ls && env.LEMONSQUEEZY_WEBHOOK_SECRET) {
       if (!uguali(ls, await hmac(env.LEMONSQUEEZY_WEBHOOK_SECRET, corpo))) return json({ ok: false }, 401);
-      ev = daLemon(JSON.parse(corpo));
+      const x = JSON.parse(corpo);
+      ev = daLemon(x);
+      await ricevuto(env, (x.meta || {}).event_name, ev, !!(x.meta || {}).test_mode);
     } else if (pd && env.PADDLE_WEBHOOK_SECRET) {
       const p = Object.fromEntries(pd.split(';').map(s => s.split('=')));
       if (!p.ts || Math.abs(Date.now() / 1000 - +p.ts) > 300) return json({ ok: false }, 401);
       if (!uguali(p.h1, await hmac(env.PADDLE_WEBHOOK_SECRET, p.ts + ':' + corpo))) return json({ ok: false }, 401);
-      ev = daPaddle(JSON.parse(corpo));
+      const x = JSON.parse(corpo);
+      ev = daPaddle(x);
+      await ricevuto(env, x.event_type, ev, !!env.PADDLE_SANDBOX);
     } else return json({ ok: false }, 401);
   } catch (e) { return json({ ok: false }, 400); }
   if (!ev) return json({ ok: true, ignorato: true });
+  if (ev.prova) return json({ ok: true, ignorato: 'prova' });       // la prova di Paolo: non tocca l'elenco
 
   const email = String(ev.email || '').trim().toLowerCase();
   if (!email) return json({ ok: true, ignorato: 'email' });

@@ -28,7 +28,7 @@
     vai: 'Ti porto alla pagina di pagamento…', paga_p: 'Il pagamento lo fa un servizio esterno sicuro: carta, PayPal, Apple Pay, Google Pay. La ricevuta con l\'IVA arriva per email. Noi non vediamo i dati della carta.',
     accetti: 'Abbonandoti accetti le', condizioni: 'condizioni d\'uso e di abbonamento',
     cambia: '← Cambia piano', gia_ab: 'Questo account ha già Claude compreso in Verba Manent.',
-    e_annullato: 'Accesso annullato. Riprova quando vuoi.', e_servizio: 'Il servizio di pagamento non risponde. Riprova tra qualche minuto.', e_generico: 'Qualcosa non è andato. Riprova.',
+    e_prova: 'La prova del pagamento è solo per gli account della famiglia.', e_annullato: 'Accesso annullato. Riprova quando vuoi.', e_servizio: 'Il servizio di pagamento non risponde. Riprova tra qualche minuto.', e_generico: 'Qualcosa non è andato. Riprova.',
     ok_t: 'Abbonamento attivo', ok_ciao: 'Benvenuto in Verba Manent!', ok_p: 'Claude è compreso: non devi mettere nessuna chiave.', ok_entra: 'Entra con',
     web: 'Apri sul web', prog: 'Scarica il programma', ok_nota: 'La ricevuta è nella tua email. Puoi gestire o disdire l\'abbonamento da «Il mio abbonamento».',
     ok_attesa: 'Se tra un minuto il programma non vede ancora l\'abbonamento, chiudilo e riaprilo.',
@@ -43,6 +43,7 @@
     portale_no: 'La pagina per gestirlo non risponde adesso. Riprova tra qualche minuto.',
     non_ab: 'Questo account non ha un abbonamento', non_ab_p: 'Puoi usare Verba Manent gratis con la tua chiave di Claude.', scad_p: 'Il tuo abbonamento è finito. Le lezioni restano sul tuo PC e nel tuo Drive.',
     vedi_prezzi: 'Vedi i prezzi', altro: 'Usa un altro account',
+    prova: 'Prova del pagamento: solo per la famiglia, con carta finta (4242 4242 4242 4242, una data futura, CVC 123). Nessun addebito vero.',
     sp_t: 'Verba Manent non è ancora uscito', sp_p: 'Stiamo finendo il programma che registra le lezioni e prepara gli appunti. Quando esce potrai scegliere:',
     sp_g: '<b>Gratis</b>: il programma completo. Per gli appunti fatti dall\'intelligenza artificiale usi un tuo account Claude.',
     sp_a: '<b>Con l\'abbonamento</b>: tutto già pronto, non devi configurare niente.',
@@ -67,7 +68,7 @@
     vai: 'Taking you to the payment page…', paga_p: 'Payment is handled by a secure external service: card, PayPal, Apple Pay, Google Pay. The VAT receipt arrives by email. We never see your card details.',
     accetti: 'By subscribing you accept the', condizioni: 'terms of use and subscription',
     cambia: '← Change plan', gia_ab: 'This account already has Claude included in Verba Manent.',
-    e_annullato: 'Sign-in cancelled. Try again whenever you like.', e_servizio: 'The payment service is not responding. Try again in a few minutes.', e_generico: 'Something went wrong. Please try again.',
+    e_prova: 'The payment test is for family accounts only.', e_annullato: 'Sign-in cancelled. Try again whenever you like.', e_servizio: 'The payment service is not responding. Try again in a few minutes.', e_generico: 'Something went wrong. Please try again.',
     ok_t: 'Subscription active', ok_ciao: 'Welcome to Verba Manent!', ok_p: 'Claude is included: no key to set up.', ok_entra: 'Sign in with',
     web: 'Open on the web', prog: 'Download the app', ok_nota: 'The receipt is in your email. You can manage or cancel the subscription from «My subscription».',
     ok_attesa: 'If the app doesn\'t see the subscription within a minute, close it and open it again.',
@@ -82,6 +83,7 @@
     portale_no: 'The management page is not responding right now. Try again in a few minutes.',
     non_ab: 'This account has no subscription', non_ab_p: 'You can use Verba Manent for free with your own Claude key.', scad_p: 'Your subscription has ended. Your lectures stay on your PC and in your Drive.',
     vedi_prezzi: 'See prices', altro: 'Use another account',
+    prova: 'Payment test: family only, with a fake card (4242 4242 4242 4242, any future date, CVC 123). No real charge.',
     sp_t: 'Verba Manent is not out yet', sp_p: 'We are finishing the app that records lectures and prepares notes. When it\'s out you can choose:',
     sp_g: '<b>Free</b>: the complete app. For the AI-made notes you use your own Claude account.',
     sp_a: '<b>With a subscription</b>: everything ready, nothing to set up.',
@@ -96,9 +98,10 @@
   var ore = function (claude) { return Math.round(claude * 5); };
   var LOGO = '<span class="vnd-logo"><svg width="26" height="26" aria-hidden="true"><use href="#i-logo"/></svg></span>';
   var G_SVG = '<svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>';
-  var mostra = function (html) { R.innerHTML = html; };
+  var FASCIA = function () { return PROVA ? '<div class="vnd-prova">🧪 ' + esc(T.prova) + '</div>' : ''; };
+  var mostra = function (html) { R.innerHTML = FASCIA() + html; };
   var centro = function (html) { mostra('<div class="vnd-centro"><div class="vnd-box">' + html + '</div></div>'); };
-  var q = new URLSearchParams(location.search);
+  var q = new URLSearchParams(location.search), PROVA = q.get('prova') === '1';
 
   // ---- Google: un accesso solo per sapere il Gmail (lo stesso permesso del programma e del web)
   var gis = null, gisCb = null;
@@ -147,7 +150,7 @@
     function carta(p, i) {
       var cifra = per === 'anno' ? p.anno : p.mese;
       var punti = i === 0 ? T.s_l(ore(p.claude)) : T.sp_l(ore(p.claude), v.piani[0].piano);
-      var href = (L.abbonati || '/abbonati/') + '?piano=' + encodeURIComponent(p.piano) + '&periodo=' + per;
+      var href = (L.abbonati || '/abbonati/') + '?piano=' + encodeURIComponent(p.piano) + '&periodo=' + per + (PROVA ? '&prova=1' : '');
       return '<div class="vnd-pi' + (i === 0 ? ' top' : '') + '"' + (i === 0 ? ' data-top="' + esc(T.top) + '"' : '') + '><h3>' + esc(p.piano) + '</h3>' +
         '<div class="vnd-p">' + esc(eur(cifra)) + ' <small>' + esc(per === 'anno' ? T.al_anno : T.al_mese) + '</small></div>' +
         '<div class="vnd-ps">' + esc(per === 'anno' ? T.rin_a(eur(p.anno / 12)) : T.rin_m) + '</div>' +
@@ -179,11 +182,11 @@
       token().then(function (tk) {
         b.innerHTML = esc(T.vai);
         return fetch('/api/vendita/checkout', { method: 'POST', headers: { 'content-type': 'application/json', 'x-vm-google': tk },
-          body: JSON.stringify({ piano: p.piano, periodo: per, lingua: IT ? 'it' : 'en' }) }).then(function (r) { return r.json(); });
+          body: JSON.stringify({ piano: p.piano, periodo: per, lingua: IT ? 'it' : 'en', prova: PROVA }) }).then(function (r) { return r.json(); });
       }).then(function (j) {
         if (j.url) { location.href = j.url; return; }
         if (j.gia) { err.innerHTML = esc(T.gia_ab) + ' <a href="' + esc(L.il_mio_abbonamento || '/il-mio-abbonamento/') + '">' + esc(T.mio) + ' ›</a>'; }
-        else err.textContent = j.errore === 'servizio' ? T.e_servizio : T.e_generico;
+        else err.textContent = j.errore === 'servizio' ? T.e_servizio : (PROVA && j.errore === 'spenta') ? T.e_prova : T.e_generico;
         b.disabled = false; b.innerHTML = G_SVG + esc(T.google);
       }).catch(function (e) {
         err.textContent = String(e.message) === 'annullato' ? T.e_annullato : T.e_generico;
@@ -258,7 +261,7 @@
 
   // ---- via
   if (PAG === 'mio') { mioAccedi(''); return; }
-  fetch('/api/vendita').then(function (r) { return r.json(); }).catch(function () { return { attiva: false }; }).then(function (v) {
+  fetch('/api/vendita' + (PROVA ? '?prova=1' : '')).then(function (r) { return r.json(); }).catch(function () { return { attiva: false }; }).then(function (v) {
     if (!v || !v.attiva || !v.piani || !v.piani.length) return spenta();
     if (PAG === 'prezzi') prezzi(v);
     else if (PAG === 'abbonati') abbonati(v);

@@ -393,6 +393,7 @@ table.confronto{width:100%;min-width:860px;border-collapse:collapse;font-size:14
 
 /* ---- pagine per i clienti (Prezzi, Abbonati, Abbonamento attivo, Il mio abbonamento): nascoste finché la vendita è spenta */
 .vnd{background:var(--soft);min-height:calc(100vh - 160px)}
+.vnd-prova{background:#fef3c7;color:#78350f;text-align:center;font-size:14.5px;font-weight:600;padding:10px 16px}
 .vnd-attesa{padding:60px 20px;color:var(--mut)}
 .vnd-wrap{padding:52px 20px 70px}
 .vnd h1{font-size:clamp(28px,4vw,38px);margin:6px 0 8px}
