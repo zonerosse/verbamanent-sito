@@ -80,6 +80,7 @@
       {{- with site.GetPage "/contatti" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
       {{- with site.GetPage "/privacy" }}<a href="{{ .RelPermalink }}">{{ $t.piede.privacy }}</a>{{ end }}
       {{- with site.GetPage "/note-legali" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+      <a href="/privato" rel="nofollow">{{ if eq site.Language.Lang "it" }}Area riservata{{ else }}Staff area{{ end }}</a>
     </span>
   </div>
 </footer>
