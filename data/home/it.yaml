@@ -1,13 +1,59 @@
 menu:
-  - { id: fa, t: "Cosa fa" }
-  - { id: dsa, t: "DSA" }
-  - { id: nonfa, t: "Cosa non fa" }
-  - { id: vetrina, t: "Punti di forza" }
+  - { pag: "per-studiare", t: "Per studiare" }
+  - { pag: "dsa", t: "DSA" }
+  - { pag: "riunioni", t: "Riunioni" }
+  - { pag: "pc-e-telefono", t: "PC e telefono" }
+  - { pag: "la-tua-privacy", t: "Privacy" }
   - { id: come, t: "Come funziona" }
-  - { id: chi, t: "Per chi" }
   - { id: domande, t: "Domande" }
 avvisami: "Avvisami"
 prova: "Versione di prova del sito: non è ancora online per il pubblico."
+
+# Schede principali della home: ognuna apre la sua pagina (content/<pag>.<lingua>.md, layouts/_default/scheda.html)
+schede:
+  kicker: "Scopri Verba Manent"
+  h2: "Cosa ti serve?"
+  p: "Scegli la scheda giusta per te: ognuna apre una pagina con tutte le sue funzioni e le schermate vere."
+  apri: "Apri"
+  torna: "Torna alla home"
+  home: "Home"
+  altre: "Le altre schede"
+  voci:
+    - { pag: "per-studiare", ic: "🎓", t: "Per studiare", p: "Appunti, flashcard, mappe e preparazione all'esame, da ogni lezione." }
+    - { pag: "dsa", ic: "⭐", t: "DSA", p: "Lo Spazio DSA: tutti gli strumenti compensativi, in un posto solo." }
+    - { pag: "riunioni", ic: "💼", t: "Per le riunioni", p: "Il verbale si scrive da solo: decisioni, cose da fare, chi e entro quando." }
+    - { pag: "pc-e-telefono", ic: "📱", t: "Su PC e telefono", p: "Windows e Android, importa quello che hai già, veloce anche su un PC lento." }
+    - { pag: "la-tua-privacy", ic: "🔒", t: "Privacy", p: "Le registrazioni restano tue: niente server, nessuna impronta della voce." }
+
+# Cosa c'è in ogni pagina. "schermate": [sezione, numero] da vetrina/inpiu/dsa; "carte": numeri delle voci di "fa" (da 0).
+pagine:
+  per-studiare:
+    - kicker: "Per studiare"
+      h2: "Dalla lezione al giorno dell'esame"
+      p: "Registri la lezione, online o in aula: Verba Manent la trascrive e ti consegna tutto quello che serve per studiare."
+      schermate: [[vetrina, 0], [vetrina, 1], [vetrina, 2], [vetrina, 3], [vetrina, 4], [vetrina, 5], [vetrina, 6], [vetrina, 7]]
+      carte: [0, 1, 2, 3, 4, 5, 15]
+  dsa:
+    - { tipo: "dsa" }
+  riunioni:
+    - kicker: "Per le riunioni"
+      h2: "Il verbale si scrive da solo"
+      p: "Meet, Teams, Zoom o in sala: a fine riunione hai il verbale, le cose da fare e chi ha detto cosa."
+      schermate: [[vetrina, 8], [vetrina, 9], [vetrina, 10], [vetrina, 11]]
+      carte: [6, 7, 8]
+  pc-e-telefono:
+    - kicker: "Su PC e telefono"
+      h2: "Dove vuoi, come vuoi"
+      p: "Sul PC e sul telefono, con le lezioni che registri o con quelle che hai già."
+      schermate: [[inpiu, 2], [inpiu, 3], [inpiu, 4]]
+      carte: [9, 10, 11, 12, 13, 14]
+      piattaforme: true
+  la-tua-privacy:
+    - { tipo: "nonfa" }
+    - kicker: "E in più"
+      h2: "Rispettoso di chi registri"
+      p: "Le attenzioni che fanno la differenza, per te e per chi registri."
+      schermate: [[inpiu, 0], [inpiu, 1]]
 
 hero:
   pill: "🎓 L'app per prendere appunti, per chi studia e per chi lavora"

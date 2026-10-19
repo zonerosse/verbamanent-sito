@@ -6,8 +6,12 @@
 ## {{ if $it }}Pagine principali{{ else }}Main pages{{ end }}
 
 - [{{ if $it }}Verba Manent IA: cosa fa e cosa non fa{{ else }}Verba Manent IA: what it does and doesn't do{{ end }}]({{ .Permalink }}): {{ .Description }}
+{{- $t := index hugo.Data.home site.Language.Lang }}
+{{- range $t.schede.voci }}{{ with site.GetPage .pag }}
+- [{{ .Params.seotitolo | default .Title }}]({{ .Permalink }}): {{ .Description }}
+{{- end }}{{ end }}
 {{- with site.GetPage "/privacy" }}
-- [Privacy]({{ .Permalink }}): {{ .Description }}
+- [{{ if $it }}Informativa privacy{{ else }}Privacy policy{{ end }}]({{ .Permalink }}): {{ .Description }}
 {{- end }}
 {{- with site.GetPage "/guide" }}
 

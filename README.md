@@ -5,6 +5,7 @@ Sito Hugo (italiano + inglese) del programma Verba Manent IA, by Punto Web Ferra
 ## Com'è fatto
 - `hugo.toml` — impostazioni. **`prova = true`**: sito di prova (noindex, robots.txt chiuso, fascia "Versione di prova"). Per la pubblicazione vera: `prova = false` e `baseURL` sul dominio scelto.
 - `data/home/it.yaml`, `data/home/en.yaml` — tutti i testi della pagina principale (stessa struttura nelle due lingue).
+- Home a schede: `schede` in `data/home/*.yaml` sono le schede principali; ognuna apre una pagina (`content/<pag>.it.md` / `.en.md`, modello `layouts/_default/scheda.html`) i cui pezzi sono descritti in `pagine` (prende per indice le voci di fa, vetrina, inpiu, dsa, nonfa).
 - `content/` — pagine (privacy in bozza, da completare con i dati del venditore e far rileggere).
 - `layouts/` — modelli; `assets/css/sito.css` — grafica (stile della prima anteprima approvata).
 - `static/video`, `static/img` — video della guida del programma (dal repository registra-lezione) e copertine.

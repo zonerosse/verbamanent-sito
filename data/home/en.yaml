@@ -1,13 +1,58 @@
 menu:
-  - { id: fa, t: "Features" }
-  - { id: dsa, t: "Dyslexia" }
-  - { id: nonfa, t: "What it won't do" }
-  - { id: vetrina, t: "Highlights" }
+  - { pag: "per-studiare", t: "Studying" }
+  - { pag: "dsa", t: "Dyslexia" }
+  - { pag: "riunioni", t: "Meetings" }
+  - { pag: "pc-e-telefono", t: "PC and phone" }
+  - { pag: "la-tua-privacy", t: "Privacy" }
   - { id: come, t: "How it works" }
-  - { id: chi, t: "Who it's for" }
   - { id: domande, t: "FAQ" }
 avvisami: "Notify me"
 prova: "Preview version of the site: not yet public."
+
+# Main tiles on the home page: each opens its own page (content/<pag>.<lang>.md, layouts/_default/scheda.html)
+schede:
+  kicker: "Discover Verba Manent"
+  h2: "What do you need?"
+  p: "Pick the tile that fits you: each one opens a page with all its features and real screenshots."
+  apri: "Open"
+  torna: "Back to home"
+  home: "Home"
+  altre: "The other tiles"
+  voci:
+    - { pag: "per-studiare", ic: "🎓", t: "For studying", p: "Notes, flashcards, maps and exam preparation, from every lecture." }
+    - { pag: "dsa", ic: "⭐", t: "Dyslexia", p: "The DSA space: every assistive tool, in one place." }
+    - { pag: "riunioni", ic: "💼", t: "For meetings", p: "The minutes write themselves: decisions, action items, who and by when." }
+    - { pag: "pc-e-telefono", ic: "📱", t: "On PC and phone", p: "Windows and Android, import what you already have, fast even on a slow PC." }
+    - { pag: "la-tua-privacy", ic: "🔒", t: "Privacy", p: "Your recordings stay yours: no servers, no voiceprints." }
+
+pagine:
+  per-studiare:
+    - kicker: "For studying"
+      h2: "From the lecture to exam day"
+      p: "Record the lecture, online or in class: Verba Manent transcribes it and gives you everything you need to study."
+      schermate: [[vetrina, 0], [vetrina, 1], [vetrina, 2], [vetrina, 3], [vetrina, 4], [vetrina, 5], [vetrina, 6], [vetrina, 7]]
+      carte: [0, 1, 2, 3, 4, 5, 15]
+  dsa:
+    - { tipo: "dsa" }
+  riunioni:
+    - kicker: "For meetings"
+      h2: "The minutes write themselves"
+      p: "Meet, Teams, Zoom or in the room: when the meeting ends you have the minutes, the action items and who said what."
+      schermate: [[vetrina, 8], [vetrina, 9], [vetrina, 10], [vetrina, 11]]
+      carte: [6, 7, 8]
+  pc-e-telefono:
+    - kicker: "On PC and phone"
+      h2: "Wherever you are, however you like"
+      p: "On your PC and your phone, with the lectures you record or the ones you already have."
+      schermate: [[inpiu, 2], [inpiu, 3], [inpiu, 4]]
+      carte: [9, 10, 11, 12, 13, 14]
+      piattaforme: true
+  la-tua-privacy:
+    - { tipo: "nonfa" }
+    - kicker: "And more"
+      h2: "Respectful of the people you record"
+      p: "The little things that make a difference, for you and for the people you record."
+      schermate: [[inpiu, 0], [inpiu, 1]]
 
 hero:
   pill: "🎓 The note-taking app for students and professionals"

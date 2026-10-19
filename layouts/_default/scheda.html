@@ -1,0 +1,84 @@
+{{ define "main" }}
+{{- /* Pagina di una scheda principale: i pezzi vengono da data/home/<lingua>.yaml (pagine › <pag>), con i testi
+     delle sezioni fa / dsa / nonfa / vetrina / inpiu / chi presi per indice, così ogni testo sta in un posto solo. */ -}}
+{{- $t := index hugo.Data.home site.Language.Lang -}}
+{{- $pag := .Params.pag -}}
+{{- $me := dict -}}
+{{- range $t.schede.voci }}{{ if eq .pag $pag }}{{ $me = . }}{{ end }}{{ end -}}
+<div class="wrap pbar-w">
+  <div class="pbar">
+    <a class="btn" href="{{ site.Home.RelPermalink }}">← {{ $t.schede.torna }}</a>
+    <span class="dove"><a href="{{ site.Home.RelPermalink }}">{{ $t.schede.home }}</a> › <b>{{ $me.ic }} {{ $me.t }}</b></span>
+  </div>
+</div>
+{{- range $i, $s := index $t.pagine $pag }}
+{{- $h1 := eq $i 0 }}
+{{- if eq $s.tipo "dsa" }}{{ with $t.dsa }}
+<section id="dsa" class="dsa">
+  <div class="wrap">
+    {{ partial "titolo-sez.html" (dict "s" . "h1" $h1) }}
+    <div class="vc-griglia">{{ range .voci }}{{ partial "vc.html" . }}{{ end }}</div>
+    <div class="grid3 dsa-altri">
+      {{- range .altri }}
+      <div class="card"><div class="ic" aria-hidden="true">{{ .ic }}</div><h3>{{ .t }}</h3><p>{{ .p }}</p></div>
+      {{- end }}
+    </div>
+    <div class="dsa-legge">
+      <span class="big" aria-hidden="true">⚖️</span>
+      <div><b>{{ .legge_t }}</b><span>{{ .legge_p }}</span></div>
+    </div>
+  </div>
+</section>
+{{- end }}
+{{- else if eq $s.tipo "nonfa" }}{{ with $t.nonfa }}
+<section id="nonfa" class="non">
+  <div class="wrap">
+    {{ partial "titolo-sez.html" (dict "s" . "h1" $h1) }}
+    <div class="nl">
+      {{- range .voci }}
+      <div class="ni"><span class="x" aria-hidden="true">✕</span><div><h3>{{ .t }}</h3><p>{{ .p }}</p></div></div>
+      {{- end }}
+    </div>
+    <div class="lock">
+      <span class="big" aria-hidden="true">🔒</span>
+      <div><b>{{ .lock_t }}</b><span>{{ .lock_p }}</span></div>
+    </div>
+  </div>
+</section>
+{{- end }}
+{{- else }}
+<section{{ with $s.cls }} class="{{ . }}"{{ end }}>
+  <div class="wrap">
+    {{ partial "titolo-sez.html" (dict "s" $s "h1" $h1) }}
+    {{- with $s.schermate }}
+    <div class="vc-griglia">{{ range . }}{{ partial "vc.html" (index (index $t (index . 0)).voci (index . 1)) }}{{ end }}</div>
+    {{- end }}
+    {{- with $s.carte }}
+    <div class="grid3{{ if $s.schermate }} altri-g{{ end }}">
+      {{- range . }}{{ with index $t.fa.voci . }}
+      <div class="card"><div class="ic" aria-hidden="true">{{ .ic }}</div><h3>{{ .t }}</h3><p>{{ .p | markdownify }}</p></div>
+      {{- end }}{{ end }}
+    </div>
+    {{- end }}
+    {{- if $s.piattaforme }}{{ with $t.chi }}
+    <h3 style="margin:40px 0 6px;font-size:19px">{{ .disponibile }}</h3>
+    <div class="plat">
+      <div class="pl"><span aria-hidden="true">🪟</span> Windows <small class="ok">{{ .ok }}</small></div>
+      <div class="pl"><span aria-hidden="true">🤖</span> Android <small class="ok">{{ .ok }}</small></div>
+      <div class="pl"><span aria-hidden="true">🍎</span> Mac <small class="soon">{{ .presto }}</small></div>
+      <div class="pl"><span aria-hidden="true">📱</span> iPhone <small class="soon">{{ .presto }}</small></div>
+    </div>
+    {{- end }}{{ end }}
+  </div>
+</section>
+{{- end }}
+{{- end }}
+<!-- in fondo: le altre schede e la lista d'attesa -->
+<section class="prossime">
+  <div class="wrap">
+    <div class="kicker">{{ $t.schede.altre }}</div>
+    {{ partial "schede-griglia.html" (dict "t" $t "senza" $pag) }}
+    <p style="margin-top:28px"><a class="btn btn-p" href="{{ site.Home.RelPermalink }}#attesa">{{ $t.hero.cta1 }}</a></p>
+  </div>
+</section>
+{{ end }}

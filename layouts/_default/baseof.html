@@ -52,7 +52,10 @@
     <a class="brand" href="{{ $home }}"><span class="logo"><svg width="24" height="24" aria-hidden="true"><use href="#i-logo"/></svg></span><span><b>Verba Manent IA</b><small>by {{ site.Params.marchio }}</small></span></a>
     <nav aria-label="Menu">
       {{- range $t.menu }}
+      {{- if .pag }}{{ with site.GetPage .pag }}<a href="{{ .RelPermalink }}"{{ if eq .RelPermalink $.RelPermalink }} aria-current="page"{{ end }}>{{ end }}{{ .t }}</a>
+      {{- else }}
       <a href="{{ $home }}#{{ .id }}">{{ .t }}</a>
+      {{- end }}
       {{- end }}
       {{- with site.GetPage "/guide" }}<a href="{{ .RelPermalink }}">{{ if eq site.Language.Lang "it" }}Guide{{ else }}Guides{{ end }}</a>{{ end }}
     </nav>

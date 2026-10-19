@@ -1,0 +1,6 @@
+{{- /* Testata di una sezione: h1 se è la prima della pagina, altrimenti h2 */ -}}
+<div class="sec-h">
+  <div class="kicker">{{ .s.kicker }}</div>
+  {{ if .h1 }}<h1>{{ .s.h2 }}</h1>{{ else }}<h2>{{ .s.h2 }}</h2>{{ end }}
+  <p>{{ .s.p }}</p>
+</div>

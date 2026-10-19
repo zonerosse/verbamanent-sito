@@ -43,94 +43,16 @@
   </div>
 </div>
 
-<!-- COSA FA -->
-<section id="fa">
-  <div class="wrap">
-    <div class="sec-h">
-      <div class="kicker">{{ $t.fa.kicker }}</div>
-      <h2>{{ $t.fa.h2 }}</h2>
-      <p>{{ $t.fa.p }}</p>
-    </div>
-    <div class="grid3">
-      {{- range $t.fa.voci }}
-      <div class="card"><div class="ic" aria-hidden="true">{{ .ic }}</div><h3>{{ .t }}</h3><p>{{ .p | markdownify }}</p></div>
-      {{- end }}
-    </div>
-  </div>
-</section>
-
-<!-- DSA: lo Spazio DSA come punto di forza -->
-{{- with $t.dsa }}
-<section id="dsa" class="dsa">
+<!-- SCHEDE PRINCIPALI: ognuna apre la sua pagina (layouts/_default/scheda.html) -->
+{{- with $t.schede }}
+<section id="schede">
   <div class="wrap">
     <div class="sec-h">
       <div class="kicker">{{ .kicker }}</div>
       <h2>{{ .h2 }}</h2>
       <p>{{ .p }}</p>
     </div>
-    <div class="vc-griglia">
-      {{- range .voci }}
-      <article class="vc">
-        <figure class="vm-schermata"><div class="vm-cornice"><span></span><span></span><span></span></div><img src="{{ printf "img/schermate/%s.webp" .img | relURL }}" alt="{{ .alt }}" width="1060" height="620" loading="lazy"></figure>
-        <h3>{{ .t }}</h3>
-        <p>{{ .p }}</p>
-        <ul>{{ range .punti }}<li>{{ . }}</li>{{ end }}</ul>
-      </article>
-      {{- end }}
-    </div>
-    <div class="grid3 dsa-altri">
-      {{- range .altri }}
-      <div class="card"><div class="ic" aria-hidden="true">{{ .ic }}</div><h3>{{ .t }}</h3><p>{{ .p }}</p></div>
-      {{- end }}
-    </div>
-    <div class="dsa-legge">
-      <span class="big" aria-hidden="true">⚖️</span>
-      <div><b>{{ .legge_t }}</b><span>{{ .legge_p }}</span></div>
-    </div>
-  </div>
-</section>
-{{- end }}
-
-<!-- COSA NON FA -->
-<section id="nonfa" class="non">
-  <div class="wrap">
-    <div class="sec-h">
-      <div class="kicker">{{ $t.nonfa.kicker }}</div>
-      <h2>{{ $t.nonfa.h2 }}</h2>
-      <p>{{ $t.nonfa.p }}</p>
-    </div>
-    <div class="nl">
-      {{- range $t.nonfa.voci }}
-      <div class="ni"><span class="x" aria-hidden="true">✕</span><div><h3>{{ .t }}</h3><p>{{ .p }}</p></div></div>
-      {{- end }}
-    </div>
-    <div class="lock">
-      <span class="big" aria-hidden="true">🔒</span>
-      <div><b>{{ $t.nonfa.lock_t }}</b><span>{{ $t.nonfa.lock_p }}</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- PUNTI DI FORZA: cosa si ottiene (schermate vere) e, sotto, le attenzioni in più -->
-{{- range $k := slice "vetrina" "inpiu" }}
-{{- $s := index $t $k }}
-<section id="{{ $k }}"{{ if eq $k "inpiu" }} class="inpiu"{{ end }}>
-  <div class="wrap">
-    <div class="sec-h">
-      <div class="kicker">{{ $s.kicker }}</div>
-      <h2>{{ $s.h2 }}</h2>
-      <p>{{ $s.p }}</p>
-    </div>
-    <div class="vc-griglia">
-      {{- range $s.voci }}
-      <article class="vc">
-        <figure class="vm-schermata"><div class="vm-cornice"><span></span><span></span><span></span></div><img src="{{ printf "img/schermate/%s.webp" .img | relURL }}" alt="{{ .alt }}" width="1060" height="620" loading="lazy"></figure>
-        <h3>{{ .t }}</h3>
-        <p>{{ .p }}</p>
-        <ul>{{ range .punti }}<li>{{ . }}</li>{{ end }}</ul>
-      </article>
-      {{- end }}
-    </div>
+    {{ partial "schede-griglia.html" (dict "t" $t) }}
   </div>
 </section>
 {{- end }}
@@ -159,39 +81,6 @@
         <span class="n">{{ add $i 1 }}</span><span><b>{{ $p.t }}</b><small>{{ $p.p }}</small></span><span class="bar" aria-hidden="true"><i></i></span>
       </button>
       {{- end }}
-    </div>
-  </div>
-</section>
-
-<!-- PER CHI -->
-<section id="chi" class="who">
-  <div class="wrap">
-    <div class="sec-h">
-      <div class="kicker">{{ $t.chi.kicker }}</div>
-      <h2>{{ $t.chi.h2 }}</h2>
-    </div>
-    <div class="two">
-      {{- with $t.chi.studenti }}
-      <div class="card">
-        <span class="tag" style="background:#e0f2fe;color:#075985">{{ .tag }}</span>
-        <h3>{{ .t }}</h3>
-        <ul>{{ range .voci }}<li>{{ . }}</li>{{ end }}</ul>
-      </div>
-      {{- end }}
-      {{- with $t.chi.pro }}
-      <div class="card">
-        <span class="tag" style="background:#ede9fe;color:#5b21b6">{{ .tag }}</span>
-        <h3>{{ .t }}</h3>
-        <ul>{{ range .voci }}<li>{{ . }}</li>{{ end }}</ul>
-      </div>
-      {{- end }}
-    </div>
-    <h3 style="margin:40px 0 6px;font-size:19px">{{ $t.chi.disponibile }}</h3>
-    <div class="plat">
-      <div class="pl"><span aria-hidden="true">🪟</span> Windows <small class="ok">{{ $t.chi.ok }}</small></div>
-      <div class="pl"><span aria-hidden="true">🤖</span> Android <small class="ok">{{ $t.chi.ok }}</small></div>
-      <div class="pl"><span aria-hidden="true">🍎</span> Mac <small class="soon">{{ $t.chi.presto }}</small></div>
-      <div class="pl"><span aria-hidden="true">📱</span> iPhone <small class="soon">{{ $t.chi.presto }}</small></div>
     </div>
   </div>
 </section>

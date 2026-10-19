@@ -1,0 +1,7 @@
+{{- /* Una scheda con la schermata vera (Punti di forza, E in più, DSA) */ -}}
+<article class="vc">
+  <figure class="vm-schermata"><div class="vm-cornice"><span></span><span></span><span></span></div><img src="{{ printf "img/schermate/%s.webp" .img | relURL }}" alt="{{ .alt }}" width="1060" height="620" loading="lazy"></figure>
+  <h3>{{ .t }}</h3>
+  <p>{{ .p }}</p>
+  <ul>{{ range .punti }}<li>{{ . }}</li>{{ end }}</ul>
+</article>
