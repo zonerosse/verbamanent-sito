@@ -46,6 +46,7 @@
 #webBar b{color:#fff}
 #webBar .wb-acc{opacity:.85}
 #webBar .wb-sync{opacity:.85}
+#webBar .wb-tetto{background:#fef3c7;color:#78350f;border-radius:6px;padding:2px 8px;font-weight:600}
 #webBar button{background:transparent;border:1px solid rgba(255,255,255,.45);color:#fff;border-radius:8px;padding:3px 10px;font:inherit;font-size:13.5px;cursor:pointer}
 #webBar button:hover{background:rgba(255,255,255,.12)}
 body.web-on{padding-bottom:42px}

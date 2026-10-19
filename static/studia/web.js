@@ -267,7 +267,7 @@ async function apri(chiave, nuova) {
   } catch (e) { return mostraErrore(T.errore + e.message); }
   // Claude «gia' pronto»: gli account della famiglia usano la chiave che sta nella cassaforte del sito
   let fam = false;
-  try { fam = !!(await fetch('/api/claude/stato', {headers: {'X-VM-Google': tok.token}}).then(r => r.json())).famiglia; } catch (e) {}
+  try { abbon = await fetch('/api/claude/stato', {headers: {'X-VM-Google': tok.token}}).then(r => r.json()); fam = !!abbon.famiglia; } catch (e) {}
   if (fam) {
     await chiedi('famiglia', {si: true});
     if (!salvatoPrima.claude) { try { await chiedi('chiama', {nome: 'prova_chiave', args: ['sk-ant-verbamanent-famiglia']}); } catch (e) {} }
@@ -351,12 +351,17 @@ function entra() {
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden' && sporco) salvaDrive(); });
 }
 
-let ultimoGiro = 0, giroInCorso = null;
+let ultimoGiro = 0, giroInCorso = null, abbon = null;
 function barra() {
   let b = document.getElementById('webBar');
   if (!b) { b = document.createElement('div'); b.id = 'webBar'; document.body.append(b); }
   b.innerHTML = `<span>🌐 <b class="wb-tit">${esc(T.bar)}</b></span><span class="wb-acc">${esc(email)}</span><span class="wb-sync" id="wbSync"></span>
     <button id="wbSalva">${esc(T.salva)}</button><button id="wbEsci">${esc(T.esci)}</button>`;
+  // abbonamento con un tetto: dall'80% lo diciamo, cosi' non si resta a meta' di un ripasso
+  if (abbon && abbon.tetto && abbon.usato / abbon.tetto >= 0.8) {
+    const pc = Math.min(100, Math.round(abbon.usato / abbon.tetto * 100));
+    b.querySelector('#wbSync').insertAdjacentHTML('beforebegin', `<span class="wb-tetto">⚠ ${esc(IT ? `Claude: hai usato il ${pc}% di questo mese` : `Claude: ${pc}% of this month used`)}</span>`);
+  }
   b.querySelector('#wbSalva').onclick = () => salvaDrive(true);
   b.querySelector('#wbEsci').onclick = esci;
   statoSync();

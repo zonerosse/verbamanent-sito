@@ -24,7 +24,7 @@ export async function rispondi(env, url, linkCsv, torna = '') {
   do {
     const p = await env.ATTESA.list({ cursor });
     for (const c of p.keys) {
-      if (c.name.startsWith('limite:') || c.name.startsWith('uso:')) continue;
+      if (c.name.startsWith('limite:') || c.name.startsWith('uso:') || c.name.startsWith('abbonato:')) continue;
       let v = {};
       try { v = JSON.parse(await env.ATTESA.get(c.name) || '{}'); } catch (e) {}
       righe.push({ email: c.name, uso: v.uso || '', lingua: v.lingua || '', data: v.data || '' });

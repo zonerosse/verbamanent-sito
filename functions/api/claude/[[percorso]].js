@@ -1,4 +1,4 @@
-// Claude «gia' pronto» per la famiglia su Verba Manent sul web (/studia/).
+// Claude «gia' pronto» per la famiglia e gli abbonati su Verba Manent sul web (/studia/).
 // La chiave di Claude sta SOLO nella cassaforte di Cloudflare (variabile segreta ANTHROPIC_API_KEY):
 // non e' nel codice e non arriva mai al browser. Chi chiama deve mandare il suo accesso Google
 // (X-VM-Google): controllo che sia stato dato a Verba Manent e che l'account sia nell'elenco.
@@ -46,12 +46,32 @@ async function chi(token) {
   return email;
 }
 
-// il nome di chi chiama (Paolo, Sara...) se e' della famiglia, altrimenti null
+// Chi puo' usare Claude di Verba Manent: la famiglia (impronte qui sopra, sempre) e gli abbonati
+// dell'elenco nel pannello (memoria ATTESA, chiavi abbonato:<email>). Torna {id, nome, piano, tetto} o null.
+// id = la riga dei consumi (uso:AAAA-MM:<id>): il nome per la famiglia, l'email per gli altri.
 async function ammesso(env, token) {
   const email = await chi(token);
   if (!email) return null;
+  const fam = IMPRONTE.get(await sha256(email));
+  let ab = null;
+  if (env.ATTESA) { try { ab = JSON.parse(await env.ATTESA.get('abbonato:' + email) || 'null'); } catch (e) {} }
+  if (fam) {
+    if (!ab && env.ATTESA) {       // la famiglia entra da sola nell'elenco del pannello (l'indirizzo arriva da Google, non dal codice)
+      ab = { id: fam, nome: fam, piano: 'Famiglia', dal: new Date().toISOString(), scade: null, tetto: null, origine: 'manuale' };
+      await env.ATTESA.put('abbonato:' + email, JSON.stringify(ab));
+    }
+    return { id: fam, nome: fam, piano: 'Famiglia', tetto: null };
+  }
   const extra = String(env.VM_FAMIGLIA || '').split(',').map(x => x.trim().toLowerCase()).filter(Boolean);
-  return IMPRONTE.get(await sha256(email)) || (extra.includes(email) ? email.split('@')[0] : null);
+  if (extra.includes(email)) return { id: email, nome: email.split('@')[0], piano: 'Famiglia', tetto: null };
+  if (!ab || (ab.scade && new Date(ab.scade) < new Date())) return null;
+  return { id: email, nome: ab.nome || email.split('@')[0], piano: ab.piano || 'Studente', tetto: ab.tetto ? +ab.tetto : null };
+}
+
+const meseRoma = () => { const o = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Rome' })); return o.getFullYear() + '-' + String(o.getMonth() + 1).padStart(2, '0'); };
+async function usato(env, id) {
+  if (!env.ATTESA) return 0;
+  try { return +(JSON.parse(await env.ATTESA.get(`uso:${meseRoma()}:${id}`) || '{}').usd || 0); } catch (e) { return 0; }
 }
 
 // «Uso di Claude»: quante domande e quanto si spende, per persona e per giorno (nella memoria ATTESA, chiavi uso:...)
@@ -80,13 +100,18 @@ export async function onRequest({ request, env, params, waitUntil }) {
   const percorso = [].concat(params.percorso || []).join('/');
   const token = request.headers.get('x-vm-google') || '';
   if (percorso === 'stato') {
-    return json({ famiglia: !!env.ANTHROPIC_API_KEY && await ammesso(env, token) });
+    const a = env.ANTHROPIC_API_KEY ? await ammesso(env, token) : null;
+    if (!a) return json({ famiglia: false });
+    return json({ famiglia: true, piano: a.piano, tetto: a.tetto, usato: a.tetto ? await usato(env, a.id) : null });
   }
   const permesso = (percorso === 'v1/messages' && request.method === 'POST') || (percorso.startsWith('v1/models') && request.method === 'GET');
   if (!permesso) return errore(404, 'non trovato');
-  if (!env.ANTHROPIC_API_KEY) return errore(503, 'Claude per la famiglia non è ancora acceso (manca la chiave in Cloudflare).');
-  const nome = await ammesso(env, token);
-  if (!nome) return errore(403, "Questo account Google non può usare Claude di Verba Manent: metti la tua chiave in Impostazioni.");
+  if (!env.ANTHROPIC_API_KEY) return errore(503, 'Claude di Verba Manent non è ancora acceso (manca la chiave in Cloudflare).');
+  const a = await ammesso(env, token);
+  if (!a) return errore(403, "Questo account Google non ha l'abbonamento a Verba Manent: metti la tua chiave di Claude in Impostazioni.");
+  if (a.tetto && percorso === 'v1/messages' && await usato(env, a.id) >= a.tetto) {
+    return errore(400, 'Hai usato tutto il Claude compreso nel tuo abbonamento per questo mese: si riattiva il 1° del mese prossimo. Puoi passare a Studente Plus da «Il mio abbonamento».');
+  }
   const u = new URL(request.url);
   const r = await fetch('https://api.anthropic.com/' + percorso + u.search, {
     method: request.method,
@@ -99,7 +124,7 @@ export async function onRequest({ request, env, params, waitUntil }) {
   });
   const corpo = await r.text();
   if (r.ok && percorso === 'v1/messages') {
-    try { const x = segna(env, nome, JSON.parse(corpo)); waitUntil ? waitUntil(x) : await x; } catch (e) {}
+    try { const x = segna(env, a.id, JSON.parse(corpo)); waitUntil ? waitUntil(x) : await x; } catch (e) {}
   }
   return new Response(corpo, { status: r.status, headers: { ...PRIV, 'content-type': r.headers.get('content-type') || 'application/json' } });
 }

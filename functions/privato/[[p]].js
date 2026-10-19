@@ -2,6 +2,7 @@
 // Si entra con la password messa in Cloudflare (variabile segreta VM_PASSWORD): nel codice non c'e'.
 // «Mantieni l'accesso» = un biscotto firmato valido 30 giorni su quel dispositivo (cambiando la password, scadono tutti).
 //   /privato        Panoramica
+//   /privato/abbonati  Abbonati: chi ha Claude incluso (aggiungi, +1 mese, modifica, togli)
 //   /privato/lista  Lista d'attesa (con ?csv=1 il file Excel)
 //   /privato/uso    Consumi Claude della famiglia
 //   /privato/esci   Esci
@@ -72,6 +73,17 @@ td{padding:10px 6px;border-bottom:1px solid #f1f5f9;font-variant-numeric:tabular
 .bs{border:1px solid var(--line);background:#fff;border-radius:8px;padding:7px 12px;font-size:13px;color:var(--navy);text-decoration:none;font-weight:500}
 .nota{color:var(--mut);font-size:12.5px;margin-top:14px;line-height:1.5}
 details summary{cursor:pointer;color:var(--blue);font-size:13.5px;margin-top:6px}
+.badge{display:inline-block;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;background:#e0f2fe;color:#0d4275}
+.badge.off{background:#f1f5f9;color:#64748b}.badge.ok{background:#dcfce7;color:#166534}.badge.att{background:#fef3c7;color:#92400e}.badge.no{background:#fee2e2;color:#991b1b}
+.bp2{border:0;border-radius:8px;padding:8px 14px;font:inherit;font-weight:600;font-size:13.5px;background:var(--navy);color:#fff;cursor:pointer;text-decoration:none}
+.form{display:grid;grid-template-columns:2fr 1.2fr 1.3fr 1fr 1fr auto;gap:10px;align-items:end;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:14px}
+.form label{font-size:12px;font-weight:600;color:var(--mut);display:block;margin-bottom:4px}
+.form input,.form select{width:100%;border:1px solid #cbd5e1;border-radius:8px;padding:8px 10px;font:inherit;font-size:14px;background:#fff}
+.mini{height:6px;background:var(--line);border-radius:4px;overflow:hidden;margin-top:4px;width:110px}.mini i{display:block;height:100%;background:var(--navy)}
+.az{display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap}.az form{margin:0}.az button,.az a{border:1px solid var(--line);background:#fff;border-radius:7px;padding:5px 9px;font:inherit;font-size:12.5px;color:var(--navy);cursor:pointer;text-decoration:none}.az .r{color:#b91c1c}
+.pag{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:14px;flex-wrap:wrap}.pag b{color:var(--ink)}.pag span{color:var(--mut);font-size:13.5px}
+.msg{background:#dcfce7;color:#166534;border-radius:10px;padding:10px 14px;margin-bottom:14px;font-weight:600}
+@media(max-width:860px){.form{grid-template-columns:1fr 1fr}}
 @media(max-width:860px){.kpi{grid-template-columns:1fr 1fr}.griglia{grid-template-columns:1fr}.chi div{display:none}.tabs{margin-left:0;order:3;width:100%;padding-bottom:8px;overflow:auto}}`;
 const MARCHIO = '<div class="vm">VM</div><div><b>Verba Manent IA</b><small>Pannello di controllo</small></div>';
 const html = (titolo, corpo, extra = {}) => new Response(`<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>${esc(titolo)} · Verba Manent IA</title><style>${STILE}</style></head><body>${corpo}</body></html>`,
@@ -91,7 +103,7 @@ function accesso(errore = '') {
 function pannello(scheda, titolo, sotto, corpo) {
   const t = (id, href, nome) => `<a href="${href}"${scheda === id ? ' class="on" aria-current="page"' : ''}>${nome}</a>`;
   return html(titolo, `<div class="top"><a class="marchio" href="/privato">${MARCHIO}</a>
-    <nav class="tabs" aria-label="Pannello">${t('pan', '/privato', 'Panoramica')}${t('lista', '/privato/lista', "Lista d'attesa")}${t('uso', '/privato/uso', 'Consumi Claude')}</nav>
+    <nav class="tabs" aria-label="Pannello">${t('pan', '/privato', 'Panoramica')}${t('abb', '/privato/abbonati', 'Abbonati')}${t('lista', '/privato/lista', "Lista d'attesa")}${t('uso', '/privato/uso', 'Consumi Claude')}</nav>
     <div class="chi"><div><b>Paolo Boldrini</b><small>CEO</small></div><span class="av">PB</span><a class="esci" href="/privato/esci">Esci</a></div></div>
     <main class="main"><div class="tit"><h2>${esc(titolo)}</h2><span>${esc(sotto)}</span></div>${corpo}</main>`);
 }
@@ -104,7 +116,7 @@ async function iscritti(env) {
   do {
     const p = await env.ATTESA.list({ cursor });
     for (const c of p.keys) {
-      if (c.name.startsWith('limite:') || c.name.startsWith('uso:')) continue;
+      if (c.name.startsWith('limite:') || c.name.startsWith('uso:') || c.name.startsWith('abbonato:')) continue;
       let v = {};
       try { v = JSON.parse(await env.ATTESA.get(c.name) || '{}'); } catch (e) {}
       out.push({ email: c.name, uso: v.uso || '', lingua: v.lingua || '', data: v.data || '' });
@@ -159,7 +171,8 @@ async function panoramica(env) {
   const lista = await iscritti(env), uso = await datiUso(env), m = meseOra(), mese = nomeMese(m);
   const settimana = lista.filter(r => r.data && Date.now() - new Date(r.data) < 7 * 86400000).length;
   const stud = lista.filter(r => tipo(r.uso) === 'Studio').length, lav = lista.filter(r => tipo(r.uso) === 'Lavoro').length;
-  const persone = Object.entries(uso[m] || {}).sort((a, b) => (b[1].usd || 0) - (a[1].usd || 0));
+  const nomi = Object.fromEntries((await abbonati(env)).map(a => [a.email, a.nome || a.email]));
+  const persone = Object.entries(uso[m] || {}).map(([id, d]) => [nomi[id] || id, d]).sort((a, b) => (b[1].usd || 0) - (a[1].usd || 0));
   const spesa = persone.reduce((s, [, d]) => s + (d.usd || 0), 0), domande = persone.reduce((s, [, d]) => s + (d.n || 0), 0);
   const oggi = roma().getDate(), giorni = Array.from({ length: oggi }, (_, i) => persone.reduce((s, [, d]) => s + (((d.giorni || {})[String(i + 1).padStart(2, '0')] || {}).usd || 0), 0));
   const ora = roma().toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
@@ -194,15 +207,98 @@ async function paginaLista(env) {
 
 async function paginaUso(env) {
   const uso = await datiUso(env), mesi = Object.keys(uso).sort().reverse();
+  const nomi = Object.fromEntries((await abbonati(env)).map(a => [a.email, a.nome || a.email]));
+  for (const m of mesi) uso[m] = Object.fromEntries(Object.entries(uso[m]).map(([id, d]) => [nomi[id] || id, d]));
   const blocchi = mesi.map(m => {
     const persone = Object.entries(uso[m]).sort((a, b) => (b[1].usd || 0) - (a[1].usd || 0));
     const dettagli = persone.map(([nome, d]) => {
       const giorni = Object.entries(d.giorni || {}).sort((a, b) => +b[0] - +a[0]);
       return `<details><summary>${esc(nome)} · giorno per giorno (ultima domanda ${esc(quando(d.ultimo))})</summary><table><tr><th>Giorno</th><th class="n">Domande</th><th class="n">Spesa</th></tr>${giorni.map(([g, x]) => `<tr><td>${+g} ${MESI[+m.split('-')[1] - 1]}</td><td class="n">${x.n}</td><td class="n">${usd(x.usd)}</td></tr>`).join('')}</table></details>`;
     }).join('');
-    return `<div class="box"><h3>${esc(nomeMese(m))}</h3><p class="s">Chiave «Verba Manent famiglia»</p>${tabellaPersone(persone)}${dettagli}</div>`;
+    return `<div class="box"><h3>${esc(nomeMese(m))}</h3><p class="s">Chiave «Verba Manent famiglia» nella cassaforte del sito</p>${tabellaPersone(persone)}${dettagli}</div>`;
   }).join('') || '<div class="box"><p class="vuoto">Ancora nessuna domanda a Claude dalla famiglia.</p></div>';
-  return pannello('uso', 'Consumi Claude', 'famiglia · per mese e per persona', blocchi + NOTA_COSTI);
+  return pannello('uso', 'Consumi Claude', 'famiglia e abbonati · per mese e per persona', blocchi + NOTA_COSTI);
+}
+
+// ------------------------------------------------------------------ abbonati
+const PIANI = { Famiglia: 'badge', Omaggio: 'badge att', Studente: 'badge ok', 'Studente Plus': 'badge ok' };
+async function abbonati(env) {
+  const out = [];
+  let cursor;
+  do {
+    const p = await env.ATTESA.list({ prefix: 'abbonato:', cursor });
+    for (const c of p.keys) {
+      try { out.push({ email: c.name.slice(9), ...JSON.parse(await env.ATTESA.get(c.name) || '{}') }); } catch (e) {}
+    }
+    cursor = p.list_complete ? null : p.cursor;
+  } while (cursor);
+  const ord = { Famiglia: 0, Omaggio: 1, Studente: 2, 'Studente Plus': 3 };
+  return out.sort((a, b) => (ord[a.piano] ?? 9) - (ord[b.piano] ?? 9) || String(a.nome).localeCompare(String(b.nome)));
+}
+const EMAIL = /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,24}$/;
+const giorno = d => d ? new Date(d).toLocaleDateString('it-IT', { timeZone: 'Europe/Rome', day: '2-digit', month: '2-digit', year: 'numeric' }) : '—';
+function piuMesi(da, n) { const d = new Date(da); d.setMonth(d.getMonth() + n); return d.toISOString(); }
+
+async function salvaAbbonato(env, f) {
+  const azione = String(f.get('azione') || ''), email = String(f.get('email') || '').trim().toLowerCase();
+  if (!EMAIL.test(email)) return 'Indirizzo non valido.';
+  const k = 'abbonato:' + email;
+  let ab = null;
+  try { ab = JSON.parse(await env.ATTESA.get(k) || 'null'); } catch (e) {}
+  if (azione === 'togli') { await env.ATTESA.delete(k); return `${email} tolto.`; }
+  if (azione === 'mese') {
+    if (!ab) return 'Abbonato non trovato.';
+    const base = ab.scade && new Date(ab.scade) > new Date() ? ab.scade : new Date().toISOString();
+    ab.scade = piuMesi(base, 1);
+    await env.ATTESA.put(k, JSON.stringify(ab));
+    return `Un mese in più a ${ab.nome || email}: scade il ${giorno(ab.scade)}.`;
+  }
+  const piano = Object.keys(PIANI).includes(String(f.get('piano'))) ? String(f.get('piano')) : 'Omaggio';
+  const sc = String(f.get('scadenza') || ''), tetto = parseFloat(String(f.get('tetto') || '').replace(',', '.'));
+  const nuovo = { ...(ab || {}), nome: String(f.get('nome') || '').trim().slice(0, 40) || email.split('@')[0], piano,
+    dal: (ab && ab.dal) || new Date().toISOString(), tetto: tetto > 0 ? tetto : null, origine: (ab && ab.origine) || 'manuale' };
+  if (sc === 'nessuna') nuovo.scade = null;
+  else if (/^\d+$/.test(sc)) nuovo.scade = piuMesi(new Date().toISOString(), +sc);
+  await env.ATTESA.put(k, JSON.stringify(nuovo));
+  return `${nuovo.nome} salvato.`;
+}
+
+async function paginaAbbonati(env, url, messaggio = '') {
+  const elenco = await abbonati(env), uso = (await datiUso(env))[meseOra()] || {};
+  const mod = url.searchParams.get('modifica'), m = elenco.find(x => x.email === mod) || null;
+  const ora = Date.now(), attivo = a => !a.scade || new Date(a.scade) > ora;
+  const attivi = elenco.filter(attivo);
+  const conta = p => attivi.filter(a => a.piano === p).length;
+  const scadono = attivi.filter(a => a.scade && new Date(a.scade) - ora < 7 * 86400000).length;
+  const spesa = elenco.reduce((s, a) => s + ((uso[a.id || a.email] || {}).usd || 0), 0);
+  const opz = (v, t, sel) => `<option value="${esc(v)}"${sel ? ' selected' : ''}>${esc(t)}</option>`;
+  const form = `<form class="form" method="post" action="/privato/abbonati"><input type="hidden" name="azione" value="salva">
+    <div><label>Gmail</label><input name="email" type="email" required placeholder="nome@gmail.com" value="${esc(m ? m.email : '')}"${m ? ' readonly' : ''}></div>
+    <div><label>Nome</label><input name="nome" maxlength="40" placeholder="per riconoscerlo" value="${esc(m ? m.nome : '')}"></div>
+    <div><label>Piano</label><select name="piano">${['Famiglia', 'Omaggio', 'Studente', 'Studente Plus'].map(p => opz(p, p === 'Famiglia' ? 'Famiglia (gratis)' : p, m ? m.piano === p : p === 'Omaggio')).join('')}</select></div>
+    <div><label>Scadenza</label><select name="scadenza">${m ? opz('', 'come adesso' + (m.scade ? ' (' + giorno(m.scade) + ')' : ' (nessuna)'), true) : ''}${opz('nessuna', 'Nessuna', !m)}${opz('1', '1 mese')}${opz('3', '3 mesi')}${opz('12', '1 anno')}</select></div>
+    <div><label>Tetto Claude al mese</label><select name="tetto">${opz('', 'Senza tetto', m ? !m.tetto : true)}${[3, 5, 10].map(v => opz(v, '$ ' + v, m && +m.tetto === v)).join('')}</select></div>
+    <button class="bp2">${m ? 'Salva modifiche' : 'Aggiungi'}</button></form>`;
+  const righe = elenco.map(a => {
+    const d = uso[a.id || a.email] || {}, sp = d.usd || 0;
+    const stato = attivo(a) ? `<span class="${PIANI[a.piano] || 'badge'}">${esc(a.piano)}</span>` : '<span class="badge no">Scaduto</span>';
+    const cons = usd(sp) + (a.tetto ? ` di ${usd(+a.tetto)}<div class="mini"><i style="width:${Math.min(100, sp / a.tetto * 100).toFixed(0)}%"></i></div>` : ' · senza tetto');
+    const bott = (az, t, cls = '') => `<form method="post" action="/privato/abbonati"${az === 'togli' ? ` onsubmit="return confirm('Togliere ${esc(a.nome || a.email)}?')"` : ''}><input type="hidden" name="azione" value="${az}"><input type="hidden" name="email" value="${esc(a.email)}"><button${cls ? ` class="${cls}"` : ''}>${t}</button></form>`;
+    return `<tr><td><b>${esc(a.nome || '')}</b><br><small style="color:#64748b">${esc(a.email)}</small></td><td>${stato}</td><td>${giorno(a.dal)}</td><td>${a.scade ? giorno(a.scade) : 'nessuna'}</td><td>${cons}</td><td>${a.origine === 'pagamento' ? '💳 pagamento' : '✋ a mano'}</td>
+      <td><div class="az">${a.scade ? bott('mese', '+1 mese') : ''}<a href="/privato/abbonati?modifica=${encodeURIComponent(a.email)}">Modifica</a>${bott('togli', 'Togli', 'r')}</div></td></tr>`;
+  }).join('') || '<tr><td colspan="7" class="vuoto">Ancora nessun abbonato. La famiglia entra da sola la prima volta che usa Claude sul web.</td></tr>';
+  return pannello('abb', 'Abbonati', 'Chi ha Claude incluso in Verba Manent', `
+    ${messaggio ? `<div class="msg">✓ ${esc(messaggio)}</div>` : ''}
+    <div class="pag"><span class="badge off">⏸ Pagamenti spenti</span><div><b>Vendita non ancora attiva.</b> <span>Quando la accendi, chi paga sul sito entra qui da solo e ne esce quando scade o disdice.</span></div></div>
+    <div class="kpi">
+      <div class="k"><small>Abbonati attivi</small><b>${attivi.length}</b><span>${conta('Famiglia')} famiglia · ${plur(conta('Studente') + conta('Studente Plus'), 'studente', 'studenti')} · ${conta('Omaggio')} omaggio</span></div>
+      <div class="k"><small>In scadenza</small><b>${scadono}</b><span>nei prossimi 7 giorni</span></div>
+      <div class="k"><small>Spesa Claude · mese</small><b>${usd(spesa)}</b><span>tutti gli abbonati</span></div>
+      <div class="k"><small>Incassi · mese</small><b>—</b><span>con i pagamenti accesi</span></div>
+    </div>
+    <div class="box"><div class="azioni"><h3>${m ? 'Modifica ' + esc(m.nome || m.email) : 'Aggiungi abbonato'}</h3>${m ? '<a class="bs" href="/privato/abbonati">Annulla</a>' : ''}</div>${form}
+      <table><tr><th>Abbonato</th><th>Piano</th><th>Dal</th><th>Scadenza</th><th>Claude questo mese</th><th>Origine</th><th></th></tr>${righe}</table>
+      <p class="nota">Con un tetto, all'80% Verba Manent lo dice all'abbonato e al 100% Claude si ferma fino al mese dopo; la famiglia non ha tetto. Gli indirizzi stanno nella memoria privata del sito, non nel codice.</p></div>`);
 }
 
 // ------------------------------------------------------------------ ingresso
@@ -235,6 +331,14 @@ export async function onRequest({ request, env, params }) {
   if (via === 'lista') {
     const url = new URL(request.url);
     return url.searchParams.get('csv') ? listaCsv(env, url, '') : paginaLista(env);
+  }
+  if (via === 'abbonati') {
+    if (request.method === 'POST') {
+      const msg = await salvaAbbonato(env, await request.formData());
+      return new Response(null, { status: 303, headers: { ...PRIV, location: '/privato/abbonati?fatto=' + encodeURIComponent(msg) } });
+    }
+    const url = new URL(request.url);
+    return paginaAbbonati(env, url, url.searchParams.get('fatto') || '');
   }
   if (via === 'uso') return paginaUso(env);
   return panoramica(env);
