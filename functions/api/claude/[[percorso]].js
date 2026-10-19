@@ -10,6 +10,8 @@
 const CLIENT_ID = '303488426536-mqi6a2cd59sis931tb6nmmltrjfrclkf.apps.googleusercontent.com';
 const IMPRONTE = new Set([
   '3a1ab56353f71b067bd217e90c3a098a3d10971d2dd44648935354c908713900',   // Paolo
+  '1a8850eab1d16634bb85e18444151ba896a454ed059d3f511c6b49ace7dc5790',   // Sara
+  '45ee0a913732bce39f3a47f99a39723a3a003e0b19d3351ea6c92e0e27168e94',   // Lorenzo
 ]);
 const PRIV = { 'cache-control': 'no-store', 'x-robots-tag': 'noindex, nofollow', 'content-type': 'application/json' };
 const visti = new Map();      // token -> {email, fino}: per non chiedere a Google a ogni domanda
