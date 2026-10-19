@@ -18,6 +18,16 @@
 #web .wpic{font-size:13px;color:var(--w-mut);margin:16px 0 0;line-height:1.5}
 #web .wpic a{color:var(--w-blue)}
 #web .wlink{margin-top:10px}
+#web .wcampo{display:flex;gap:8px;margin:0 0 12px}
+#web .wcampo .win{flex:1;min-width:0;margin:0}
+#web .winc{flex:none;border:1px solid #bae6fd;background:#f0f9ff;color:var(--w-navy);border-radius:12px;padding:0 14px;font:inherit;font-weight:600;font-size:15px;cursor:pointer;white-space:nowrap}
+#web .winc:hover{background:#e0f2fe}
+#web .wdove{text-align:left;background:#f1f6fb;border:1px solid var(--w-line);border-radius:14px;padding:12px 14px;margin:0 0 16px;font-size:14px;line-height:1.5}
+#web .wdove summary{cursor:pointer;font-weight:700;color:var(--w-navy)}
+#web .wdove ol{margin:8px 0 0;padding-left:20px}#web .wdove li{margin:5px 0}
+#web .wdove small{display:block;color:var(--w-mut);margin-top:6px}
+#web .wvai{display:inline-flex;margin:8px 0 2px;background:var(--w-navy);color:#fff;text-decoration:none;border-radius:10px;padding:8px 12px;font-weight:600}
+#web .wvai:hover{background:var(--w-blue)}
 #web .werr{color:var(--w-no);font-size:14.5px;margin:0 0 12px;line-height:1.45}
 #web .werr:empty{display:none}
 #web .wlista{text-align:left;margin:0 0 18px;padding:0;list-style:none;display:grid;gap:8px;font-size:14.5px}

@@ -31,6 +31,13 @@ const T = IT ? {
   cl_t: 'Le funzioni con Claude', cl_p: "Chiedi, il tutor, i test e l'interrogazione usano Claude. Sul web serve la tua chiave.",
   cl_1: 'La chiave resta solo in questa pagina e va direttamente a Claude', cl_2: 'Non passa da nessun nostro server',
   cl_3: 'Quando esci, sparisce, a meno che tu chieda di ricordarla',
+  incolla: '📋 Incolla', incolla_no: 'Premi Ctrl+V per incollare',
+  pw_dove: 'Dove la trovo?', pw_d1: 'Sul PC apri <b>Verba Manent</b>.', pw_d2: 'Vai in <b>Impostazioni › Sincronizza › Apri…</b>',
+  pw_d3: 'Sotto <b>🔑 La password degli zip</b>: selezionala, copiala (Ctrl+C) e torna qui.', pw_d4: 'Sul telefono: Impostazioni › Sincronizza, stesso posto.',
+  cl_vai: 'Apri la pagina delle chiavi di Claude ↗', cl_d1: 'Accedi con il tuo account di Claude.',
+  cl_d2: 'Tocca <b>Create Key</b>, chiamala per esempio <b>Verba Manent web</b>, e tocca <b>Copy</b>.',
+  cl_d3: 'Torna qui: la chiave si incolla da sola (o tocca <b>📋 Incolla</b>).',
+  cl_d4: 'Claude fa vedere una chiave una volta sola: quella del programma sul PC non si può rileggere. Creane una nuova: la vecchia continua a funzionare sul PC.',
   cl_ok: 'Usa questa chiave', cl_dopo: 'Più tardi: per ora studio senza Claude', cl_no: 'Questa chiave non funziona: controllala e riprova.',
   bar: 'Verba Manent sul web', esci: 'Esci', salva: 'Salva nel Drive', salvato: 'Salvato nel Drive alle', salvo: 'Salvo nel Drive…',
   riaccedi: 'Accedi di nuovo per salvare', non_salvato: 'Il ripasso di oggi non è ancora nel Drive.',
@@ -60,6 +67,13 @@ const T = IT ? {
   cl_t: 'The Claude features', cl_p: 'Ask, the tutor, the tests and the oral exam use Claude. On the web you need your own key.',
   cl_1: 'The key stays only in this page and goes straight to Claude', cl_2: 'It never goes through a server of ours',
   cl_3: 'When you sign out it disappears, unless you ask to remember it',
+  incolla: '📋 Paste', incolla_no: 'Press Ctrl+V to paste',
+  pw_dove: 'Where do I find it?', pw_d1: 'On your PC open <b>Verba Manent</b>.', pw_d2: 'Go to <b>Settings › Sync › Open…</b>',
+  pw_d3: 'Under <b>🔑 The zip password</b>: select it, copy it (Ctrl+C) and come back here.', pw_d4: 'On the phone: Settings › Sync, same place.',
+  cl_vai: 'Open the Claude keys page ↗', cl_d1: 'Sign in with your Claude account.',
+  cl_d2: 'Tap <b>Create Key</b>, name it for example <b>Verba Manent web</b>, and tap <b>Copy</b>.',
+  cl_d3: 'Come back here: the key pastes itself (or tap <b>📋 Paste</b>).',
+  cl_d4: 'Claude shows a key only once: the one in the PC program cannot be read again. Create a new one: the old one keeps working on the PC.',
   cl_ok: 'Use this key', cl_dopo: 'Later: for now I study without Claude', cl_no: "This key doesn't work: check it and try again.",
   bar: 'Verba Manent on the web', esci: 'Sign out', salva: 'Save to Drive', salvato: 'Saved to Drive at', salvo: 'Saving to Drive…',
   riaccedi: 'Sign in again to save', non_salvato: "Today's review is not in your Drive yet.",
@@ -190,12 +204,28 @@ async function accedi() {
   schermoPassword();
 }
 
+// una casella con accanto «📋 Incolla»
+const campo = (id, ph, et, stile = '') => `<div class="wcampo"><input class="win" id="${id}" autocomplete="off" spellcheck="false" placeholder="${ph}" aria-label="${esc(et)}"${stile}><button class="winc" type="button" data-inc="${id}">${esc(T.incolla)}</button></div>`;
+async function incolla(id, solo) {
+  const i = ov.querySelector('#' + id); if (!i) return false;
+  try {
+    const x = (await navigator.clipboard.readText() || '').trim();
+    if (solo && !solo.test(x)) return false;
+    if (x) { i.value = x; i.focus(); return true; }
+  } catch (e) { if (!solo) { i.focus(); mostraErrore(T.incolla_no); } }
+  return false;
+}
+function tastiIncolla() { ov.querySelectorAll('[data-inc]').forEach(b => b.onclick = () => incolla(b.dataset.inc)); }
+const dove = (tit, voci, sotto, prima = '') => `<details class="wdove" open><summary>${esc(tit)}</summary>${prima}<ol>${voci.map(v => `<li>${v}</li>`).join('')}</ol><small>${esc(sotto)}</small></details>`;
+
 function schermoPassword(err = '') {
-  schermo(`<div class="wlogo">🔒</div><h1>${esc(T.pw_t)}</h1><p class="ws">${esc(T.pw_p)}</p><p class="werr">${esc(err)}</p>
-    <input class="win" id="wPw" autocomplete="off" spellcheck="false" placeholder="ABCD-EFGH-JKLM-NPQR" aria-label="${esc(T.pw_t)}">
+  schermo(`<div class="wlogo">🔒</div><h1>${esc(T.pw_t)}</h1><p class="ws">${esc(T.pw_p.split(':')[0])}.</p><p class="werr">${esc(err)}</p>
+    ${campo('wPw', 'ABCD-EFGH-JKLM-NPQR', T.pw_t)}
+    ${dove(T.pw_dove, [T.pw_d1, T.pw_d2, T.pw_d3], T.pw_d4)}
     <label class="wck"><input type="checkbox" id="wRic"${ricorda ? ' checked' : ''}> ${esc(T.ricorda)}</label>
     <button class="wbtn wp" id="wPwOk">${esc(T.pw_ok)}</button><p class="wpic">${esc(T.pw_pic)}</p>${LINK}`);
   const i = ov.querySelector('#wPw'), b = ov.querySelector('#wPwOk');
+  tastiIncolla();
   i.focus();
   i.onkeydown = e => { if (e.key === 'Enter') b.click(); };
   b.onclick = async () => {
@@ -241,10 +271,22 @@ async function apri(chiave, nuova) {
 
 function schermoClaude(err = '') {
   schermo(`<div class="wlogo">🔑</div><h1>${esc(T.cl_t)}</h1><p class="ws">${esc(T.cl_p)}</p>
-    <ul class="wlista"><li>${esc(T.cl_1)}</li><li>${esc(T.cl_2)}</li><li>${esc(T.cl_3)}</li></ul><p class="werr">${esc(err)}</p>
-    <input class="win" id="wCl" placeholder="sk-ant-…" autocomplete="off" spellcheck="false" style="letter-spacing:0" aria-label="${esc(T.cl_t)}">
+<p class="werr">${esc(err)}</p>
+    ${campo('wCl', 'sk-ant-…', T.cl_t, ' style="letter-spacing:0"')}
+    ${dove(T.pw_dove.replace(/la trovo|find it/, IT ? 'trovo la chiave' : 'find the key'), [T.cl_d1, T.cl_d2, T.cl_d3], T.cl_d4,
+      `<a class="wvai" id="wClVai" href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">${esc(T.cl_vai)}</a>`)}
+    <ul class="wlista"><li>${esc(T.cl_1)}</li><li>${esc(T.cl_3)}</li></ul>
     <button class="wbtn wp" id="wClOk">${esc(T.cl_ok)}</button><button class="wbtn wg" id="wClDopo">${esc(T.cl_dopo)}</button>`);
   const i = ov.querySelector('#wCl'), b = ov.querySelector('#wClOk');
+  tastiIncolla();
+  // dopo «Apri la pagina delle chiavi»: quando torni qui, la chiave copiata entra da sola nella casella
+  ov.querySelector('#wClVai').onclick = () => {
+    const torna = async () => {
+      if (!document.getElementById('wCl') || document.visibilityState !== 'visible') return;
+      if (await incolla('wCl', /^sk-ant-[\w-]{20,}$/)) { window.removeEventListener('focus', torna); ov.querySelector('#wClOk').focus(); }
+    };
+    window.addEventListener('focus', torna);
+  };
   i.onkeydown = e => { if (e.key === 'Enter') b.click(); };
   b.onclick = async () => {
     const k = i.value.trim();
