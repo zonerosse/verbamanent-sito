@@ -1,0 +1,13 @@
+{{ define "main" }}
+{{- /* Pagine per i clienti (Prezzi, Abbonati, Abbonamento attivo, Il mio abbonamento): nascoste finche' la vendita e' spenta.
+       Il contenuto lo disegna /js/vendita.js dopo aver chiesto a /api/vendita se la vendita e' accesa. */ -}}
+{{- $l := dict }}
+{{- range slice "prezzi" "abbonati" "abbonamento-attivo" "il-mio-abbonamento" "pc-e-telefono" "privacy" "contatti" }}{{ with site.GetPage (printf "/%s" .) }}{{ $l = merge $l (dict (replace .File.ContentBaseName "-" "_") .RelPermalink) }}{{ end }}{{ end }}
+{{- $l = merge $l (dict "home" site.Home.RelPermalink "studia" "/studia/") }}
+<div class="vnd" id="vendita" data-pagina="{{ .Params.pagina }}" data-lingua="{{ site.Language.Lang }}" data-link="{{ $l | jsonify }}" data-email="{{ site.Params.email }}">
+  <div class="wrap vnd-attesa"><p>{{ if eq site.Language.Lang "it" }}Un momento…{{ else }}One moment…{{ end }}</p>
+  <noscript><p>{{ if eq site.Language.Lang "it" }}Questa pagina ha bisogno di JavaScript.{{ else }}This page needs JavaScript.{{ end }}</p></noscript></div>
+</div>
+{{- $js := resources.Get "js/vendita.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}

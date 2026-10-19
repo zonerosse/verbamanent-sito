@@ -2,13 +2,14 @@
 // Si entra con la password messa in Cloudflare (variabile segreta VM_PASSWORD): nel codice non c'e'.
 // «Mantieni l'accesso» = un biscotto firmato valido 30 giorni su quel dispositivo (cambiando la password, scadono tutti).
 //   /privato        Panoramica
-//   /privato/abbonati  Abbonati: chi ha Claude incluso (aggiungi, +1 mese, modifica, togli)
+//   /privato/abbonati  Abbonati: vendita (spenta/accesa, prezzi), prova gratuita, chi ha Claude incluso
 //   /privato/lista  Lista d'attesa (con ?csv=1 il file Excel)
 //   /privato/uso    Consumi Claude della famiglia
 //   /privato/esci   Esci
 import { rispondi as listaCsv } from '../api/lista.js';
 import { datiUso } from '../api/uso.js';
 import { impostazioniProva } from '../api/licenza/index.js';
+import { impostazioniVendita, salvaVendita, controlli, FORNITORI, PIANI_VENDITA } from '../api/vendita/index.js';
 
 const GIORNI = 30;
 const PRIV = { 'x-robots-tag': 'noindex, nofollow', 'cache-control': 'no-store', 'referrer-policy': 'no-referrer', 'x-frame-options': 'DENY' };
@@ -85,8 +86,11 @@ details summary{cursor:pointer;color:var(--blue);font-size:13.5px;margin-top:6px
 .pag{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:14px;flex-wrap:wrap}.pag b{color:var(--ink)}.pag span{color:var(--mut);font-size:13.5px}
 .prv{display:flex;gap:16px;align-items:center;flex-wrap:wrap}.prv select{border:1px solid #cbd5e1;border-radius:8px;padding:8px 10px;font:inherit;font-size:14px}.prv form{margin:0;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .t1{border:0;border-radius:10px;padding:10px 16px;font:inherit;font-weight:700;font-size:14px;cursor:pointer}.t1.on{background:#059669;color:#fff}.t1.off{background:#fff;color:#b91c1c;border:1px solid #fecaca}
+.vgr{display:grid;grid-template-columns:1fr 1.25fr;gap:22px;align-items:start}.vck{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #f1f5f9}.vck form{margin:0 0 0 auto}.vck .vi{width:24px;height:24px;border-radius:50%;background:#fee2e2;color:#b91c1c;display:grid;place-items:center;font-weight:800;font-size:13px;flex:none}.vck.ok .vi{background:#dcfce7;color:#15803d}.vck b{display:block;color:var(--ink);font-size:14px}.vck small{color:var(--mut);font-size:12.5px}
+.vpz h3{margin:0 0 6px;font-size:15px;color:var(--ink)}.vpz input{border:1px solid #cbd5e1;border-radius:7px;padding:6px 8px;font:inherit;font-size:14px;width:84px}.vpz .vcod input{width:100%}.vcod{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-top:8px}.vcod label{font-size:13px;font-weight:600;display:flex;gap:10px;align-items:center;margin-bottom:6px}.vcod select{border:1px solid #cbd5e1;border-radius:7px;padding:6px 8px;font:inherit}
+.t1:disabled{opacity:.45;cursor:not-allowed}
 .msg{background:#dcfce7;color:#166534;border-radius:10px;padding:10px 14px;margin-bottom:14px;font-weight:600}
-@media(max-width:860px){.form{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){.form{grid-template-columns:1fr 1fr}.vgr{grid-template-columns:1fr}}
 @media(max-width:860px){.kpi{grid-template-columns:1fr 1fr}.griglia{grid-template-columns:1fr}.chi div{display:none}.tabs{margin-left:0;order:3;width:100%;padding-bottom:8px;overflow:auto}}`;
 const MARCHIO = '<div class="vm">VM</div><div><b>Verba Manent IA</b><small>Pannello di controllo</small></div>';
 const html = (titolo, corpo, extra = {}) => new Response(`<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>${esc(titolo)} · Verba Manent IA</title><style>${STILE}</style></head><body>${corpo}</body></html>`,
@@ -251,6 +255,7 @@ async function salvaAbbonato(env, f) {
     await env.ATTESA.put('config:prova', JSON.stringify(n));
     return n.attiva ? `Prova gratuita accesa: ${n.giorni} giorni per chi inizia da adesso.` : 'Prova gratuita spenta: il programma funziona per tutti come prima.';
   }
+  if (azione.startsWith('vendita_')) return salvaImpVendita(env, azione, f);
   if (azione === 'prova_piu7') {
     let p = null;
     try { p = JSON.parse(await env.ATTESA.get('prova:' + email) || 'null'); } catch (e) {}
@@ -279,6 +284,91 @@ async function salvaAbbonato(env, f) {
   else if (/^\d+$/.test(sc)) nuovo.scade = piuMesi(new Date().toISOString(), +sc);
   await env.ATTESA.put(k, JSON.stringify(nuovo));
   return `${nuovo.nome} salvato.`;
+}
+
+// ------------------------------------------------------------------ vendita
+const num = v => { const x = parseFloat(String(v || '').replace(',', '.')); return x > 0 && x < 10000 ? Math.round(x * 100) / 100 : null; };
+const euro = x => x == null ? '—' : x.toFixed(2).replace('.', ',');
+async function salvaImpVendita(env, azione, f) {
+  const c = await impostazioniVendita(env);
+  if (azione === 'vendita_prezzi') {
+    for (const p of PIANI_VENDITA) {
+      const x = c.prezzi[p], k = p === 'Studente' ? 's' : 'sp';
+      x.mese = num(f.get(k + '_mese')) ?? x.mese; x.anno = num(f.get(k + '_anno')) ?? x.anno; x.claude = num(f.get(k + '_claude')) ?? x.claude;
+      x.codice_mese = String(f.get(k + '_cm') || '').trim().slice(0, 80); x.codice_anno = String(f.get(k + '_ca') || '').trim().slice(0, 80);
+    }
+    const fo = String(f.get('fornitore') || '');
+    c.fornitore = FORNITORI[fo] ? fo : '';
+    c.prezzi_ok = true;
+    await salvaVendita(env, c);
+    return 'Prezzi salvati.' + (c.attiva ? ' Sul sito si vedono subito.' : '');
+  }
+  if (azione === 'vendita_spunta') {
+    const quale = String(f.get('quale'));
+    if (quale === 'condizioni' || quale === 'fiscale') c[quale] = !c[quale];
+    if (!c[quale] && c.attiva) { c.attiva = false; await salvaVendita(env, c); return 'Tolta la spunta: la vendita si è spenta.'; }
+    await salvaVendita(env, c);
+    return 'Fatto.';
+  }
+  if (azione === 'vendita_on') {
+    if (!controlli(env, c).every(x => x.ok)) return 'Prima servono tutte e quattro le spunte.';
+    c.attiva = true; c.dal = new Date().toISOString();
+    await salvaVendita(env, c);
+    return 'Vendita accesa: la pagina Prezzi e il menu «Prezzi» si vedono sul sito.';
+  }
+  if (azione === 'vendita_off') {
+    c.attiva = false;
+    await salvaVendita(env, c);
+    return 'Vendita spenta: niente abbonamenti nuovi; chi ha già pagato continua fino alla scadenza.';
+  }
+  return '';
+}
+
+async function boxVendita(env, elenco, uso) {
+  const c = await impostazioniVendita(env), ck = controlli(env, c), pronti = ck.every(x => x.ok), manca = ck.filter(x => !x.ok).length;
+  const riga = x => `<div class="vck${x.ok ? ' ok' : ''}"><span class="vi">${x.ok ? '✓' : '✗'}</span><div><b>${esc(x.titolo)}</b><small>${esc(x.dettaglio)}</small></div>${x.auto ? '' :
+    `<form method="post" action="/privato/abbonati"><input type="hidden" name="azione" value="vendita_spunta"><input type="hidden" name="quale" value="${x.id}"><button class="bs">${x.ok ? 'Togli la spunta' : 'Spunta'}</button></form>`}</div>`;
+  const cella = (n, v, step = '0.01') => `<input name="${n}" inputmode="decimal" value="${esc(v ?? '')}" size="6"${step ? '' : ''}>`;
+  const pz = PIANI_VENDITA.map(p => { const x = c.prezzi[p], k = p === 'Studente' ? 's' : 'sp';
+    return `<tr><td><b>${esc(p)}</b></td><td>€ ${cella(k + '_mese', euro(x.mese))}</td><td>€ ${cella(k + '_anno', euro(x.anno))}</td><td>$ ${cella(k + '_claude', euro(x.claude))} <small>≈ ${Math.round(x.claude * 5)} ore</small></td></tr>`; }).join('');
+  const codici = PIANI_VENDITA.map(p => { const x = c.prezzi[p], k = p === 'Studente' ? 's' : 'sp';
+    return `<tr><td>${esc(p)}</td><td><input name="${k}_cm" value="${esc(x.codice_mese)}" placeholder="mensile"></td><td><input name="${k}_ca" value="${esc(x.codice_anno)}" placeholder="annuale"></td></tr>`; }).join('');
+  const forn = `<select name="fornitore"><option value="">— non ancora scelto —</option>${Object.entries(FORNITORI).map(([id, f]) => `<option value="${id}"${c.fornitore === id ? ' selected' : ''}>${f.nome}</option>`).join('')}</select>`;
+  const prezzi = `<form method="post" action="/privato/abbonati" class="vpz"><input type="hidden" name="azione" value="vendita_prezzi">
+    <h3>Prezzi</h3><table><tr><th>Piano</th><th>Al mese</th><th>All'anno</th><th>Claude compreso al mese</th></tr>${pz}</table>
+    <p class="nota" style="margin-top:6px">IVA inclusa. Si vedono sulla pagina Prezzi del sito.${c.prezzi_ok ? '' : ' Adesso ci sono prezzi d\'esempio: cambiali come vuoi e salva.'}</p>
+    <details${c.fornitore ? '' : ''}><summary>Servizio di pagamento e codici dei piani</summary>
+      <div class="vcod"><label>Servizio ${forn}</label>
+      <table><tr><th>Piano</th><th>Codice mensile</th><th>Codice annuale</th></tr>${codici}</table>
+      <p class="nota">I codici li trovi nel servizio di pagamento, nella scheda di ogni prodotto (Lemon Squeezy: «Variant ID»; Paddle: «Price ID»). Le chiavi segrete non vanno qui: le metti tu in Cloudflare. L'indirizzo per gli avvisi del servizio è <b>https://verbamanent.app/api/vendita/webhook</b>.</p></div></details>
+    <button class="bp2" style="margin-top:12px">Salva i prezzi</button></form>`;
+  let corpo;
+  if (!c.attiva) {
+    corpo = `<div class="azioni"><h3>Vendita</h3><span class="badge off">⏸ Spenta</span></div>
+      <div class="vgr"><div>${ck.map(riga).join('')}
+        <form method="post" action="/privato/abbonati" style="margin-top:12px"><input type="hidden" name="azione" value="vendita_on"><button class="t1 on"${pronti ? '' : ' disabled'}>▶ Accendi la vendita${pronti ? '' : ' · ' + (manca === 1 ? 'manca 1 cosa' : 'mancano ' + manca + ' cose')}</button></form></div>
+        <div>${prezzi}</div></div>
+      <p class="nota">Spenta: sul sito la pagina Prezzi dice «Verba Manent non è ancora uscito» e raccoglie le email; nel menu «Prezzi» non c'è. Gli abbonati che aggiungi tu qui sotto funzionano lo stesso.</p>`;
+  } else {
+    const ora = Date.now(), paganti = elenco.filter(a => a.origine === 'pagamento' && (!a.scade || new Date(a.scade) > ora));
+    const nuovi = paganti.filter(a => ora - new Date(a.dal) < 7 * 86400000).length;
+    const f = FORNITORI[c.fornitore] || { commissione: [0.05, 0.5] };
+    const incasso = paganti.reduce((s, a) => s + (a.pag && a.pag.prezzo ? (a.pag.periodo === 'anno' ? a.pag.prezzo / 12 : a.pag.prezzo) : 0), 0);
+    const netto = paganti.reduce((s, a) => { const p = a.pag && a.pag.prezzo ? (a.pag.periodo === 'anno' ? a.pag.prezzo / 12 : a.pag.prezzo) : 0; return s + (p ? p - p * f.commissione[0] - f.commissione[1] * 0.92 / (a.pag.periodo === 'anno' ? 12 : 1) : 0); }, 0);
+    const claude = paganti.reduce((s, a) => s + ((uso[a.email] || {}).usd || 0), 0);
+    corpo = `<div class="azioni"><h3>Vendita</h3><span class="badge ok">● Accesa dal ${esc(giorno(c.dal))}</span></div>
+      <div class="kpi" style="margin:4px 0 14px">
+        <div class="k"><small>Abbonati paganti</small><b>${paganti.length}</b><span>+${nuovi} questa settimana</span></div>
+        <div class="k"><small>Incassi · mese</small><b>€ ${euro(incasso)}</b><span>netto commissioni ≈ € ${euro(netto)}</span></div>
+        <div class="k"><small>Costo Claude · mese</small><b>${usd(claude)}</b><span>≈ ${eur(claude)}</span></div>
+        <div class="k"><small>Margine · mese</small><b>€ ${euro(netto - claude * 0.92)}</b><span>incassi netti − Claude</span></div></div>
+      <div class="vgr"><div>${ck.map(riga).join('')}
+        <form method="post" action="/privato/abbonati" style="margin-top:12px" onsubmit="return confirm('Spegnere la vendita?')"><input type="hidden" name="azione" value="vendita_off"><button class="t1 off">⏸ Spegni la vendita</button></form>
+        <p class="nota">Spegnendo: niente abbonamenti nuovi; chi ha già pagato continua fino alla scadenza.</p></div>
+        <div>${prezzi}</div></div>
+      <p class="nota">Incassi: abbonamenti attivi, l'annuale diviso per 12. Commissioni stimate (5% + 0,50 $ a pagamento); il conto preciso è nel servizio di pagamento.</p>`;
+  }
+  return `<div class="box">${corpo}</div>`;
 }
 
 async function boxProva(env, elenco) {
@@ -341,13 +431,13 @@ async function paginaAbbonati(env, url, messaggio = '') {
   }).join('') || '<tr><td colspan="7" class="vuoto">Ancora nessun abbonato. La famiglia entra da sola la prima volta che usa Claude sul web.</td></tr>';
   return pannello('abb', 'Abbonati', 'Chi ha Claude incluso in Verba Manent', `
     ${messaggio ? `<div class="msg">✓ ${esc(messaggio)}</div>` : ''}
+    ${await boxVendita(env, elenco, uso)}
     ${await boxProva(env, elenco)}
-    <div class="pag"><span class="badge off">⏸ Pagamenti spenti</span><div><b>Vendita non ancora attiva.</b> <span>Quando la accendi, chi paga sul sito entra qui da solo e ne esce quando scade o disdice.</span></div></div>
     <div class="kpi">
       <div class="k"><small>Abbonati attivi</small><b>${attivi.length}</b><span>${conta('Famiglia')} famiglia · ${plur(conta('Studente') + conta('Studente Plus'), 'studente', 'studenti')} · ${conta('Omaggio')} omaggio</span></div>
       <div class="k"><small>In scadenza</small><b>${scadono}</b><span>nei prossimi 7 giorni</span></div>
       <div class="k"><small>Spesa Claude · mese</small><b>${usd(spesa)}</b><span>tutti gli abbonati</span></div>
-      <div class="k"><small>Incassi · mese</small><b>—</b><span>con i pagamenti accesi</span></div>
+      <div class="k"><small>Pagano da soli</small><b>${attivi.filter(a => a.origine === 'pagamento').length}</b><span>entrano ed escono col pagamento</span></div>
     </div>
     <div class="box"><div class="azioni"><h3 id="aggiungi">${m ? 'Modifica ' + esc(m.nome || m.email) : 'Aggiungi abbonato'}</h3>${m ? '<a class="bs" href="/privato/abbonati">Annulla</a>' : ''}</div>${form}
       <table><tr><th>Abbonato</th><th>Piano</th><th>Dal</th><th>Scadenza</th><th>Claude questo mese</th><th>Origine</th><th></th></tr>${righe}</table>
