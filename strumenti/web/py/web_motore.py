@@ -110,15 +110,22 @@ def urlopen(req, data=None, timeout=60, *a, **k):
     if isinstance(req, str):
         req = urllib.request.Request(req, data=data)
     url, metodo, corpo = req.full_url, req.get_method(), req.data if req.data is not None else data
+    famiglia = "api.anthropic.com" in url and bool(js.vmFamiglia())
+    if famiglia:
+        # Claude «gia' pronto» per la famiglia: la chiave sta nella cassaforte del sito, non qui
+        url = str(js.location.origin) + "/api/claude" + url.split("api.anthropic.com", 1)[1]
     xhr = js.XMLHttpRequest.new()
     xhr.open(metodo, url, False)
     xhr.responseType = "arraybuffer"
     if timeout:
         xhr.timeout = int(float(timeout) * 1000)
     for nome, valore in req.header_items():
-        if nome.lower() not in VIETATE:
+        if nome.lower() not in VIETATE and not (famiglia and nome.lower() == "x-api-key"):
             xhr.setRequestHeader(nome, str(valore))
-    if "api.anthropic.com" in url:
+    if famiglia:
+        t = js.vmToken()
+        xhr.setRequestHeader("X-VM-Google", str(t.token) if t else "")
+    elif "api.anthropic.com" in url:
         # Claude chiamato dalla pagina, con la chiave della persona: Anthropic lo permette con questa intestazione
         xhr.setRequestHeader("anthropic-dangerous-direct-browser-access", "true")
     if corpo is not None and not isinstance(corpo, (bytes, bytearray, memoryview)):

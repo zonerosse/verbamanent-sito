@@ -265,6 +265,14 @@ async function apri(chiave, nuova) {
     bar.style.width = '100%';
     ultimoGiro = Date.now(); sporco = false;
   } catch (e) { return mostraErrore(T.errore + e.message); }
+  // Claude «gia' pronto»: gli account della famiglia usano la chiave che sta nella cassaforte del sito
+  let fam = false;
+  try { fam = !!(await fetch('/api/claude/stato', {headers: {'X-VM-Google': tok.token}}).then(r => r.json())).famiglia; } catch (e) {}
+  if (fam) {
+    await chiedi('famiglia', {si: true});
+    if (!salvatoPrima.claude) { try { await chiedi('chiama', {nome: 'prova_chiave', args: ['sk-ant-verbamanent-famiglia']}); } catch (e) {} }
+    return entra();
+  }
   if (!salvatoPrima.claude && salvaLoc('vm-web-claude-dopo') !== '1') return schermoClaude();
   entra();
 }

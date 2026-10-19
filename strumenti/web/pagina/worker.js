@@ -26,6 +26,8 @@ self.vmLink = u => postMessage({evento: 'link', url: String(u)});
 self.vmRicarica = () => postMessage({evento: 'ricarica'});
 self.vmToken = () => token && Date.now() < scade ? {token, resta: Math.floor((scade - Date.now()) / 1000)} : null;
 self.vmEmail = () => email;
+let famiglia = false;
+self.vmFamiglia = () => famiglia;
 self.vmFase = f => postMessage({evento: 'fase', f: Number(f) || 0});
 
 // ---------------------------------------------------------------- avvio
@@ -80,6 +82,7 @@ setInterval(() => { if (salvare) salva(); }, 20000);
 const fa = {
   async carica(m) { await carica(m); return salvato(); },
   token(m) { token = m.token || null; scade = Date.now() + Math.max(0, (m.resta || 0) - 60) * 1000; if (m.email) email = m.email; return true; },
+  famiglia(m) { famiglia = !!m.si; return famiglia; },
   password(m) { return JSON.parse(wm.controlla_password(m.chiave)); },
   async avvia(m) {
     if (m.ricorda && !ricorda) {     // «Ricorda» scelto adesso: da qui in poi le lezioni restano nel browser
