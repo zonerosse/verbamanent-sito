@@ -30,6 +30,11 @@ flussi:
     - { ic: "🎙️", t: "Record the meeting", p: "Meet, Teams, Zoom or in the room" }
     - { ic: "🗣️", t: "Who said what", p: "Voices kept apart, with names" }
     - { ic: "📋", t: "Minutes ready", p: "Decisions and action items with owners and deadlines" }
+  dsa:
+    - { ic: "🎙️", t: "Record the lecture", p: "With Dyslexia mode already on" }
+    - { ic: "🎤", t: "Listen and read", p: "Lecture karaoke and text-to-speech" }
+    - { ic: "🗺️", t: "Test map", p: "Key words and formulas on an A4 sheet" }
+    - { ic: "📋", t: "For your teacher", p: "A sheet listing the tools you use" }
 
 confronti:
   sbobine:
@@ -50,6 +55,9 @@ confronti:
   verbale:
     senza: ["The note-taker only half listens", "The minutes arrive days later", "Action items with no owner or deadline"]
     con: ["Everyone takes part, nobody takes notes", "Minutes ready when the meeting ends", "Every action with an owner and a deadline"]
+  dsa:
+    senza: ["A different app for every tool", "Maps built by hand after every lecture", "Text-to-speech reads, but it isn't your lecturer's voice"]
+    con: ["Every tool in one DSA space", "A test map ready from your lectures", "Karaoke with the lecturer's real voice"]
 
 finali:
   sbobine:
@@ -106,3 +114,12 @@ finali:
       - { ic: "📣", t: "Notify participants", p: "A ready-made message to say the meeting is being recorded." }
     img: "cose-da-fare-en"
     didascalia: "Action items gathered from all your minutes, with owners and deadlines."
+  dsa:
+    t: "Verba Manent puts every assistive tool in one place"
+    schede:
+      - { ic: "⭐", t: "DSA space", p: "The tools in order: in class, after the lecture, for the test, for your teacher." }
+      - { ic: "🎤", t: "Lecture karaoke", p: "The lecturer's real voice with the words lighting up." }
+      - { ic: "🗺️", t: "Test map", p: "An A4 sheet with key words and formulas, with name and class." }
+      - { ic: "📋", t: "The tools I use", p: "The sheet for your school plan or university." }
+    img: "spazio-dsa-en"
+    didascalia: "The DSA space: every assistive tool, grouped by moment."

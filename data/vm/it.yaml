@@ -30,6 +30,11 @@ flussi:
     - { ic: "🎙️", t: "Registra la riunione", p: "Meet, Teams, Zoom o in sala" }
     - { ic: "🗣️", t: "Chi ha detto cosa", p: "Le voci separate e con i nomi" }
     - { ic: "📋", t: "Verbale pronto", p: "Decisioni e cose da fare con chi e entro quando" }
+  dsa:
+    - { ic: "🎙️", t: "Registra la lezione", p: "Con la Modalità DSA già accesa" }
+    - { ic: "🎤", t: "Riascolti e leggi", p: "Karaoke della lezione e sintesi vocale" }
+    - { ic: "🗺️", t: "Mappa per la verifica", p: "Parole chiave e formule su un A4" }
+    - { ic: "📋", t: "Per il docente", p: "Il foglio con gli strumenti che usi" }
 
 confronti:
   sbobine:
@@ -50,6 +55,9 @@ confronti:
   verbale:
     senza: ["Chi verbalizza ascolta a metà", "Il verbale arriva giorni dopo", "Azioni senza nome né scadenza"]
     con: ["Tutti partecipano, nessuno scrive", "Verbale pronto a fine riunione", "Ogni azione con chi e entro quando"]
+  dsa:
+    senza: ["Un programma per ogni strumento", "Mappe da costruire a mano dopo ogni lezione", "La sintesi vocale legge, ma non è la voce del docente"]
+    con: ["Tutti gli strumenti in uno Spazio DSA", "Mappa per la verifica pronta dalle lezioni", "Il karaoke con la voce vera del prof"]
 
 finali:
   sbobine:
@@ -106,3 +114,12 @@ finali:
       - { ic: "📣", t: "Avvisa i partecipanti", p: "Un messaggio pronto per dire che la riunione viene registrata." }
     img: "cose-da-fare"
     didascalia: "Le cose da fare raccolte da tutti i verbali, con chi e entro quando."
+  dsa:
+    t: "Verba Manent mette gli strumenti compensativi in un posto solo"
+    schede:
+      - { ic: "⭐", t: "Spazio DSA", p: "Gli strumenti in ordine: in aula, dopo la lezione, per la verifica, per il docente." }
+      - { ic: "🎤", t: "Karaoke della lezione", p: "La voce vera del prof con le parole che si illuminano." }
+      - { ic: "🗺️", t: "Mappa per la verifica", p: "Un A4 con parole chiave e formule, con nome e classe." }
+      - { ic: "📋", t: "Gli strumenti che uso", p: "Il foglio per il PDP o per l'università." }
+    img: "spazio-dsa"
+    didascalia: "Lo Spazio DSA: tutti gli strumenti compensativi, divisi per momento."
