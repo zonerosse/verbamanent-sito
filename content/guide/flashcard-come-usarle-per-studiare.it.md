@@ -3,6 +3,7 @@ seotitolo: "Flashcard: come usarle per studiare davvero"
 title: "Flashcard: come usarle per studiare davvero (e ricordare all'esame)"
 description: "Perché le flashcard funzionano, come scriverle bene e come ripassarle con il sistema Leitner. Guida pratica per l'università, con le ricerche."
 date: 2026-10-16
+lastmod: 2026-10-19
 vm: "flashcard"
 slug: "flashcard-come-usarle-per-studiare"
 ---
@@ -66,9 +67,13 @@ Tutte e due funzionano.
 
 La scelta migliore è quella che userai davvero ogni giorno.
 
+{{< vm-nota >}}le flashcard di ogni lezione si esportano per **Anki** con un tocco, con la slide e il minuto della lezione e un mazzo per materia. Se esporti di nuovo dopo altre lezioni, Anki aggiorna le carte senza doppioni e senza perdere i tuoi ripassi.{{< /vm-nota >}}
+
 {{< vm-confronto tema="flashcard" >}}
 
-{{< vm-nota >}}le carte sbagliate tornano finché non le sai, come nelle scatole di Leitner: tocchi «Da rivedere» o «La sapevo» e al resto pensa il programma.{{< /vm-nota >}}
+{{< vm-nota >}}il **Ripasso del giorno** fa il lavoro delle scatole di Leitner: ogni giorno ti propone poche carte prese da tutte le lezioni, prima quelle che sbagli, distribuite fino alla data dell'esame. Le ripassi con le carte, a voce, a crocette o in cinque minuti.{{< /vm-nota >}}
+
+{{< vm-schermata img="ripasso-giorno" didascalia="Il Ripasso del giorno: quante carte oggi, di quali lezioni, e come vuoi ripassarle." >}}
 
 ## Gli errori più comuni
 

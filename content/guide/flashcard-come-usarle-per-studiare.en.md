@@ -3,6 +3,7 @@ seotitolo: "How to Study With Flashcards (and Remember in the Exam)"
 title: "How to study with flashcards (and still remember on exam day)"
 description: "Why flashcards work, how to write good ones and how to review them with the Leitner system. A practical guide for university students, backed by research."
 date: 2026-10-17
+lastmod: 2026-10-19
 vm: "flashcard"
 url: "/en/guides/how-to-study-with-flashcards/"
 ---
@@ -66,9 +67,13 @@ Both work.
 
 The best choice is the one you'll actually use every day.
 
+{{< vm-nota >}}each lecture's flashcards export for **Anki** in one tap, with the slide and the minute of the lecture and one deck per subject. Export again after more lectures and Anki updates the cards with no duplicates and without losing your reviews.{{< /vm-nota >}}
+
 {{< vm-confronto tema="flashcard" >}}
 
-{{< vm-nota >}}the cards you miss come back until you know them, just like Leitner's boxes: you tap «Review again» or «I knew it» and the app does the rest.{{< /vm-nota >}}
+{{< vm-nota >}}**Daily review** does the job of Leitner's boxes: every day it offers a few cards from all your lectures, the ones you miss first, spread out until the exam date. Review them as cards, out loud, as multiple choice or in five minutes.{{< /vm-nota >}}
+
+{{< vm-schermata img="ripasso-giorno-en" didascalia="Daily review: how many cards today, from which lectures, and how you want to review them." >}}
 
 ## The most common mistakes
 

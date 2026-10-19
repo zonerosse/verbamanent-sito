@@ -3,6 +3,7 @@ seotitolo: "Metodo Cornell: spiegazione ed esempio"
 title: "Il metodo Cornell per prendere appunti: spiegazione ed esempio"
 description: "Il metodo Cornell spiegato passo per passo: come dividere la pagina, le 5 R per studiare, un esempio completo e come usarlo su carta, PC e tablet."
 date: 2026-10-16
+lastmod: 2026-10-19
 vm: "cornell"
 slug: "metodo-cornell"
 ---
@@ -84,6 +85,10 @@ Il metodo funziona su qualsiasi supporto.
 - **Su carta**: traccia una riga verticale a circa un terzo del foglio e una orizzontale in fondo. Esistono anche quaderni già stampati con lo schema Cornell.
 - **Al computer**: in Word o in Google Documenti basta una tabella a due colonne con una riga finale unita per la sintesi.
 - **Sul tablet**: le app per gli appunti a mano permettono di usare un modello Cornell come sfondo di ogni pagina.
+
+{{< vm-nota >}}gli appunti Cornell arrivano già pronti in PDF. Se hai un DSA, in **Come leggo meglio** scegli il carattere (anche OpenDyslexic), la grandezza, lo spazio tra le righe e il colore dello sfondo; con **Ascolta gli appunti** li senti letti a voce, con la frase che si illumina.{{< /vm-nota >}}
+
+{{< vm-schermata img="come-leggo" didascalia="Come leggo meglio: carattere, grandezza, spazi e colore dello sfondo, con l'anteprima." >}}
 
 ## Pro e contro
 

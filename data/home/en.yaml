@@ -137,7 +137,7 @@ dsa:
     - { ic: "✍️", t: "Dictated written answers", p: "Answer by voice: marking looks at content, never at spelling." }
     - { ic: "📋", t: "Your support plan sheet", p: "«The tools I use»: a PDF listing the assistive tools you really use, for your school or university." }
   legge_t: "Tools provided for by law"
-  legge_p: "In Italy, Law 170/2010 grants students with dyslexia and other SpLDs the right to assistive tools such as text-to-speech and concept maps, and the 2011 guidelines allow up to 30% extra time in university exams. Verba Manent puts them all in one program."
+  legge_p: "In Italy, Law 170/2010 grants students with dyslexia and other SpLDs the right to assistive tools such as text-to-speech and concept maps, and the 2011 guidelines (Ministerial Decree 5669) add extra time in tests: at university usually up to 30%. Verba Manent puts them all in one program."
 
 nonfa:
   kicker: "What it won't do"

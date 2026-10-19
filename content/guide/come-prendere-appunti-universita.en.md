@@ -3,6 +3,7 @@ seotitolo: "How to Take Notes in College: A Method That Works"
 title: "How to take notes in college: the method that actually works"
 description: "How to take notes in college or university without missing anything: what to do before, during and after the lecture, the Cornell method and how to review, backed by research."
 date: 2026-10-17
+lastmod: 2026-10-19
 vm: "appunti"
 url: "/en/guides/how-to-take-notes-in-college/"
 ---
@@ -38,6 +39,8 @@ So during the lecture:
 - **use your own abbreviations**, always the same ones.
 
 If you miss a bit, leave a gap and carry on. You'll fill it in later.
+
+{{< vm-nota >}}during the lecture you tap ⭐ at the moment that matters or type a couple of words: the note takes the exact minute of the recording. If the lecturer writes on the board, take a **photo**: it is attached to that minute and what's written ends up in your notes.{{< /vm-nota >}}
 
 {{< vm-confronto tema="appunti" >}}
 
@@ -78,6 +81,10 @@ So when you review:
 - **spread your review** over several days instead of cramming it all before the exam: a little and often beats a lot at once;
 - **explain the topic out loud**, to a classmate or to yourself: if you can't explain it simply, you haven't understood it yet.
 
+{{< vm-nota >}}**Daily review** picks a few cards every day from all your lectures, spread out until the exam date: you review them as cards, out loud, as multiple choice or in five minutes. And **Your tutor** tells you what to do today and where you are going wrong.{{< /vm-nota >}}
+
+{{< vm-schermata img="ripasso-giorno-en" didascalia="Daily review: a few cards a day from every subject, and four ways to review them." >}}
+
 ## What about lecture recordings and transcripts?
 
 Many students record lectures or share full transcripts within their course. They are useful for catching up on a missed lecture or checking a passage, but **they don't replace notes**: reading a two-hour transcript is slow, and without reworking it you're back to copying without understanding.
@@ -85,6 +92,21 @@ Many students record lectures or share full transcripts within their course. The
 The best way to use them is as **a source to complete** your notes, not as a substitute.
 
 One caution: before recording a lecture, check your university's rules and ask the lecturer. Many institutions have a policy on it, and lecturers have rights over their lectures.
+
+## If you have dyslexia or another SpLD
+
+Dyslexia, dysgraphia and the other specific learning difficulties make the very thing you do in a lecture harder: writing fast while you listen. That is why in Italy Law 170/2010 provides for **assistive tools** such as recording the lecture, text-to-speech and concept maps, and the 2011 guidelines add extra time in tests: at university usually up to 30%.
+
+A few practical tips:
+
+- **record the lecture** (with the lecturer's permission) and write down only key words and questions;
+- **turn your notes into a map**: one page of connected concepts is easier to review than three pages of text;
+- **listen instead of rereading**, with text-to-speech;
+- **choose the font and background that tire you least**: many people with dyslexia read better with highly legible fonts, more line spacing and a soft background.
+
+{{< vm-schermata img="spazio-dsa-en" didascalia="The Verba Manent DSA space: the assistive tools in order, in class, after the lecture and for the test." >}}
+
+You'll find every tool on the [Dyslexia](/en/dyslexia/) page.
 
 ## The most common mistakes
 
@@ -102,5 +124,7 @@ One caution: before recording a lecture, check your university's rules and ask t
 - Morehead, K., Dunlosky, J., Rawson, K. A. (2019). *How Much Mightier Is the Pen Than the Keyboard for Note-Taking? A Replication and Extension of Mueller and Oppenheimer (2014)*. Educational Psychology Review. [doi:10.1007/s10648-019-09468-2](https://doi.org/10.1007/s10648-019-09468-2)
 - Roediger, H. L., Karpicke, J. D. (2006). *Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention*. Psychological Science. [doi:10.1111/j.1467-9280.2006.01693.x](https://doi.org/10.1111/j.1467-9280.2006.01693.x)
 - Cornell University, Learning Strategies Center. [The Cornell Note Taking System](https://lsc.cornell.edu/how-to-study/taking-notes/cornell-note-taking-system/)
+- Italian Law no. 170 of 8 October 2010, *New rules on specific learning disorders in education*. [Normattiva](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2010-10-08;170)
+- University of Foggia, *Guidelines for students with disabilities and SpLDs* (extra time up to 30%, Ministerial Decree 5669/2011). [PDF, Italian](https://www.studiumanistici.unifg.it/sites/st06/files/2024-04/linee-guida-disabilit%C3%A0-dsa.pdf)
 
 </div>

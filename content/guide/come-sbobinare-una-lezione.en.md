@@ -3,6 +3,7 @@ seotitolo: "How to Transcribe a Lecture, With AI Too"
 title: "How to transcribe a lecture (with AI too): a guide for students"
 description: "How to transcribe a lecture by hand or with artificial intelligence, how to share transcripts with your classmates and what the rules say about recording lectures."
 date: 2026-10-17
+lastmod: 2026-10-19
 vm: "sbobine"
 url: "/en/guides/how-to-transcribe-a-lecture/"
 ---
@@ -37,6 +38,8 @@ Today the longest part, writing down what you hear, can be done by AI in a few m
 3. **check the critical points**: proper names, technical terms, numbers, formulas. These are the most frequent errors;
 4. **tidy up and structure**: headings, lists, slides in the right place.
 
+{{< vm-nota >}}if the lecture hall is noisy, **Noisy classroom** cleans up the audio before transcribing. And with a **photo of the board**, what the lecturer writes ends up in the transcript at the right minute.{{< /vm-nota >}}
+
 {{< vm-confronto tema="sbobine" >}}
 
 For the options available, from online services to programs that work on your own PC, there's a comparison in the guide on [how to transcribe audio to text](/en/guides/transcribe-audio-to-text/).
@@ -60,6 +63,10 @@ A tip: whoever transcribes a lecture learns it best, because they have to listen
 A transcript is very handy for catching up on a missed lecture or checking a passage. But **studying only from transcripts** has a limit: two hours of lecture become dozens of pages, and rereading them is slow and not very effective.
 
 The best approach is to use them to build your own notes: key ideas, questions, summary. The method is in the guide on [how to take notes in college](/en/guides/how-to-take-notes-in-college/), and for review [flashcards](/en/guides/how-to-study-with-flashcards/) work brilliantly.
+
+{{< vm-nota >}}to check a passage there's **Lecture karaoke**: you hear the lecturer's real voice while the words light up, so you spot at once where the transcript went wrong. If you add the PDF of your **textbook**, each lecture also shows you the right pages.{{< /vm-nota >}}
+
+{{< vm-schermata img="karaoke-en" didascalia="Lecture karaoke: the lecturer's voice with the words lighting up." >}}
 
 ## Can you record a lecture? What the rules say
 

@@ -3,6 +3,7 @@ seotitolo: "Come prendere appunti all'università: il metodo"
 title: "Come prendere appunti all'università: il metodo che funziona davvero"
 description: "Come prendere appunti all'università senza perdere pezzi: cosa fare prima, durante e dopo la lezione, il metodo Cornell e come ripassare, con le ricerche."
 date: 2026-10-16
+lastmod: 2026-10-19
 vm: "appunti"
 slug: "come-prendere-appunti-universita"
 ---
@@ -38,6 +39,8 @@ Durante la lezione quindi:
 - **usa abbreviazioni tue**, sempre le stesse.
 
 Se ti perdi un pezzo, lascia uno spazio e prosegui. Lo recuperi dopo.
+
+{{< vm-nota >}}durante la lezione tocchi ⭐ nel momento che conta o scrivi due parole: la nota prende il minuto esatto della registrazione. Se il docente scrive alla lavagna, fai una **foto**: si aggancia a quel minuto e quello che c'è scritto finisce negli appunti.{{< /vm-nota >}}
 
 {{< vm-confronto tema="appunti" >}}
 
@@ -78,6 +81,10 @@ Per ripassare quindi:
 - **distribuisci il ripasso** su più giorni invece di concentrarlo tutto prima dell'esame: poco ma spesso funziona meglio di tanto in una volta sola;
 - **spiega l'argomento a voce**, a un compagno o a te stesso: se non riesci a spiegarlo semplice, non l'hai ancora capito.
 
+{{< vm-nota >}}il **Ripasso del giorno** sceglie ogni giorno poche carte fra tutte le tue lezioni, distribuite fino alla data dell'esame: le ripassi con le carte, a voce, a crocette o in cinque minuti. E **Il tuo tutor** ti dice cosa fare oggi e dove stai sbagliando.{{< /vm-nota >}}
+
+{{< vm-schermata img="ripasso-giorno" didascalia="Il Ripasso del giorno: poche carte al giorno da tutte le materie, e quattro modi per ripassarle." >}}
+
 ## E le sbobine?
 
 In molte università italiane si usano le sbobine: la lezione registrata e trascritta parola per parola, spesso divisa tra compagni. Sono utili per recuperare una lezione persa o controllare un passaggio, ma **non sostituiscono gli appunti**: leggere una trascrizione di due ore è lento, e senza rielaborazione si torna al problema del copiare senza capire.
@@ -85,6 +92,21 @@ In molte università italiane si usano le sbobine: la lezione registrata e trasc
 Il modo migliore di usarle è come **fonte per completare** i tuoi appunti, non al posto loro.
 
 Un'avvertenza: prima di registrare una lezione verifica le regole della tua università e chiedi al docente. Molti atenei lo regolano, e il docente ha diritti sulla sua lezione.
+
+## Se hai un DSA
+
+Dislessia, disgrafia e gli altri disturbi specifici dell'apprendimento rendono più faticoso proprio quello che si fa a lezione: scrivere in fretta mentre si ascolta. Per questo la legge 170/2010 prevede gli **strumenti compensativi**, come la registrazione della lezione, la sintesi vocale e le mappe concettuali, e le linee guida del 2011 aggiungono il tempo in più nelle prove: all'università di solito fino al 30%.
+
+Qualche consiglio pratico:
+
+- **registra la lezione** (con il permesso del docente) e scrivi solo le parole chiave e i dubbi;
+- **trasforma gli appunti in una mappa**: una pagina sola, con i concetti collegati, si rilegge più facilmente di tre pagine di testo;
+- **ascolta invece di rileggere**, con la sintesi vocale;
+- **scegli il carattere e lo sfondo che ti stancano meno**: molte persone con dislessia leggono meglio con caratteri ad alta leggibilità, più spazio tra le righe e uno sfondo tenue.
+
+{{< vm-schermata img="spazio-dsa" didascalia="Lo Spazio DSA di Verba Manent: gli strumenti compensativi in ordine, in aula, dopo la lezione e per la verifica." >}}
+
+Trovi tutti gli strumenti nella pagina [DSA](/dsa/).
 
 ## Gli errori più comuni
 
@@ -102,5 +124,7 @@ Un'avvertenza: prima di registrare una lezione verifica le regole della tua univ
 - Morehead, K., Dunlosky, J., Rawson, K. A. (2019). *How Much Mightier Is the Pen Than the Keyboard for Note-Taking? A Replication and Extension of Mueller and Oppenheimer (2014)*. Educational Psychology Review. [doi:10.1007/s10648-019-09468-2](https://doi.org/10.1007/s10648-019-09468-2)
 - Roediger, H. L., Karpicke, J. D. (2006). *Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention*. Psychological Science. [doi:10.1111/j.1467-9280.2006.01693.x](https://doi.org/10.1111/j.1467-9280.2006.01693.x)
 - Cornell University, Learning Strategies Center. [The Cornell Note Taking System](https://lsc.cornell.edu/how-to-study/taking-notes/cornell-note-taking-system/)
+- Legge 8 ottobre 2010, n. 170, *Nuove norme in materia di disturbi specifici di apprendimento in ambito scolastico*. [Normattiva](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2010-10-08;170)
+- Università di Foggia, *Linee guida per studenti con disabilità e DSA* (tempo aggiuntivo fino al 30%, DM 5669/2011). [PDF](https://www.studiumanistici.unifg.it/sites/st06/files/2024-04/linee-guida-disabilit%C3%A0-dsa.pdf)
 
 </div>

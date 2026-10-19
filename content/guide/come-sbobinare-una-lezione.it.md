@@ -3,6 +3,7 @@ seotitolo: "Come sbobinare una lezione, anche con l'IA"
 title: "Come sbobinare una lezione (anche con l'IA): guida per universitari"
 description: "Cos'è una sbobina, come sbobinare una lezione a mano o con l'intelligenza artificiale, come organizzare le sbobine di gruppo e cosa dice la legge."
 date: 2026-10-16
+lastmod: 2026-10-19
 vm: "sbobine"
 slug: "come-sbobinare-una-lezione"
 ---
@@ -39,6 +40,8 @@ Oggi la parte più lunga, cioè scrivere quello che si sente, la può fare l'int
 3. **controlla i punti critici**: nomi propri, termini tecnici, numeri, formule. Sono gli errori più frequenti;
 4. **sistema e struttura**: titoli, elenchi, slide al posto giusto.
 
+{{< vm-nota >}}se l'aula è rumorosa, **Aula rumorosa** pulisce l'audio prima di trascrivere. E con la **foto alla lavagna** quello che il docente scrive finisce nella sbobina, al minuto giusto.{{< /vm-nota >}}
+
 {{< vm-confronto tema="sbobine" >}}
 
 Per le opzioni disponibili, dai servizi online ai programmi che lavorano sul tuo PC, trovi un confronto nella guida su [come trascrivere audio in testo](/guide/trascrivere-audio-in-testo/).
@@ -62,6 +65,10 @@ Un consiglio: chi sbobina una lezione è quello che la impara meglio, perché è
 La sbobina è utilissima per recuperare una lezione persa o controllare un passaggio. Ma **studiare solo sulle sbobine** ha un limite: due ore di lezione diventano decine di pagine, e rileggerle è lento e poco efficace.
 
 Il modo migliore è usarle per costruire i propri appunti: concetti chiave, domande, sintesi. Il metodo per farlo è nella guida su [come prendere appunti all'università](/guide/come-prendere-appunti-universita/), e per il ripasso funzionano benissimo le [flashcard](/guide/flashcard-come-usarle-per-studiare/).
+
+{{< vm-nota >}}per controllare un passaggio c'è il **Karaoke della lezione**: senti la voce vera del docente mentre le parole si illuminano, e trovi subito dove la trascrizione ha sbagliato. Se aggiungi il PDF del **libro di testo**, per ogni lezione trovi anche le pagine giuste.{{< /vm-nota >}}
+
+{{< vm-schermata img="karaoke" didascalia="Il Karaoke della lezione: la voce del docente con le parole che si illuminano." >}}
 
 ## Si può registrare una lezione? Cosa dice la legge
 

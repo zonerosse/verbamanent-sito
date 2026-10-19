@@ -9,7 +9,7 @@ flussi:
     - { ic: "🎙️", t: "You listen", p: "Verba Manent records and transcribes" }
     - { ic: "⭐", t: "Mark the key points", p: "A couple of words or a star at the right moment" }
     - { ic: "📚", t: "Notes after class", p: "Cornell or exam-ready, with the slides" }
-    - { ic: "🃏", t: "Review", p: "Flashcards and likely exam questions ready" }
+    - { ic: "🃏", t: "Review", p: "Daily review until the exam" }
   flashcard:
     - { ic: "🎙️", t: "Recorded lecture", p: "Online or in the classroom" }
     - { ic: "🃏", t: "Automatic flashcards", p: "Questions and answers from the lecture" }
@@ -58,14 +58,14 @@ finali:
       - { ic: "💻", t: "Transcribes on your PC", p: "Transcription happens on your computer: the audio never goes online." }
       - { ic: "🗣️", t: "Who's speaking", p: "Tells the lecturer apart from students' questions." }
       - { ic: "📚", t: "Notes, not just text", p: "Turns the transcript into Cornell and exam-ready notes." }
-      - { ic: "🏫", t: "In the classroom too", p: "Records from the laptop microphone when the lecturer is right in front of you." }
+      - { ic: "🔇", t: "Even in a noisy room", p: "Records from the laptop and cleans up the audio before transcribing." }
     img: "chi-parla-en"
     didascalia: "The transcript with voices kept apart: you choose the names, or the AI suggests them."
   appunti:
     t: "Verba Manent takes the notes for you"
     schede:
       - { ic: "⭐", t: "Your notes during class", p: "A couple of words or a star: the note gets the exact minute of the recording." }
-      - { ic: "💬", t: "Ask during class", p: "Lost the thread? Ask what's being discussed and get an answer in seconds." }
+      - { ic: "📷", t: "Photo of the board", p: "Attached to the right minute, and what's written ends up in your notes." }
       - { ic: "📚", t: "Notes ready", p: "Cornell or exam-ready, with the lecturer's slides in the right place." }
       - { ic: "🃏", t: "Flashcards", p: "The lecture's questions ready for review." }
     img: "note-durante-en"
@@ -75,8 +75,8 @@ finali:
     schede:
       - { ic: "🃏", t: "Cards ready", p: "Questions and answers drawn from what the lecturer said." }
       - { ic: "⭐", t: "The most likely ones", p: "Stars mark the questions that matter most for the exam." }
-      - { ic: "🔁", t: "«I knew it» or «Review again»", p: "Cards you miss come back until you know them." }
-      - { ic: "🎯", t: "Mock exam", p: "Questions, a written answer and a grade." }
+      - { ic: "🔁", t: "Daily review", p: "A few cards a day, the ones you miss first, until the exam." }
+      - { ic: "⬇️", t: "Export for Anki", p: "One deck per subject, with the slide and the minute of the lecture." }
     img: "flashcard-en"
     didascalia: "Reviewing with flashcards: tap the card to flip it, then say whether you knew it."
   trascrivere:
@@ -93,7 +93,7 @@ finali:
     schede:
       - { ic: "📝", t: "Cornell format", p: "Keywords and questions, notes and summary, page after page." }
       - { ic: "🖼️", t: "With the slides", p: "The lecturer's slides placed at the right point of the lecture." }
-      - { ic: "📄", t: "PDF ready", p: "To print or to read on a tablet." }
+      - { ic: "👓", t: "Easy to read", p: "A ready PDF, with the font, spacing and background you prefer." }
       - { ic: "🎯", t: "Exam-ready format too", p: "A second format built for review, alongside Cornell if you like." }
     img: "appunti-pronti-en"
     didascalia: "When the lecture ends: «Your first notes are ready», in Cornell format."

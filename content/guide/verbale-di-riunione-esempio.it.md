@@ -3,6 +3,7 @@ seotitolo: "Verbale di riunione: esempio e modello"
 title: "Verbale di riunione: esempio pronto e modello da copiare"
 description: "Come scrivere un verbale di riunione chiaro e utile: cosa deve contenere, un esempio completo, un modello vuoto da copiare e gli errori da evitare."
 date: 2026-10-16
+lastmod: 2026-10-19
 vm: "verbale"
 slug: "verbale-di-riunione-esempio"
 ---
@@ -106,6 +107,8 @@ PROSSIMA RIUNIONE
 - **Frasi chiare e brevi**: chi era assente deve capire tutto senza chiedere.
 - **Mandalo a tutti**, assenti compresi, e chiedi di segnalare eventuali correzioni entro un termine.
 - **Riparti dal verbale** alla riunione successiva: la prima cosa da fare è controllare le azioni della volta prima.
+
+{{< vm-nota >}}quando inizia una riunione, Verba Manent ti ricorda le cose ancora aperte dalla volta prima; se qualcuno dice che sono fatte, nel nuovo verbale risultano chiuse.{{< /vm-nota >}}
 
 {{< vm-confronto tema="verbale" >}}
 

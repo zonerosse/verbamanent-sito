@@ -3,6 +3,7 @@ seotitolo: "Cornell Note-Taking Method: How It Works, With an Example"
 title: "The Cornell note-taking method: how it works, with an example"
 description: "The Cornell method explained step by step: how to divide the page, the 5 Rs of studying, a complete example and how to use it on paper, laptop and tablet."
 date: 2026-10-17
+lastmod: 2026-10-19
 vm: "cornell"
 url: "/en/guides/cornell-note-taking-method/"
 ---
@@ -84,6 +85,10 @@ The method works on any medium.
 - **On paper**: draw a vertical line about a third of the way across and a horizontal one near the bottom. You can also buy notebooks pre-printed with the Cornell layout.
 - **On a laptop**: in Word or Google Docs, a two-column table with a merged last row for the summary is all you need.
 - **On a tablet**: handwriting apps let you use a Cornell template as the background of every page.
+
+{{< vm-nota >}}Cornell notes arrive ready as a PDF. If you have dyslexia, in **How I read best** you choose the font (OpenDyslexic too), the size, the line spacing and the background colour; with **Listen to the notes** you hear them read aloud, with the sentence lighting up.{{< /vm-nota >}}
+
+{{< vm-schermata img="come-leggo-en" didascalia="How I read best: font, size, spacing and background colour, with a live preview." >}}
 
 ## Pros and cons
 

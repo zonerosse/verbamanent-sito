@@ -9,7 +9,7 @@ flussi:
     - { ic: "🎙️", t: "Tu ascolti", p: "Verba Manent registra e trascrive" }
     - { ic: "⭐", t: "Segni i punti chiave", p: "Due parole o una stella nel momento giusto" }
     - { ic: "📚", t: "Appunti a fine lezione", p: "Cornell o Formato Esame, con le slide" }
-    - { ic: "🃏", t: "Ripassi", p: "Flashcard e domande d'esame pronte" }
+    - { ic: "🃏", t: "Ripassi", p: "Ripasso del giorno fino all'esame" }
   flashcard:
     - { ic: "🎙️", t: "Lezione registrata", p: "Online o in aula" }
     - { ic: "🃏", t: "Flashcard automatiche", p: "Domande e risposte dalla lezione" }
@@ -58,14 +58,14 @@ finali:
       - { ic: "💻", t: "Sbobina sul tuo PC", p: "La trascrizione avviene sul computer: l'audio non va su internet." }
       - { ic: "🗣️", t: "Chi parla", p: "Distingue il docente dalle domande degli studenti." }
       - { ic: "📚", t: "Appunti, non solo testo", p: "Dalla sbobina prepara appunti Cornell e Formato Esame." }
-      - { ic: "🏫", t: "Anche in aula", p: "Registra dal microfono del portatile quando il docente è lì davanti." }
+      - { ic: "🔇", t: "Anche in aula rumorosa", p: "Registra dal portatile e pulisce l'audio prima di trascrivere." }
     img: "chi-parla"
     didascalia: "La trascrizione con le voci separate: i nomi li dai tu, oppure li suggerisce l'IA."
   appunti:
     t: "Verba Manent prende gli appunti al posto tuo"
     schede:
       - { ic: "⭐", t: "Le tue note durante la lezione", p: "Due parole o una stella: la nota prende il minuto esatto della registrazione." }
-      - { ic: "💬", t: "Chiedi durante la lezione", p: "Ti sei perso? Chiedi di cosa si sta parlando e rispondi in pochi secondi." }
+      - { ic: "📷", t: "Foto alla lavagna", p: "Si aggancia al minuto giusto e quello che c'è scritto finisce negli appunti." }
       - { ic: "📚", t: "Appunti pronti", p: "Cornell o Formato Esame, con le slide del docente al posto giusto." }
       - { ic: "🃏", t: "Flashcard", p: "Le domande della lezione pronte per il ripasso." }
     img: "note-durante"
@@ -75,8 +75,8 @@ finali:
     schede:
       - { ic: "🃏", t: "Carte pronte", p: "Domande e risposte ricavate da quello che ha detto il docente." }
       - { ic: "⭐", t: "Le più probabili", p: "Le stelle indicano le domande più importanti per l'esame." }
-      - { ic: "🔁", t: "«La sapevo» o «Da rivedere»", p: "Le carte sbagliate tornano finché non le sai." }
-      - { ic: "🎯", t: "Simulazione d'esame", p: "Domande, risposta scritta e voto in trentesimi." }
+      - { ic: "🔁", t: "Ripasso del giorno", p: "Poche carte al giorno, prima quelle che sbagli, fino all'esame." }
+      - { ic: "⬇️", t: "Esporta per Anki", p: "Un mazzo per materia, con la slide e il minuto della lezione." }
     img: "flashcard"
     didascalia: "Il ripasso con le flashcard: tocchi la carta per girarla, poi dici se la sapevi."
   trascrivere:
@@ -93,7 +93,7 @@ finali:
     schede:
       - { ic: "📝", t: "Formato Cornell", p: "Parole chiave e domande, appunti e sintesi, pagina dopo pagina." }
       - { ic: "🖼️", t: "Con le slide", p: "Le slide del docente inserite al punto giusto della lezione." }
-      - { ic: "📄", t: "PDF pronto", p: "Da stampare o da leggere sul tablet." }
+      - { ic: "👓", t: "Facili da leggere", p: "PDF pronto, con il carattere, gli spazi e lo sfondo che preferisci." }
       - { ic: "🎯", t: "Anche Formato Esame", p: "Un secondo formato pensato per ripassare, anche insieme al Cornell." }
     img: "appunti-pronti"
     didascalia: "A fine lezione: «I primi appunti sono pronti», in formato Cornell."

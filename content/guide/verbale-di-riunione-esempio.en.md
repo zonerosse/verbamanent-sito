@@ -3,6 +3,7 @@ seotitolo: "Meeting Minutes Example and Free Template"
 title: "Meeting minutes: a complete example and a template to copy"
 description: "How to write clear, useful meeting minutes: what they must include, a complete example, a blank template to copy and the mistakes to avoid."
 date: 2026-10-17
+lastmod: 2026-10-19
 vm: "verbale"
 url: "/en/guides/meeting-minutes-example/"
 ---
@@ -106,6 +107,8 @@ NEXT MEETING
 - **Short, clear sentences**: someone who wasn't there should understand everything without asking.
 - **Send them to everyone**, including those who were absent, and ask for corrections by a set date.
 - **Start from the minutes** at the next meeting: the first thing to do is check last time's action items.
+
+{{< vm-nota >}}when a meeting starts, Verba Manent reminds you of what was still open from last time; if someone says it's done, the new minutes show it as closed.{{< /vm-nota >}}
 
 {{< vm-confronto tema="verbale" >}}
 

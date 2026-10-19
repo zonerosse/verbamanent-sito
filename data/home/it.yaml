@@ -138,7 +138,7 @@ dsa:
     - { ic: "✍️", t: "Scritto dettato", p: "Rispondi a voce: la correzione guarda il contenuto, mai l'ortografia." }
     - { ic: "📋", t: "Il foglio per il PDP", p: "«Gli strumenti che uso»: un PDF con gli strumenti compensativi che usi davvero, da dare alla scuola o all'università." }
   legge_t: "Strumenti previsti dalla legge"
-  legge_p: "La legge 170/2010 riconosce il diritto agli strumenti compensativi, come la sintesi vocale e le mappe concettuali. Le linee guida del 2011 prevedono all'università fino al 30% di tempo in più agli esami. Verba Manent li mette tutti in un programma solo."
+  legge_p: "La legge 170/2010 riconosce il diritto agli strumenti compensativi, come la sintesi vocale e le mappe concettuali. Le linee guida del 2011 (DM 5669) prevedono anche tempo in più nelle prove: all'università di solito fino al 30%. Verba Manent li mette tutti in un programma solo."
 
 nonfa:
   kicker: "Cosa NON fa"

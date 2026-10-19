@@ -3,6 +3,7 @@ seotitolo: "Transcribe Audio to Text: Every Way, From Voice Notes to Lectures"
 title: "How to transcribe audio to text: every way, from voice notes to lectures"
 description: "How to transcribe audio to text: WhatsApp voice messages, audio files, lectures and meetings. Free, online and on-device tools compared, with an eye on privacy."
 date: 2026-10-17
+lastmod: 2026-10-19
 vm: "trascrivere"
 url: "/en/guides/transcribe-audio-to-text/"
 ---
@@ -80,6 +81,8 @@ Transcript quality depends mostly on audio quality. A few precautions make a hug
 | Several people talking at once | No tool works miracles: those parts will be uncertain |
 
 And one rule that always applies: **reread the important parts**. Even the best automatic transcript gets a few words wrong, and sometimes it's the one that changes the meaning.
+
+{{< vm-nota >}}**Noisy classroom** cleans up the audio before transcribing, and the subject's «Difficult words» (names, technical terms) are passed to the transcription so they come out right. To check the important parts there's **Karaoke**: the real voice, with the words lighting up.{{< /vm-nota >}}
 
 ## Mind the permission to record
 

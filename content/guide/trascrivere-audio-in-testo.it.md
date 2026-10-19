@@ -3,6 +3,7 @@ seotitolo: "Trascrivere audio in testo: tutti i modi"
 title: "Trascrivere audio in testo: tutti i modi, dai vocali alle lezioni"
 description: "Come trascrivere un audio in testo: vocali WhatsApp, file audio, lezioni e riunioni. Strumenti gratuiti, online e sul PC a confronto, con attenzione alla privacy."
 date: 2026-10-16
+lastmod: 2026-10-19
 vm: "trascrivere"
 slug: "trascrivere-audio-in-testo"
 ---
@@ -80,6 +81,8 @@ La qualità della trascrizione dipende soprattutto dalla qualità dell'audio. Qu
 | Più persone che parlano insieme | Nessuno strumento fa miracoli: in quei punti la trascrizione sarà incerta |
 
 E una regola che vale sempre: **rileggi i punti importanti**. Anche la migliore trascrizione automatica sbaglia qualche parola, e a volte è proprio quella che cambia il senso.
+
+{{< vm-nota >}}**Aula rumorosa** pulisce l'audio prima di trascrivere, e le «Parole difficili» della materia (nomi, termini tecnici) passano alla trascrizione, così vengono scritte giuste. Per rileggere i punti importanti c'è il **Karaoke**: la voce vera, con le parole che si illuminano.{{< /vm-nota >}}
 
 ## Attenzione al permesso di registrare
 
