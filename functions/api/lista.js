@@ -18,7 +18,7 @@ export async function onRequestGet({ request, env }) {
   do {
     const p = await env.ATTESA.list({ cursor });
     for (const c of p.keys) {
-      if (c.name.startsWith('limite:')) continue;
+      if (c.name.startsWith('limite:') || c.name.startsWith('uso:')) continue;
       let v = {};
       try { v = JSON.parse(await env.ATTESA.get(c.name) || '{}'); } catch (e) {}
       righe.push({ email: c.name, uso: v.uso || '', lingua: v.lingua || '', data: v.data || '' });
