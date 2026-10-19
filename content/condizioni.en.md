@@ -59,7 +59,7 @@ If a renewal payment fails, Lemon Squeezy retries for a few days; if it does not
 
 ## 6. Refunds and right of withdrawal
 
-[To be decided] Within **14 days of your first payment** you can ask for a **full refund** by writing to [info@puntowebferrara.com](mailto:info@puntowebferrara.com), with no reason needed. After 14 days, periods already paid are not refunded, except where the law provides otherwise. Your statutory consumer rights always apply.
+Within **14 days of your first payment** you can ask for a **full refund** by writing to [info@puntowebferrara.com](mailto:info@puntowebferrara.com), with no reason needed. After 14 days, periods already paid are not refunded, except where the law provides otherwise. Your statutory consumer rights always apply.
 
 ## 7. Price changes
 

@@ -59,7 +59,7 @@ Se un pagamento di rinnovo non va a buon fine, Lemon Squeezy riprova per qualche
 
 ## 6. Rimborsi e diritto di recesso
 
-[Da scegliere] Entro **14 giorni dal primo pagamento** puoi chiedere il **rimborso completo** scrivendo a [info@puntowebferrara.com](mailto:info@puntowebferrara.com), senza dare spiegazioni. Dopo i 14 giorni, il periodo già pagato non si rimborsa, salvo quanto previsto dalla legge. Restano in ogni caso i diritti che il Codice del Consumo ti riconosce.
+Entro **14 giorni dal primo pagamento** puoi chiedere il **rimborso completo** scrivendo a [info@puntowebferrara.com](mailto:info@puntowebferrara.com), senza dare spiegazioni. Dopo i 14 giorni, il periodo già pagato non si rimborsa, salvo quanto previsto dalla legge. Restano in ogni caso i diritti che il Codice del Consumo ti riconosce.
 
 ## 7. Cambi di prezzo
 
