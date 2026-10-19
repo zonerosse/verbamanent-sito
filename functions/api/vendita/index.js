@@ -23,7 +23,7 @@ export async function impostazioniVendita(env) {
   try { c = JSON.parse(await env.ATTESA.get('config:vendita') || '{}'); } catch (e) {}
   const prezzi = {};
   for (const p of PIANI_VENDITA) prezzi[p] = { ...ESEMPIO[p], ...((c.prezzi || {})[p] || {}) };
-  return { attiva: !!c.attiva, dal: c.dal || null, fornitore: FORNITORI[c.fornitore] ? c.fornitore : '',
+  return { attiva: !!c.attiva, dal: c.dal || null, fornitore: FORNITORI[c.fornitore] ? c.fornitore : (c.fornitore === '' ? '' : 'lemonsqueezy'),   // scelto da Paolo: Lemon Squeezy
     prezzi_ok: !!c.prezzi_ok, condizioni: !!c.condizioni, fiscale: !!c.fiscale, prezzi };
 }
 export async function salvaVendita(env, c) {
