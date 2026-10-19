@@ -1,0 +1,51 @@
+/* Verba Manent sul web: le schermate di accesso e la riga in basso. Le pagine sono quelle del programma. */
+#web{--w-navy:#0d4275;--w-navy-d:#092d4f;--w-dd:#061e36;--w-blue:#0369a1;--w-cyan:#22d3ee;--w-ink:#0f1b2d;--w-mut:#64748b;--w-line:#e2e8f0;--w-ok:#059669;--w-no:#dc2626}
+#web{position:fixed;inset:0;z-index:10000;overflow:auto;display:grid;place-items:center;padding:30px 16px;font-family:"Segoe UI",system-ui,sans-serif;color:#26354a;
+  background:radial-gradient(900px 400px at 80% -10%,#0b5fa8 0%,transparent 60%),linear-gradient(180deg,var(--w-dd),var(--w-navy-d))}
+#web[hidden]{display:none}
+#web *{box-sizing:border-box}
+#web .wbox{background:#fff;border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,.35);padding:34px 30px 28px;width:100%;max-width:440px;text-align:center}
+#web .wlogo{width:54px;height:54px;border-radius:15px;background:linear-gradient(135deg,var(--w-navy),var(--w-blue));display:inline-grid;place-items:center;color:var(--w-cyan);font-weight:800;font-size:22px}
+#web h1{font-size:24px;color:var(--w-ink);margin:14px 0 6px;line-height:1.25}
+#web p.ws{color:var(--w-mut);margin:0 0 22px;line-height:1.5}
+#web .wbtn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;border-radius:12px;padding:13px 18px;font:inherit;font-weight:600;font-size:16px;cursor:pointer;margin:0}
+#web .wbtn + .wbtn{margin-top:10px}
+#web .wbtn:disabled{opacity:.5;cursor:default}
+#web .wg{background:#fff;border:1px solid #cbd5e1;color:#1f2937}
+#web .wp{background:var(--w-navy);color:#fff}#web .wp:hover:not(:disabled){background:var(--w-blue)}
+#web .win{width:100%;border:1px solid #cbd5e1;border-radius:12px;padding:12px 14px;font:inherit;font-size:16px;margin:0 0 12px;text-align:center;letter-spacing:1px;color:var(--w-ink)}
+#web .wck{display:flex;gap:8px;align-items:center;justify-content:center;font-size:14px;margin:0 0 16px;cursor:pointer}
+#web .wpic{font-size:13px;color:var(--w-mut);margin:16px 0 0;line-height:1.5}
+#web .wpic a{color:var(--w-blue)}
+#web .werr{color:var(--w-no);font-size:14.5px;margin:0 0 12px;line-height:1.45}
+#web .werr:empty{display:none}
+#web .wlista{text-align:left;margin:0 0 18px;padding:0;list-style:none;display:grid;gap:8px;font-size:14.5px}
+#web .wlista li{padding-left:26px;position:relative;line-height:1.4}
+#web .wlista li::before{content:"✓";position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:50%;background:#dcfce7;color:#15803d;font-weight:800;font-size:11px;display:grid;place-items:center}
+#web .wbarra{height:10px;background:var(--w-line);border-radius:6px;overflow:hidden;margin:6px 0 10px}
+#web .wbarra i{display:block;height:100%;width:3%;background:linear-gradient(90deg,var(--w-cyan),var(--w-blue));transition:width .4s}
+#web .wvoce{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding:7px 0;border-bottom:1px solid var(--w-line);text-align:left}
+#web .wvoce:last-child{border:0}
+#web .wvoce b{color:var(--w-ok)}
+#web .wvoce span:last-child{color:var(--w-mut);white-space:nowrap}
+
+/* la riga blu in basso: sei sul web, con quale account, «Esci» */
+#webBar{position:fixed;left:0;right:0;bottom:0;z-index:9000;background:#0d4275;color:#e0f2fe;font:14px "Segoe UI",system-ui,sans-serif;
+  padding:7px 16px;display:flex;gap:6px 14px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+#webBar b{color:#fff}
+#webBar .wb-acc{opacity:.85}
+#webBar .wb-sync{opacity:.85}
+#webBar button{background:transparent;border:1px solid rgba(255,255,255,.45);color:#fff;border-radius:8px;padding:3px 10px;font:inherit;font-size:13.5px;cursor:pointer}
+#webBar button:hover{background:rgba(255,255,255,.12)}
+body.web-on{padding-bottom:42px}
+
+/* sul web si studia: niente «Registra» e «Cose da fare», niente parti che servono solo sul PC */
+html.web #nav [data-p="reg"], html.web #nav [data-p="fare"],
+html.web .web-no, html.web .solo-pc, html.web #fNuova{display:none !important}
+
+/* telefono: la riga sta in alto e piccola (in basso c'e' il menu dell'app) */
+html.android #webBar{top:0;bottom:auto;padding:5px 10px;font-size:13px;gap:4px 10px}
+html.android #webBar .wb-acc,html.android #webBar .wb-tit,html.android #webBar .wb-sync{display:none}
+html.android #webBar{flex-wrap:nowrap;height:36px}
+html.android body.web-on{padding-bottom:0}
+html.android body.web-on .app{margin-top:36px;height:calc(100vh - 36px);height:calc(100dvh - 36px)}

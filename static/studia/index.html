@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verba Manent sul web</title>
+<link rel="stylesheet" href="stile.css?v=d3a71c3a6b">
+<link rel="stylesheet" href="web.css?v=d3a71c3a6b">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-logo" viewBox="12 12 76 76"><g fill="#22d3ee"><rect x="16" y="42" width="5" height="16" rx="2.5"/><rect x="25" y="32" width="5" height="36" rx="2.5"/><rect x="34" y="38" width="5" height="24" rx="2.5"/><rect x="43" y="28" width="5" height="44" rx="2.5"/></g><g fill="#fff"><rect x="54" y="33" width="30" height="5" rx="2.5"/><rect x="54" y="43" width="24" height="5" rx="2.5"/><rect x="54" y="53" width="30" height="5" rx="2.5"/><rect x="54" y="63" width="18" height="5" rx="2.5"/></g></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z" fill="#fbbf24" stroke="#f59e0b" stroke-width="1" stroke-linejoin="round"/></symbol>
+  <symbol id="i-rec" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.5" fill="currentColor"/></symbol>
+  <symbol id="i-lib" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M8 4v5"/></symbol>
+  <symbol id="i-set" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2.2"/><circle cx="8" cy="17" r="2.2"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></symbol>
+  <symbol id="i-scr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></symbol>
+  <symbol id="i-aud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11"/></symbol>
+  <symbol id="i-sli" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 15l3-3 3 3 4-5"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 5.6L19.5 9l-5.7 1.6L12 16l-1.8-5.4L4.5 9l5.7-1.4z"/><path d="M19 14l.9 2.6 2.6.9-2.6.9L19 21l-.9-2.6-2.6-.9 2.6-.9z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-zip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M12 11v5M10 14l2 2 2-2"/></symbol>
+  <symbol id="i-disk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+  <symbol id="i-srch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></symbol>
+  <symbol id="i-stop" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="i-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 10h16M4 14h10M4 18h7"/></symbol>
+  <symbol id="i-redo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+  <symbol id="i-guida" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M9 7h6M9 11h6"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><circle cx="4" cy="5" r="2"/><circle cx="20" cy="5" r="2"/><circle cx="4" cy="19" r="2"/><circle cx="20" cy="19" r="2"/><path d="M6 6l4 4M18 6l-4 4M6 18l4-4M18 18l-4-4"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+  <symbol id="i-pdf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M8.5 16v-4h1.5a1.2 1.2 0 0 1 0 2.4H8.5M13 12v4h1a2 2 0 0 0 0-4z"/></symbol>
+  <symbol id="i-abc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l3.5-10L10 17M4.3 13.5h4.4M13 7v10h3a2.5 2.5 0 0 0 0-5h-3 2.5a2.5 2.5 0 0 0 0-5z"/></symbol>
+  <symbol id="i-cards" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="7" width="13" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3"/></symbol>
+  <symbol id="i-imp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3M7 8l5-5 5 5"/><path d="M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></symbol>
+  <symbol id="i-film" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M3 15h18M8 5v14M16 5v14"/></symbol>
+</svg>
+
+<!-- AVVIO -->
+<div class="splash" id="splash">
+  <div class="logo"><svg width="40" height="40"><use href="#i-logo"/></svg></div>
+  <h1>Verba Manent IA</h1>
+  <div class="by">by <b>Punto Web Ferrara</b></div>
+  <div class="ld"><div class="bar"><i id="splBar" style="width:5%"></i></div><small id="splTxt">Avvio…</small></div>
+  <div class="err hidden" id="splErr"></div>
+</div>
+
+<div class="app">
+  <aside class="side">
+    <div class="brand"><div class="logo"><svg width="22" height="22"><use href="#i-logo"/></svg></div><div><b>Verba Manent IA</b><small>by Punto Web Ferrara</small></div></div>
+    <nav class="nav" id="nav">
+      <a data-p="dsa" class="navdsa"><svg><use href="#i-star"/></svg><span data-t="nav.dsa">Spazio DSA</span></a>
+      <a data-p="reg" class="on"><svg><use href="#i-rec"/></svg><span data-t="nav.reg">Registra</span><span class="recdot hidden" id="navRec"></span></a>
+      <a data-p="arch"><svg><use href="#i-lib"/></svg><span data-t="nav.arch">Le mie registrazioni</span><span class="cnt hidden" id="navCnt"></span></a>
+      <a data-p="studia"><svg><use href="#i-cards"/></svg><span data-t="nav.studia">Studia</span></a>
+      <a data-p="fare"><svg><use href="#i-check"/></svg><span data-t="nav.fare">Cose da fare</span><span class="cnt hidden" id="navFare"></span></a>
+      <a data-p="imp"><svg><use href="#i-set"/></svg><span data-t="nav.imp">Impostazioni</span></a>
+      <a data-p="guida"><svg><use href="#i-guida"/></svg><span data-t="nav.guida">Guida</span></a>
+      <a data-p="info" class="solo-pc"><svg><use href="#i-info"/></svg><span data-t="nav.info">Informazioni</span></a>
+    </nav>
+    <div class="foot">
+      <div class="statobox" id="statobox"></div>
+      <a id="footSync" class="hidden"></a>
+      <span id="footVer">Versione</span> · <a id="footAgg">Aggiorna</a>
+    </div>
+  </aside>
+
+  <main class="main" id="main">
+
+    <!-- REGISTRA: pronto -->
+    <section class="pg" id="v-pronto">
+      <div class="hd"><div><h2 data-t="pr.h">Pronto a registrare</h2><p id="prP" data-t="pr.p">Schermo, audio del PC e slide: penso a tutto io.</p></div><div class="row" style="gap:8px;flex-wrap:wrap;justify-content:flex-end"><span id="pillAI"></span><div class="dsaint" data-dsa><span data-t="dsa.nome">Modalità DSA</span><span class="sw"></span></div></div></div>
+      <div class="dsabanda"><div data-t="dsa.banda">Modalità DSA accesa. Gli appunti di questa lezione escono già facili da leggere (carattere grande, più spazio, fondo crema). Quando è pronta, nella pagina della lezione trovi in cima Ascolta, Mappa e Flashcard con la voce.</div></div>
+      <div class="hopronto hidden" id="hoPronto"><span class="sp" data-t="ho.pronto">🎟 Hai ricevuto un invito?</span><button class="btn b-ghost b-sm" id="hoPrB" data-t="ho.pronto.b">Incollalo qui</button><button class="x" id="hoPrX" title="×">✕</button></div>
+      <div class="card" style="margin-bottom:14px">
+        <div class="lbl" data-t="tp.h">Che cosa registri?</div>
+        <div class="dove tre" id="tipoBox">
+          <div class="aiopt" data-k="lezione"><span class="rd"></span><span class="ico i-blue">🎓</span><b data-t="tp.lez.t">Lezione</b><small data-t="tp.lez">Appunti Cornell o Formato Esame, flashcard, Chiedi.</small></div>
+          <div class="aiopt" data-k="riunione"><span class="rd"></span><span class="ico i-org">💼</span><b data-t="tp.riu.t">Riunione di lavoro</b><small data-t="tp.riu">Verbale: decisioni, cose da fare con chi e entro quando.</small></div>
+          <div class="aiopt" data-k="webinar"><span class="rd"></span><span class="ico i-vio">🎤</span><b data-t="tp.web.t">Webinar o corso</b><small data-t="tp.web">Punti chiave, capitoli, riassunto.</small></div>
+        </div>
+      </div>
+      <div class="card" style="margin-bottom:14px">
+        <div class="lbl" data-t="pr.dove">Dove si tiene la lezione?</div>
+        <div class="dove" id="doveBox">
+          <div class="aiopt" data-m="online"><span class="rd"></span><span class="ico i-blue"><svg><use href="#i-scr"/></svg></span><b data-t="pr.online.t">Online</b><small data-t="pr.online">Meet, Teams, Zoom: registro schermo e audio del PC.</small></div>
+          <div class="aiopt" data-m="aula"><span class="rd"></span><span class="ico i-teal"><svg><use href="#i-mic"/></svg></span><b data-t="pr.aula.t">In aula</b><small data-t="pr.aula">Il docente è lì davanti: registro dal microfono del portatile.</small></div>
+        </div>
+        <div class="srcsub hidden" id="srcAula">
+          <div class="srcr"><span class="ico i-teal"><svg><use href="#i-mic"/></svg></span><b data-t="src.mic">Microfono</b><div class="sp" style="min-width:0"><select class="sel" id="selMic"></select></div><div class="livello" id="micLiv"></div></div>
+          
+        </div>
+        <div class="srcsub hidden" id="srcRum"><div class="srcr"><span class="ico i-teal">🔇</span><b data-t="ru.t">Aula rumorosa</b><div class="sp" style="min-width:0"><small class="mutt" data-t="ru.s">Toglie brusio, sedie e ronzio e alza la voce del prof prima di trascrivere. Spento: decide il programma se serve.</small></div><div class="sw" id="swRum"></div></div></div>
+        <div class="srcsub solo-pc" id="srcOnline">
+          <div class="srcok"><span><b data-t="src.scr">Schermo</b> <small class="okt" id="srcScr">✓ Schermo principale</small></span><span><b data-t="src.aud">Audio del PC</b> <small id="srcAud" class="mutt">Controllo…</small></span><span><b data-t="src.sl">Slide</b> <small class="okt" data-t="src.sl.ok">✓ Cattura automatica</small></span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div id="matBox">
+          <div class="lbl" data-t="mt.h">Materia</div>
+          <input class="in" id="materia" data-tp="mt.ph" placeholder="Es. Fisiologia" maxlength="60" autocomplete="off">
+          <div class="chips" id="recenti"></div>
+          <div class="hint" style="margin-top:6px" data-t="mt.s">Serve a raggruppare le lezioni in «Studia» (esame, test, flashcard della materia).</div>
+          <div class="lbl" style="margin-top:16px" data-t="pr.nome">Nome</div>
+        </div>
+        <div class="lbl hidden" id="nomeLbl" data-t="pr.nome">Nome</div>
+        <input class="in" id="nome" data-tp="pr.ph" placeholder="Es. Analisi 1 – Limiti" maxlength="90" autocomplete="off">
+        <div class="nmsg" id="nomeMsg"></div>
+        <div class="hint" id="nomeAnt" style="margin-top:7px"></div>
+        <div class="calora hidden" id="calOra"></div>
+        <div id="modBox" class="hidden" style="margin-top:14px">
+          <div class="lbl" style="margin:0 0 6px" data-t="md.h">Che riunione è?</div>
+          <div class="chips" id="modChips"></div>
+          <div class="hint" id="modHint" style="margin-top:6px"></div>
+        </div>
+        <div id="partBox" class="hidden" style="margin-top:14px">
+          <div class="lbl" style="margin:0 0 6px" data-t="tp.part">Chi partecipa (facoltativo)</div>
+          <div class="tags" id="partTags"></div>
+          <div class="row" style="margin-top:8px;gap:8px"><input class="in sp" id="partIn" data-tp="tp.part.ph" placeholder="Scrivi un nome e premi Invio…" maxlength="60" autocomplete="off"><button class="btn b-ghost b-sm" id="partAgg" data-t="pw.agg">Aggiungi</button></div>
+          <div class="hint" style="margin-top:6px" data-t="tp.part.s">Servono a scrivere i nomi giusti nel verbale.</div>
+        </div>
+        <div class="lbl" style="margin:14px 0 0" data-t="pr.lingua">In che lingua parla il docente?</div>
+        <div class="chips" id="lingue" style="margin-top:8px"></div>
+        <div class="hint" id="linguaTr" style="margin-top:8px;color:var(--cor);font-weight:600"></div>
+      </div>
+      <div class="card mt" id="mpCard">
+        <div class="mp">
+          <div class="mph"><b data-t="mpf.h">📎 Materiali del prof</b> <small data-t="mpf.fac">· facoltativo</small></div>
+          <div class="hint" data-t="mpf.s">Se il prof ti ha dato dei PDF, mettili qui: li uso negli appunti. Puoi aggiungerli anche dopo, dalla pagina della lezione.</div>
+          <div class="mpr"><span class="ico i-vio">🖼</span><div class="sp"><b data-t="mpf.sl">Slide di questa lezione</b><small class="mutt" id="pdfTxt"></small></div><div class="row" style="gap:6px"><button class="btn b-ghost b-sm" id="btnPdfA" data-t="src.pdf.b">Scegli il PDF…</button><button class="lnk hidden" id="btnPdfX" data-t="togli">Togli</button></div></div>
+          <div class="mpr" id="mpLb"><span class="ico i-blue">📘</span><div class="sp"><b id="mpLbT"></b><small class="mutt" id="mpLbTx"></small></div><button class="btn b-ghost b-sm" id="mpLbB"></button></div>
+        </div>
+      </div>
+      <div class="card mt solo-and" id="quandoCard">
+        <div class="lbl" data-t="and.quando">Quando trascrivo?</div>
+        <div class="dove" id="quandoBox">
+          <div class="aiopt" data-q="durante"><span class="rd"></span><span class="ico i-org">⚡</span><b data-t="and.durante.t">Durante</b><small data-t="and.durante"></small></div>
+          <div class="aiopt" data-q="dopo"><span class="rd"></span><span class="ico i-vio">🌙</span><b data-t="and.dopo.t">Dopo</b><small data-t="and.dopo"></small></div>
+        </div>
+        <div class="hint" id="quandoStima" style="margin-top:10px"></div>
+      </div>
+      <div class="recwrap mt">
+        <button class="recbtn" id="btnRec"><span></span><b data-t="rec">REGISTRA</b></button>
+        <div class="hint" id="recNome" style="font-weight:600"></div>
+        <div class="hint" id="recHint"></div>
+        <div class="hint" id="recModello" style="color:var(--blue);font-weight:600"></div>
+      </div>
+      <div class="imp mt" id="btnImporta"><span class="ico i-teal"><svg><use href="#i-imp"/></svg></span>
+        <div class="sp"><b style="color:var(--ink)" data-t="im.v.t">Hai già un video della lezione?</b><div class="hint" data-t="im.v">Registrato col telefono o dato dall'università (mp4, mov, mkv, mp3, m4a…). Lo trasformo in trascrizione, slide e appunti, come una registrazione fatta qui.</div></div>
+        <span class="btn b-ghost b-sm" data-t="im.v.b">Importa un video…</span></div>
+      <div class="imp mt" id="btnImportaTesto"><span class="ico i-vio"><svg><use href="#i-pdf"/></svg></span>
+        <div class="sp"><b style="color:var(--ink)" data-t="it.b.t">Hai già la trascrizione della lezione?</b><div class="hint" data-t="it.b">Un PDF, un file Word o di testo con quello che ha detto il docente (anche il «Per Claude» di un'altra registrazione). Ne faccio gli appunti.</div></div>
+        <span class="btn b-ghost b-sm" data-t="it.b.b">Importa un testo…</span></div>
+      <div class="hint" style="text-align:center;margin-top:12px" id="prPrima" data-t="pr.prima">Prima di iniziare entra nella lezione (Meet, Teams, Zoom…) e tieni la sua finestra sullo schermo principale, con il volume acceso.</div>
+    </section>
+
+    <!-- REGISTRA: importa un video -->
+    <section class="pg hidden" id="v-importa">
+      <div class="hd"><div><h2 data-t="iv.h">Importa un video</h2><p data-t="iv.p">Lo copio nelle tue registrazioni: il file originale resta dov'è.</p></div></div>
+      <div class="card">
+        <div class="file"><span class="ico i-teal"><svg><use href="#i-film"/></svg></span><div class="sp"><b style="color:var(--ink)" id="ivFile"></b><div class="hint" id="ivInfo"></div></div><button class="btn b-ghost b-sm" id="ivCambia" data-t="im.cambia">Cambia…</button></div>
+        <div class="lbl" data-t="iv.nome">Nome della lezione</div><input class="in" id="ivNome" maxlength="90" autocomplete="off"><div class="nmsg" id="ivNomeMsg"></div>
+        <div class="lbl" style="margin-top:14px" data-t="pr.lingua">In che lingua parla il docente?</div>
+        <div class="chips" id="ivLingue"></div>
+        <div class="set" id="ivSlideRiga" style="margin-top:12px"><div class="t"><b data-t="iv.sl.t">C'è lo schermo con le slide?</b><span data-t="iv.sl">Se il video ha solo l'audio (o solo la faccia del docente) salto le slide.</span></div><div class="seg" id="ivSlide"><span data-v="1" data-t="iv.sl.si">Sì, cerco le slide</span><span data-v="0" data-t="iv.sl.no">Solo audio</span></div></div>
+        <div class="hint" style="margin-top:10px" id="ivStima"></div>
+        <div class="row mt"><span class="sp"></span><button class="btn b-ghost b-sm" id="ivAnnulla" data-t="annulla">Annulla</button><button class="btn b-main" id="ivVai" data-t="iv.vai">Importa e prepara gli appunti</button></div>
+      </div>
+    </section>
+
+    <!-- REGISTRA: importa una trascrizione -->
+    <section class="pg hidden" id="v-itesto">
+      <div class="hd"><div><h2 data-t="it.h">Importa una trascrizione</h2><p data-t="it.p">Ne faccio gli appunti: il file originale resta dov'è.</p></div></div>
+      <div class="card">
+        <div class="file"><span class="ico i-vio"><svg><use href="#i-pdf"/></svg></span><div class="sp"><b style="color:var(--ink)" id="itFile"></b><div class="hint" id="itInfo"></div></div><button class="btn b-ghost b-sm" id="itCambia" data-t="im.cambia">Cambia…</button></div>
+        <div class="lbl" data-t="iv.nome">Nome della lezione</div><input class="in" id="itNome" maxlength="90" autocomplete="off"><div class="nmsg" id="itNomeMsg"></div>
+        <div class="lbl" style="margin-top:14px" data-t="it.fmt">Che appunti vuoi?</div>
+        <div id="itFmt" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div class="aiopt" data-f="cornell"><span class="rd"></span><b data-t="it.fmt.c.t">Cornell</b><small data-t="it.fmt.c">Domande a sinistra, appunti a destra, riassunto in fondo.</small></div>
+          <div class="aiopt" data-f="esame"><span class="rd"></span><b data-t="it.fmt.e.t">Formato Esame</b><small data-t="it.fmt.e">Le domande più probabili, con lo schema della risposta.</small></div>
+        </div>
+        <div class="hint" style="margin-top:10px" id="itStima"></div>
+        <div class="row mt"><span class="sp"></span><button class="btn b-ghost b-sm" id="itAnnulla" data-t="annulla">Annulla</button><button class="btn b-main" id="itVai" data-t="it.vai">Crea gli appunti</button></div>
+      </div>
+    </section>
+
+    <!-- REGISTRA: in registrazione -->
+    <section class="pg hidden" id="v-reg">
+      <div class="live" id="live">
+        <span class="tag" id="lTag"><i></i>REC</span>
+        <div class="big" id="lT">00:00:00</div>
+        <div class="nm" id="lNm"></div>
+        <div class="wave" id="lWave"></div>
+        <div class="hidden" id="lFotoBox" style="margin-top:12px;position:relative;z-index:1"><button class="fotob" id="lFoto">📷 <span id="lFotoT"></span></button><div class="strip" id="lFotoStrip"></div></div>
+        <div class="stats"><div><b id="lSl">0</b><small data-t="lv.slide">slide catturate</small></div><div><b id="lGb">0 MB</b><small data-t="lv.reg">registrati</small></div><div><b id="lPk">0</b><small data-t="lv.pac">parti pronte</small></div></div>
+      </div>
+      <div class="card mt avv-card hidden" id="avvCard">
+        <div class="avv-testa"><span class="avv-ic">📣</span><div class="sp"><b class="avv-t" id="avvT"></b><div class="hint" id="avvSub"></div></div></div>
+        <textarea class="in avv-msg" id="avvMsg" rows="4"></textarea>
+        <div class="row" style="margin-top:10px;gap:8px;flex-wrap:wrap">
+          <button class="btn b-main b-sm" id="avvCopia"></button><span class="hint" id="avvDove"></span><span class="sp"></span>
+          <button class="btn b-ghost b-sm" id="avvFatto" data-t="av.fatto">✓ Fatto, ho avvisato</button>
+        </div>
+      </div>
+      <div class="avv-ok mt hidden" id="avvOk">✓ <b data-t="av.ok">Partecipanti avvisati</b> <span class="hint" id="avvOra"></span> <a id="avvRiapri" data-t="av.rivedi">rivedi il messaggio</a></div>
+      <div class="avviso mt hidden" id="lAvv"></div>
+      <div class="avviso2 mt hidden" id="aperteCard"></div>
+      <div class="card mt" id="noteCard">
+        <div class="lbl" data-t="nt.h">Le tue note</div>
+        <div id="noteLista"></div>
+        <input class="in" id="notaIn" data-tp="nt.ph" placeholder="Scrivi una nota e premi Invio…" maxlength="300" autocomplete="off" style="margin-top:6px">
+        <div class="row" style="margin-top:8px;gap:6px;flex-wrap:wrap"><span class="chip" data-nota="importante">⭐ <span data-t="nt.imp">Importante</span></span><span class="chip" data-nota="chiarire">❓ <span data-t="nt.chi">Da chiarire</span></span><span class="chip" data-nota="fare">✅ <span data-t="nt.fare">Cosa da fare</span></span><span class="sp"></span><span class="hint" data-t="nt.s">Claude le userà per gli appunti</span></div>
+      </div>
+      <div class="card mt" id="ddCard">
+        <div class="row"><div class="lbl sp" style="margin:0" data-t="dd.h">Chiedi adesso</div><span class="hint" data-t="dd.costo">circa 1 centesimo a domanda</span></div>
+        <div id="ddChat"></div>
+        <div class="row" style="margin-top:8px;gap:8px"><input class="in sp" id="ddIn" data-tp="dd.ph" placeholder="Fai una domanda su quello che si è detto finora…" maxlength="500" autocomplete="off"><button class="btn b-cor b-sm" id="ddVai" data-t="dd.chiedi">Chiedi</button></div>
+        <div class="row" style="margin-top:8px;gap:6px;flex-wrap:wrap" id="ddChips"></div>
+        <div class="hint hidden" id="ddNoDir" style="margin-top:6px" data-t="dd.nodir">Senza «Testo in diretta» Claude vede solo le parti già trascritte. Si accende in Impostazioni e vale dalla prossima registrazione.</div>
+      </div>
+      <div class="card mt hidden" id="dirCard">
+        <div class="row" style="margin-bottom:10px"><div class="lbl" style="margin:0" data-t="lv.dir">Testo in diretta</div><span class="sp"></span><span class="pill p-blue" data-t="lv.dir.rit">circa 2 minuti di ritardo</span></div>
+        <div class="diretta" id="dirTxt"></div>
+      </div>
+      <div class="card mt solo-pc" id="slideCard">
+        <div class="row" style="margin-bottom:10px"><div class="lbl" style="margin:0" data-t="lv.ultime">Ultime slide</div><span class="sp"></span><span class="pill p-blue" data-t="lv.sole">si aggiornano da sole</span></div>
+        <div class="thumbs" id="thumbs"><div class="vuoto" data-t="lv.vuoto">Le slide compaiono qui appena cambiano sullo schermo.</div></div>
+      </div>
+      <div class="card mt">
+        <div class="lbl" data-t="lv.parti">Parti e appunti</div>
+        <div class="parts" id="lParti"></div>
+      </div>
+      <div class="row mt">
+        <button class="btn b-pz sp" id="btnPausa"><svg><use href="#i-pause"/></svg>Pausa (intervallo)</button>
+        <button class="btn b-end sp" id="btnFine"><svg><use href="#i-stop"/></svg><span data-t="lv.fine">Fine</span></button>
+      </div>
+      <div class="hint" style="text-align:center;margin-top:10px" data-t="lv.riduci">Puoi ridurre questa finestra: la registrazione continua.</div>
+    </section>
+
+    <!-- REGISTRA: fine -->
+    <section class="pg hidden" id="v-fine">
+      <div class="hero-ok" id="fHero">
+        <div class="check" id="fCheck"><svg><use href="#i-check"/></svg></div>
+        <div class="sp"><div style="font-size:21px;font-weight:700;color:var(--ink)" id="fTit"></div><div class="hint" style="font-size:13.5px" id="fSub"></div>
+          <div class="bar hidden" id="fBar" style="max-width:360px"><i style="width:0"></i></div></div>
+      </div>
+      <div class="avviso mt hidden" id="fAvv"></div>
+      <div class="card mt hidden" id="fImp"><div class="lbl" data-t="iv.fasi">A che punto sono</div><div class="fasi" id="fFasi"></div></div>
+      <div class="card mt" id="fAp"></div>
+      <div class="card mt">
+        <div class="lbl" data-t="lv.parti">Parti e appunti</div>
+        <div class="parts" id="fParti"></div>
+      </div>
+      <div class="grid3 mt">
+        <button class="btn b-ghost b-sm" id="fTras"><svg><use href="#i-text"/></svg><span data-t="fn.tras">Slide e trascrizione</span></button>
+        <button class="btn b-ghost b-sm solo-pc" id="fPac"><svg><use href="#i-zip"/></svg><span data-t="fn.cartpac">Cartella delle lezioni</span></button>
+        <button class="btn b-ghost b-sm" id="fNuova"><svg><use href="#i-rec"/></svg><span data-t="fn.nuova">Nuova registrazione</span></button>
+      </div>
+    </section>
+
+    <!-- LE MIE REGISTRAZIONI -->
+    <section class="pg hidden" id="v-arch">
+      <div class="hd"><div><h2 data-t="ar.h">Le mie registrazioni</h2><p id="aSub"></p></div><button class="btn b-ghost b-sm solo-pc" id="aCart"><svg><use href="#i-folder"/></svg><span data-t="ar.cart">Apri cartella</span></button></div>
+      <div class="toolbar">
+        <div class="search"><svg><use href="#i-srch"/></svg><input class="in" id="cerca" data-tp="ar.cerca" placeholder="Cerca per nome, data o parole dette…" autocomplete="off"></div>
+        <div class="disk card solo-pc"><svg width="16" height="16" style="color:var(--mut)"><use href="#i-film"/></svg><span data-t="ar.video">Video sul PC</span> <b id="aVid">–</b><div class="bar"><i id="aVidBar" style="width:0"></i></div><button class="lnk hidden" id="aVidDel" style="color:#be123c" data-t="ar.eltutti">Elimina tutti</button></div>
+      </div>
+      <div id="paroleRis" class="hidden"></div>
+      <div id="ripBanda"></div>
+      <div id="lista"></div>
+    </section>
+
+    <!-- CHIEDI ALLA LEZIONE -->
+    <section class="pg hidden" id="v-chiedi">
+      <div class="hd"><div><h2 data-t="ch.h">Chiedi alla lezione</h2><p id="chSub"></p></div><div class="seg hidden" id="chSeg"></div></div>
+      <div class="card">
+        <div class="chat" id="chat"></div>
+        <div class="row" style="margin-top:12px;gap:8px"><input class="in sp" id="chIn" data-tp="ch.ph" placeholder="Scrivi cosa non hai capito…" autocomplete="off" maxlength="600"><button class="btn b-ghost solo-dsa" id="chMic" title="🎤">🎤</button><button class="btn b-main" id="chVai" data-t="ch.vai">Chiedi</button></div>
+        <div class="row" style="margin-top:8px"><span class="hint sp" data-t="ch.costo">Meno di 1 centesimo a domanda · risponde solo con quello che c'è nella lezione: se il docente non l'ha detto, te lo dice.</span><button class="lnk" id="chNuova" data-t="ch.nuova">Nuova conversazione</button></div>
+      </div>
+    </section>
+
+    <!-- MAPPA MENTALE -->
+    <section class="pg hidden" id="v-mappa">
+      <div class="hd"><div><h2 data-t="mp.h">Mappa mentale</h2><p id="mpSub"></p></div><div class="row" style="gap:6px"><button class="btn b-ghost b-sm" id="mpPdf"><svg><use href="#i-doc"/></svg><span data-t="mp.pdf">Salva in PDF</span></button><button class="btn b-ghost b-sm solo-pc" id="mpStampa" data-t="mp.stampa">Stampa</button></div></div>
+      <div class="mappa" id="mpBox"></div>
+      <div class="row mt"><span class="hint sp" data-t="mp.nota">Si crea una volta sola e resta con la lezione.</span><button class="lnk" id="mpRifai" data-t="mp.rifai">Rifalla</button></div>
+    </section>
+
+    <!-- PAGINA DELLA LEZIONE -->
+    <section class="pg hidden" id="v-lezione">
+      <div class="hd"><div><h2 id="lzTit"></h2><p id="lzSub"></p></div><div class="row" style="gap:8px"><div class="dsaint" data-dsa><span data-t="dsa.nome">Modalità DSA</span><span class="sw"></span></div><button class="btn b-ghost b-sm" id="lzAltro">⋯ <span data-t="ar.altro">Altro</span></button></div></div>
+      <div class="card" id="lzBox"></div>
+      <div class="hint mt" data-t="lz.altro">In «⋯ Altro»: rinomina, rifai gli appunti, slide del docente, cartella, elimina.</div>
+    </section>
+
+    <!-- KARAOKE DELLA LEZIONE -->
+    <section class="pg hidden" id="v-fo">
+      <div class="hd"><div><h2 data-t="fo.h">📷 Foto della lezione</h2><p id="foSub"></p></div></div>
+      <div class="fogrid"><div class="card"><div class="fogal" id="foGal"></div></div><div class="card" id="foDet"></div></div>
+    </section>
+    <section class="pg hidden" id="v-sc">
+      <div class="hd"><div><h2 data-t="sc.h">✍ Appunti a mano e fotocopie</h2><p id="scSub"></p></div>
+        <div class="row" style="gap:8px;flex-wrap:wrap"><button class="btn b-main b-sm solo-and" id="scScatta" data-t="sc.scatta">📷 Scatta</button><button class="btn b-ghost b-sm" id="scScegli" data-t="sc.scegli">🖼 Scegli foto</button></div></div>
+      <div class="hint" style="margin-bottom:12px" data-t="sc.s">Foto dei tuoi fogli scritti a mano o delle fotocopie: Claude li legge e il testo si aggiunge alla lezione (Chiedi, tutor, mappe, test, glossario). Pochi centesimi a foglio.</div>
+      <div id="scBox"></div>
+    </section>
+    <section class="pg hidden" id="v-ru">
+      <div class="hd"><div><h2 data-t="ru.h">🔇 Aula rumorosa</h2><p id="ruSub"></p></div></div>
+      <div id="ruBox"></div>
+    </section>
+    <section class="pg hidden" id="v-lb">
+      <div class="hd"><div><h2 id="lbH">📘 Libro di testo</h2><p data-t="lb.sub">Il tuo libro collegato alle lezioni: le pagine giuste per ogni lezione e quello che a lezione non si è detto.</p></div></div>
+      <div id="lbBox"></div>
+    </section>
+    <section class="pg hidden" id="v-tu">
+      <div class="hd"><div><h2 id="tuH">🧑‍🏫 Il tuo tutor</h2><p data-t="tu.sub">Sa quando hai l'esame, cosa hai già studiato e dove sbagli: ti dice cosa fare oggi e risponde alle domande.</p></div></div>
+      <div class="tugrid">
+        <div><div class="card" id="tuOggi"></div>
+          <div class="card mt"><div class="lbl" data-t="tu.chiedi">Chiedi al tutor</div><div class="chat tuchat" id="tuChat"></div>
+            <div class="chips2" id="tuChips"></div>
+            <div class="tuin"><input class="in sm" id="tuIn" maxlength="500" data-ph="tu.ph"><button class="btn b-ghost b-sm" id="tuMic">🎙</button><button class="btn b-main b-sm" id="tuVai" data-t="tu.invia">Invia</button></div></div></div>
+        <div><div class="card" id="tuDeb"></div><div class="card mt" id="tuVa"></div></div>
+      </div>
+    </section>
+    <section class="pg hidden" id="v-gl">
+      <div class="hd"><div><h2 id="glH">📖 Glossario</h2><p data-t="gl.sub">Tutte le parole difficili delle lezioni, spiegate semplici, con la slide e la voce del prof.</p></div>
+        <div class="row" style="gap:8px;flex-wrap:wrap"><button class="btn b-ghost b-sm" id="glPdf" data-t="gl.pdf">⬇ PDF</button><button class="btn b-main b-sm" id="glRip" data-t="gl.rip">🃏 Ripassa le parole</button></div></div>
+      <div id="glBox"></div>
+    </section>
+    <section class="pg hidden" id="v-lm">
+      <div class="hd"><div><h2 data-t="lm.h">👓 Come leggo meglio</h2><p data-t="lm.sub">Scegli come vuoi vedere il testo: vale per appunti, Ascolta, Karaoke, flashcard e PDF.</p></div></div>
+      <div class="lmgrid">
+        <div class="card" id="lmBox"></div>
+        <div><div class="lmprova" id="lmProva"></div><div class="hint mt" data-t="lm.nota">Così vedrai gli appunti, «Ascolta», il Karaoke, le flashcard e i PDF per DSA. Le sillabe colorate solo in italiano.</div></div>
+      </div>
+    </section>
+    <section class="pg hidden" id="v-sy">
+      <div class="hd"><div><h2 data-t="sy.h">🔄 Sincronizza</h2><p data-t="sy.sub">Le stesse lezioni, gli stessi appunti e lo stesso ripasso sul PC e sul telefono.</p></div></div>
+      <div id="syBox"></div>
+    </section>
+    <section class="pg hidden" id="v-rg">
+      <div class="hd"><div><h2 data-t="rg.h2">🃏 Ripasso del giorno</h2><p data-t="rg.sub">Poche carte ogni giorno, scelte per te, fino all'esame.</p></div></div>
+      <div id="rgBox"></div>
+    </section>
+    <section class="pg hidden" id="v-dsa">
+      <div class="hd"><div><h2 data-t="sd.h">⭐ Spazio DSA</h2><p data-t="sd.sub">Tutto quello che ti serve, in ordine: in aula, dopo la lezione, per la verifica.</p></div><div class="dsaint" data-dsa><span data-t="dsa.nome">Modalità DSA</span><span class="sw"></span></div></div>
+      <div class="card"><div class="sdscegli" id="sdScegli"></div></div>
+      <div class="card mt" id="sdBox"></div>
+    </section>
+    <section class="pg hidden" id="v-verifica">
+      <div class="hd"><div><h2 data-t="mv.h">🗺 Mappa per la verifica</h2><p data-t="mv.sub">Un foglio A4 con le parole chiave, da portare alla verifica (strumento compensativo, legge 170/2010)</p></div></div>
+      <div class="mvgrid">
+        <div class="card">
+          <div class="lbl" data-t="mv.lez">Di quali lezioni?</div><div id="mvLez"></div>
+          <div class="lbl" style="margin-top:14px" data-t="mv.foglio">Il foglio</div>
+          <div class="mvset"><div class="sp"><b data-t="mv.parole">Solo parole chiave</b><div class="hint" data-t="mv.parole.s">Niente frasi: come chiedono molti docenti</div></div><div class="sw on" id="mvParole"></div></div>
+          <div class="mvset"><div class="sp"><b data-t="mv.formule">Riquadro formule e valori</b></div><div class="sw on" id="mvFormule"></div></div>
+          <div class="lbl" style="margin-top:14px" data-t="mv.alto">In alto sul foglio</div>
+          <input class="in sm" id="mvNome" maxlength="60" data-ph="mv.nome.ph" placeholder="Nome e classe (es. Marco Rossi – 3ªB)">
+          <div class="row mt" style="gap:8px;flex-wrap:wrap">
+            <button class="btn b-main b-sm" id="mvCrea" data-t="mv.crea">Fai la mappa</button>
+            <button class="btn b-ghost b-sm" id="mvMod" data-t="mv.mod">✎ Modifica</button>
+            <button class="btn b-ghost b-sm" id="mvPdf" data-t="mv.pdf">⬇ PDF</button>
+            <button class="btn b-main b-sm" id="mvStampa" data-t="mv.stampa">🖨 Stampa</button>
+          </div>
+          <div class="hint mt" id="mvModH" data-t="mv.modh"></div>
+          <div class="hint mt" data-t="mv.firma">Molti docenti vogliono vedere la mappa prima della verifica: stampala e falla firmare.</div>
+          <button class="lnk mt" id="mvRifai" data-t="mv.rifai">↻ Nuova mappa</button>
+        </div>
+        <div class="foglio" id="mvFoglio"></div>
+      </div>
+    </section>
+    <section class="pg hidden" id="v-karaoke">
+      <div class="hd"><div><h2 data-t="kk.h">🎤 Karaoke della lezione</h2><p id="kkSub"></p></div><div class="dsaint" data-dsa><span data-t="dsa.nome">Modalità DSA</span><span class="sw"></span></div></div>
+      <div class="card"><div class="kkplayer">
+        <button class="pcplay" id="kkPlay">▶</button><span class="kktempo" id="kkT0">0:00</span>
+        <div class="kkbarra" id="kkBar"><i id="kkBarI"></i></div><span class="kktempo" id="kkT1"></span>
+        <div class="seg" id="kkVel"><span data-v="0.8">0,8×</span><span data-v="1">1×</span><span data-v="1.25">1,25×</span><span data-v="1.5">1,5×</span></div>
+        <button class="btn b-ghost b-sm" id="kkRiga" data-t="kk.riga">📏 Una riga alla volta</button>
+      </div><div class="hint hidden" id="kkNo" style="margin-top:8px" data-t="kk.novideo">Il video o l'audio di questa lezione non c'è più: puoi leggere il testo, ma non sentire la voce.</div></div>
+      <div class="kkgrid mt">
+        <div class="card"><div class="kktesto" id="kkTesto"></div><div class="hint mt" data-t="kk.hint">Tocca una parola per far ripartire la voce da lì.</div></div>
+        <div class="kkslide hidden" id="kkSlideBox"><div class="card"><div class="lbl" data-t="kk.slide">Slide in quel momento</div><img id="kkSlide" alt=""><div class="hint" style="margin-top:8px" data-t="kk.slide.s">La slide cambia da sola mentre il prof parla.</div></div></div>
+      </div>
+    </section>
+
+    <!-- PODCAST DELLA LEZIONE -->
+    <section class="pg hidden" id="v-podcast">
+      <div class="hd"><div><h2 data-t="pc.h">🎧 Podcast della lezione</h2><p id="pcSub"></p></div>
+        <div class="row" style="gap:8px;flex-wrap:wrap;justify-content:flex-end"><div class="seg" id="pcStile"><span data-v="uno" data-t="pc.s.uno">Una voce</span><span data-v="due" data-t="pc.s.due">Due voci</span><span data-v="dibattito" data-t="pc.s.dib">Dibattito</span></div><div class="seg" id="pcDur"><span data-v="breve" data-t="pc.breve">Breve · 8 min</span><span data-v="completo" data-t="pc.completo">Completo · 20 min</span></div><div class="dsaint" data-dsa><span data-t="dsa.nome">Modalità DSA</span><span class="sw"></span></div></div></div>
+      <div class="hint" id="pcStileS" style="margin:-4px 0 12px"></div>
+      <div class="avviso2 solo-dsa-b" style="margin-bottom:14px" data-t="pc.dsa">⭐ Modalità DSA: il podcast parte più lento, la voce narrante usa frasi corte e semplici e mentre ascolti la parola che senti si illumina. Pausa di 2 secondi dopo ogni pezzo del prof.</div>
+      <div class="card"><div class="pcplayer">
+        <button class="pcplay" id="pcPlay">▶</button>
+        <div class="pcbarra"><div class="pctl" id="pcTl"></div><div class="pctempo"><span id="pcT0">0:00</span><span id="pcT1"></span></div>
+          <div class="pcleg" id="pcLeg"></div></div>
+        <div class="seg" id="pcVel"><span data-v="0.8" class="solo-dsa">0,8×</span><span data-v="1">1×</span><span data-v="1.25">1,25×</span><span data-v="1.5">1,5×</span></div>
+      </div>
+      <div class="row mt hidden" id="pcMp3Box" style="gap:8px;justify-content:flex-end"><button class="btn b-ghost b-sm" id="pcMp3" data-t="pc.mp3">⬇ Salva in MP3</button><button class="btn b-ghost b-sm" id="pcManda" data-t="pc.manda">📤 Manda sul telefono</button></div></div>
+      <div class="card mt"><div class="lbl" data-t="pc.scaletta">Scaletta</div><div id="pcLista"></div>
+        <div class="hint mt" data-t="pc.hint">Tocca un pezzo per ascoltarlo da lì. Nei pezzi del prof, «Rivedi» apre la lezione a quel minuto.</div>
+        <div class="row mt"><span class="sp"></span><button class="lnk" id="pcRifai" data-t="pc.rifai">Rifallo</button></div></div>
+    </section>
+
+    <!-- STUDIA (la materia) -->
+    <section class="pg hidden" id="v-studia">
+      <div class="hd"><div><h2 data-t="st.h2">Studia</h2><p data-t="st.p">Scegli la materia</p></div><div class="dsaint" data-dsa><span data-t="dsa.nome">Modalità DSA</span><span class="sw"></span></div></div>
+      <div class="seg stmat" id="stMat"></div>
+      <div id="stBox2"></div>
+    </section>
+
+    <!-- ASCOLTA GLI APPUNTI (lettura ad alta voce) -->
+    <section class="pg hidden" id="v-ascolta">
+      <div class="hd"><div><h2 data-t="as.h">Ascolta gli appunti</h2><p id="asSub"></p></div></div>
+      <div class="card"><div class="asbarra">
+        <button class="btn b-main b-sm" id="asPlay"></button><button class="btn b-ghost b-sm" id="asStop" data-t="as.ferma">■ Ferma</button>
+        <div class="seg" id="asVel"><span data-v="0.8" data-t="as.lenta">Lenta</span><span data-v="1" data-t="as.normale">Normale</span><span data-v="1.2" data-t="as.veloce">Veloce</span></div>
+        <span class="sp"></span><div class="asaa"><span data-t="dsa.nome">Modalità DSA</span><div class="sw" id="asFac"></div></div></div>
+        <div class="hint" style="margin-top:8px" data-t="as.hint">Tocca una frase per far partire la lettura da lì. La frase che sto leggendo è evidenziata.</div></div>
+      <div class="card mt"><div class="seg hidden" id="asFmt" style="margin-bottom:12px"></div><div class="ap" id="asBox"></div></div>
+    </section>
+
+    <!-- CAPITOLI -->
+    <section class="pg hidden" id="v-cap">
+      <div class="hd"><div><h2 data-t="cp.h">Capitoli</h2><p id="cpSub"></p></div></div>
+      <div class="capgrid">
+        <div class="card" style="padding:0;overflow:hidden"><div id="cpMedia"></div><div class="hint" style="padding:10px 14px" data-t="cp.tocca">Tocca un capitolo: si riparte da lì.</div></div>
+        <div class="card"><div class="lbl" data-t="cp.h">Capitoli</div><div id="cpLista"></div></div>
+      </div>
+      <div class="card mt" id="spCard">
+        <div class="lbl" data-t="sp.h">✂ Spezzone da mandare</div>
+        <div class="sptl" id="spTl"><div class="sel" id="spSel"></div><div class="pos" id="spPos"></div></div>
+        <div class="row" style="gap:8px;flex-wrap:wrap">
+          <span class="hint" data-t="sp.dal">dal</span><input class="in" id="spDa" value="00:00:00" style="width:104px"><button class="btn b-ghost b-sm" id="spDaQui" data-t="sp.qui">⏱ da qui</button>
+          <span class="hint" data-t="sp.al">al</span><input class="in" id="spA" value="00:01:00" style="width:104px"><button class="btn b-ghost b-sm" id="spAQui" data-t="sp.qui2">⏱ fino a qui</button>
+          <span class="hint sp" id="spDur"></span>
+        </div>
+        <div class="row" style="margin-top:10px;justify-content:flex-end;gap:8px"><button class="btn b-ghost b-sm" id="spAudio">🎧 <span data-t="sp.audio">Solo audio</span></button><button class="btn b-main b-sm solo-pc" id="spVideo">🎬 <span data-t="sp.video">Video con sottotitoli</span></button></div>
+        <div class="hint" style="margin-top:6px" data-t="sp.nota">Scorciatoia: tocca ✂ accanto a un capitolo. Il video si ferma e si guarda dal punto «dal».</div>
+      </div>
+    </section>
+
+    <!-- PREPARAZIONE ALL'ESAME -->
+    <section class="pg hidden" id="v-esame">
+      <div class="hd"><div><h2 id="esTit"></h2><p id="esSub"></p></div><div class="row" style="gap:6px"><button class="btn b-ghost b-sm" id="esPdf"><svg><use href="#i-doc"/></svg><span data-t="mp.pdf">Salva in PDF</span></button></div></div>
+      <div id="esBox"></div>
+    </section>
+
+    <!-- COSE DA FARE -->
+    <section class="pg hidden" id="v-fare">
+      <div class="hd"><div><h2 data-t="cf.h">Cose da fare</h2><p id="cfSub"></p></div></div>
+      <div class="card"><div class="row" style="gap:6px;flex-wrap:wrap;margin-bottom:6px" id="cfFiltri"></div><div id="cfLista"></div></div>
+    </section>
+
+    <!-- STATISTICHE -->
+    <section class="pg hidden" id="v-stat">
+      <div class="hd"><div><h2 id="stTit">Statistiche</h2><p id="stSub"></p></div></div>
+      <div id="stBox"></div>
+    </section>
+
+    <!-- CHI PARLA -->
+    <section class="pg hidden" id="v-voci">
+      <div class="hd"><div><h2 id="vcTit" data-t="vc.h">Chi parla</h2><p id="vcSub"></p></div><button class="btn b-ghost b-sm" id="vcStat">📊 <span data-t="st.h">Statistiche</span></button></div>
+      <div id="vcMedia"></div>
+      <div class="card"><div class="row" style="margin-bottom:8px"><div class="lbl sp" style="margin:0" data-t="vc.tras">Trascrizione · chi parla</div><button class="btn b-ghost b-sm" id="vcNomi" data-t="vc.nomi">Dai i nomi alle voci…</button></div>
+        <div id="vcRighe"></div></div>
+      <div class="card"><div class="lbl" data-t="vc.voci">Voci</div><div class="row" id="vcPill" style="flex-wrap:wrap;gap:8px"></div>
+        <div class="hint" style="margin-top:8px" data-t="vc.nota">Il programma separa le voci da solo, sul PC: l'audio non va su internet. Può sbagliare: i nomi si correggono con «Dai i nomi alle voci».</div>
+        <div class="row mt"><span class="sp"></span><button class="lnk" id="vcRifai" data-t="vc.rifai">Riconosci di nuovo le voci</button></div></div>
+    </section>
+
+    <!-- INFOGRAFICA -->
+    <section class="pg hidden" id="v-ig">
+      <div class="hd"><div><h2 data-t="ig.h">Infografica</h2><p id="igSub"></p></div><div class="row" style="gap:6px"><button class="btn b-ghost b-sm" id="igPdf"><svg><use href="#i-doc"/></svg><span data-t="mp.pdf">Salva in PDF</span></button></div></div>
+      <div id="igBox"></div>
+      <div class="row mt"><span class="hint sp" data-t="ig.nota">Si crea una volta sola (circa 1 centesimo) e resta con la registrazione.</span><button class="lnk" id="igRifai" data-t="mp.rifai">Rifalla</button></div>
+    </section>
+
+    <!-- RIPASSO (flashcard) -->
+    <section class="pg hidden" id="v-rip">
+      <div id="rpScelta">
+        <div class="hd"><div><h2 id="rpH"></h2><p data-t="rp.p">Domande prese dagli appunti delle tue lezioni.</p></div></div>
+        <div class="card"><div class="lbl" data-t="rp.quali">Quali domande?</div>
+          <div class="scelta" id="rpModi"></div>
+          <div class="row mt"><span class="hint sp" data-t="rp.consiglio">Tocca la carta per girarla, poi dimmi se la sapevi.</span><button class="btn b-ghost b-sm" id="rpAnki" data-t="rp.anki">⬇ Esporta per Anki</button><button class="btn b-ghost b-sm" id="rpAnnulla" data-t="annulla">Annulla</button><button class="btn b-rip" id="rpVia" data-t="rp.via">Comincia</button></div></div>
+      </div>
+      <div id="rpCarte" class="hidden">
+        <div class="hd"><div><h2 id="rpH2"></h2><p id="rpSub"></p></div><button class="btn b-ghost b-sm" id="rpBasta" data-t="rp.basta">Basta così</button></div>
+        <div class="rgadesso hidden" id="rpAdesso"></div>
+        <div class="rprog"><span id="rpN"></span><div class="bar"><i id="rpBar" style="width:0%"></i></div><span id="rpOk"></span></div>
+        <div class="carta" id="carta"><div class="in2">
+          <div class="faccia fronte"><div class="stelle" id="cSt"></div><div class="dom" id="cD"></div><div class="ori"><svg width="15" height="15"><use href="#i-doc"/></svg><span id="cO"></span></div><div class="tocca" data-t="rp.pensa">Pensa alla risposta, poi tocca la carta per girarla ↻</div></div>
+          <div class="faccia retro"><h4 id="cTit"></h4><ol id="cSc"></ol><div id="cAv"></div><div id="cK"></div><div class="sl" id="cSl"></div><div class="err" id="cE"></div></div>
+        </div></div>
+        <div class="rgcroc hidden" id="rpCroc"></div>
+        <div class="rgvoce hidden" id="rpVoce">
+          <div class="row" style="justify-content:center;gap:10px;flex-wrap:wrap"><button class="btn b-ghost" id="rgRileggi" data-t="rg.rileggi">🔊 Rileggi la domanda</button><button class="btn b-rec" id="rgMic" data-t="rg.mic">🎙 Rispondi a voce</button></div>
+          <div class="rgesito hidden" id="rgEsito"></div>
+        </div>
+        <div class="voto" id="voto"><button class="btn b-no" id="vNo" data-t="rp.no">↺ Da rivedere</button><button class="btn b-si" id="vSi" data-t="rp.si">✓ La sapevo</button></div>
+        <div class="hint" style="text-align:center;margin-top:8px" id="rpQuando"></div>
+        <div class="hint solo-pc" style="text-align:center;margin-top:10px" data-t="rp.tasti"></div>
+      </div>
+      <div id="rpRis" class="hidden">
+        <div class="card ris"><div class="anello" id="anello"><div><span id="rN"></span><small data-t="rp.sapute">sapute</small></div></div>
+          <div style="font-size:21px;font-weight:700;color:var(--ink)" id="rT"></div>
+          <div class="hint" data-t="rp.r.p"></div>
+          <div class="dariv" id="rL"></div>
+          <div class="row mt" style="justify-content:center"><button class="btn b-ghost" id="rFine" data-t="rp.r.fine">Fine</button><button class="btn b-rip" id="rAncora" data-t="rp.r.ancora"></button></div></div>
+      </div>
+    </section>
+
+    <!-- IMPOSTAZIONI -->
+    <section class="pg hidden" id="v-imp">
+      <div class="hd"><div><h2 data-t="im.h">Impostazioni</h2><p data-t="im.p">Si salvano da sole.</p></div></div>
+      <div class="imsez" data-t="im.ess">Essenziali</div>
+      <div class="card">
+        <div class="lbl" data-t="im.lingua">Lingua</div>
+        <div class="set"><div class="t"><b data-t="im.lingua.t">Lingua del programma e degli appunti</b><span data-t="im.lingua.s">Menu, pulsanti, appunti Cornell e PDF.</span></div><div class="seg" id="segLingua"><span data-l="it">Italiano</span><span data-l="en">English</span></div></div>
+        <div class="set"><div class="t"><b data-t="fa.t">Lettura facilitata (DSA)</b><span data-t="fa.s">Carattere ad alta leggibilità, lettere e righe più distanziate, fondo color crema: in «Ascolta gli appunti», nelle flashcard e nei PDF degli appunti nuovi.</span></div><div class="sw" id="swFac"></div></div>
+        <div class="set" id="lmImp"><div class="t"><b data-t="lm.t">👓 Come leggo meglio</b><span data-t="lm.s">Carattere, grandezza, colore dello sfondo, sillabe colorate, righello di lettura.</span></div><button class="btn b-ghost b-sm" id="lmApri" data-t="lm.apri">Scegli…</button></div>
+      </div>
+      <div class="card mt">
+        <div class="lbl" data-t="sy.lbl">Sincronizza</div>
+        <div class="set"><div class="t"><b data-t="sy.t">🔄 PC e telefono insieme</b><span id="syImpS" data-t="sy.s">Le stesse lezioni e lo stesso ripasso su PC e telefono, sulla stessa rete Wi-Fi.</span></div><button class="btn b-ghost b-sm" id="syApri" data-t="sy.apri">Apri…</button></div>
+      </div>
+      <div class="card mt">
+        <div class="lbl" data-t="im.ai">Intelligenza artificiale</div>
+        <div class="ai">
+          <div class="aiopt" id="aiA"><span class="rd"></span><span class="ico i-org"><svg><use href="#i-spark"/></svg></span><b data-t="im.a.t">Appunti automatici con Claude</b>
+            <small data-t="im.a">Con la tua chiave di Claude gli appunti in formato Cornell arrivano da soli, mentre registri. Costo: circa 0,20 $ per ogni ora registrata.</small>
+            <div id="chiaveBox"></div>
+          </div>
+          <div class="aiopt" id="aiB"><span class="rd"></span><span class="ico i-blue"><svg><use href="#i-zip"/></svg></span><b data-t="im.b.t">Cartella per l'AI che vuoi</b>
+            <small data-t="im.b">Nessuna chiave: preparo i file (slide + parole del docente) da portare a Claude, ChatGPT, Gemini o qualsiasi altra AI.</small></div>
+        </div>
+      </div>
+      <div class="card mt hidden" id="hoCard">
+        <div class="lbl" data-t="ho.h">Ho un invito</div>
+        <div class="invok hidden" id="hoGia"></div>
+        <div class="hint" style="margin-bottom:8px" data-t="ho.s">Incolla qui il messaggio dell'invito che ti hanno mandato:</div>
+        <textarea class="in" id="hoTxt" rows="4" style="width:100%;font-size:12.5px"></textarea>
+        <div class="row" style="margin-top:8px"><span class="hint sp" id="hoEsito"></span><button class="btn b-main b-sm" id="hoVai" data-t="ho.vai">Attiva</button></div>
+      </div>
+      <div class="card mt" id="dvCard">
+        <div class="lbl" data-t="dv.h">Dove trascrivo</div>
+        <div class="ai" id="dvBox">
+          <div class="aiopt" data-d="qui"><span class="rd"></span><span class="ico i-blue" id="dvIcoQui">💻</span><b data-t="dv.qui.t">Sul PC</b><small data-t="dv.qui">Gratis. L'audio non esce dal PC. Pronta un paio di minuti dopo la fine.</small></div>
+          <div class="aiopt" data-d="server"><span class="rd"></span><span class="ico i-org">⚡</span><b data-t="dv.srv.t">Sul server (veloce)</b><small data-t="dv.srv">Un'ora di lezione in circa un minuto, anche se il PC è lento. Pochi centesimi l'ora sul tuo conto RunPod. L'audio va al server (in Europa) e viene cancellato finito il lavoro.</small></div>
+        </div>
+        <div class="dvattivo" id="dvAttivo"></div>
+        <div class="dvpc" id="dvPc">
+          <div class="lbl" style="margin:0 0 4px" data-t="dv.pc.h">Trascrizione sul PC</div>
+          <div class="set"><div class="t"><b data-t="dv.vel.t">Velocità di questo PC</b><span id="dvVel"></span></div></div>
+          <div class="set"><div class="t"><b data-t="im.prec">Trascrizione più precisa</b><span data-t="im.prec.s">Sbaglia meno parole, ma ci mette circa una volta e mezza il tempo. Vale per le prossime registrazioni.</span></div><div class="sw" id="swPrec"></div></div>
+          <div class="set solo-and"><div class="t"><b data-t="and.q.t"></b><span data-t="and.q.s"></span></div><div class="seg" id="segQuando"><span data-v="durante" data-t="and.durante.t"></span><span data-v="dopo" data-t="and.dopo.t"></span></div></div>
+          <div class="set solo-and"><div class="t"><b data-t="and.c.t"></b><span data-t="and.c.s"></span></div><div class="sw" id="swCarica"></div></div>
+          <div class="dvlim" data-t="dv.lim.pc">ℹ Da sapere: mentre trascrive il PC lavora molto e può scaldare o rallentare; non spegnerlo finché non ha finito (se lo spegni, riprende alla riaccensione). Se il PC è lento, conviene «Sul server».</div>
+        </div>
+        <div id="dvSrv">
+          <div class="dvcosa" data-t="dv.cosa">Cos'è il server? Un computer molto potente a noleggio (RunPod, in Europa) che trascrive al posto del PC: un'ora di lezione in circa un minuto. Si paga solo il tempo che lavora, pochi centesimi per un'ora di lezione. L'audio viene cancellato appena finito.</div>
+          <div class="dvlim" data-t="dv.lim.srv">ℹ Da sapere: serve internet; se il server era spento, la prima volta ci mette fino a un minuto in più ad accendersi. Se manca internet trascrivo qui come prima.</div>
+        <div class="dvstato" id="dvStato"></div>
+        <details class="dvaltre" id="dvAltre"><summary><span data-t="dv.altre">⚙ Altre opzioni: codice e chiave del server</span></summary>
+        <div id="srvBox" style="margin-top:10px;border-top:1px dashed #dbe5f0;padding-top:10px">
+          <div class="lbl" data-t="dv.cod">Codice del server (Endpoint ID)</div>
+          <input class="in" id="srvCod" autocomplete="off" spellcheck="false" maxlength="40">
+          <div class="lbl" style="margin-top:10px" data-t="dv.chiave">Chiave di RunPod</div>
+          <input class="in" id="srvKey" type="password" autocomplete="off" spellcheck="false">
+          <div class="hint" style="margin-top:4px" data-t="dv.chiave.s">Resta solo su questo PC, protetta.</div>
+          <div class="row" style="margin-top:10px;gap:8px;flex-wrap:wrap"><button class="btn b-main b-sm" id="srvVai" data-t="dv.vai">Collega e prova</button><span class="hint sp" id="srvEsito"></span></div>
+          <div style="margin-top:14px"><button class="btn b-sm dvvia hidden" id="srvVia" data-t="dv.via">Scollega il server…</button></div>
+        </div>
+        </details>
+        </div>
+      </div>
+      <div class="card mt">
+        <div class="lbl" data-t="im.fmt">Formato degli appunti</div>
+        <div class="ai" id="fmtBox">
+          <div class="aiopt" data-f="cornell"><span class="rd"></span><b data-t="im.fmt.c.t">Cornell</b><small data-t="im.fmt.c">Domande a sinistra, appunti a destra, riassunto in fondo. Per capire e ripassare la lezione.</small></div>
+          <div class="aiopt" data-f="esame"><span class="rd"></span><b data-t="im.fmt.e.t">Formato Esame</b><small data-t="im.fmt.e">Le domande più probabili in ordine di importanza, per ognuna lo schema della risposta e le parole chiave; in fondo una simulazione d'esame. Per prepararsi a rispondere.</small></div>
+          <div class="aiopt" data-f="mio"><span class="rd"></span><b data-t="im.fmt.m.t">✎ Il mio formato</b><small data-t="im.fmt.m">Descrivi tu a parole come vuoi gli appunti.</small></div>
+        </div>
+        <div id="mioBox" style="margin-top:12px">
+          <div class="lbl" data-t="mio.h">Il mio formato</div>
+          <input class="in sm" id="mioNome" data-tp="mio.nome.ph" placeholder="Nome del formato, es. Schema per l'orale" maxlength="60" autocomplete="off">
+          <textarea class="in" id="mioDesc" rows="4" style="margin-top:8px;resize:vertical" data-tp="mio.desc.ph" placeholder="Scrivi come vuoi gli appunti: cosa mettere, in che ordine, quanto lunghi…"></textarea>
+          <div class="chips" id="mioEsempi" style="margin-top:6px"></div>
+          <div class="row" style="margin-top:8px;gap:8px"><span class="hint sp" id="mioHint" data-t="mio.s">Si salva da solo. Prima di usarlo puoi provarlo su una registrazione già fatta (circa 5-10 centesimi).</span><button class="btn b-cor b-sm" id="mioProva" data-t="mio.prova">Prova</button></div>
+        </div>
+        <div class="hint" style="margin-top:6px" data-t="im.fmt.tipi">Per le riunioni gli appunti sono il verbale, per i webinar i punti chiave.</div>
+        <div class="hint" style="margin-top:10px" data-t="im.fmt.s">Vale per le prossime registrazioni. Su una lezione già fatta: «⋯» → «Rifai appunti» nel formato scelto.</div>
+      </div>
+      <div class="card mt solo-pc" id="clCard">
+        <div class="lbl" data-t="cl.h">☁ Copia nel cloud</div>
+        <div class="hint" data-t="cl.s">Le registrazioni restano su questo PC. Appena una lezione è pronta, ne copio una copia nel tuo cloud: la ritrovi anche dal telefono o da un altro computer.</div>
+        <div class="clcome"><b data-t="cl.come">Come si imposta:</b><ol><li data-t="cl.come1">Scegli dove copiare (consigliato: OneDrive, c'è già su Windows).</li><li data-t="cl.come2">Spunta cosa copiare.</li><li data-t="cl.come3">Tocca «Copia anche le lezioni già fatte». Da lì in poi le nuove si copiano da sole.</li></ol></div>
+        <div class="clopts" id="clOpts">
+          <div class="clopt" data-d="no"><i>🚫</i><b data-t="cl.no">No</b><small data-t="cl.no.s">Non copio niente. Tutto resta solo sul PC.</small></div>
+          <div class="clopt" data-d="gdrive"><i>🟢</i><b>Google Drive</b><small data-t="cl.gd.s">Serve «Google Drive per desktop» installato. 15 GB gratis.</small></div>
+          <div class="clopt" data-d="onedrive"><i>🔵</i><b>OneDrive</b><small data-t="cl.od.s">C'è già su Windows. 5 GB gratis.</small></div>
+          <div class="clopt" data-d="altro"><i>📁</i><b data-t="cl.altro">Altra cartella…</b><small data-t="cl.al.s">Dropbox, una chiavetta, un disco esterno…</small></div>
+        </div>
+        <div class="clbox hidden" id="clBox">
+          <div id="clTrov"></div>
+          <div class="clsub" data-t="cl.qui">Qui trovi le copie: una cartella per ogni lezione</div>
+          <div class="clpath"><span id="clPath"></span><button class="btn b-ghost b-sm" id="clApri" data-t="im.apri">Apri</button></div>
+          <div class="hint" id="clTel"></div>
+          <div class="clsub" data-t="cl.cosa">Cosa copio</div>
+          <label class="invck"><input type="checkbox" id="clAp"><span><b data-t="cl.ap">Appunti (PDF)</b><small data-t="cl.ap.s">Cornell, Formato Esame, verbali… Da leggere o stampare dal telefono. Pochissimo spazio.</small></span></label>
+          <label class="invck"><input type="checkbox" id="clTr"><span><b data-t="cl.tr">Trascrizione</b><small data-t="cl.tr.s">Il PDF «Per Claude – …» con tutto quello che è stato detto. Ti serve per rifare gli appunti con «Importa testo» o per darlo a Claude. Pochissimo spazio.</small></span></label>
+          <label class="invck"><input type="checkbox" id="clAu"><span><b data-t="cl.au">Audio compresso</b><small data-t="cl.au.s">Per riascoltare la lezione. Circa 30 MB per ora: è la parte che occupa di più (5 GB ≈ 160 ore). Il video non lo copio.</small></span></label>
+          <div style="margin-top:10px"><button class="btn b-ghost b-sm" id="clTutte"></button></div>
+          <div class="hint" id="clTutteS" data-t="cl.tutte.s" style="margin-top:6px">Copia le lezioni registrate prima di accendere la copia. Basta toccarlo una volta.</div>
+        </div>
+        <div class="dvstato" id="clStato"></div>
+        <div class="hint" id="clRiprova" data-t="cl.riprova" style="margin-top:8px">Se il PC è senza internet, riprovo da solo ogni 10 minuti. In «Le mie registrazioni» vedi ☁ sulle lezioni già copiate.</div>
+      </div>
+      <div class="card mt">
+        <div class="lbl" data-t="im.dati">I tuoi dati</div>
+        <div class="hint" data-t="im.dati.s">Compaiono in testa agli appunti e aiutano Claude a scriverli adatti al tuo corso.</div>
+        <div class="dati">
+          <div><label for="dNome" data-t="im.d.nome">Nome e cognome</label><input class="in sm" id="dNome" data-k="nome"></div>
+          <div><label for="dUni" data-t="im.d.uni">Università</label><input class="in sm" id="dUni" data-k="universita"></div>
+          <div><label for="dCorso" data-t="im.d.corso">Corso di laurea</label><input class="in sm" id="dCorso" data-k="corso"></div>
+          <div><label for="dAnno" data-t="im.d.anno">Anno</label><input class="in sm" id="dAnno" data-k="anno"></div>
+        </div>
+      </div>
+      <div class="card mt">
+        <div class="row"><span class="ico i-blue"><svg><use href="#i-abc"/></svg></span><div class="sp"><b style="color:var(--ink);font-size:15px" data-t="pw.t">Parole difficili</b><div class="hint" data-t="pw.s">Nomi, termini tecnici, il nome del docente: la trascrizione li sbaglia molto meno e Claude li scrive giusti. Una materia alla volta.</div></div></div>
+        <div class="pwes" data-t="pw.es">💡 Esempio: il docente dice «ciclo di Krebs» e la trascrizione scrive «ciclo di crebs». Se aggiungi «ciclo di Krebs» a Biochimica, dalla prossima lezione di Biochimica lo scrive giusto, anche negli appunti.</div>
+        <div class="lbl" style="margin-top:12px" data-t="pw.mat">Materia</div>
+        <div class="chips" id="pwMat"></div>
+        <div class="lbl" style="margin-top:12px" id="pwTit"></div>
+        <div class="tags" id="pwTags"></div>
+        <div class="row" style="margin-top:10px;gap:8px"><input class="in sp" id="pwIn" data-tp="pw.ph" placeholder="Aggiungi una parola e premi Invio…" maxlength="60" autocomplete="off"><button class="btn b-ghost b-sm" id="pwAgg" data-t="pw.agg">Aggiungi</button></div>
+        <div class="pwok" id="pwOk"></div>
+        <div id="pwProp"></div>
+      </div>
+      <div class="card mt solo-and">
+        <div class="lbl" data-t="and.imp">Telefono</div>
+        <div class="set" id="andAgg" style="cursor:pointer"><div class="t"><b data-t="and.agg.t"></b><span id="andVer"></span></div><span style="font-size:22px;color:var(--mut)">›</span></div>
+      </div>
+      <button class="imavz" id="imAvz"><span class="ico i-vio"><svg><use href="#i-set"/></svg></span><span class="sp"><b data-t="im.avz.t">Impostazioni avanzate</b><small data-t="im.avz.s">Collegamenti, calendario, privacy, inviti, cartelle e altro</small></span><span class="btn b-ghost b-sm imavz-apri"><span data-t="im.avz.apri">Apri</span> <span class="fr">▾</span></span></button>
+      <div id="imAvanzate" class="hidden">
+      <div class="imsez" data-t="im.avz">Avanzate</div>
+      <div class="card mt" id="cgCard">
+        <div class="lbl" data-t="cg.h">Condividi e collega</div>
+        <div class="hint" data-t="cg.s">Email, Word, Google Docs e calendario funzionano subito, dal pulsante «Condividi» di ogni registrazione. Questi si collegano una volta sola:</div>
+        <div id="cgLista" style="margin-top:6px"></div>
+      </div>
+      <div class="card mt" id="calCard">
+        <div class="lbl" data-t="cal.h">Calendario</div>
+        <div class="hint" data-t="cal.s">Collega il calendario (o scrivi l'orario delle lezioni): il programma sa quando inizia un impegno, ti avvisa o registra da solo, con il nome giusto.</div>
+        <div id="calFonti" style="margin-top:10px"></div>
+        <div class="row" style="flex-wrap:wrap;gap:8px;margin-top:10px">
+          <button class="btn b-ghost b-sm" id="calGoogle">📅 <span data-t="cal.google">Collega Gmail (Google Calendar)…</span></button>
+          <button class="btn b-ghost b-sm" id="calOutlook">📆 <span data-t="cal.outlook">Collega Outlook / Hotmail…</span></button>
+          <button class="btn b-ghost b-sm" id="calAltro">🔗 <span data-t="cal.altro">Altro calendario (iCloud…)…</span></button>
+          <button class="btn b-ghost b-sm" id="calOrario">🗓 <span data-t="cal.orario">Orario delle lezioni…</span></button>
+        </div>
+        <div class="set" style="margin-top:12px"><div class="t"><b data-t="cal.modo.t">Quando inizia un impegno</b><span data-t="cal.modo.s">Vale per tutti; per un impegno solo lo cambi qui sotto.</span></div><div class="seg" id="segCal"><span data-v="avvisa" data-t="cal.avvisa">Avvisami</span><span data-v="solo" data-t="cal.solo">Registra da solo</span><span data-v="niente" data-t="cal.niente">Niente</span></div></div>
+        <div class="lbl" style="margin-top:12px" data-t="cal.prossimi">Prossimi impegni</div>
+        <div id="calImpegni"></div>
+      </div>
+      <div class="card mt">
+        <div class="set"><div class="t"><b data-t="im.ogni">Ogni quanto salvo una parte</b><span data-t="im.ogni.s">Con 30 minuti gli appunti arrivano prima; il costo è quasi lo stesso.</span></div><div class="seg" id="segDur"><span data-v="30" data-t="im.30">30 min</span><span data-v="60" data-t="im.60">1 ora</span></div></div>
+        <div class="set solo-pc"><div class="t"><b data-t="im.mini">Mini finestra durante la registrazione</b><span data-t="im.mini.s">Piccola, sempre in primo piano, con Pausa e Fine.</span></div><div class="sw" id="swMini"></div></div>
+        <div class="set"><div class="t"><b data-t="im.voci">Riconosci chi parla</b><span data-t="im.voci.s">Nella trascrizione e negli appunti c'è scritto chi ha detto cosa.</span></div><div class="sw" id="swVoci"></div></div>
+        <div class="set solo-pc"><div class="t"><b data-t="im.dir">Testo in diretta</b><span data-t="im.dir.s">Mentre registri vedi il testo con circa 2 minuti di ritardo. Il PC lavora di più: su un portatile lento può rallentare Meet.</span></div><div class="sw" id="swDir"></div></div>
+        <div class="set solo-pc"><div class="t"><b data-t="im.dnd">Ricordami «Non disturbare»</b><span data-t="im.dnd.s">Così i suoni delle notifiche non finiscono nella registrazione.</span></div><div class="sw" id="swDnd"></div></div>
+        <div class="set solo-pc"><div class="t"><b data-t="im.cart">Dove salvo le lezioni</b><span id="impCart"></span></div><button class="btn b-ghost b-sm" id="btnCart" data-t="im.cambia">Cambia…</button></div>
+        <div class="set solo-pc"><div class="t"><b data-t="im.base">Le registrazioni sono in</b><span id="impBase"></span></div><button class="btn b-ghost b-sm" id="btnBase" data-t="im.apri">Apri</button></div>
+      </div>
+      <div class="card mt hidden" id="invCard">
+        <div class="lbl" data-t="inv.h">Inviti</div>
+        <div class="hint" style="margin-bottom:10px" data-t="inv.s">Per dare il programma già pronto a qualcuno di cui ti fidi (Sara, Lorenzo…): riceve le tue chiavi senza vederle. Quello che usa lo paghi tu.</div>
+        <div class="lbl" data-t="inv.per">Per chi è?</div><input class="in" id="invPer" maxlength="40" autocomplete="off">
+        <div class="lbl" style="margin-top:12px" data-t="inv.cosa">Cosa gli dai</div>
+        <label class="invck"><input type="checkbox" id="invCl" checked><span><b data-t="inv.cl">La chiave di Claude</b><small data-t="inv.cl.s">per appunti, Chiedi, mappe…</small></span></label>
+        <label class="invck"><input type="checkbox" id="invSrv" checked><span><b data-t="inv.srv">Il server per trascrivere</b><small data-t="inv.srv.s">trascrizione veloce sul tuo RunPod</small></span></label>
+        <div class="row" style="margin-top:10px"><span class="sp"></span><button class="btn b-main b-sm" id="invVai" data-t="inv.vai">Prepara l'invito</button></div>
+        <div id="invRis" class="hidden" style="margin-top:14px;border-top:1px dashed #dbe5f0;padding-top:12px">
+          <div class="invok" id="invOk"></div>
+          <div class="hint" style="margin:6px 0" data-t="inv.copia.s">Copia questo messaggio e mandalo su WhatsApp:</div>
+          <textarea class="in" id="invMsg" rows="5" readonly style="width:100%;font-size:12.5px"></textarea>
+          <div class="row" style="margin-top:8px"><span class="hint sp" id="invCopiato"></span><button class="btn b-main b-sm" id="invCopia" data-t="inv.copia">Copia il messaggio</button></div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- GUIDA -->
+    <section class="pg hidden" id="v-guida">
+      <div class="hd"><div><h2 id="gT">Guida</h2><p id="gS"></p></div><div class="seg" id="segGuida"><span data-l="it">Italiano</span><span data-l="en">English</span></div></div>
+      <div id="gCap"></div>
+    </section>
+
+    <!-- INFORMAZIONI -->
+    <section class="pg hidden" id="v-info">
+      <div class="card about">
+        <div class="logo"><svg width="44" height="44"><use href="#i-logo"/></svg></div>
+        <div style="font-size:24px;font-weight:700;color:var(--ink)">Verba Manent IA</div>
+        <div class="hint" style="font-size:13.5px" id="infoVer"></div>
+        <div style="max-width:440px;margin:16px auto;font-size:13.5px;line-height:1.55" data-t="in.desc">Registra lezioni, webinar e riunioni online. Trascrive sul tuo PC, senza mandare l'audio su internet, e prepara appunti di studio in formato Cornell.</div>
+        <div class="aggbox" id="aggBox"></div>
+        <div class="row" style="justify-content:center;gap:10px;margin:22px 0 6px">
+          <span class="pw">PW</span>
+          <div style="text-align:left"><b style="color:var(--navy)">Punto Web Ferrara</b><div class="hint">puntowebferrara.com</div></div>
+        </div>
+        <div class="row" style="justify-content:center;margin-top:14px"><button class="btn b-main b-sm" id="btnAss" data-t="in.ass">Assistenza</button><button class="btn b-ghost b-sm" id="btnCercaAgg" data-t="in.cerca">Cerca aggiornamenti</button><button class="btn b-ghost b-sm" id="btnLic" data-t="in.lic">Licenze</button></div>
+      </div>
+      <div class="card mt">
+        <div class="lbl" data-t="im.pv.h">Privacy</div>
+        <div class="set"><div class="t"><b data-t="im.pv.t">Privacy</b><span data-t="im.pv.s"></span></div><button class="btn b-ghost b-sm" id="btnPrivacy" data-t="im.pv.b">Rileggi</button></div>
+        <div class="set"><div class="t"><b data-t="im.rap.t">Rapporti sugli errori</b><span data-t="im.rap.s"></span></div><div class="sw" id="swRap"></div></div>
+      </div>
+    </section>
+
+    <!-- LICENZE -->
+    <section class="pg hidden" id="v-lic">
+      <button class="li-back" id="licIndietro" data-t="li.indietro">‹ Informazioni</button>
+      <div class="hd"><div><h2 data-t="li.h">Licenze</h2><p data-t="li.sub"></p></div></div>
+      <div class="card li-prop"><span class="pw">PW</span><div><b data-t="li.prop"></b><div class="hint" data-t="li.prop.s"></div></div></div>
+      <div class="li-leg">
+        <span><span class="li-l">MIT · BSD · Apache</span><span data-t="li.leg.lib"></span></span>
+        <span><span class="li-l lg">LGPL</span><span data-t="li.leg.lgpl"></span></span>
+        <span><span class="li-l gp">GPL</span><span data-t="li.leg.gpl"></span></span>
+        <span><span class="li-l ms">Microsoft</span><span data-t="li.leg.ms"></span></span>
+      </div>
+      <p class="hint" data-t="li.tocca"></p>
+      <div id="licGruppi"></div>
+      <p class="hint" style="text-align:center;margin-top:14px" data-t="li.file"></p>
+    </section>
+  </main>
+</div>
+
+<script src="testi.js?v=d3a71c3a6b"></script>
+<script src="guida.js?v=d3a71c3a6b"></script>
+<script src="android.js?v=d3a71c3a6b"></script>
+<script src="qrcode.js?v=d3a71c3a6b"></script>
+<script src="web.js?v=d3a71c3a6b"></script>
+<script src="app.js?v=d3a71c3a6b"></script>
+<div class="rghd" id="rghd"></div>
+</body>
+</html>

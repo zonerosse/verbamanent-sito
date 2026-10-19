@@ -1,0 +1,11 @@
+Verba Manent sul web usa, dentro il browser:
+- Pyodide 0.27.7 (Python per il browser) – Mozilla Public License 2.0 – https://github.com/pyodide/pyodide
+- CPython 3.12 – Python Software Foundation License – https://www.python.org
+- NumPy – BSD 3-Clause – https://numpy.org
+- Pillow – MIT-CMU (HPND) – https://python-pillow.org
+- fontTools – MIT – https://github.com/fonttools/fonttools
+- OpenSSL 1.1.1 – OpenSSL License – https://www.openssl.org
+- SQLite – pubblico dominio – https://sqlite.org
+- fpdf2 2.8.9 – LGPL-3.0 – https://github.com/py-pdf/fpdf2
+- defusedxml 0.7.1 – Python Software Foundation License – https://github.com/tiran/defusedxml
+Le licenze del programma sono in licenze.js (le stesse del programma per PC e telefono).
