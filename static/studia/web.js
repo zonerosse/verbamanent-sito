@@ -141,9 +141,12 @@ let ricorda = salvaLoc('vm-web-ricorda') === '1';
 let caricato = null;            // il worker ha caricato Pyodide e il programma
 let email = '', tok = null, salvatoPrima = {};
 
+const SITO = IT ? {home: '/', privacy: '/privacy/', guide: '/guide/', t: ['Il sito', 'Privacy', 'Guide']}
+                : {home: '/en/', privacy: '/en/privacy/', guide: '/en/guides/', t: ['Website', 'Privacy', 'Guides']};
+const LINK = `<p class="wpic wlink"><a href="${SITO.home}">${SITO.t[0]}</a> · <a href="${SITO.privacy}">${SITO.t[1]}</a> · <a href="${SITO.guide}">${SITO.t[2]}</a></p>`;
 function schermoAccedi(err = '') {
   schermo(`${LOGO}<h1>${esc(T.titolo)}</h1><p class="ws">${esc(T.intro)}</p><p class="werr">${esc(err)}</p>
-    <button class="wbtn wg" id="wAccedi">${G_SVG}${esc(T.accedi)}</button><p class="wpic">${esc(T.accedi_p)}</p>`);
+    <button class="wbtn wg" id="wAccedi">${G_SVG}${esc(T.accedi)}</button><p class="wpic">${esc(T.accedi_p)}</p>${LINK}`);
   ov.querySelector('#wAccedi').onclick = accedi;
 }
 
@@ -188,7 +191,7 @@ function schermoPassword(err = '') {
   schermo(`<div class="wlogo">🔒</div><h1>${esc(T.pw_t)}</h1><p class="ws">${esc(T.pw_p)}</p><p class="werr">${esc(err)}</p>
     <input class="win" id="wPw" autocomplete="off" spellcheck="false" placeholder="ABCD-EFGH-JKLM-NPQR" aria-label="${esc(T.pw_t)}">
     <label class="wck"><input type="checkbox" id="wRic"${ricorda ? ' checked' : ''}> ${esc(T.ricorda)}</label>
-    <button class="wbtn wp" id="wPwOk">${esc(T.pw_ok)}</button><p class="wpic">${esc(T.pw_pic)}</p>`);
+    <button class="wbtn wp" id="wPwOk">${esc(T.pw_ok)}</button><p class="wpic">${esc(T.pw_pic)}</p>${LINK}`);
   const i = ov.querySelector('#wPw'), b = ov.querySelector('#wPwOk');
   i.focus();
   i.onkeydown = e => { if (e.key === 'Enter') b.click(); };
@@ -347,7 +350,18 @@ async function esci() {
 }
 
 // ---------------------------------------------------------------- partenza
+// I link del menu del programma non hanno indirizzo (li gestisce app.js): qui ne hanno uno vero,
+// cosi' la pagina non sembra una trappola a chi controlla i link (alcuni antivirus); il clic resta al programma.
+function indirizzi() {
+  document.querySelectorAll('a:not([href])').forEach(a => {
+    a.setAttribute('href', location.pathname + '?vai=' + encodeURIComponent(a.dataset.p || a.id || 'home'));
+    a.dataset.vmInt = '1';
+  });
+}
+document.addEventListener('click', e => { const a = e.target.closest && e.target.closest('a[data-vm-int]'); if (a) e.preventDefault(); }, true);
+
 function parti() {
+  indirizzi();
   if (!window.Worker || !window.WebAssembly || !window.DecompressionStream) { schermo(`${LOGO}<h1>${esc(T.titolo)}</h1><p class="werr">${esc(T.browser)}</p>`); return; }
   document.body.append(ov);
   schermoAccedi();
