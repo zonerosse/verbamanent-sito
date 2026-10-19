@@ -37,7 +37,7 @@ Audio and video recordings, transcripts, notes, flashcards, the names you give t
 | A **copy** of notes, transcript and, if you choose, audio, **only if you turn on «Copy to the cloud»** | Your own Google Drive, OneDrive or a folder you choose | To find your lectures from your phone or another computer. We see nothing: it's your own space |
 | Lessons, notes and reviews, **only if you link your phone to a computer with «Sync»** (Wi-Fi) | Straight to your other device, on your home network or the phone's hotspot | To have the same lessons on PC and phone. It goes through no internet and no server of ours |
 | Lessons packed in **password-protected zips**, **only if you turn on «Sync away from home»** | Your own Google Drive or OneDrive | To sync PC and phone even when they are far apart. Without the password nobody can open the zips, not Google, Microsoft or us. See below |
-| Activation code and a computer identifier | The service that handles sales | To check that your licence is valid |
+| Your **Gmail address**, only if the free trial is on or you have a subscription (including «Complimentary» or family) | Our site verbamanent.app | To know how many trial days you have left, or whether Claude is included for you. See «Free trial and subscription» below |
 | Technical error reports, **only if you agree** (you can change your mind in Settings › Privacy) | Sentry, with data in Europe (Germany) | To fix problems. They only contain where in the program the error happened, the version and the type of computer. Never recordings, transcripts, notes, file or people names, keys |
 
 ## Google Drive and OneDrive («Sync away from home»)
@@ -55,6 +55,24 @@ You can remove the permission at any time: in Verba Manent with «Unlink the clo
 
 Verba Manent IA's use and transfer to any other app of information received from Google APIs will adhere to the [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements.
 
+## Free trial and subscription
+
+**What we keep on our site** (Cloudflare storage):
+
+- **Free trial:** your Gmail address, the day you started the trial and the last day you used the app.
+- **Subscription** (including «Complimentary» and family): your Gmail address, plan, since when you have it, any expiry date and the monthly Claude cap.
+- **Included Claude usage:** for each day, how many questions you asked Claude and what they cost (deleted automatically after about 13 months). **We do not keep the content** of questions or answers: the text passes through our site only to reach Anthropic, then is stored nowhere. Anthropic receives it with our key, not yours: it does not know who you are.
+
+**Why:** to provide the service you asked for (counting trial days, knowing whether Claude is included for you, applying the monthly cap). The legal basis is our contract with you.
+
+**For how long:** while you are on the trial or subscribed, then for 12 months after it ends, so we can recognise you if you come back. Then it is deleted automatically. You can ask us to delete it sooner by writing to [info@puntowebferrara.com](mailto:info@puntowebferrara.com).
+
+{{% solo-vendita %}}
+**If you subscribe and pay**, we also keep the subscription status (active or cancelled), the renewal date, the card type and last 4 digits, and the codes Lemon Squeezy uses to identify your subscription.
+
+**Lemon Squeezy** (Lemon Squeezy LLC, part of the Stripe group) sells the subscription as *merchant of record*. For payment it is an **independent controller** of your data: it receives your name, email, country and payment details, processes them under [its privacy policy](https://lemonsqueezy.com/privacy) and keeps receipts for as long as tax law requires. Lemon Squeezy is based in the United States: the data transfer is covered by the safeguards required by the GDPR. We never receive your card details.
+{{% /solo-vendita %}}
+
 ## “Who's speaking” and your voice
 
 To tell speakers apart, Verba Manent compares voices **only within the same recording and only while processing it**. When it's done, every trace of the voice is deleted: the file only keeps a label such as “Voice 1 = Lecturer”. Verba Manent does not recognise people from one recording to the next and keeps no voiceprints.
@@ -65,7 +83,7 @@ When you record lectures or meetings, you also record other people's voices. Get
 
 ## This website
 
-If you join the waiting list we keep your email and the use you select, only to tell you when the app is released. You can ask us to delete it at any time. The site's visitor statistics use no cookies.
+If you join the waiting list we keep your email and the use you select, only to tell you when the app is released. You can ask us to delete it at any time. The site's visitor statistics use no cookies. The «My subscription» page and Verba Manent on the web use Google sign-in to learn your Gmail address; the site sets no cookie for this.
 
 ## Your rights
 

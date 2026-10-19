@@ -80,14 +80,15 @@
     <span>
       {{- with site.GetPage "/contatti" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
       {{- with site.GetPage "/privacy" }}<a href="{{ .RelPermalink }}">{{ $t.piede.privacy }}</a>{{ end }}
+      {{- with site.GetPage "/condizioni" }}<a href="{{ .RelPermalink }}">{{ if eq site.Language.Lang "it" }}Condizioni d'uso{{ else }}Terms{{ end }}</a>{{ end }}
       {{- with site.GetPage "/note-legali" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
       <a href="/privato" rel="nofollow">{{ if eq site.Language.Lang "it" }}Area riservata{{ else }}Staff area{{ end }}</a>
     </span>
   </div>
 </footer>
 <script>
-// «Prezzi» nel menu compare solo quando la vendita e' accesa (pannello › Abbonati › Vendita)
-(function(){try{fetch('/api/vendita').then(function(r){return r.json()}).then(function(v){if(v&&v.attiva)document.querySelectorAll('.solo-vendita').forEach(function(a){a.hidden=false})}).catch(function(){})}catch(e){}})();
+// «Prezzi» nel menu e le parti sui pagamenti (condizioni, privacy) compaiono solo quando la vendita e' accesa (pannello › Abbonati › Vendita)
+(function(){try{fetch('/api/vendita').then(function(r){return r.json()}).then(function(v){if(v&&v.attiva){document.querySelectorAll('.solo-vendita').forEach(function(a){a.hidden=false});document.querySelectorAll('.senza-vendita').forEach(function(a){a.hidden=true})}}).catch(function(){})}catch(e){}})();
 </script>
 </body>
 </html>

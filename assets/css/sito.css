@@ -9,6 +9,7 @@ body{margin:0;font-family:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-s
 h1,h2,h3{font-family:"Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;color:var(--ink);line-height:1.15;margin:0}
 a{color:var(--blue)}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.solo-vendita[hidden],.senza-vendita[hidden]{display:none!important}
 .banner{background:#fef3c7;color:#78350f;text-align:center;font-size:14px;padding:8px 16px}
 
 /* testata */
