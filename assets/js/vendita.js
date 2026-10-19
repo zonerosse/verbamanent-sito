@@ -26,6 +26,7 @@
     ab_p: 'Accedi con Google: l\'abbonamento sarà legato a questo account. Usa lo stesso Gmail con cui usi Verba Manent (Sincronizza).',
     google: 'Accedi con Google', google_p: 'Verba Manent vede solo il tuo indirizzo e i file che crea lui nel tuo Drive.',
     vai: 'Ti porto alla pagina di pagamento…', paga_p: 'Il pagamento lo fa un servizio esterno sicuro: carta, PayPal, Apple Pay, Google Pay. La ricevuta con l\'IVA arriva per email. Noi non vediamo i dati della carta.',
+    accetti: 'Abbonandoti accetti le', condizioni: 'condizioni d\'uso e di abbonamento',
     cambia: '← Cambia piano', gia_ab: 'Questo account ha già Claude compreso in Verba Manent.',
     e_annullato: 'Accesso annullato. Riprova quando vuoi.', e_servizio: 'Il servizio di pagamento non risponde. Riprova tra qualche minuto.', e_generico: 'Qualcosa non è andato. Riprova.',
     ok_t: 'Abbonamento attivo', ok_ciao: 'Benvenuto in Verba Manent!', ok_p: 'Claude è compreso: non devi mettere nessuna chiave.', ok_entra: 'Entra con',
@@ -64,6 +65,7 @@
     ab_p: 'Sign in with Google: the subscription will be linked to this account. Use the same Gmail you use with Verba Manent (Sync).',
     google: 'Sign in with Google', google_p: 'Verba Manent only sees your address and the files it creates in your Drive.',
     vai: 'Taking you to the payment page…', paga_p: 'Payment is handled by a secure external service: card, PayPal, Apple Pay, Google Pay. The VAT receipt arrives by email. We never see your card details.',
+    accetti: 'By subscribing you accept the', condizioni: 'terms of use and subscription',
     cambia: '← Change plan', gia_ab: 'This account already has Claude included in Verba Manent.',
     e_annullato: 'Sign-in cancelled. Try again whenever you like.', e_servizio: 'The payment service is not responding. Try again in a few minutes.', e_generico: 'Something went wrong. Please try again.',
     ok_t: 'Subscription active', ok_ciao: 'Welcome to Verba Manent!', ok_p: 'Claude is included: no key to set up.', ok_entra: 'Sign in with',
@@ -170,7 +172,7 @@
     var per = q.get('periodo') === 'anno' ? 'anno' : 'mese', cifra = per === 'anno' ? p.anno : p.mese;
     centro(LOGO + '<h1>' + esc(T.ab_t(p.piano)) + '</h1><div class="vnd-riep"><div><span>' + esc(p.piano) + '</span><b>' + esc(eur(cifra)) + ' ' + esc(per === 'anno' ? T.al_anno : T.al_mese) + '</b></div></div>' +
       '<p>' + esc(T.ab_p) + '</p><p class="vnd-err" role="alert"></p>' + bottoneGoogle('vG') +
-      '<p class="vnd-pic">' + esc(T.paga_p) + '</p><p class="vnd-pic"><a href="' + esc((L.prezzi || '/prezzi/') + '?periodo=' + per) + '">' + esc(T.cambia) + '</a></p>');
+      '<p class="vnd-pic">' + esc(T.paga_p) + ' ' + esc(T.accetti) + ' <a href="' + esc(L.condizioni || '/condizioni/') + '">' + esc(T.condizioni) + '</a>.</p><p class="vnd-pic"><a href="' + esc((L.prezzi || '/prezzi/') + '?periodo=' + per) + '">' + esc(T.cambia) + '</a></p>');
     var b = document.getElementById('vG'), err = R.querySelector('.vnd-err');
     b.onclick = function () {
       b.disabled = true; err.textContent = '';
