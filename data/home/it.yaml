@@ -1,5 +1,6 @@
 menu:
   - { id: fa, t: "Cosa fa" }
+  - { id: dsa, t: "DSA" }
   - { id: nonfa, t: "Cosa non fa" }
   - { id: vetrina, t: "Punti di forza" }
   - { id: come, t: "Come funziona" }
@@ -18,6 +19,7 @@ hero:
   trust:
     - "Le registrazioni restano sul tuo PC"
     - "Nessuna impronta della voce"
+    - "Spazio DSA completo"
     - "In italiano e inglese"
   demo:
     bar: "Registrazione in corso · Diritto privato · 00:42:17"
@@ -53,6 +55,44 @@ fa:
     - { ic: "📱", t: "Anche sul telefono", p: "L'app Android registra, trascrive sul telefono e prepara gli stessi appunti del PC." }
     - { ic: "🚀", t: "Trascrizione veloce, se vuoi", p: "PC lento? Collega un tuo server a consumo: un'ora di lezione in circa un minuto, per pochi centesimi. È facoltativo." }
     - { ic: "💬", t: "Chiedi alla lezione", p: "Non hai capito un passaggio? Fai la domanda e la risposta arriva da quello che ha detto il docente." }
+
+dsa:
+  kicker: "Per chi ha un DSA"
+  h2: "Lo Spazio DSA: tutti gli strumenti compensativi, in un posto solo"
+  p: "Dislessia, disgrafia, disortografia, discalculia. Accendi la Modalità DSA e Verba Manent mette in cima quello che ti serve, in ordine: in aula, dopo la lezione, per la verifica e per il docente."
+  voci:
+    - img: "spazio-dsa"
+      t: "Tutto in ordine, al primo colpo"
+      p: "Scegli materia e lezione e trovi gli strumenti divisi per momento. Niente menu da cercare: quello che ti serve adesso è già lì."
+      punti: ["In aula, dopo la lezione, per la verifica, per il docente", "Si accende con un interruttore", "Le altre funzioni restano a portata di mano in «Altro»"]
+      alt: "Lo Spazio DSA di Verba Manent con gli strumenti divisi in: in aula, dopo la lezione, per la verifica."
+    - img: "karaoke"
+      t: "Il karaoke della lezione"
+      p: "Riascolti la voce vera del prof e le parole si illuminano mentre parla, con la slide di quel momento accanto. Tocchi una parola e riparte da lì."
+      punti: ["La voce del docente, non una voce sintetica", "«Una riga alla volta» per non perdere il segno", "Velocità da 0,8× a 1,5×"]
+      alt: "Il karaoke della lezione: il testo del docente con il lettore audio e la scelta della velocità."
+    - img: "come-leggo"
+      t: "Come leggo meglio"
+      p: "Scegli il carattere (anche OpenDyslexic), la grandezza, lo spazio tra righe e lettere, il colore dello sfondo, le sillabe colorate e il righello di lettura."
+      punti: ["Vale per appunti, ascolto, karaoke, flashcard e PDF", "Sfondi tenui: crema, azzurro, verde, rosa", "Anteprima mentre scegli"]
+      alt: "La pagina Come leggo meglio con la scelta del carattere, della grandezza e del colore dello sfondo."
+    - img: "mappa-verifica"
+      t: "La mappa per la verifica"
+      p: "Un foglio A4 con le parole chiave delle lezioni che scegli e il riquadro di formule e valori, da stampare e portare alla verifica, con nome e classe in alto."
+      punti: ["Solo parole chiave, come chiedono molti docenti", "Togli le parole che non vuoi", "Da far firmare al docente prima della verifica"]
+      alt: "La mappa per la verifica: una mappa concettuale su un foglio A4 con nome e classe."
+  altri:
+    - { ic: "🔊", t: "Ascolta gli appunti", p: "Letti ad alta voce, con la frase che si illumina." }
+    - { ic: "🎙️", t: "Scrivi parlando", p: "Detti e il testo si scrive da solo, anche nelle risposte dei test." }
+    - { ic: "🎧", t: "Podcast semplice", p: "La lezione in pochi minuti, con frasi corte e la voce del prof nei punti chiave." }
+    - { ic: "🃏", t: "Ripasso del giorno", p: "Poche flashcard al giorno, scelte per te fino all'esame, lette anche a voce." }
+    - { ic: "📖", t: "Glossario della materia", p: "Le parole difficili spiegate semplici, con la slide e «Senti il prof» dal punto giusto." }
+    - { ic: "⏱️", t: "Test con il 30% di tempo in più", p: "Domande lette a voce e tempo in più, come all'esame vero." }
+    - { ic: "🎤", t: "Interrogazione a voce", p: "Rispondi parlando, come all'orale, e ricevi il voto con cosa manca." }
+    - { ic: "✍️", t: "Scritto dettato", p: "Rispondi a voce: la correzione guarda il contenuto, mai l'ortografia." }
+    - { ic: "📋", t: "Il foglio per il PDP", p: "«Gli strumenti che uso»: un PDF con gli strumenti compensativi che usi davvero, da dare alla scuola o all'università." }
+  legge_t: "Strumenti previsti dalla legge"
+  legge_p: "La legge 170/2010 riconosce il diritto agli strumenti compensativi, come la sintesi vocale e le mappe concettuali. Le linee guida del 2011 prevedono all'università fino al 30% di tempo in più agli esami. Verba Manent li mette tutti in un programma solo."
 
 nonfa:
   kicker: "Cosa NON fa"

@@ -286,3 +286,19 @@ pre.modello{background:var(--soft);border:1px solid var(--line);border-radius:12
 .inpiu{padding-top:10px}
 @media (max-width:980px){.vc-griglia{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.vc-griglia{grid-template-columns:1fr}}
+
+/* DSA: stessi elementi di Punti di forza e Cosa fa, sfondo chiaro */
+.dsa{background:var(--soft)}
+.dsa-altri{margin-top:28px}
+.dsa-legge{margin-top:22px;display:flex;gap:16px;align-items:center;padding:22px 24px;border-radius:var(--r);background:#fff;border:1px solid var(--line)}
+.dsa-legge .big{font-size:34px}
+.dsa-legge b{color:var(--ink);font-size:19px;display:block}
+.dsa-legge span{color:var(--mut);font-size:15.5px}
+.dsa .vc-griglia{grid-template-columns:repeat(2,1fr)}
+@media (max-width:640px){.dsa .vc-griglia{grid-template-columns:1fr}}
+/* menu con una voce in piu': le voci restano su una riga */
+nav a,.brand b{white-space:nowrap}
+@media (max-width:1180px){nav{gap:15px}nav a{font-size:14px}}
+@media (max-width:1060px){nav{gap:11px}nav a{font-size:13.5px}.brand small{display:none}header .wrap{gap:12px}}
+@media (max-width:960px){nav{gap:6px}nav a{font-size:12.5px}.brand b{font-size:15px}header .btn{padding:8px 12px}}
+header .lang,header .btn,.brand{flex-shrink:0}

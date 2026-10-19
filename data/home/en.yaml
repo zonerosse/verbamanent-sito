@@ -1,5 +1,6 @@
 menu:
   - { id: fa, t: "Features" }
+  - { id: dsa, t: "Dyslexia" }
   - { id: nonfa, t: "What it won't do" }
   - { id: vetrina, t: "Highlights" }
   - { id: come, t: "How it works" }
@@ -18,6 +19,7 @@ hero:
   trust:
     - "Recordings stay on your computer"
     - "No voiceprints"
+    - "Complete dyslexia space"
     - "In English and Italian"
   demo:
     bar: "Recording · Contract Law · 00:42:17"
@@ -53,6 +55,44 @@ fa:
     - { ic: "📱", t: "On your phone too", p: "The Android app records, transcribes on the phone and prepares the same notes as the PC." }
     - { ic: "🚀", t: "Fast transcription, if you want", p: "Slow PC? Connect your own pay-as-you-go server: an hour of lecture in about a minute, for a few cents. It's optional." }
     - { ic: "💬", t: "Ask the lecture", p: "Missed a point? Ask your question and the answer comes from what the lecturer actually said." }
+
+dsa:
+  kicker: "For students with dyslexia and other SpLDs"
+  h2: "The DSA space: every assistive tool, in one place"
+  p: "Dyslexia, dysgraphia, dysorthography, dyscalculia. Turn on Dyslexia mode and Verba Manent puts what you need first, in order: in class, after the lecture, for the test and for your teacher."
+  voci:
+    - img: "spazio-dsa-en"
+      t: "Everything in order, first time"
+      p: "Pick the subject and the lecture and the tools are grouped by moment. No menus to dig through: what you need now is already there."
+      punti: ["In class, after the lecture, for the test, for your teacher", "One switch turns it on", "Every other feature stays one tap away in «More»"]
+      alt: "The Verba Manent DSA space with the tools grouped into: in class, after the lecture, for the test."
+    - img: "karaoke-en"
+      t: "Lecture karaoke"
+      p: "Listen again to your lecturer's real voice while the words light up, with the slide of that moment next to it. Tap a word to start again from there."
+      punti: ["The lecturer's voice, not a synthetic one", "«One line at a time» so you never lose your place", "Speed from 0.8× to 1.5×"]
+      alt: "Lecture karaoke: the lecturer's text with the audio player and the speed options."
+    - img: "come-leggo-en"
+      t: "How I read best"
+      p: "Choose the font (OpenDyslexic too), the size, the spacing between lines and letters, the background colour, coloured syllables and the reading ruler."
+      punti: ["Applies to notes, listening, karaoke, flashcards and PDFs", "Soft backgrounds: cream, blue, green, pink", "Live preview while you choose"]
+      alt: "The How I read best page with the choice of font, size and background colour."
+    - img: "mappa-verifica-en"
+      t: "The test map"
+      p: "An A4 sheet with the key words of the lectures you choose and a box of formulas and values, to print and bring to the test, with your name and class at the top."
+      punti: ["Key words only, as many teachers require", "Remove the words you don't want", "Have it signed by your teacher before the test"]
+      alt: "The test map: a concept map on an A4 sheet with name and class."
+  altri:
+    - { ic: "🔊", t: "Listen to the notes", p: "Read aloud, with the sentence lighting up." }
+    - { ic: "🎙️", t: "Write by speaking", p: "Dictate and the text writes itself, test answers included." }
+    - { ic: "🎧", t: "Simple podcast", p: "The lecture in a few minutes, in short sentences, with the lecturer's voice at the key points." }
+    - { ic: "🃏", t: "Daily review", p: "A few flashcards a day, picked for you until the exam, read aloud too." }
+    - { ic: "📖", t: "Course glossary", p: "The difficult words explained simply, with the slide and «Hear the lecturer» from the right moment." }
+    - { ic: "⏱️", t: "Tests with 30% extra time", p: "Questions read aloud and extra time, just like the real exam." }
+    - { ic: "🎤", t: "Oral exam practice", p: "Answer by speaking, as in an oral exam, and get a mark with what is missing." }
+    - { ic: "✍️", t: "Dictated written answers", p: "Answer by voice: marking looks at content, never at spelling." }
+    - { ic: "📋", t: "Your support plan sheet", p: "«The tools I use»: a PDF listing the assistive tools you really use, for your school or university." }
+  legge_t: "Tools provided for by law"
+  legge_p: "In Italy, Law 170/2010 grants students with dyslexia and other SpLDs the right to assistive tools such as text-to-speech and concept maps, and the 2011 guidelines allow up to 30% extra time in university exams. Verba Manent puts them all in one program."
 
 nonfa:
   kicker: "What it won't do"

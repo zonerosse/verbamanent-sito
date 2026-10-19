@@ -59,6 +59,38 @@
   </div>
 </section>
 
+<!-- DSA: lo Spazio DSA come punto di forza -->
+{{- with $t.dsa }}
+<section id="dsa" class="dsa">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="kicker">{{ .kicker }}</div>
+      <h2>{{ .h2 }}</h2>
+      <p>{{ .p }}</p>
+    </div>
+    <div class="vc-griglia">
+      {{- range .voci }}
+      <article class="vc">
+        <figure class="vm-schermata"><div class="vm-cornice"><span></span><span></span><span></span></div><img src="{{ printf "img/schermate/%s.webp" .img | relURL }}" alt="{{ .alt }}" width="1060" height="620" loading="lazy"></figure>
+        <h3>{{ .t }}</h3>
+        <p>{{ .p }}</p>
+        <ul>{{ range .punti }}<li>{{ . }}</li>{{ end }}</ul>
+      </article>
+      {{- end }}
+    </div>
+    <div class="grid3 dsa-altri">
+      {{- range .altri }}
+      <div class="card"><div class="ic" aria-hidden="true">{{ .ic }}</div><h3>{{ .t }}</h3><p>{{ .p }}</p></div>
+      {{- end }}
+    </div>
+    <div class="dsa-legge">
+      <span class="big" aria-hidden="true">⚖️</span>
+      <div><b>{{ .legge_t }}</b><span>{{ .legge_p }}</span></div>
+    </div>
+  </div>
+</section>
+{{- end }}
+
 <!-- COSA NON FA -->
 <section id="nonfa" class="non">
   <div class="wrap">
