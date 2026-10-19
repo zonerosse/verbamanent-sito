@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Prova web · Verba Manent IA</title>
+<style>
+:root{--navy:#0d4275;--blue:#0369a1;--ink:#0f1b2d;--mut:#64748b;--line:#e2e8f0;--soft:#f1f6fb;--ok:#059669;--no:#dc2626}
+*{box-sizing:border-box}body{margin:0;font-family:"Segoe UI",system-ui,sans-serif;background:var(--soft);color:#26354a}
+.w{max-width:720px;margin:0 auto;padding:28px 16px 60px}
+h1{color:var(--ink);font-size:26px;margin:0 0 6px}p{line-height:1.55}
+.box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:16px 0}
+.btn{border:0;border-radius:12px;padding:12px 18px;font:inherit;font-weight:600;font-size:16px;cursor:pointer;background:var(--navy);color:#fff}
+.btn:disabled{opacity:.45;cursor:default}
+input{width:100%;border:1px solid #cbd5e1;border-radius:12px;padding:12px 14px;font:inherit;font-size:16px;margin:8px 0 12px}
+ol{padding-left:20px;margin:0}li{margin:6px 0;line-height:1.45}
+.ok{color:var(--ok);font-weight:700}.no{color:var(--no);font-weight:700}.att{color:var(--mut)}
+pre{white-space:pre-wrap;background:var(--soft);border-radius:10px;padding:12px;font-size:13px;margin:10px 0 0}
+</style>
+</head>
+<body>
+<div class="w">
+  <h1>Prova di Verba Manent sul web</h1>
+  <p>Questa pagina prova solo due cose: se il browser riesce a <b>leggere la cartella «Verba Manent IA» del tuo Google Drive</b> e se riesce ad <b>aprire le lezioni con la password</b>. Non cambia niente nel Drive: legge e basta.</p>
+
+  <div class="box">
+    <b>1 · Accedi con Google</b>
+    <p class="att" style="margin:6px 0 12px">Usa lo stesso account collegato in Verba Manent (Impostazioni › Sincronizza).</p>
+    <button class="btn" id="accedi">Accedi con Google</button>
+  </div>
+
+  <div class="box">
+    <b>2 · La password degli zip</b>
+    <p class="att" style="margin:6px 0 0">Quella di Impostazioni › Sincronizza. Resta solo in questa pagina.</p>
+    <input id="pw" placeholder="XXXX-XXXX-XXXX-XXXX" autocomplete="off" spellcheck="false">
+    <button class="btn" id="prova" disabled>Fai la prova</button>
+  </div>
+
+  <div class="box">
+    <b>Risultato</b>
+    <ol id="esito"><li class="att">Ancora niente: accedi e fai la prova.</li></ol>
+    <pre id="rapporto" hidden></pre>
+    <button class="btn" id="copia" hidden style="margin-top:10px">Copia il risultato</button>
+  </div>
+</div>
+
+<script src="https://accounts.google.com/gsi/client" async></script>
+<script src="../zipaes.js"></script>
+<script>
+'use strict';
+const CLIENT_ID = '303488426536-mqi6a2cd59sis931tb6nmmltrjfrclkf.apps.googleusercontent.com';
+const API = 'https://www.googleapis.com/drive/v3';
+const $ = id => document.getElementById(id);
+let token = null;
+const righe = [];
+function riga(ok, testo) {
+  if (righe.length === 0) $('esito').innerHTML = '';
+  righe.push((ok === true ? '✓ ' : ok === false ? '✗ ' : '… ') + testo);
+  const li = document.createElement('li');
+  li.innerHTML = `<span class="${ok === true ? 'ok' : ok === false ? 'no' : 'att'}">${ok === true ? '✓' : ok === false ? '✗' : '…'}</span> ${testo.replace(/</g, '&lt;')}`;
+  $('esito').append(li);
+  $('rapporto').textContent = righe.join('\n'); $('rapporto').hidden = false; $('copia').hidden = false;
+}
+async function drive(url, binario) {
+  const r = await fetch(url, {headers: {Authorization: 'Bearer ' + token}});
+  if (!r.ok) throw new Error('Drive ' + r.status + ': ' + (await r.text()).slice(0, 200));
+  return binario ? new Uint8Array(await r.arrayBuffer()) : r.json();
+}
+$('accedi').onclick = () => {
+  if (!window.google || !google.accounts) { riga(false, 'Il servizio di accesso di Google non si è caricato: ricarica la pagina.'); return; }
+  google.accounts.oauth2.initTokenClient({
+    client_id: CLIENT_ID,
+    scope: 'https://www.googleapis.com/auth/drive.file',
+    callback: r => {
+      if (r.error) { riga(false, 'Accesso non riuscito: ' + r.error); return; }
+      token = r.access_token; riga(true, 'Accesso con Google fatto');
+      $('prova').disabled = false; $('accedi').textContent = '✓ Accesso fatto';
+    },
+  }).requestAccessToken();
+};
+$('prova').onclick = async () => {
+  $('prova').disabled = true;
+  try {
+    const q = encodeURIComponent("name='Verba Manent IA' and mimeType='application/vnd.google-apps.folder' and trashed=false");
+    const c = await drive(`${API}/files?q=${q}&fields=files(id,name)&spaces=drive`);
+    if (!c.files || !c.files.length) { riga(false, 'Non vedo la cartella «Verba Manent IA» (con questo account, o il permesso non basta)'); return; }
+    riga(true, 'Vedo la cartella «Verba Manent IA»');
+    const q2 = encodeURIComponent(`'${c.files[0].id}' in parents and trashed=false`);
+    const el = await drive(`${API}/files?q=${q2}&fields=files(id,name,size)&pageSize=1000`);
+    const f = {}; (el.files || []).forEach(x => f[x.name] = x);
+    const lez = Object.keys(f).filter(n => /^L-.*\.zip$/.test(n));
+    riga(lez.length || f['indice.zip'] ? true : false, `Nella cartella vedo ${Object.keys(f).length} file: ${lez.length} lezioni (L-…zip)` + (f['indice.zip'] ? ', l\'indice' : ', ma non l\'indice') + (f['studio.zip'] ? ' e studio.zip' : ''));
+    if (!f['indice.zip']) { riga(false, 'Manca indice.zip: sul PC fai un giro di Sincronizza con la versione 3.96 o più nuova'); return; }
+    const t0 = performance.now();
+    let ind;
+    try { ind = await ZipAes.apri(await drive(`${API}/files/${f['indice.zip'].id}?alt=media`, true), $('pw').value.trim()); }
+    catch (e) { riga(false, e instanceof ZipAes.PasswordSbagliata ? 'La password non è giusta' : 'Indice non leggibile: ' + e.message); return; }
+    const indice = JSON.parse(new TextDecoder().decode(ind['indice.json']));
+    const nomi = Object.keys(indice.unita || {}).filter(n => n !== '_studio');
+    riga(true, `Indice aperto con la password: ${nomi.length} lezioni (${nomi.slice(0, 3).join(' · ')}${nomi.length > 3 ? ' …' : ''})`);
+    if (!lez.length) return;
+    const z = f[lez[0]];
+    const b = await drive(`${API}/files/${z.id}?alt=media`, true);
+    const dentro = await ZipAes.apri(b, $('pw').value.trim());
+    const man = JSON.parse(new TextDecoder().decode(dentro['.vm/manifesto.json'] || new Uint8Array()) || '{}');
+    const veri = man.voci ? Object.values(man.voci).map(v => v[0]) : Object.keys(dentro);
+    const app = veri.filter(n => /appunti/.test(n)).length, tr = veri.filter(n => /trascrizione/.test(n)).length;
+    riga(true, `Lezione aperta nel browser: ${(b.length / 1048576).toFixed(1)} MB, ${veri.length} file (${app} di appunti, ${tr} di trascrizione), in ${Math.round(performance.now() - t0)} ms`);
+    riga(true, 'TUTTO A POSTO: il web può leggere il Drive e aprire le lezioni');
+  } catch (e) { riga(false, 'Errore: ' + e.message); }
+  finally { $('prova').disabled = false; }
+};
+$('copia').onclick = () => navigator.clipboard.writeText(righe.join('\n')).then(() => $('copia').textContent = '✓ Copiato');
+</script>
+</body>
+</html>
