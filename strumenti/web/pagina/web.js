@@ -73,6 +73,9 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '
 let salvaLoc = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
 let scriviLoc = (k, v) => { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} };
 document.documentElement.classList.add('web');
+// tasto destro: sul web il menu del browser (Copia, Incolla...), non quello del programma, che resterebbe
+// nascosto dietro le schermate di accesso e che per incollare ha bisogno di un permesso in piu'
+window.addEventListener('contextmenu', e => e.stopPropagation(), true);
 // schermo da telefono: le stesse pagine dell'app Android (menu in basso, tutto a una colonna)
 if (!/[?&]android=1/.test(location.search) && Math.min(screen.width || 9999, window.innerWidth || 9999) < 760) {
   location.replace(location.pathname + '?android=1' + location.hash);
