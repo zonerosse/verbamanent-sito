@@ -8,6 +8,9 @@
 //   POST /api/claude/v1/messages  -> come Claude
 // Le domande passano di qui e vanno a Claude: non si salvano da nessuna parte.
 const CLIENT_ID = '303488426536-mqi6a2cd59sis931tb6nmmltrjfrclkf.apps.googleusercontent.com';
+// gli accessi Google validi: quelli dati a Verba Manent (pagina web e programma, stesso progetto Google)
+const PROGETTO = '303488426536-';
+const nostro = t => [t.aud, t.azp].some(x => String(x || '').startsWith(PROGETTO) && String(x).endsWith('.apps.googleusercontent.com'));
 const IMPRONTE = new Map([
   ['3a1ab56353f71b067bd217e90c3a098a3d10971d2dd44648935354c908713900', 'Paolo'],
   ['1a8850eab1d16634bb85e18444151ba896a454ed059d3f511c6b49ace7dc5790', 'Sara'],
@@ -29,14 +32,14 @@ async function sha256(t) {
 const json = (o, status = 200) => new Response(JSON.stringify(o), { status, headers: PRIV });
 const errore = (status, msg) => json({ type: 'error', error: { type: 'vm', message: msg } }, status);
 
-async function chi(token) {
+export async function chi(token) {
   if (!token) return null;
   const v = visti.get(token);
   if (v && v.fino > Date.now()) return v.email;
   const ti = await fetch('https://oauth2.googleapis.com/tokeninfo?access_token=' + encodeURIComponent(token));
   if (!ti.ok) return null;
   const t = await ti.json();
-  if (t.aud !== CLIENT_ID && t.azp !== CLIENT_ID) return null;          // accesso dato a un'altra app: no
+  if (!nostro(t)) return null;          // accesso dato a un'altra app: no
   const ab = await fetch('https://www.googleapis.com/drive/v3/about?fields=user(emailAddress)', { headers: { Authorization: 'Bearer ' + token } });
   if (!ab.ok) return null;
   const email = String(((await ab.json()).user || {}).emailAddress || '').trim().toLowerCase();
@@ -49,8 +52,8 @@ async function chi(token) {
 // Chi puo' usare Claude di Verba Manent: la famiglia (impronte qui sopra, sempre) e gli abbonati
 // dell'elenco nel pannello (memoria ATTESA, chiavi abbonato:<email>). Torna {id, nome, piano, tetto} o null.
 // id = la riga dei consumi (uso:AAAA-MM:<id>): il nome per la famiglia, l'email per gli altri.
-async function ammesso(env, token) {
-  const email = await chi(token);
+export async function ammesso(env, token, email_ = null) {
+  const email = email_ || await chi(token);
   if (!email) return null;
   const fam = IMPRONTE.get(await sha256(email));
   let ab = null;
@@ -69,7 +72,7 @@ async function ammesso(env, token) {
 }
 
 const meseRoma = () => { const o = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Rome' })); return o.getFullYear() + '-' + String(o.getMonth() + 1).padStart(2, '0'); };
-async function usato(env, id) {
+export async function usato(env, id) {
   if (!env.ATTESA) return 0;
   try { return +(JSON.parse(await env.ATTESA.get(`uso:${meseRoma()}:${id}`) || '{}').usd || 0); } catch (e) { return 0; }
 }

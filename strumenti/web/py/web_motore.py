@@ -251,6 +251,16 @@ def avvia(lingua, chiave_zip, email_, prima_volta):
     if M is None:
         return {"ok": False, "errore": API._errore or "motore"}
     M.aspetta_carica = False
+    # la prova gratuita (licenza.py, se c'e') sul web non vale: qui entra solo chi ha gia' Sincronizza, e Claude
+    # per famiglia e abbonati passa gia' dal sito (urlopen qui sopra)
+    if getattr(M, "lic", None) is not None:
+        import appunti as ap
+        ap.LICENZA = None
+        M.lic.controlla = lambda *a, **k: None
+        M.lic.controlla_dopo = lambda *a, **k: None
+        M.lic.stato = lambda: {"stato": "libero"}
+        M.lic.bloccato = lambda: False
+        M.lic.abbonato = lambda: False
     am._stato_android(M)
     M.nome_dispositivo = lambda: "Web"
     _ripara_stato(M)
