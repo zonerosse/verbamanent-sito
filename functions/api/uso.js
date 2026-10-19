@@ -53,7 +53,10 @@ export async function onRequestGet({ request, env }) {
   const url = new URL(request.url), k = url.searchParams.get('k') || '';
   const priv = { 'x-robots-tag': 'noindex, nofollow', 'cache-control': 'no-store', 'referrer-policy': 'no-referrer' };
   if (!k || (await sha256(k)) !== IMPRONTA) return new Response('Non trovato', { status: 404, headers: priv });
-  if (!env.ATTESA) return new Response('Memoria non collegata (ATTESA)', { status: 503, headers: priv });
+  return rispondi(env);
+}
+
+export async function datiUso(env) {
   const dati = {};
   let cursor;
   do {
@@ -64,5 +67,13 @@ export async function onRequestGet({ request, env }) {
     }
     cursor = p.list_complete ? null : p.cursor;
   } while (cursor);
-  return new Response(pagina(dati), { headers: { ...priv, 'content-type': 'text/html; charset=utf-8' } });
+  return dati;
+}
+
+// la pagina: la usa anche l'Area privata (/privato/uso)
+export async function rispondi(env, torna = '') {
+  const priv = { 'x-robots-tag': 'noindex, nofollow', 'cache-control': 'no-store', 'referrer-policy': 'no-referrer' };
+  if (!env.ATTESA) return new Response('Memoria non collegata (ATTESA)', { status: 503, headers: priv });
+  const dati = await datiUso(env);
+  return new Response(pagina(dati).replace('<div class="w">', '<div class="w">' + torna), { headers: { ...priv, 'content-type': 'text/html; charset=utf-8' } });
 }

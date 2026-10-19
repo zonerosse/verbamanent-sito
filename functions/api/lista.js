@@ -8,10 +8,16 @@ async function sha256(t) {
 }
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
 
+const priv = { 'x-robots-tag': 'noindex, nofollow', 'cache-control': 'no-store', 'referrer-policy': 'no-referrer' };
+
 export async function onRequestGet({ request, env }) {
   const url = new URL(request.url), k = url.searchParams.get('k') || '';
-  const priv = { 'x-robots-tag': 'noindex, nofollow', 'cache-control': 'no-store', 'referrer-policy': 'no-referrer' };
   if (!k || (await sha256(k)) !== IMPRONTA) return new Response('Non trovato', { status: 404, headers: priv });
+  return rispondi(env, url, '?k=' + encodeURIComponent(k) + '&csv=1');
+}
+
+// la pagina (o il file Excel con ?csv=1): la usa anche l'Area privata (/privato/lista)
+export async function rispondi(env, url, linkCsv, torna = '') {
   if (!env.ATTESA) return new Response('Lista non collegata (ATTESA)', { status: 503, headers: priv });
   const righe = [];
   let cursor;
@@ -44,7 +50,7 @@ th,td{padding:10px 12px;border-bottom:1px solid #edf2f7;text-align:left}th{backg
 td.e{word-break:break-all}.v{color:#64748b;text-align:center;padding:30px}</style></head><body><div class="w">
 <h1>Lista d'attesa</h1><p class="s">Chi vuole essere avvisato quando Verba Manent esce. Pagina privata: non condividere il link.</p>
 <div class="n"><div><b>${righe.length}</b><span>iscritti in tutto</span></div><div><b>${conta('stud')}</b><span>per studiare</span></div><div><b>${conta('lavoro') + conta('work')}</b><span>per lavoro e riunioni</span></div><div><b>${conta('tutti') + conta('both')}</b><span>tutti e due</span></div></div>
-<a class="b" href="?k=${encodeURIComponent(k)}&csv=1">⬇ Scarica l'elenco (Excel)</a>
+${torna}<a class="b" href="${linkCsv}">⬇ Scarica l'elenco (Excel)</a>
 <table><tr><th>Email</th><th>Lo userebbe per</th><th>Lingua</th><th>Iscritto il</th></tr>
 ${righe.length ? righe.map(r => `<tr><td class="e">${esc(r.email)}</td><td>${esc(r.uso.replace(/^.*?:\s*/, ''))}</td><td>${r.lingua === 'en' ? 'EN' : 'IT'}</td><td>${data(r.data)}</td></tr>`).join('') : '<tr><td colspan="4" class="v">Ancora nessun iscritto.</td></tr>'}
 </table></div></body></html>`;
