@@ -1,11 +1,15 @@
 parola,ricerche_mese,concorrenza,cpc_euro
 notebooklm,550000,LOW,1.57
 turboscribe,49500,MEDIUM,0.26
+quizlet,27100,LOW,1.2
 trascrizione audio,18100,HIGH,0.92
+mappa concettuale,14800,LOW,0.47
 trascrivere audio in testo,12100,HIGH,1.06
 flashcard,12100,MEDIUM,0.6
+anki,9900,LOW,0.78
 otter ai,4400,MEDIUM,1.93
 happy scribe,4400,MEDIUM,1.35
+glossario,3600,LOW,0.03
 appunti università,2900,LOW,0.95
 app per studiare,2400,LOW,0.76
 come prendere appunti all'università,1300,LOW,0.31
@@ -13,21 +17,38 @@ flashcard ai,1300,MEDIUM,0.74
 ai per studiare,1300,MEDIUM,0.91
 app per prendere appunti,1000,LOW,0.81
 metodo cornell,1000,LOW,0.04
+legge 170,1000,LOW,1.72
+opendyslexic,1000,LOW,
+mappe concettuali dsa,880,MEDIUM,0.54
 sbobinare audio,590,HIGH,0.89
+strumenti compensativi dsa,480,HIGH,0.62
+carattere per dislessici,320,LOW,
 sbobine università,260,LOW,0.65
 metodo cornell appunti,260,MEDIUM,0.04
 verbale riunione,260,LOW,
+mappe per dsa,260,LOW,0.47
+pdp dsa,210,LOW,3.79
 sbobinatura,170,LOW,0.79
 registratore lezioni universitarie,170,HIGH,0.61
 riassunto con ai,170,MEDIUM,0.9
+sintesi vocale dsa,170,MEDIUM,0.46
+dsa università,170,LOW,2.74
 app per sbobinare,140,HIGH,1.71
 registrare riunione teams,140,LOW,3.13
 note taker ai,140,HIGH,5.25
+metodo di studio dsa,110,HIGH,0.62
+test a crocette,110,LOW,0.26
+app per dislessici,90,LOW,0.49
+ripetizione dilazionata,90,LOW,
+app per dsa,70,MEDIUM,0.7
 registrare lezioni università,50,HIGH,0.99
+tempo aggiuntivo dsa,50,LOW,
 sbobinare con ai,40,HIGH,2.51
 come registrare una lezione online,40,LOW,
 sbobinare lezioni universitarie,30,MEDIUM,1.62
 sbobinare audio con ai,30,HIGH,2.48
+programmi per dsa,30,HIGH,0.56
+podcast per studiare,30,LOW,
 sbobinare lezioni,20,HIGH,1.03
 programma per sbobinare,20,MEDIUM,1.44
 app per registrare lezioni,20,HIGH,0.91
@@ -39,3 +60,8 @@ trascrivere riunione,0,,
 appunti con intelligenza artificiale,0,,
 riassunto lezione,0,,
 verbale riunione ai,0,,
+strumenti compensativi dsa università,0,,
+studiare con la dislessia,0,,
+dislessia università esami,0,,
+come prepararsi a un esame orale,0,,
+interrogazione simulata,0,,
