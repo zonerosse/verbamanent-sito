@@ -43,6 +43,30 @@
   </div>
 </div>
 
+<!-- TRE MOMENTI: dalla lezione all'esame -->
+{{- with $t.momenti }}
+<section id="momenti">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="kicker">{{ .kicker }}</div>
+      <h2>{{ .h2 }}</h2>
+      <p>{{ .p }}</p>
+    </div>
+    <div class="momenti">
+      {{- range .voci }}
+      <div class="mom">
+        <figure class="vm-schermata"><div class="vm-cornice"><span></span><span></span><span></span></div><img src="{{ printf "img/schermate/%s.webp" .img | relURL }}" alt="" width="1060" height="620" loading="lazy"></figure>
+        <div class="mom-t">
+          <div class="mom-n"><span>{{ .n }}</span><div><h3>{{ .t }}</h3><small>{{ .sott }}</small></div></div>
+          <ul>{{ range .punti }}<li>{{ . }}</li>{{ end }}</ul>
+        </div>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{- end }}
+
 <!-- GLI ARGOMENTI: una riga per argomento (schermata grande + testo), ognuna porta alla sua pagina -->
 {{- range $i, $s := $t.schede.voci }}
 {{- with site.GetPage $s.pag }}
@@ -61,6 +85,65 @@
   </div>
 </section>
 {{- end }}
+{{- end }}
+
+<!-- COSA HA IN PIU': quattro cose, ognuna col suo video -->
+{{- with $t.unici }}
+<section id="unici" class="unici">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="kicker">{{ .kicker }}</div>
+      <h2>{{ .h2 }}</h2>
+    </div>
+    <div class="uni-g">
+      {{- range .voci }}
+      <article class="uni">
+        <div class="uni-v" role="button" tabindex="0" aria-label="▶ {{ .h2 }}">
+          <video playsinline muted preload="none" poster="{{ printf "img/schermate/%s.webp" .img | relURL }}">
+            <source src="{{ printf "video/%s-%s.webm" .v $lang | relURL }}" type="video/webm">
+          </video>
+          <span class="uni-play" aria-hidden="true">▶</span>
+        </div>
+        <div class="uni-t">
+          <div class="kicker">{{ .ic }} {{ .k }}</div>
+          <h3>{{ .h2 }}</h3>
+          <p>{{ .testo }}</p>
+          <ul>{{ range .punti }}<li>{{ . }}</li>{{ end }}</ul>
+          {{- $l := .link }}{{ with site.GetPage .pag }}<a class="riga-link" href="{{ .RelPermalink }}">{{ $l }} →</a>{{ end }}
+        </div>
+      </article>
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{- end }}
+
+<!-- CONFRONTO con le altre app -->
+{{- with $t.confronto }}
+<section id="confronto">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="kicker">{{ .kicker }}</div>
+      <h2>{{ .h2 }}</h2>
+      <p>{{ .p }}</p>
+    </div>
+    <div class="tab-scorri">
+      <table class="confronto">
+        <thead><tr><th scope="col"></th>{{ range $i, $c := .colonne }}<th scope="col"{{ if eq $i 0 }} class="noi"{{ end }}>{{ $c }}</th>{{ end }}</tr></thead>
+        {{- $n := len .colonne }}
+        {{- range .gruppi }}
+        <tbody>
+          <tr class="gr"><th colspan="{{ add $n 1 }}" scope="colgroup">{{ .t }}</th></tr>
+          {{- range .righe }}
+          <tr>{{ range $i, $c := . }}{{ if eq $i 0 }}<th scope="row">{{ $c }}</th>{{ else }}<td class="{{ if eq $i 1 }}noi {{ end }}{{ if eq $c "—" }}no{{ else if hasPrefix $c "✓" }}si{{ else }}parz{{ end }}">{{ $c }}</td>{{ end }}{{ end }}</tr>
+          {{- end }}
+        </tbody>
+        {{- end }}
+      </table>
+    </div>
+    <p class="legenda">{{ .legenda }}</p>
+  </div>
+</section>
 {{- end }}
 
 <!-- COME FUNZIONA -->
@@ -90,6 +173,27 @@
     </div>
   </div>
 </section>
+
+<!-- PREZZI -->
+{{- with $t.prezzi }}
+<section id="prezzi" style="padding-bottom:20px">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="kicker">{{ .kicker }}</div>
+      <h2>{{ .h2 }}</h2>
+    </div>
+    <div class="prezzi">
+      {{- range .voci }}
+      <div class="prezzo">
+        <h3>{{ .t }}</h3>
+        <div class="cifra">{{ .cifra }}{{ with .piccolo }} <small>{{ . }}</small>{{ end }}</div>
+        <p>{{ .p }}</p>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{- end }}
 
 <!-- LISTA D'ATTESA -->
 <section id="attesa">
@@ -154,6 +258,19 @@
     var f = pl.requestFullscreen || pl.webkitRequestFullscreen; if (f) f.call(pl);
   });
 })();
+// Cosa ha in piu': il video parte quando lo tocchi, uno alla volta.
+document.querySelectorAll('.uni-v').forEach(function (box) {
+  var v = box.querySelector('video');
+  function via() {
+    if (v.paused) { document.querySelectorAll('.uni-v video').forEach(function (x) { if (x !== v) x.pause(); }); v.play(); }
+    else v.pause();
+  }
+  box.addEventListener('click', via);
+  box.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); via(); } });
+  v.addEventListener('play', function () { box.classList.add('va'); });
+  v.addEventListener('pause', function () { box.classList.remove('va'); });
+  v.addEventListener('ended', function () { box.classList.remove('va'); });
+});
 // Lista d'attesa: nel sito di prova non invia niente, mostra solo il messaggio.
 document.getElementById('modulo-attesa').addEventListener('submit', function (e) {
   e.preventDefault();

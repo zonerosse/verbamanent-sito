@@ -5,6 +5,7 @@ menu:
   - { pag: "pc-e-telefono", t: "PC and phone" }
   - { pag: "la-tua-privacy", t: "Privacy" }
   - { id: come, t: "How it works" }
+  - { id: confronto, t: "Comparison" }
   - { id: domande, t: "FAQ" }
 avvisami: "Notify me"
 prova: "Preview version of the site: not yet public."
@@ -55,10 +56,10 @@ pagine:
       schermate: [[inpiu, 0], [inpiu, 1]]
 
 hero:
-  pill: "🎓 The note-taking app for students and professionals"
+  pill: "🎓 From the lecture to the exam"
   h1a: "Words fly away."
   h1b: "Notes remain."
-  lead: "Verba Manent records the lecture, transcribes it and turns it into clear, organised notes, ready to study. You listen, it does the rest."
+  lead: "It records the lecture, gives you the notes and takes you all the way to the exam: with the lecturer's real voice, a tutor that knows when your exam is and the tools for dyslexic students. Everything stays on your device."
   cta1: "Notify me at launch"
   cta2: "See how it works"
   trust:
@@ -300,3 +301,67 @@ domande:
 piede:
   privacy: "Privacy"
   licenze: "Licences"
+
+# ---- new home sections (October 2026): three moments, what's more, comparison, prices
+momenti:
+  kicker: "How it works"
+  h2: "Three moments, one program"
+  p: "What you already do, from the lecture to the exam. Verba Manent does the boring work, you study."
+  voci:
+    - { n: 1, t: "In class", sott: "In the room or online (Meet, Teams, Zoom)", img: "lavagna-en", punti: ["Records audio, video and slides together", "Transcribes on your PC or phone, even live", "📷 Photo of the board, linked to the minute", "🔇 Noisy classroom: removes the chatter"] }
+    - { n: 2, t: "After the lecture", sott: "Understand and remember", img: "podcast-en", punti: ["Cornell and Exam Format notes, with the slides", "💬 Ask the lecture, with slide and minute", "🎤 Karaoke and 🎧 two-voice podcast", "Mind map, infographic, flashcards"] }
+    - { n: 3, t: "Before the exam", sott: "Across the whole course", img: "crocette-en", punti: ["🧑‍🏫 Tutor and study plan up to the exam", "🃏 Daily review, a few minutes", "☑ Multiple choice, 🎤 oral exam, written exam", "📘 Textbook and 📖 glossary"] }
+
+unici:
+  kicker: "What's more"
+  h2: "Four things other apps don't have all together"
+  voci:
+    - { ic: "🎙", k: "The lecturer's real voice", h2: "Hear your lecturer again, not a fake voice", v: "u-podcast", img: "podcast-en", pag: "per-studiare", link: "Everything for studying", testo: "The lecture podcast, the Karaoke with words lighting up, the glossary with «▶ Hear the lecturer»: at the moments that matter it's them speaking, with their own voice, from the recording.", punti: ["Podcast with one voice, two voices or a debate", "The slide of that moment always alongside"] }
+    - { ic: "🧑‍🏫", k: "Your tutor", h2: "It knows when your exam is and where you go wrong", v: "u-tutor", img: "tutor-en", pag: "per-studiare", link: "Everything for studying", testo: "Every day it tells you what to do, with the minutes: the daily review, the point of the lecture to listen to again where you went wrong, the oral exam if you haven't done one for days. And you can ask it to quiz you.", punti: ["Days to the exam and «how ready you are»", "Mistakes in tests and oral exams, with lecture and minute"] }
+    - { ic: "⭐", k: "For dyslexic students", h2: "Assistive tools, ready to use", v: "u-dsa", img: "come-leggo-en", pag: "dsa", link: "All about the DSA space", testo: "Dyslexia mode puts listening, maps and easy-to-read notes first. Font and background as you like, coloured syllables, reading ruler, the A4 test map and the sheet for your learning plan.", punti: ["OpenDyslexic, Lexend, Atkinson Hyperlegible", "Test map (Italian law 170/2010)"] }
+    - { ic: "🔒", k: "Real privacy", h2: "Your lectures stay yours", v: "u-sincronizza", img: "sincronizza-en", pag: "la-tua-privacy", link: "All about privacy", testo: "Transcription happens on your device. PC and phone sync with each other over Wi-Fi, or through your Google Drive with password-locked zips: not even Google knows which lectures you have.", punti: ["No voiceprints, no AI training", "No bot joins the meeting"] }
+
+confronto:
+  kicker: "Comparison"
+  h2: "Verba Manent and other AI note-taking apps"
+  p: "Honest: including what they do better (syncing over the internet, iPhone and Mac already available)."
+  colonne: ["Verba Manent IA", "Notability", "Goodnotes", "Turbo AI", "NotebookLM"]
+  legenda: "✓ = available · — = not found on their official pages · «not stated» = their site doesn't say. Checked on official sites and store pages, October 2026."
+  gruppi:
+    - t: "In class"
+      righe:
+        - ["Records from your PC or phone, with no bot in the call", "✓", "✓", "✓", "✓", "you upload the file"]
+        - ["Also records the screen and captures the slides by itself", "✓", "—", "—", "—", "—"]
+        - ["Transcribes on your device, free and offline", "✓", "not stated", "✓", "not stated", "—"]
+        - ["Recognises who is speaking", "✓", "not stated", "✓ in meetings", "—", "—"]
+        - ["Photo of the board linked to the minute of the lecture", "✓", "photos in notes", "photos in notes", "—", "—"]
+        - ["Imports video, audio, YouTube links and transcripts", "✓", "✓ YouTube", "—", "✓", "✓"]
+    - t: "After the lecture"
+      righe:
+        - ["Cornell and Exam Format notes, with the slides alongside", "✓", "summary", "summary", "notes", "summary"]
+        - ["Ask the lecture, with slide and minute", "✓", "✓ chat", "✓ chat", "✓ chat", "✓ with citations"]
+        - ["Lecture podcast with the lecturer's real voice", "✓ one voice, two voices, debate", "—", "—", "synthetic voices", "synthetic voices"]
+        - ["Synced replay (Karaoke) with the slide", "✓", "✓ with your handwritten notes", "—", "—", "—"]
+        - ["Mind map and infographic", "✓", "—", "—", "—", "✓"]
+        - ["Course glossary with «Hear the lecturer»", "✓", "—", "—", "—", "—"]
+    - t: "Before the exam"
+      righe:
+        - ["Flashcards and multiple-choice tests", "✓", "✓", "quizzes", "✓", "✓"]
+        - ["Daily review up to the exam date", "✓", "—", "—", "—", "—"]
+        - ["Tutor that knows when your exam is and where you go wrong", "✓", "—", "—", "—", "tutor on your sources"]
+        - ["Simulated and corrected oral exam", "✓", "—", "—", "—", "—"]
+        - ["Textbook: the right pages for each lecture and what wasn't said", "✓", "PDF to annotate", "PDF to annotate", "PDF", "book as a source"]
+        - ["Export flashcards to Anki", "✓", "—", "—", "—", "—"]
+    - t: "For everyone"
+      righe:
+        - ["Dyslexia tools: font, coloured syllables, ruler, test map, learning-plan sheet", "✓", "—", "—", "—", "—"]
+        - ["Meeting minutes with action items, who and by when", "✓", "—", "✓ action items", "—", "—"]
+        - ["Sync PC and phone", "Wi-Fi and encrypted Google Drive", "✓ over the internet", "✓ over the internet", "✓ over the internet", "✓ over the internet"]
+        - ["Devices", "Windows, Android · iPhone and Mac coming", "iPad, iPhone, Mac, Windows, Android", "iPad, iPhone, Mac, Windows, Android, web", "web, iPhone, Android", "web, iPhone, Android"]
+
+prezzi:
+  kicker: "Prices"
+  h2: "Two ways, you choose"
+  voci:
+    - { t: "With your own Claude key", cifra: "about $0.20", piccolo: "per recorded hour", p: "You pay only for what you use, directly to Anthropic. On-device transcription is free." }
+    - { t: "Subscription", cifra: "coming soon", piccolo: "", p: "Claude and the fast server included, no keys to enter." }

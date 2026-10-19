@@ -5,6 +5,7 @@ menu:
   - { pag: "pc-e-telefono", t: "PC e telefono" }
   - { pag: "la-tua-privacy", t: "Privacy" }
   - { id: come, t: "Come funziona" }
+  - { id: confronto, t: "Confronto" }
   - { id: domande, t: "Domande" }
 avvisami: "Avvisami"
 prova: "Versione di prova del sito: non è ancora online per il pubblico."
@@ -56,10 +57,10 @@ pagine:
       schermate: [[inpiu, 0], [inpiu, 1]]
 
 hero:
-  pill: "🎓 L'app per prendere appunti, per chi studia e per chi lavora"
+  pill: "🎓 Dalla lezione all'esame"
   h1a: "Le parole volano."
   h1b: "Gli appunti restano."
-  lead: "Verba Manent registra la lezione, la sbobina e la trasforma in appunti ordinati, pronti per studiare. Tu ascolti, al resto pensa lui."
+  lead: "Registra la lezione, ti dà gli appunti e ti accompagna fino all'esame: con la voce vera del prof, un tutor che sa quando hai l'esame e gli strumenti per chi ha un DSA. Tutto resta sul tuo dispositivo."
   cta1: "Avvisami quando esce"
   cta2: "Guarda come funziona"
   trust:
@@ -301,3 +302,67 @@ domande:
 piede:
   privacy: "Privacy"
   licenze: "Licenze"
+
+# ---- sezioni nuove della home (ottobre 2026): tre momenti, cosa ha in più, confronto, prezzi
+momenti:
+  kicker: "Come funziona"
+  h2: "Tre momenti, un solo programma"
+  p: "Quello che fai già, dalla lezione all'esame. Verba Manent fa il lavoro noioso, tu studi."
+  voci:
+    - { n: 1, t: "A lezione", sott: "In aula o online (Meet, Teams, Zoom)", img: "lavagna", punti: ["Registra audio, video e slide insieme", "Trascrive sul tuo PC o telefono, anche in diretta", "📷 Foto alla lavagna, agganciata al minuto", "🔇 Aula rumorosa: toglie il brusio"] }
+    - { n: 2, t: "Dopo la lezione", sott: "Capire e fissare", img: "podcast", punti: ["Appunti Cornell e Formato Esame, con le slide", "💬 Chiedi alla lezione, con slide e minuto", "🎤 Karaoke e 🎧 podcast a due voci", "Mappa mentale, infografica, flashcard"] }
+    - { n: 3, t: "Prima dell'esame", sott: "Su tutto il corso", img: "crocette", punti: ["🧑‍🏫 Tutor e piano di studio fino all'esame", "🃏 Ripasso del giorno, pochi minuti", "☑ Crocette, 🎤 interrogazione a voce, scritto", "📘 Libro di testo e 📖 glossario"] }
+
+unici:
+  kicker: "Cosa ha in più"
+  h2: "Quattro cose che le altre app non hanno tutte insieme"
+  voci:
+    - { ic: "🎙", k: "La voce vera del prof", h2: "Riascolti il prof, non una voce finta", v: "u-podcast", img: "podcast", pag: "per-studiare", link: "Tutto per studiare", testo: "Il podcast della lezione, il Karaoke con le parole che si illuminano, il glossario con «▶ Senti il prof»: nei momenti che contano parla lui, con la sua voce, presa dalla registrazione.", punti: ["Podcast a una voce, a due voci o a dibattito", "La slide di quel momento sempre accanto"] }
+    - { ic: "🧑‍🏫", k: "Il tuo tutor", h2: "Sa quando hai l'esame e dove sbagli", v: "u-tutor", img: "tutor", pag: "per-studiare", link: "Tutto per studiare", testo: "Ogni giorno ti dice cosa fare, con i minuti: il ripasso del giorno, il punto della lezione da riascoltare dove hai sbagliato, l'interrogazione se non la fai da giorni. E puoi chiedergli di interrogarti.", punti: ["Giorni all'esame e «quanto sei pronto»", "Errori di test e interrogazioni, con lezione e minuto"] }
+    - { ic: "⭐", k: "Per chi ha un DSA", h2: "Gli strumenti compensativi, già pronti", v: "u-dsa", img: "come-leggo", pag: "dsa", link: "Tutto sullo Spazio DSA", testo: "La Modalità DSA mette in cima ascolto, mappe e appunti facili da leggere. Carattere e sfondo come vuoi tu, sillabe colorate, righello di lettura, la mappa A4 per la verifica e il foglio per il PDP.", punti: ["OpenDyslexic, Lexend, Atkinson Hyperlegible", "Mappa per la verifica (L. 170/2010)"] }
+    - { ic: "🔒", k: "Privacy vera", h2: "Le tue lezioni restano tue", v: "u-sincronizza", img: "sincronizza", pag: "la-tua-privacy", link: "Tutto sulla privacy", testo: "Trascrive sul tuo dispositivo. PC e telefono si sincronizzano tra loro sul Wi-Fi, o dal tuo Google Drive con zip chiusi da una password: nemmeno Google sa quali lezioni hai.", punti: ["Nessuna impronta della voce, nessun addestramento di IA", "Nessun bot entra nella riunione"] }
+
+confronto:
+  kicker: "Confronto"
+  h2: "Verba Manent e le altre app di appunti con IA"
+  p: "Onesto: c'è anche quello che fanno meglio loro (sincronizzazione via internet, iPhone e Mac già pronti)."
+  colonne: ["Verba Manent IA", "Notability", "Goodnotes", "Turbo AI", "NotebookLM"]
+  legenda: "✓ = c'è · — = non trovato nelle pagine ufficiali · «non dichiarato» = il sito non lo dice. Controllato sui siti ufficiali e sulle pagine degli store, ottobre 2026."
+  gruppi:
+    - t: "A lezione"
+      righe:
+        - ["Registra dal tuo PC o telefono, senza bot nella chiamata", "✓", "✓", "✓", "✓", "carichi tu il file"]
+        - ["Registra anche lo schermo e fotografa le slide da solo", "✓", "—", "—", "—", "—"]
+        - ["Trascrive sul tuo dispositivo, gratis e senza internet", "✓", "non dichiarato", "✓", "non dichiarato", "—"]
+        - ["Riconosce chi parla", "✓", "non dichiarato", "✓ nelle riunioni", "—", "—"]
+        - ["Foto alla lavagna agganciata al minuto della lezione", "✓", "foto nelle note", "foto nelle note", "—", "—"]
+        - ["Importa video, audio, link YouTube e trascrizioni", "✓", "✓ YouTube", "—", "✓", "✓"]
+    - t: "Dopo la lezione"
+      righe:
+        - ["Appunti Cornell e Formato Esame, con le slide accanto", "✓", "riassunto", "riassunto", "note", "riassunto"]
+        - ["Chiedi alla lezione, con slide e minuto", "✓", "✓ chat", "✓ chat", "✓ chat", "✓ con citazioni"]
+        - ["Podcast della lezione con la voce vera del prof", "✓ una voce, due voci, dibattito", "—", "—", "voci sintetiche", "voci sintetiche"]
+        - ["Riascolto sincronizzato (Karaoke) con la slide", "✓", "✓ con i tuoi appunti a mano", "—", "—", "—"]
+        - ["Mappa mentale e infografica", "✓", "—", "—", "—", "✓"]
+        - ["Glossario della materia con «Senti il prof»", "✓", "—", "—", "—", "—"]
+    - t: "Prima dell'esame"
+      righe:
+        - ["Flashcard e test a crocette", "✓", "✓", "quiz", "✓", "✓"]
+        - ["Ripasso del giorno fino alla data dell'esame", "✓", "—", "—", "—", "—"]
+        - ["Tutor che sa quando hai l'esame e dove sbagli", "✓", "—", "—", "—", "tutor sulle fonti"]
+        - ["Interrogazione a voce simulata e corretta", "✓", "—", "—", "—", "—"]
+        - ["Libro di testo: le pagine giuste per ogni lezione e cosa non si è detto", "✓", "PDF da annotare", "PDF da annotare", "PDF", "libro come fonte"]
+        - ["Esporta le flashcard per Anki", "✓", "—", "—", "—", "—"]
+    - t: "Per tutti"
+      righe:
+        - ["Strumenti DSA: carattere, sillabe colorate, righello, mappa per la verifica, foglio PDP", "✓", "—", "—", "—", "—"]
+        - ["Verbale di riunione con cose da fare, chi ed entro quando", "✓", "—", "✓ azioni da fare", "—", "—"]
+        - ["Sincronizza PC e telefono", "Wi-Fi e Google Drive cifrato", "✓ via internet", "✓ via internet", "✓ via internet", "✓ via internet"]
+        - ["Dispositivi", "Windows, Android · iPhone e Mac in arrivo", "iPad, iPhone, Mac, Windows, Android", "iPad, iPhone, Mac, Windows, Android, web", "web, iPhone, Android", "web, iPhone, Android"]
+
+prezzi:
+  kicker: "Prezzi"
+  h2: "Due modi, scegli tu"
+  voci:
+    - { t: "Con la tua chiave di Claude", cifra: "circa 0,20 $", piccolo: "per ora registrata", p: "Paghi solo quello che usi, direttamente ad Anthropic. Trascrizione sul dispositivo gratis." }
+    - { t: "Abbonamento", cifra: "in arrivo", piccolo: "", p: "Claude e il server veloce già compresi, senza chiavi da mettere." }
