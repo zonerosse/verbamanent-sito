@@ -275,6 +275,10 @@ chi:
   disponibile: "Disponibile per"
   ok: "Disponibile"
   presto: "In arrivo"
+  web: "Web"
+  web_t: "Anche dal browser, su qualsiasi computer"
+  web_p: "Apri le tue lezioni su verbamanent.app/studia: accedi con Google e la password di Sincronizza. Appunti, karaoke, flashcard e ripasso, senza installare niente; il ripasso fatto sul web torna sul PC e sul telefono."
+  web_b: "Apri Verba Manent sul web →"
 
 attesa:
   h2: "Vuoi essere tra i primi?"
@@ -358,7 +362,7 @@ confronto:
         - ["Strumenti DSA: carattere, sillabe colorate, righello, mappa per la verifica, foglio PDP", "✓", "—", "—", "—", "—"]
         - ["Verbale di riunione con cose da fare, chi ed entro quando", "✓", "—", "✓ azioni da fare", "—", "—"]
         - ["Sincronizza PC e telefono", "Wi-Fi e Google Drive cifrato", "✓ via internet", "✓ via internet", "✓ via internet", "✓ via internet"]
-        - ["Dispositivi", "Windows, Android · iPhone e Mac in arrivo", "iPad, iPhone, Mac, Windows, Android", "iPad, iPhone, Mac, Windows, Android, web", "web, iPhone, Android", "web, iPhone, Android"]
+        - ["Dispositivi", "Windows, Android, web · iPhone e Mac in arrivo", "iPad, iPhone, Mac, Windows, Android", "iPad, iPhone, Mac, Windows, Android, web", "web, iPhone, Android", "web, iPhone, Android"]
 
 prezzi:
   kicker: "Prezzi"

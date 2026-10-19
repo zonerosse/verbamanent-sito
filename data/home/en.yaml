@@ -274,6 +274,10 @@ chi:
   disponibile: "Available for"
   ok: "Available"
   presto: "Coming soon"
+  web: "Web"
+  web_t: "From the browser too, on any computer"
+  web_p: "Open your lectures at verbamanent.app/studia: sign in with Google and your Sync password. Notes, karaoke, flashcards and review, with nothing to install; the review you do on the web goes back to your PC and phone."
+  web_b: "Open Verba Manent on the web →"
 
 attesa:
   h2: "Want to be among the first?"
@@ -357,7 +361,7 @@ confronto:
         - ["Dyslexia tools: font, coloured syllables, ruler, test map, learning-plan sheet", "✓", "—", "—", "—", "—"]
         - ["Meeting minutes with action items, who and by when", "✓", "—", "✓ action items", "—", "—"]
         - ["Sync PC and phone", "Wi-Fi and encrypted Google Drive", "✓ over the internet", "✓ over the internet", "✓ over the internet", "✓ over the internet"]
-        - ["Devices", "Windows, Android · iPhone and Mac coming", "iPad, iPhone, Mac, Windows, Android", "iPad, iPhone, Mac, Windows, Android, web", "web, iPhone, Android", "web, iPhone, Android"]
+        - ["Devices", "Windows, Android, web · iPhone and Mac coming", "iPad, iPhone, Mac, Windows, Android", "iPad, iPhone, Mac, Windows, Android, web", "web, iPhone, Android", "web, iPhone, Android"]
 
 prezzi:
   kicker: "Prices"
