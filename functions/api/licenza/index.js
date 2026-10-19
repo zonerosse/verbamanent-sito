@@ -10,6 +10,7 @@
 //   -> {stato: 'accesso'} (401)                  accesso Google mancante o scaduto
 import { chi, ammesso, usato } from '../claude/[[percorso]].js';
 
+const ANNO = 365 * 86400;
 const PRIV = { 'cache-control': 'no-store', 'x-robots-tag': 'noindex, nofollow', 'content-type': 'application/json' };
 const json = (o, status = 200) => new Response(JSON.stringify(o), { status, headers: PRIV });
 
@@ -34,8 +35,10 @@ export async function onRequestGet({ request, env }) {
     p = { inizio: new Date().toISOString(), ultimo: new Date().toISOString() };
   }
   p.ultimo = new Date().toISOString();
-  await env.ATTESA.put(k, JSON.stringify(p));
   const fine = new Date(new Date(p.inizio).getTime() + cfg.giorni * 86400000);
+  // privacy: la prova si cancella da sola 12 mesi dopo la fine (o dopo l'ultimo uso, se e' piu' tardi)
+  const via = Math.floor(Math.max(fine.getTime(), Date.now()) / 1000) + ANNO;
+  await env.ATTESA.put(k, JSON.stringify(p), { expiration: via });
   const resta = fine - Date.now();
   if (resta > 0) return json({ stato: 'prova', giorni: Math.ceil(resta / 86400000), fine: fine.toISOString(), giorni_prova: cfg.giorni });
   return json({ stato: 'scaduta', fine: fine.toISOString(), giorni_prova: cfg.giorni });

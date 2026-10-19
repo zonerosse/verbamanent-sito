@@ -75,7 +75,9 @@ export async function onRequestPost({ request, env }) {
     pag: { fornitore: ev.fornitore, sub: ev.sub, cliente: ev.cliente, stato: ev.stato, periodo: quale ? quale.periodo : ((ab && ab.pag && ab.pag.periodo) || 'mese'),
       prezzo: quale ? quale.prezzo : ((ab && ab.pag && ab.pag.prezzo) || null), rinnovo: attivo ? ev.rinnovo : null, fine: attivo ? null : scade,
       carta: ev.carta || ((ab && ab.pag && ab.pag.carta) || ''), agg: new Date().toISOString() } };
-  await env.ATTESA.put(k, JSON.stringify(nuovo));
+  // privacy: finito l'abbonamento, i suoi dati si cancellano da soli 12 mesi dopo la fine
+  const via = attivo ? null : Math.floor(Math.max(new Date(scade).getTime() || 0, Date.now()) / 1000) + 365 * 86400;
+  await env.ATTESA.put(k, JSON.stringify(nuovo), via ? { expiration: via } : undefined);
   return json({ ok: true });
 }
 

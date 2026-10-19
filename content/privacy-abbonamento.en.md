@@ -27,11 +27,11 @@ The row «Activation code and a computer identifier → the sales service» **is
 
 - **Free trial:** your Gmail address, the day you started the trial and the last day you used the app.
 - **Subscription:** your Gmail address, plan, since when you are subscribed, expiry or renewal, status (active or cancelled), card type and last 4 digits, and the codes Lemon Squeezy uses to identify your subscription.
-- **Included Claude usage:** for each day, how many questions you asked Claude and what they cost. **We do not keep the content** of questions or answers: the text passes through our site only to reach Anthropic, then is stored nowhere.
+- **Included Claude usage:** for each day, how many questions you asked Claude and what they cost (deleted automatically after about 13 months). **We do not keep the content** of questions or answers: the text passes through our site only to reach Anthropic, then is stored nowhere.
 
 **Why:** to provide the service you asked for (counting trial days, knowing whether you are subscribed, applying the monthly Claude cap). The legal basis is our contract with you.
 
-**For how long:** while you are on the trial or subscribed, then for [12 months] after it ends, so we can recognise you if you come back and answer any requests. Then we delete it. You can ask us to delete it sooner by writing to [info@puntowebferrara.com](mailto:info@puntowebferrara.com).
+**For how long:** while you are on the trial or subscribed, then for 12 months after it ends, so we can recognise you if you come back and answer any requests. Then it is deleted automatically. You can ask us to delete it sooner by writing to [info@puntowebferrara.com](mailto:info@puntowebferrara.com).
 
 **Lemon Squeezy** (Lemon Squeezy LLC, part of the Stripe group) sells the subscription as *merchant of record*. For payment it is an **independent controller** of your data: it receives your name, email, country and payment details, processes them under [its privacy policy](https://lemonsqueezy.com/privacy) and keeps receipts for as long as tax law requires. Lemon Squeezy is based in the United States: the data transfer is covered by the safeguards required by the GDPR.
 

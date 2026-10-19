@@ -27,11 +27,11 @@ La riga «Codice di attivazione e un identificativo del computer → il servizio
 
 - **Prova gratuita:** il tuo indirizzo Gmail, il giorno in cui hai iniziato la prova e l'ultimo giorno in cui hai usato il programma.
 - **Abbonamento:** il tuo indirizzo Gmail, il piano, da quando sei abbonato, la scadenza o il rinnovo, lo stato (attivo o disdetto), il tipo di carta e le ultime 4 cifre, e i codici con cui Lemon Squeezy riconosce il tuo abbonamento.
-- **Uso di Claude compreso:** per ogni giorno, quante domande hai fatto a Claude e quanto sono costate. **Non conserviamo il contenuto** delle domande né delle risposte: il testo passa dal nostro sito solo per arrivare ad Anthropic, poi non resta da nessuna parte.
+- **Uso di Claude compreso:** per ogni giorno, quante domande hai fatto a Claude e quanto sono costate (si cancellano da sole dopo circa 13 mesi). **Non conserviamo il contenuto** delle domande né delle risposte: il testo passa dal nostro sito solo per arrivare ad Anthropic, poi non resta da nessuna parte.
 
 **Perché:** per darti il servizio che hai chiesto (contare i giorni di prova, sapere se hai l'abbonamento, rispettare il tetto mensile di Claude). La base giuridica è il contratto con te.
 
-**Per quanto tempo:** finché sei in prova o abbonato, e poi per [12 mesi] dalla fine, per poterti riconoscere se torni e per rispondere a eventuali richieste. Dopo li cancelliamo. Puoi chiedere di cancellarli prima scrivendo a [info@puntowebferrara.com](mailto:info@puntowebferrara.com).
+**Per quanto tempo:** finché sei in prova o abbonato, e poi per 12 mesi dalla fine, per poterti riconoscere se torni e per rispondere a eventuali richieste. Dopo si cancellano da soli. Puoi chiedere di cancellarli prima scrivendo a [info@puntowebferrara.com](mailto:info@puntowebferrara.com).
 
 **Lemon Squeezy** (Lemon Squeezy LLC, una società del gruppo Stripe) vende l'abbonamento come *merchant of record*. Per il pagamento è un **titolare autonomo** dei tuoi dati: riceve il nome, l'email, il Paese e i dati di pagamento, li tratta secondo la [sua informativa privacy](https://lemonsqueezy.com/privacy) e conserva le ricevute per il tempo richiesto dalle leggi fiscali. Lemon Squeezy ha sede negli Stati Uniti: il trasferimento dei dati è protetto dalle garanzie previste dal GDPR.
 

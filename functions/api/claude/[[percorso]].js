@@ -96,7 +96,7 @@ async function segna(env, nome, risposta) {
   const g = d.giorni[giorno] || { n: 0, usd: 0 };
   g.n++; g.usd += usd; d.giorni[giorno] = g;
   d.ultimo = new Date().toISOString();
-  await env.ATTESA.put(chiave, JSON.stringify(d));
+  await env.ATTESA.put(chiave, JSON.stringify(d), { expirationTtl: 400 * 86400 });   // privacy: i consumi di un mese spariscono dopo circa 13 mesi
 }
 
 export async function onRequest({ request, env, params, waitUntil }) {
