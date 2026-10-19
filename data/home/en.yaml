@@ -45,6 +45,7 @@ pagine:
     - kicker: "On PC and phone"
       h2: "Wherever you are, however you like"
       p: "On your PC and your phone, with the lectures you record or the ones you already have."
+      video: { v: "inizia-qui", img: "inizia-qui-en", ic: "🚀", k: "Start here", h2: "Ready in 3 steps, at first start", testo: "Verba Manent guides you: one Google sign-in for the same lectures on PC, phone and web, the Claude key with the right links and steps (not needed with a subscription), and the QR to link your phone.", punti: ["One sign-in, for everything", "The key pastes itself", "Phone and web linked in a minute"] }
       schermate: [[inpiu, 2], [inpiu, 3], [inpiu, 4]]
       carte: [9, 10, 11, 12, 13, 14]
       piattaforme: true

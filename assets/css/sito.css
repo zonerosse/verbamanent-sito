@@ -359,6 +359,8 @@ nav a[aria-current="page"]{color:#fff;font-weight:600}
 .uni-play{position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.95);color:var(--blue);display:grid;place-items:center;font-size:24px;padding-left:4px;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:opacity .2s}
 .uni-v.va .uni-play{opacity:0}
 .uni-t{padding:22px 24px 24px}
+.uni-largo{display:grid;grid-template-columns:1.3fr 1fr;align-items:center;margin:0 0 28px}
+@media (max-width:900px){.uni-largo{grid-template-columns:1fr}}
 .uni-t h3{font-size:22px;margin:6px 0 8px}
 .uni-t p{margin:0 0 10px;color:var(--mut);font-size:15.5px}
 .tab-scorri{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:14px}

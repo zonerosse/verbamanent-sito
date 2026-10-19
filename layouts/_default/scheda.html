@@ -50,6 +50,22 @@
 <section{{ with $s.cls }} class="{{ . }}"{{ end }}>
   <div class="wrap">
     {{ partial "titolo-sez.html" (dict "s" $s "h1" $h1) }}
+    {{- with $s.video }}
+    <article class="uni uni-largo">
+      <div class="uni-v" role="button" tabindex="0" aria-label="▶ {{ .h2 }}">
+        <video playsinline muted preload="none" poster="{{ printf "img/schermate/%s.webp" .img | relURL }}">
+          <source src="{{ printf "video/%s-%s.webm" .v site.Language.Lang | relURL }}" type="video/webm">
+        </video>
+        <span class="uni-play" aria-hidden="true">▶</span>
+      </div>
+      <div class="uni-t">
+        <div class="kicker">{{ .ic }} {{ .k }}</div>
+        <h3>{{ .h2 }}</h3>
+        <p>{{ .testo }}</p>
+        <ul>{{ range .punti }}<li>{{ . }}</li>{{ end }}</ul>
+      </div>
+    </article>
+    {{- end }}
     {{- with $s.schermate }}
     <div class="vc-griglia">{{ range . }}{{ partial "vc.html" (index (index $t (index . 0)).voci (index . 1)) }}{{ end }}</div>
     {{- end }}
@@ -78,6 +94,18 @@
 </section>
 {{- end }}
 {{- end }}
+<script>
+// i video delle schede: si avviano col clic (uno alla volta)
+document.querySelectorAll('.uni-v').forEach(function (box) {
+  var v = box.querySelector('video');
+  function via() { if (v.paused) { document.querySelectorAll('.uni-v video').forEach(function (x) { if (x !== v) x.pause(); }); v.play(); } else v.pause(); }
+  box.addEventListener('click', via);
+  box.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); via(); } });
+  v.addEventListener('play', function () { box.classList.add('va'); });
+  v.addEventListener('pause', function () { box.classList.remove('va'); });
+  v.addEventListener('ended', function () { box.classList.remove('va'); });
+});
+</script>
 <!-- in fondo: torna alla home e lista d'attesa -->
 <section class="prossime">
   <div class="wrap fine-pag">

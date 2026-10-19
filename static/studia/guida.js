@@ -160,10 +160,23 @@ const GUIDA = {
    },
    {
     "ico": "set",
+    "t": "🚀 Inizia qui: tutto pronto in 3 passi",
+    "p": [
+     "Al primo avvio, dopo «Prima di iniziare», Verba Manent ti guida in 3 passi. Lo rifai quando vuoi da <b>Impostazioni → 🚀 Inizia qui</b>.",
+     "<b>1 · Google</b>: un accesso solo, per tutto. Collega il tuo Google Drive per avere le stesse lezioni su PC, telefono e web, e riconosce se hai l'abbonamento. Puoi saltarlo se usi Verba Manent solo su questo PC.",
+     "<b>2 · Claude</b>: se hai l'abbonamento (o sei della famiglia) Claude è già compreso. Altrimenti incolli la tua chiave, con i passi e i link per prenderla: tornando dalla pagina delle chiavi, si incolla da sola.",
+     "<b>3 · Telefono e web</b>: il telefono inquadra il QR e riceve da solo lezioni, Drive e password. La <b>password degli zip</b>, con il bottone Copia, serve per Verba Manent sul web (verbamanent.app/studia)."
+    ],
+    "g": "primi",
+    "v": "inizia-qui"
+   },
+   {
+    "ico": "set",
     "t": "La chiave di Claude o un invito",
     "p": [
      "Gli appunti, «Chiedi», le mappe e l'esame li scrive <b>Claude</b>. Serve una chiave, oppure un invito di chi te la presta.",
-     "<b>Con la tua chiave</b>: in <b>Impostazioni → Intelligenza artificiale</b> scegli «Appunti automatici con Claude», incolla la chiave (si crea su platform.claude.com → Settings → API keys) e tocca <b>Prova e salva</b>. Resta solo su questo PC, protetta da Windows. Costo: circa 0,20 $ per ora registrata.",
+     "<b>Il modo più facile</b>: <b>Impostazioni → 🚀 Inizia qui</b>. Ti guida in 3 passi (Google, Claude, telefono e web), con i link alle pagine giuste e il bottone <b>📋 Incolla</b>. Se hai l'abbonamento o sei della famiglia, Claude è già compreso: non metti nessuna chiave.",
+     "<b>Con la tua chiave</b>: si crea su <b>console.anthropic.com → Chiavi API → Crea chiave</b>. La prima volta metti un po' di credito in <b>Fatturazione</b> (bastano 5 $). Nella finestra della chiave scegli l'<b>Ambito</b> che ti propone (altrimenti il bottone Crea resta grigio) e come <b>Scadenza</b> «Mai». Premi <b>Copia</b>: la chiave inizia con <b>sk-ant-</b> e si vede una volta sola. Poi in <b>Impostazioni → Intelligenza artificiale</b> incollala e tocca <b>Prova e salva</b>. Resta solo su questo PC, protetta da Windows. Costo: circa 0,20 $ per ora registrata.",
      "<b>Con un invito</b>: chi ti invita ti manda un messaggio su WhatsApp. In <b>Impostazioni → Ho un invito</b> incolla tutto il messaggio e tocca <b>Attiva</b>. Le chiavi arrivano già pronte, senza che tu le veda; quello che usi lo paga chi ti ha invitato.",
      "<b>Senza chiave</b>: scegli «Cartella per l'AI che vuoi». Il programma registra e trascrive lo stesso e prepara un file per ogni parte, da portare a Claude, ChatGPT o Gemini."
     ],
@@ -525,7 +538,7 @@ const GUIDA = {
      "<b>Sul PC</b>: «Collega un telefono». Compare un <b>QR</b> con sotto un codice di 6 cifre.",
      "<b>Sul telefono</b>: «Collegati al PC» → <b>📷 Inquadra il QR del PC</b> (oppure scrivi il codice). PC e telefono devono essere sulla stessa rete Wi-Fi o sull'hotspot del telefono.",
      "Da lì in poi si scambiano da soli lezioni, appunti, foto, ripasso e voti, ogni minuto, quando sono sulla stessa rete. Se la stessa cosa cambia su tutti e due, si unisce senza perdere niente; una lezione eliminata da una parte sparisce anche dall'altra.",
-     "<b>☁️ Anche fuori casa</b>: accedi con Google Drive e le lezioni passano dal tuo Drive, ognuna in uno <b>zip chiuso con una password</b>. Il telefono collegato col QR riceve accesso e password dal PC. Scrivi la password su un foglio: serve solo se perdi PC e telefono insieme.",
+     "<b>☁️ Anche fuori casa</b>: accedi con Google Drive e le lezioni passano dal tuo Drive, ognuna in uno <b>zip chiuso con una password</b>. Il telefono collegato col QR riceve accesso e password dal PC. Una lezione finita va nel Drive dopo pochi secondi, e quando apri Verba Manent sull'altro dispositivo la trovi già lì. La stessa password serve anche per <b>Verba Manent sul web</b> (verbamanent.app/studia). Scrivila su un foglio: serve anche se perdi PC e telefono insieme.",
      "In basso a sinistra (PC) vedi sempre «🔄 Sincronizzato 2 min fa». I video non passano, a meno che tu li scelga."
     ],
     "g": "lez"
@@ -790,10 +803,23 @@ const GUIDA = {
    },
    {
     "ico": "set",
+    "t": "🚀 Start here: ready in 3 steps",
+    "p": [
+     "At the first start, after «Before you start», Verba Manent guides you in 3 steps. Do it again anytime from <b>Settings → 🚀 Start here</b>.",
+     "<b>1 · Google</b>: one sign-in, for everything. It connects your Google Drive so you have the same lectures on PC, phone and web, and it recognises your subscription. You can skip it if you only use Verba Manent on this PC.",
+     "<b>2 · Claude</b>: with a subscription (or as family) Claude is already included. Otherwise you paste your own key, with the steps and links to get it: when you come back from the keys page, it pastes itself.",
+     "<b>3 · Phone and web</b>: the phone scans the QR and gets lectures, Drive and password by itself. The <b>zip password</b>, with its Copy button, opens Verba Manent on the web (verbamanent.app/studia)."
+    ],
+    "g": "primi",
+    "v": "inizia-qui"
+   },
+   {
+    "ico": "set",
     "t": "The Claude key or an invitation",
     "p": [
      "Notes, «Ask», maps and the exam are written by <b>Claude</b>. You need a key, or an invitation from someone who lends you theirs.",
-     "<b>With your own key</b>: in <b>Settings → Artificial intelligence</b> choose «Automatic notes with Claude», paste the key (create it on platform.claude.com → Settings → API keys) and tap <b>Test and save</b>. It stays only on this PC, protected by Windows. Cost: about 0.20 $ per recorded hour.",
+     "<b>The easiest way</b>: <b>Settings → 🚀 Start here</b>. It guides you in 3 steps (Google, Claude, phone and web), with links to the right pages and a <b>📋 Paste</b> button. If you have a subscription or are family, Claude is already included: no key needed.",
+     "<b>With your own key</b>: create it on <b>console.anthropic.com → API keys → Create Key</b>. The first time add some credit under <b>Billing</b> ($5 is enough). In the key window choose the <b>Workspace</b> offered (otherwise the Create button stays grey) and «Never» as <b>Expiry</b>. Press <b>Copy</b>: the key starts with <b>sk-ant-</b> and is shown only once. Then in <b>Settings → Artificial intelligence</b> paste it and tap <b>Test and save</b>. It stays only on this PC, protected by Windows. Cost: about 0.20 $ per recorded hour.",
      "<b>With an invitation</b>: whoever invites you sends you a WhatsApp message. In <b>Settings → I have an invitation</b> paste the whole message and tap <b>Activate</b>. The keys arrive ready, without you seeing them; what you use is paid by whoever invited you.",
      "<b>Without a key</b>: choose «Folder for the AI of your choice». The program still records and transcribes and prepares a file for each part, to take to Claude, ChatGPT or Gemini."
     ],
@@ -1155,7 +1181,7 @@ const GUIDA = {
      "<b>On the PC</b>: «Link a phone». A <b>QR code</b> appears with a 6-digit code under it.",
      "<b>On the phone</b>: «Link to PC» → <b>📷 Scan the PC's QR code</b> (or type the code). PC and phone must be on the same Wi-Fi or the phone's hotspot.",
      "From then on they exchange lectures, notes, photos, reviews and marks by themselves, every minute, when they're on the same network. If the same thing changes on both, it's merged without losing anything; a lecture deleted on one side disappears on the other too.",
-     "<b>☁️ Away from home too</b>: sign in with Google Drive and lectures go through your Drive, each in a <b>password-locked zip</b>. The phone linked with the QR gets access and password from the PC. Write the password on paper: you only need it if you lose PC and phone together.",
+     "<b>☁️ Away from home too</b>: sign in with Google Drive and lectures go through your Drive, each in a <b>password-locked zip</b>. The phone linked with the QR gets access and password from the PC. A finished lecture goes to Drive within seconds, and when you open Verba Manent on the other device it is already there. The same password also opens <b>Verba Manent on the web</b> (verbamanent.app/studia). Write it on paper: you also need it if you lose PC and phone together.",
      "At the bottom left (PC) you always see «🔄 Synced 2 min ago». Videos don't go across unless you choose them."
     ],
     "g": "lez"

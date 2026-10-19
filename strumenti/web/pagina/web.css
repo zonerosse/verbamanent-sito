@@ -61,3 +61,6 @@ html.android #webBar .wb-acc,html.android #webBar .wb-tit,html.android #webBar .
 html.android #webBar{flex-wrap:nowrap;height:36px}
 html.android body.web-on{padding-bottom:0}
 html.android body.web-on .app{margin-top:36px;height:calc(100vh - 36px);height:calc(100dvh - 36px)}
+
+/* «Inizia qui» è del programma sul PC: sul web non serve (Google e la password ci sono già) */
+html.web #iqImp, html.web #iqVelo{display:none !important}

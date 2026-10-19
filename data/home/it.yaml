@@ -46,6 +46,7 @@ pagine:
     - kicker: "Su PC e telefono"
       h2: "Dove vuoi, come vuoi"
       p: "Sul PC e sul telefono, con le lezioni che registri o con quelle che hai già."
+      video: { v: "inizia-qui", img: "inizia-qui", ic: "🚀", k: "Inizia qui", h2: "Pronto in 3 passi, al primo avvio", testo: "Verba Manent ti guida: un accesso con Google per avere le stesse lezioni su PC, telefono e web, la chiave di Claude con i link e i passi giusti (con l'abbonamento non serve), e il QR per collegare il telefono.", punti: ["Un accesso solo, per tutto", "La chiave si incolla da sola", "Telefono e web collegati in un minuto"] }
       schermate: [[inpiu, 2], [inpiu, 3], [inpiu, 4]]
       carte: [9, 10, 11, 12, 13, 14]
       piattaforme: true

@@ -60,6 +60,10 @@ async function avvio() {
   setTimeout(() => { try { if (!S || !S.registro) A.cerca_aggiornamenti(true); } catch (e) {} }, 4000);   // avviso all'apertura, se c'e' una versione nuova
 }
 const pausa = ms => new Promise(r => setTimeout(r, ms));
+// aprendo o tornando su Verba Manent: le lezioni nuove degli altri dispositivi arrivano subito dal cloud
+function nuvolaPresto() { try { if (A && A.nuvola_presto && document.visibilityState !== 'hidden') A.nuvola_presto(); } catch (e) {} }
+document.addEventListener('visibilitychange', nuvolaPresto);
+window.addEventListener('focus', nuvolaPresto);
 // telefono, tasto «Indietro»: chiude dialogo o menu, altrimenti torna a Registra. false = l'app va dietro
 window.indietro = () => {
   if (videoInteroChiudi()) return true;
@@ -346,7 +350,7 @@ function primaDiIniziare(rileggi) {
       await A.imposta('rapporti_errori', si); R.rapporti = si; R.rapporti_chiesto = true;
     }
     v.remove();
-    if (!rileggi) invitoCopiato();
+    if (!rileggi) { if (!ANDROID && window.iniziaQui) iniziaQui(invitoCopiato); else invitoCopiato(); }   // «Inizia qui» (inizia.js): Google, Claude, telefono e web
   };
   if (rileggi) v.onclick = e => { if (e.target === v) v.remove(); };
 }
@@ -2984,7 +2988,7 @@ async function disegnaNV() {
       <label><input type="radio" name="nvp" value="microsoft"${NV.p === 'microsoft' ? ' checked' : ''}>OneDrive<small>${esc(t('nv.m.s'))}</small></label></div>
       <div class="row mt" style="gap:8px"><button class="btn b-main b-sm" id="nvAcc"${disp ? '' : ' disabled'}>${esc(t(NV.p === 'microsoft' ? 'nv.acc.m' : 'nv.acc.g'))}</button></div>
       ${disp ? '' : `<div class="hint mt">${esc(t('nv.presto'))}</div>`}
-      ${String(r.accesso).startsWith('errore') ? `<div class="avviso mt">${esc(t({'errore:annullato': 'nv.err.annullato', 'errore:tempo': 'nv.err.tempo', 'errore:api': 'nv.err.api', 'errore:accesso': 'nv.err.permesso'}[r.accesso] || 'nv.err.accrete'))}</div>` : ''}
+      ${String(r.accesso).startsWith('errore') ? `<div class="avviso mt">${esc(t({'errore:annullato': 'nv.err.annullato', 'errore:tempo': 'nv.err.tempo', 'errore:api': 'nv.err.api', 'errore:accesso': 'nv.err.permesso'}[r.accesso] || 'nv.err.accrete'))}${r.dettaglio ? `<div class="hint" style="margin-top:4px">${esc(r.dettaglio)}</div>` : ''}</div>` : ''}
       <div class="hint mt">${esc(t('nv.contro'))}</div>`;
   }
   if (h === NV.h) return;
