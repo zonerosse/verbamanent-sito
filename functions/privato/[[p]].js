@@ -8,6 +8,7 @@
 //   /privato/esci   Esci
 import { rispondi as listaCsv } from '../api/lista.js';
 import { datiUso } from '../api/uso.js';
+import { impostazioniProva } from '../api/licenza/index.js';
 
 const GIORNI = 30;
 const PRIV = { 'x-robots-tag': 'noindex, nofollow', 'cache-control': 'no-store', 'referrer-policy': 'no-referrer', 'x-frame-options': 'DENY' };
@@ -82,6 +83,8 @@ details summary{cursor:pointer;color:var(--blue);font-size:13.5px;margin-top:6px
 .mini{height:6px;background:var(--line);border-radius:4px;overflow:hidden;margin-top:4px;width:110px}.mini i{display:block;height:100%;background:var(--navy)}
 .az{display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap}.az form{margin:0}.az button,.az a{border:1px solid var(--line);background:#fff;border-radius:7px;padding:5px 9px;font:inherit;font-size:12.5px;color:var(--navy);cursor:pointer;text-decoration:none}.az .r{color:#b91c1c}
 .pag{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:14px;flex-wrap:wrap}.pag b{color:var(--ink)}.pag span{color:var(--mut);font-size:13.5px}
+.prv{display:flex;gap:16px;align-items:center;flex-wrap:wrap}.prv select{border:1px solid #cbd5e1;border-radius:8px;padding:8px 10px;font:inherit;font-size:14px}.prv form{margin:0;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.t1{border:0;border-radius:10px;padding:10px 16px;font:inherit;font-weight:700;font-size:14px;cursor:pointer}.t1.on{background:#059669;color:#fff}.t1.off{background:#fff;color:#b91c1c;border:1px solid #fecaca}
 .msg{background:#dcfce7;color:#166534;border-radius:10px;padding:10px 14px;margin-bottom:14px;font-weight:600}
 @media(max-width:860px){.form{grid-template-columns:1fr 1fr}}
 @media(max-width:860px){.kpi{grid-template-columns:1fr 1fr}.griglia{grid-template-columns:1fr}.chi div{display:none}.tabs{margin-left:0;order:3;width:100%;padding-bottom:8px;overflow:auto}}`;
@@ -241,6 +244,21 @@ function piuMesi(da, n) { const d = new Date(da); d.setMonth(d.getMonth() + n); 
 
 async function salvaAbbonato(env, f) {
   const azione = String(f.get('azione') || ''), email = String(f.get('email') || '').trim().toLowerCase();
+  if (azione === 'prova_on' || azione === 'prova_off' || azione === 'prova_giorni') {
+    const c = await impostazioniProva(env);
+    const g = parseInt(String(f.get('giorni') || c.giorni), 10);
+    const n = { attiva: azione === 'prova_giorni' ? c.attiva : azione === 'prova_on', giorni: [7, 14, 30].includes(g) ? g : c.giorni };
+    await env.ATTESA.put('config:prova', JSON.stringify(n));
+    return n.attiva ? `Prova gratuita accesa: ${n.giorni} giorni per chi inizia da adesso.` : 'Prova gratuita spenta: il programma funziona per tutti come prima.';
+  }
+  if (azione === 'prova_piu7') {
+    let p = null;
+    try { p = JSON.parse(await env.ATTESA.get('prova:' + email) || 'null'); } catch (e) {}
+    if (!p) return 'Prova non trovata.';
+    p.inizio = new Date(new Date(p.inizio).getTime() + 7 * 86400000).toISOString();
+    await env.ATTESA.put('prova:' + email, JSON.stringify(p));
+    return `7 giorni in più a ${email}.`;
+  }
   if (!EMAIL.test(email)) return 'Indirizzo non valido.';
   const k = 'abbonato:' + email;
   let ab = null;
@@ -263,9 +281,43 @@ async function salvaAbbonato(env, f) {
   return `${nuovo.nome} salvato.`;
 }
 
+async function boxProva(env, elenco) {
+  const c = await impostazioniProva(env), ora = Date.now(), abb = new Set(elenco.map(a => a.email));
+  const prove = [];
+  let cursor;
+  do {
+    const p = await env.ATTESA.list({ prefix: 'prova:', cursor });
+    for (const k of p.keys) { try { prove.push({ email: k.name.slice(6), ...JSON.parse(await env.ATTESA.get(k.name) || '{}') }); } catch (e) {} }
+    cursor = p.list_complete ? null : p.cursor;
+  } while (cursor);
+  prove.sort((a, b) => String(b.inizio).localeCompare(String(a.inizio)));
+  const resta = p => new Date(p.inizio).getTime() + c.giorni * 86400000 - ora;
+  const inProva = prove.filter(p => !abb.has(p.email) && resta(p) > 0).length, finite = prove.filter(p => !abb.has(p.email) && resta(p) <= 0).length;
+  const conv = prove.filter(p => abb.has(p.email)).length;
+  const durata = sel => `<label>Durata <select name="giorni"${sel ? ' onchange="this.form.submit()"' : ''}>${[7, 14, 30].map(g => `<option value="${g}"${g === c.giorni ? ' selected' : ''}>${g} giorni</option>`).join('')}</select></label>`;
+  const bottone = (az, t, cls) => `<form method="post" action="/privato/abbonati"><input type="hidden" name="azione" value="${az}">${az === 'prova_on' ? durata(false) : ''}<button class="t1 ${cls}">${t}</button></form>`;
+  if (!c.attiva) return `<div class="box"><div class="azioni"><h3>Prova gratuita</h3><span class="badge off">⏸ Spenta</span></div>
+    <p class="s" style="margin:0 0 14px">Spenta: il programma funziona per tutti come oggi, senza giorni e senza accesso Google obbligatorio.</p>
+    <div class="prv">${bottone('prova_on', '▶ Accendi la prova', 'on')}</div>
+    <p class="nota">Quando la accendi, chi apre il programma vede «Benvenuto: ${c.giorni} giorni di prova gratuita» e accede con Google. Famiglia e abbonati non vedono nessuna prova. Con la prova Claude lo paga ciascuno con la sua chiave: il tuo credito non si tocca.${prove.length ? ` Le prove già iniziate (${prove.length}) restano ricordate.` : ''}</p></div>`;
+  const righe = prove.map(p => {
+    const r = resta(p), g = Math.ceil(r / 86400000);
+    const st = abb.has(p.email) ? '<span class="badge ok">Abbonato ✓</span>' : r > 0 ? `<span class="badge ${g <= 3 ? 'att' : 'ok'}">${plur(g, 'giorno', 'giorni')}</span>` : '<span class="badge no">Finita</span>';
+    const az = abb.has(p.email) ? '' : `<form method="post" action="/privato/abbonati"><input type="hidden" name="azione" value="prova_piu7"><input type="hidden" name="email" value="${esc(p.email)}"><button>+7 giorni</button></form><a href="/privato/abbonati?nuovo=${encodeURIComponent(p.email)}#aggiungi">Fai abbonato</a>`;
+    return `<tr><td>${esc(p.email)}</td><td>${giorno(p.inizio)}</td><td>${st}</td><td>${esc(quando(p.ultimo))}</td><td><div class="az">${az}</div></td></tr>`;
+  }).join('') || '<tr><td colspan="5" class="vuoto">Ancora nessuno ha iniziato la prova.</td></tr>';
+  return `<div class="box"><div class="azioni"><h3>Prova gratuita</h3><span class="badge ok">● Accesa · ${c.giorni} giorni</span></div>
+    <div class="kpi" style="margin:4px 0 14px"><div class="k"><small>In prova</small><b>${inProva}</b><span>adesso</span></div><div class="k"><small>Prova finita</small><b>${finite}</b><span>non abbonati</span></div>
+      <div class="k"><small>Diventati abbonati</small><b>${conv}</b><span>su ${prove.length} che hanno provato</span></div><div class="k"><small>Durata</small><b>${c.giorni} giorni</b><span>per chi inizia da oggi</span></div></div>
+    <table><tr><th>Chi</th><th>Iniziata il</th><th>Stato</th><th>Ultimo uso</th><th></th></tr>${righe}</table>
+    <div class="prv" style="margin-top:14px"><form method="post" action="/privato/abbonati"><input type="hidden" name="azione" value="prova_giorni">${durata(true)}</form>${bottone('prova_off', '⏸ Spegni la prova', 'off')}</div>
+    <p class="nota">Spegnendo, il programma torna a funzionare per tutti come oggi (anche per chi aveva la prova finita). «+7 giorni» allunga la prova a una persona; «Fai abbonato» la porta nell'elenco qui sotto.</p></div>`;
+}
+
 async function paginaAbbonati(env, url, messaggio = '') {
   const elenco = await abbonati(env), uso = (await datiUso(env))[meseOra()] || {};
   const mod = url.searchParams.get('modifica'), m = elenco.find(x => x.email === mod) || null;
+  const nuovo = !m && url.searchParams.get('nuovo') ? url.searchParams.get('nuovo') : '';
   const ora = Date.now(), attivo = a => !a.scade || new Date(a.scade) > ora;
   const attivi = elenco.filter(attivo);
   const conta = p => attivi.filter(a => a.piano === p).length;
@@ -273,7 +325,7 @@ async function paginaAbbonati(env, url, messaggio = '') {
   const spesa = elenco.reduce((s, a) => s + ((uso[a.id || a.email] || {}).usd || 0), 0);
   const opz = (v, t, sel) => `<option value="${esc(v)}"${sel ? ' selected' : ''}>${esc(t)}</option>`;
   const form = `<form class="form" method="post" action="/privato/abbonati"><input type="hidden" name="azione" value="salva">
-    <div><label>Gmail</label><input name="email" type="email" required placeholder="nome@gmail.com" value="${esc(m ? m.email : '')}"${m ? ' readonly' : ''}></div>
+    <div><label>Gmail</label><input name="email" type="email" required placeholder="nome@gmail.com" value="${esc(m ? m.email : nuovo)}"${m ? ' readonly' : ''}></div>
     <div><label>Nome</label><input name="nome" maxlength="40" placeholder="per riconoscerlo" value="${esc(m ? m.nome : '')}"></div>
     <div><label>Piano</label><select name="piano">${['Famiglia', 'Omaggio', 'Studente', 'Studente Plus'].map(p => opz(p, p === 'Famiglia' ? 'Famiglia (gratis)' : p, m ? m.piano === p : p === 'Omaggio')).join('')}</select></div>
     <div><label>Scadenza</label><select name="scadenza">${m ? opz('', 'come adesso' + (m.scade ? ' (' + giorno(m.scade) + ')' : ' (nessuna)'), true) : ''}${opz('nessuna', 'Nessuna', !m)}${opz('1', '1 mese')}${opz('3', '3 mesi')}${opz('12', '1 anno')}</select></div>
@@ -289,6 +341,7 @@ async function paginaAbbonati(env, url, messaggio = '') {
   }).join('') || '<tr><td colspan="7" class="vuoto">Ancora nessun abbonato. La famiglia entra da sola la prima volta che usa Claude sul web.</td></tr>';
   return pannello('abb', 'Abbonati', 'Chi ha Claude incluso in Verba Manent', `
     ${messaggio ? `<div class="msg">✓ ${esc(messaggio)}</div>` : ''}
+    ${await boxProva(env, elenco)}
     <div class="pag"><span class="badge off">⏸ Pagamenti spenti</span><div><b>Vendita non ancora attiva.</b> <span>Quando la accendi, chi paga sul sito entra qui da solo e ne esce quando scade o disdice.</span></div></div>
     <div class="kpi">
       <div class="k"><small>Abbonati attivi</small><b>${attivi.length}</b><span>${conta('Famiglia')} famiglia · ${plur(conta('Studente') + conta('Studente Plus'), 'studente', 'studenti')} · ${conta('Omaggio')} omaggio</span></div>
@@ -296,7 +349,7 @@ async function paginaAbbonati(env, url, messaggio = '') {
       <div class="k"><small>Spesa Claude · mese</small><b>${usd(spesa)}</b><span>tutti gli abbonati</span></div>
       <div class="k"><small>Incassi · mese</small><b>—</b><span>con i pagamenti accesi</span></div>
     </div>
-    <div class="box"><div class="azioni"><h3>${m ? 'Modifica ' + esc(m.nome || m.email) : 'Aggiungi abbonato'}</h3>${m ? '<a class="bs" href="/privato/abbonati">Annulla</a>' : ''}</div>${form}
+    <div class="box"><div class="azioni"><h3 id="aggiungi">${m ? 'Modifica ' + esc(m.nome || m.email) : 'Aggiungi abbonato'}</h3>${m ? '<a class="bs" href="/privato/abbonati">Annulla</a>' : ''}</div>${form}
       <table><tr><th>Abbonato</th><th>Piano</th><th>Dal</th><th>Scadenza</th><th>Claude questo mese</th><th>Origine</th><th></th></tr>${righe}</table>
       <p class="nota">Con un tetto, all'80% Verba Manent lo dice all'abbonato e al 100% Claude si ferma fino al mese dopo; la famiglia non ha tetto. Gli indirizzi stanno nella memoria privata del sito, non nel codice.</p></div>`);
 }
