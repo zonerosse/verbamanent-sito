@@ -269,7 +269,10 @@
   v.addEventListener('ended', function () { if (cur < bs.length - 1) vai(cur + 1, true); else pl.classList.remove('va'); });
   bs.forEach(function (b, i) { b.addEventListener('click', function () { vai(i, true); }); });
   document.getElementById('fs').addEventListener('click', function () {
-    var f = pl.requestFullscreen || pl.webkitRequestFullscreen; if (f) f.call(pl);
+    // iPhone: Safari non mette a schermo intero un riquadro, solo il video (con il suo lettore)
+    var f = (document.fullscreenEnabled || document.webkitFullscreenEnabled) && (pl.requestFullscreen || pl.webkitRequestFullscreen);
+    if (f) { var r = f.call(pl); if (r && r.catch) r.catch(function () { if (v.webkitEnterFullscreen) v.webkitEnterFullscreen(); }); }
+    else if (v.webkitEnterFullscreen) { v.play(); v.webkitEnterFullscreen(); }
   });
 })();
 // Cosa ha in piu': il video parte quando lo tocchi, uno alla volta.
