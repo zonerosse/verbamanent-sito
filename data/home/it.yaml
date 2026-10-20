@@ -45,7 +45,7 @@ pagine:
     - kicker: "Per studiare"
       h2: "Dalla lezione al giorno dell'esame"
       p: "Registri la lezione, online o in aula: Verba Manent la trascrive e ti consegna tutto quello che serve per studiare."
-      schermate: [[vetrina, 0], [vetrina, 1], [vetrina, 2], [vetrina, 3], [vetrina, 4], [vetrina, 5], [vetrina, 6], [vetrina, 7]]
+      schermate: [[vetrina, 0], [vetrina, 1], [vetrina, 2], [vetrina, 3], [vetrina, 4], [vetrina, 5], [vetrina, 6], [vetrina, 7], [vetrina, 12]]
       carte: [0, 1, 2, 3, 4, 5, 15]
   dsa:
     - { tipo: "dsa" }
@@ -234,6 +234,11 @@ vetrina:
       p: "Quando inizi una riunione, Verba Manent ricorda le cose ancora aperte dalla volta prima. Se oggi qualcuno dice che sono fatte, nel verbale risultano chiuse."
       punti: ["Le cose aperte sempre sotto gli occhi", "Si chiudono da sole quando sono fatte", "Il verbale dice cosa è cambiato"]
       alt: "Riquadro «Dall'ultima volta» con le cose ancora aperte all'inizio di una riunione."
+    - img: "andamento"
+      t: "Andamento: come stai andando"
+      p: "Una pagina sola per vedere a che punto sei: ore registrate settimana per settimana, giorni che mancano a ogni esame, voti dei test, giorni di ripasso di fila e cosa resta da sistemare."
+      punti: ["Giorni a ogni esame e quanto piano di studio hai fatto", "Voti dei test materia per materia", "Anche per chi lavora: riunioni, cose da fare, decisioni"]
+      alt: "La pagina Andamento: ore registrate, prossimi esami, giorni di ripasso e carte da ripassare."
 
 inpiu:
   kicker: "E in più"

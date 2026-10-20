@@ -42,7 +42,7 @@ pagine:
     - kicker: "For studying"
       h2: "From the lecture to exam day"
       p: "Record the lecture, online or in class: Verba Manent transcribes it and gives you everything you need to study."
-      schermate: [[vetrina, 0], [vetrina, 1], [vetrina, 2], [vetrina, 3], [vetrina, 4], [vetrina, 5], [vetrina, 6], [vetrina, 7]]
+      schermate: [[vetrina, 0], [vetrina, 1], [vetrina, 2], [vetrina, 3], [vetrina, 4], [vetrina, 5], [vetrina, 6], [vetrina, 7], [vetrina, 12]]
       carte: [0, 1, 2, 3, 4, 5, 15]
   dsa:
     - { tipo: "dsa" }
@@ -231,6 +231,11 @@ vetrina:
       p: "When you start a meeting, Verba Manent recalls what was still open from last time. If someone says today that it's done, the minutes show it as closed."
       punti: ["Open items always in view", "They close themselves when done", "The minutes say what changed"]
       alt: "The «Since last time» box with open items at the start of a meeting."
+    - img: "andamento-en"
+      t: "Progress: how you're doing"
+      p: "One page to see where you stand: hours recorded week by week, days left to each exam, test scores, your review streak and what is still to fix."
+      punti: ["Upcoming exams with how much of the study plan is done", "Test scores subject by subject", "For work too: meetings, to-dos, decisions"]
+      alt: "The Progress page: hours recorded, upcoming exams, review streak and cards to review."
 
 inpiu:
   kicker: "And more"
