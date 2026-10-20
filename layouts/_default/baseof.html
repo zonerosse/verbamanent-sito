@@ -51,14 +51,7 @@
   <div class="wrap">
     <a class="brand" href="{{ $home }}"><span class="logo"><svg width="24" height="24" aria-hidden="true"><use href="#i-logo"/></svg></span><span><b>Verba Manent IA</b><small>by {{ site.Params.marchio }}</small></span></a>
     <nav aria-label="Menu">
-      {{- range $t.menu }}
-      {{- if .pag }}{{ with site.GetPage .pag }}<a href="{{ .RelPermalink }}"{{ if eq .RelPermalink $.RelPermalink }} aria-current="page"{{ end }}>{{ end }}{{ .t }}</a>
-      {{- else }}
-      <a href="{{ $home }}#{{ .id }}">{{ .t }}</a>
-      {{- end }}
-      {{- end }}
-      {{- with site.GetPage "/prezzi" }}<a href="{{ .RelPermalink }}" class="solo-vendita" hidden{{ if eq .RelPermalink $.RelPermalink }} aria-current="page"{{ end }}>{{ .Title }}</a>{{ end }}
-      {{- with site.GetPage "/guide" }}<a href="{{ .RelPermalink }}">{{ if eq site.Language.Lang "it" }}Guide{{ else }}Guides{{ end }}</a>{{ end }}
+      {{- partial "menu-voci.html" (dict "p" . "t" $t "home" $home) }}
     </nav>
     <div class="lang">
       {{- $cur := .Language.Lang }}
@@ -67,8 +60,17 @@
       {{- end }}
     </div>
     <a class="btn btn-p" href="{{ $home }}#attesa">{{ $t.avvisami }}</a>
+    {{- $it := eq site.Language.Lang "it" }}
+    <button class="menu-b" id="menuB" type="button" aria-expanded="false" aria-controls="menuTel" data-apri="{{ if $it }}Menu{{ else }}Menu{{ end }}" data-chiudi="{{ if $it }}Chiudi{{ else }}Close{{ end }}"><span class="hb" aria-hidden="true"><i></i><i></i><i></i></span><span class="tx">Menu</span></button>
+  </div>
+  <div class="menu-tel" id="menuTel" hidden>
+    <div class="wrap">
+      <nav aria-label="Menu">{{ partial "menu-voci.html" (dict "p" . "t" $t "home" $home) }}</nav>
+      <a class="btn btn-p" href="{{ $home }}#attesa">{{ $t.hero.cta1 }}</a>
+    </div>
   </div>
 </header>
+<div class="menu-ombra" id="menuOmbra" hidden></div>
 
 <main id="contenuto">
 {{ block "main" . }}{{ end }}
@@ -87,6 +89,13 @@
   </div>
 </footer>
 <script>
+// il menu sul telefono (e sui PC con la finestra stretta): ☰ Menu apre il pannello, ✕ Chiudi, il velo, Esc o una voce lo chiudono
+(function(){var b=document.getElementById('menuB'),m=document.getElementById('menuTel'),o=document.getElementById('menuOmbra');if(!b||!m)return;
+function vai(si){m.hidden=!si;o.hidden=!si;b.setAttribute('aria-expanded',si?'true':'false');b.classList.toggle('aperto',si);b.querySelector('.tx').textContent=si?b.dataset.chiudi:b.dataset.apri;}
+b.addEventListener('click',function(){vai(m.hidden)});o.addEventListener('click',function(){vai(false)});
+m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){vai(false)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden){vai(false);b.focus()}});
+window.addEventListener('resize',function(){if(window.innerWidth>1140&&!m.hidden)vai(false)});})();
 // «Prezzi» nel menu e le parti sui pagamenti (condizioni, privacy) compaiono solo quando la vendita e' accesa (pannello › Abbonati › Vendita)
 (function(){try{fetch('/api/vendita').then(function(r){return r.json()}).then(function(v){if(v&&v.attiva){document.querySelectorAll('.solo-vendita').forEach(function(a){a.hidden=false});document.querySelectorAll('.senza-vendita').forEach(function(a){a.hidden=true})}}).catch(function(){})}catch(e){}})();
 </script>

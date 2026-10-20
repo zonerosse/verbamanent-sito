@@ -447,3 +447,20 @@ table.confronto{width:100%;min-width:860px;border-collapse:collapse;font-size:14
 .vnd-badge{display:inline-block;font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:999px;background:#dcfce7;color:#166534}.vnd-badge.att{background:#fef3c7;color:#92400e}
 .vnd-link{display:block;color:var(--blue);font-weight:600;text-decoration:none;padding:9px 0;border-bottom:1px solid #f1f5f9}.vnd-link.r{color:#b91c1c}
 @media (max-width:860px){.vnd-piani{grid-template-columns:1fr}.vnd-row{flex-direction:column}}
+
+/* ---- menu sul telefono e sui PC con la finestra stretta (sotto i 1140 px il menu in alto non ci sta) */
+.menu-b{display:none;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;border-radius:10px;padding:7px 11px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;flex:none}
+.menu-b .hb{display:grid;gap:3px;width:16px;height:12px;align-content:center}.menu-b .hb i{display:block;height:2px;background:#fff;border-radius:2px;transition:transform .2s,opacity .2s}
+.menu-b.aperto .hb i:nth-child(1){transform:translateY(5px) rotate(45deg)}.menu-b.aperto .hb i:nth-child(2){opacity:0}.menu-b.aperto .hb i:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+.menu-tel{background:var(--navy-dd);box-shadow:0 18px 30px rgba(0,0,0,.35);max-height:calc(100vh - 64px);overflow-y:auto}
+header .menu-tel .wrap{display:block;height:auto;padding-top:6px;padding-bottom:18px}
+.menu-tel nav{display:flex!important;flex-direction:column;gap:0;margin:0}
+.menu-tel nav a{display:flex;justify-content:space-between;align-items:center;color:#e2ecf7;font-size:17px;padding:13px 4px;border-bottom:1px solid rgba(255,255,255,.08)}
+.menu-tel nav a::after{content:"›";color:#7aa3c9}
+.menu-tel nav a[hidden]{display:none}
+.menu-tel nav a[aria-current="page"]{color:var(--cyan);font-weight:600}
+.menu-tel .btn{display:block!important;text-align:center;margin-top:16px;padding:13px 20px;font-size:16px}
+.menu-ombra{position:fixed;inset:0;z-index:9;background:rgba(6,30,54,.5)}
+.menu-tel[hidden],.menu-ombra[hidden]{display:none}
+@media (max-width:1140px){.menu-b{display:inline-flex}header .lang{margin-left:auto}}
+@media (min-width:1141px){.menu-tel,.menu-ombra{display:none!important}}

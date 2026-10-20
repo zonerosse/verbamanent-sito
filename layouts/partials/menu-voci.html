@@ -1,0 +1,10 @@
+{{- /* Le voci del menu: in alto sui PC larghi e nel pannello «Menu» sul telefono. Riceve dict "p" (la pagina), "t" (testi), "home". */ -}}
+{{- $p := .p }}{{ $home := .home }}
+{{- range .t.menu }}
+{{- if .pag }}{{ with site.GetPage .pag }}<a href="{{ .RelPermalink }}"{{ if eq .RelPermalink $p.RelPermalink }} aria-current="page"{{ end }}>{{ end }}{{ .t }}</a>
+{{- else }}
+<a href="{{ $home }}#{{ .id }}">{{ .t }}</a>
+{{- end }}
+{{- end }}
+{{- with site.GetPage "/prezzi" }}<a href="{{ .RelPermalink }}" class="solo-vendita" hidden{{ if eq .RelPermalink $p.RelPermalink }} aria-current="page"{{ end }}>{{ .Title }}</a>{{ end }}
+{{- with site.GetPage "/guide" }}<a href="{{ .RelPermalink }}">{{ if eq site.Language.Lang "it" }}Guide{{ else }}Guides{{ end }}</a>{{ end }}
