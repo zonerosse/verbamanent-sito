@@ -125,7 +125,7 @@ window.chiusura = async c => {
 /* ------------------------------------------------------------------ navigazione */
 // pagine «di dentro»: hanno la freccia per tornare alla pagina da cui sei arrivato
 const INTERNE = ['lg', 'dp', 'lezione', 'podcast', 'karaoke', 'verifica', 'rg', 'lm', 'sy', 'gl', 'tu', 'lb', 'fo', 'sc', 'ru', 'rip', 'chiedi', 'mappa', 'ascolta', 'cap', 'ig', 'voci', 'stat', 'esame'];
-if (ANDROID) INTERNE.push('and');      // sul telefono Andamento si apre da Studia: con Indietro e il percorso
+if (ANDROID) INTERNE.push('and', 'info', 'lic');   // sul telefono Informazioni si apre da Impostazioni: con Indietro e il percorso      // sul telefono Andamento si apre da Studia: con Indietro e il percorso
 let STORIA = [];
 function titoloPagina(p) {
   const n = document.querySelector(`#nav a[data-p="${p}"]`);
@@ -208,7 +208,7 @@ function vai(p, tornando = false) {
   if (p === 'fare') apriCose();
   if (p === 'and') apriAndamento();
   if (p === 'imp') { avanzate(); disegnaCloud(); disegnaInviti(); disegnaImpostazioni(); disegnaParole(); disegnaCalendario(); disegnaCollegamenti(); }
-  if (p === 'info') { disegnaAgg(); $('swRap').classList.toggle('on', !!R.rapporti); }
+  if (p === 'info') { disegnaAgg(); $('swRap').classList.toggle('on', !!R.rapporti); $('infoAggTel').textContent = document.documentElement.classList.contains('web') ? t('in.agg.web') : ANDROID ? t(IPHONE ? 'in.agg.app' : 'in.agg.tel') : ''; }
   if (p === 'lic') apriLicenze();
   if (p === 'guida') disegnaGuida(linguaGuida || LINGUA);
   if (p === 'reg' && S.vista === 'pronto') { setTimeout(() => $('nome').focus(), 50); }
@@ -328,6 +328,7 @@ function inizializza() {
   $('footAgg').onclick = () => { vai('info'); A.cerca_aggiornamenti(); };
   $('btnCercaAgg').onclick = () => A.cerca_aggiornamenti();
   $('btnAss').onclick = () => A.assistenza();
+  if ($('imInfo')) $('imInfo').onclick = () => vai('info');
   $('btnLic').onclick = () => vai('lic');
   $('btnPrivacy').onclick = () => primaDiIniziare(true);
   $('lmApri').onclick = () => vai('lm');
@@ -443,7 +444,7 @@ function primaDiIniziare(rileggi) {
       await A.imposta('rapporti_errori', si); R.rapporti = si; R.rapporti_chiesto = true;
     }
     v.remove();
-    if (!rileggi) { if (!ANDROID && window.iniziaQui) iniziaQui(invitoCopiato); else invitoCopiato(); }   // «Inizia qui» (inizia.js): Google, Claude, telefono e web
+    if (!rileggi) { if (window.iniziaQui) iniziaQui(invitoCopiato); else invitoCopiato(); }   // «Inizia qui» (inizia.js): Google, Claude, telefono e web
   };
   if (rileggi) v.onclick = e => { if (e.target === v) v.remove(); };
 }
@@ -533,6 +534,7 @@ async function aggiorna() {
 let AGG_VISTO = false;
 async function avvisoAgg() {
   const g = S.agg || {};
+  if (IPHONE) return;              // sull'iPhone gli aggiornamenti arrivano dall'App Store
   if (AGG_VISTO || g.tipo !== 'trovato' || !g.avviso || S.registro || document.querySelector('.velo')) return;
   AGG_VISTO = true;
   const d = g.dato || {};
@@ -766,8 +768,10 @@ async function inizia() {
     if (v.liberi != null && v.liberi < 3 && !await conferma(t('in.spazio.t'), t('in.spazio', {g: num(v.liberi.toFixed(1))}), t('continua'))) return;
     if (!v.cartella_ok) { await dialogo({titolo: t('in.cart.t'), testo: t('in.cart')}); vai('imp'); avanzate(true); return; }
     if (ANDROID && !aula && !await conferma(t('and.viva.t'), t('and.viva'), t('and.viva.si'), t('annulla'), 'b-rec')) return;
-    if (v.dnd && !ANDROID) {
-      const r = await dialogo({
+    if (v.dnd) {
+      const r = await dialogo(ANDROID ? {
+        titolo: t('dnd.t'), testo: t('dnd.tel'), html: `<div class="passi">${t(IPHONE ? 'dnd.passi.ip' : 'dnd.passi.and')}</div>`, ck: t('dnd.ck'),
+        bottoni: [{t: t('annulla'), v: 'no'}, {t: t('dnd.stesso'), cls: 'b-ghost', v: 'si'}, {t: t('dnd.fatto'), cls: 'b-rec', v: 'si'}]} : {
         titolo: t('dnd.t'), testo: t('dnd'), html: `<div class="passi">${t('dnd.passi')}</div>`, ck: t('dnd.ck'),
         bottoni: [{t: t('annulla'), v: 'no'}, {t: t('dnd.apri'), cls: 'b-ghost', fn: () => A.apri_non_disturbare()},
                   {t: t('dnd.stesso'), cls: 'b-ghost', v: 'si'}, {t: t('dnd.fatto'), cls: 'b-rec', v: 'si'}]});
@@ -1323,7 +1327,7 @@ async function invitoCopiato() {
 }
 async function attivaInvito(testo) {
   const r = await A.invito_attiva(testo);
-  if (!r.ok) { await dialogo({titolo: t('ho.h'), testo: r.msg || ''}); return false; }
+  if (!r.ok) { await dialogo({titolo: t('ho.h'), testo: r.msg || r.errore || ''}); return false; }
   await rileggi();
   disegnaHoPronto();
   await dialogo({titolo: t('ho.h'), testo: t('ho.ok', {c: [r.claude ? t('ho.ok.cl') : '', r.server ? t('ho.ok.srv') : ''].filter(Boolean).join(' ' + t('ho.e') + ' ')})});
@@ -1360,7 +1364,7 @@ function disegnaInviti() {
   };
   $('hoVai').onclick = async () => {
     const r = await A.invito_attiva($('hoTxt').value);
-    if (!r.ok) { $('hoEsito').style.color = '#be123c'; $('hoEsito').textContent = '⚠ ' + (r.msg || ''); return; }
+    if (!r.ok) { $('hoEsito').style.color = '#be123c'; $('hoEsito').textContent = '⚠ ' + (r.msg || r.errore || '?'); return; }
     $('hoTxt').value = '';
     $('hoEsito').style.color = '#059669';
     $('hoEsito').textContent = t('ho.ok', {c: [r.claude ? t('ho.ok.cl') : '', r.server ? t('ho.ok.srv') : ''].filter(Boolean).join(' ' + t('ho.e') + ' ')});
