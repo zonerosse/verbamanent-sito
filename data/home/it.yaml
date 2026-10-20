@@ -13,7 +13,7 @@ menu:
     tit: "Come funziona"
     voci:
       - { id: "come", t: "In tre passi", ic: "passi", d: "Registri, trascrive sul tuo PC, ti dà gli appunti pronti.", dt: "Registra, trascrive, appunti" }
-      - { pag: "pc-e-telefono", t: "PC e telefono", ic: "dispositivi", d: "Windows, Android e il web: le lezioni uguali su tutti i dispositivi.", dt: "Le lezioni su tutti i dispositivi" }
+      - { pag: "pc-e-telefono", t: "PC e telefono", ic: "dispositivi", d: "Windows, Android, iPhone e il web: le lezioni uguali su tutti i dispositivi.", dt: "Le lezioni su tutti i dispositivi" }
       - { pag: "la-tua-privacy", t: "Privacy", ic: "privacy", d: "L'audio resta sul tuo PC. Nessuna impronta della voce, nessun addestramento.", dt: "L'audio resta sul tuo PC" }
     lato: { k: "In breve", t: "Le registrazioni non vanno su internet", p: "La trascrizione avviene sul tuo computer. Per gli appunti a Claude arriva solo il testo, mai l'audio.", link: "Leggi la privacy", pag: "la-tua-privacy" }
     piede: { t: "Vuoi vederlo a confronto?", link: "Verba Manent e le altre app", id: "confronto" }
@@ -36,7 +36,7 @@ schede:
     - { pag: "per-studiare", ic: "🎓", t: "Per studiare", p: "Appunti, flashcard, mappe e preparazione all'esame, da ogni lezione.", img: "cornell", h2: "Dalla lezione al giorno dell'esame", testo: "Registri la lezione, online o in aula. A fine lezione hai gli appunti in ordine, le flashcard, la mappa e le domande più probabili dell'esame.", punti: ["Appunti Cornell e Formato Esame, con le slide del docente", "Flashcard, mappe e Ripasso del giorno", "Simulazione d'esame con il voto"], link: "Tutto per studiare" }
     - { pag: "dsa", ic: "⭐", t: "DSA", p: "Lo Spazio DSA: tutti gli strumenti compensativi, in un posto solo.", img: "spazio-dsa", h2: "Lo Spazio DSA: tutti gli strumenti compensativi in un posto solo", testo: "Accendi la Modalità DSA e trovi in ordine quello che ti serve: in aula, dopo la lezione, per la verifica e per il docente.", punti: ["Karaoke della lezione con la voce vera del prof", "Come leggo meglio: carattere, spazi, sfondo", "Mappa per la verifica e test con il 30% di tempo in più"], link: "Tutto sullo Spazio DSA" }
     - { pag: "riunioni", ic: "💼", t: "Per le riunioni", p: "Il verbale si scrive da solo: decisioni, cose da fare, chi e entro quando.", img: "verbale", h2: "Il verbale si scrive da solo", testo: "Meet, Teams, Zoom o in sala: a fine riunione hai il verbale con le decisioni, le cose da fare con chi e entro quando, e chi ha detto cosa.", punti: ["Verbale pronto in PDF, da mandare con un tocco", "Le cose da fare raccolte da tutti i verbali", "Ogni riunione riparte da quello che era rimasto aperto"], link: "Tutto per le riunioni" }
-    - { pag: "pc-e-telefono", ic: "📱", t: "Su PC e telefono", p: "Windows e Android, importa quello che hai già, veloce anche su un PC lento.", img: "telefono", h2: "Sul PC e sul telefono", testo: "Registri dal PC o dal telefono Android, oppure importi un video, un audio o una trascrizione che hai già. PC e telefono restano sincronizzati.", punti: ["Windows e Android, Mac e iPhone in arrivo", "Importa video, audio, link e trascrizioni", "Veloce anche su un PC lento"], link: "Tutto su PC e telefono" }
+    - { pag: "pc-e-telefono", ic: "📱", t: "Su PC e telefono", p: "Windows, Android e iPhone, importa quello che hai già, veloce anche su un PC lento.", img: "telefono", h2: "Sul PC e sul telefono", testo: "Registri dal PC o dal telefono (Android o iPhone), oppure importi un video, un audio o una trascrizione che hai già. PC e telefono restano sincronizzati.", punti: ["Windows, Android e iPhone, Mac in arrivo", "Importa video, audio, link e trascrizioni", "Veloce anche su un PC lento"], link: "Tutto su PC e telefono" }
     - { pag: "la-tua-privacy", ic: "🔒", t: "Privacy", p: "Le registrazioni restano tue: niente server, nessuna impronta della voce.", img: "prima-di-iniziare", h2: "Le tue registrazioni restano tue", testo: "La trascrizione avviene sul tuo PC o sul telefono: noi non riceviamo le tue registrazioni e nessuna IA viene addestrata con le tue lezioni.", punti: ["Nessuna impronta della voce, mai", "Un messaggio pronto per avvisare chi registri", "La privacy spiegata in quattro righe, al primo avvio"], link: "Tutto sulla privacy" }
 
 # Cosa c'è in ogni pagina. "schermate": [sezione, numero] da vetrina/inpiu/dsa; "carte": numeri delle voci di "fa" (da 0).
@@ -113,7 +113,7 @@ fa:
     - { ic: "📂", t: "Importa quello che hai già", p: "Un video o un audio, un link (Drive, OneDrive, Dropbox, Zoom…) o una trascrizione in PDF o Word: ottieni gli appunti lo stesso." }
     - { ic: "⚡", t: "Pronta subito", p: "Trascrive mentre registri, a pezzi di pochi minuti: a fine lezione gli appunti arrivano in un attimo." }
     - { ic: "☁️", t: "Copia nel cloud, se vuoi", p: "Appena una lezione è pronta, Verba Manent ne mette una copia nel tuo Google Drive o OneDrive: appunti e trascrizione li ritrovi anche dal telefono o da un altro computer." }
-    - { ic: "📱", t: "Anche sul telefono", p: "L'app Android registra, trascrive sul telefono e prepara gli stessi appunti del PC." }
+    - { ic: "📱", t: "Anche sul telefono", p: "L'app per Android e iPhone registra, trascrive sul telefono e prepara gli stessi appunti del PC." }
     - { ic: "🚀", t: "Trascrizione veloce, se vuoi", p: "PC lento? Collega un tuo server a consumo: un'ora di lezione in circa un minuto, per pochi centesimi. È facoltativo." }
     - { ic: "💬", t: "Chiedi alla lezione", p: "Non hai capito un passaggio? Fai la domanda e la risposta arriva da quello che ha detto il docente." }
 
@@ -318,7 +318,7 @@ domande:
   voci:
     - { q: "Posso registrare qualsiasi lezione?", a: "Dipende dalla tua università e dal docente: molte università hanno regole sulla registrazione delle lezioni. Verba Manent te lo ricorda, ma il permesso devi averlo tu." }
     - { q: "Serve internet?", a: "Per registrare e trascrivere no: avviene tutto sul tuo PC o sul telefono. Per creare gli appunti sì, perché il testo viene elaborato dall'intelligenza artificiale." }
-    - { q: "Funziona anche sul telefono?", a: "Sì, su Android: registra dal microfono (anche le lezioni online, col vivavoce), trascrive sul telefono e prepara gli stessi appunti del PC. Le versioni per Mac e iPhone sono in arrivo." }
+    - { q: "Funziona anche sul telefono?", a: "Sì, su Android e su iPhone: registra dal microfono (anche le lezioni online, col vivavoce), trascrive sul telefono e prepara gli stessi appunti del PC. La versione per Mac è in arrivo." }
     - { q: "Il mio PC è lento: la trascrizione ci mette tanto?", a: "Di serie trascrive mentre registri, quindi a fine lezione manca poco. Se vuoi ancora più velocità puoi collegare un tuo server di trascrizione a consumo (pochi centesimi l'ora): un'ora di lezione in circa un minuto. È facoltativo e, se il server non risponde, si torna a trascrivere sul PC." }
     - { q: "Dove finiscono le mie registrazioni?", a: "In una cartella del tuo computer, scelta da te. Noi non le vediamo mai." }
     - { q: "Riconosce le persone dalla voce?", a: "No. Distingue le voci solo dentro la stessa registrazione e a fine lavoro cancella ogni traccia della voce. I nomi alle voci li dai tu." }
@@ -350,7 +350,7 @@ unici:
 confronto:
   kicker: "Confronto"
   h2: "Verba Manent e le altre app di appunti con IA"
-  p: "Onesto: c'è anche quello che fanno meglio loro (sincronizzazione via internet, iPhone e Mac già pronti)."
+  p: "Onesto: c'è anche quello che fanno meglio loro (sincronizzazione via internet, Mac già pronto)."
   colonne: ["Verba Manent IA", "Notability", "Goodnotes", "Turbo AI", "NotebookLM"]
   legenda: "✓ = c'è · — = non trovato nelle pagine ufficiali · «non dichiarato» = il sito non lo dice. Le funzioni di accessibilità del sistema (lettura dello schermo, dettatura) ci sono su tutti i dispositivi, con qualsiasi app. Controllato sui siti ufficiali e sulle pagine degli store, ottobre 2026."
   gruppi:
@@ -394,7 +394,7 @@ confronto:
       righe:
         - ["Verbale di riunione con cose da fare, chi ed entro quando", "✓", "—", "✓ azioni da fare", "—", "—"]
         - ["Sincronizza PC e telefono", "Wi-Fi e Google Drive cifrato", "✓ via internet", "✓ via internet", "✓ via internet", "✓ via internet"]
-        - ["Dispositivi", "Windows, Android, web · iPhone e Mac in arrivo", "iPad, iPhone, Mac, Windows, Android", "iPad, iPhone, Mac, Windows, Android, web", "web, iPhone, Android", "web, iPhone, Android"]
+        - ["Dispositivi", "Windows, Android, iPhone, web · Mac in arrivo", "iPad, iPhone, Mac, Windows, Android", "iPad, iPhone, Mac, Windows, Android, web", "web, iPhone, Android", "web, iPhone, Android"]
 
 prezzi:
   kicker: "Prezzi"

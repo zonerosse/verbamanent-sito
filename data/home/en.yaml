@@ -11,7 +11,7 @@ menu:
     tit: "How it works"
     voci:
       - { id: "come", t: "In three steps", ic: "passi", d: "You record, it transcribes on your PC, you get the notes ready.", dt: "Record, transcribe, notes" }
-      - { pag: "pc-e-telefono", t: "PC and phone", ic: "dispositivi", d: "Windows, Android and the web: the same lectures on every device.", dt: "Lectures on every device" }
+      - { pag: "pc-e-telefono", t: "PC and phone", ic: "dispositivi", d: "Windows, Android, iPhone and the web: the same lectures on every device.", dt: "Lectures on every device" }
       - { pag: "la-tua-privacy", t: "Privacy", ic: "privacy", d: "Audio stays on your PC. No voiceprints, no AI training.", dt: "Audio stays on your PC" }
     lato: { k: "In short", t: "Recordings never go online", p: "Transcription happens on your computer. For the notes, Claude only receives text, never audio.", link: "Read about privacy", pag: "la-tua-privacy" }
     piede: { t: "Want to compare?", link: "Verba Manent vs other apps", id: "confronto" }
@@ -34,7 +34,7 @@ schede:
     - { pag: "per-studiare", ic: "🎓", t: "For studying", p: "Notes, flashcards, maps and exam preparation, from every lecture.", img: "cornell-en", h2: "From the lecture to exam day", testo: "Record the lecture, online or in class. When it ends you have tidy notes, flashcards, a mind map and the most likely exam questions.", punti: ["Cornell and Exam Format notes, with the lecturer's slides", "Flashcards, maps and Daily review", "Mock exams with a mark"], link: "Everything for studying" }
     - { pag: "dsa", ic: "⭐", t: "Dyslexia", p: "The DSA space: every assistive tool, in one place.", img: "spazio-dsa-en", h2: "The DSA space: every assistive tool in one place", testo: "Turn on Dyslexia mode and find what you need in order: in class, after the lecture, for the test and for your teacher.", punti: ["Lecture karaoke with the lecturer's real voice", "How I read best: font, spacing, background", "Test map and tests with 30% extra time"], link: "All about the DSA space" }
     - { pag: "riunioni", ic: "💼", t: "For meetings", p: "The minutes write themselves: decisions, action items, who and by when.", img: "verbale-en", h2: "The minutes write themselves", testo: "Meet, Teams, Zoom or in the room: when the meeting ends you have the minutes with decisions, action items with who and by when, and who said what.", punti: ["Minutes ready as a PDF, shared in one tap", "Action items gathered from every meeting", "Each meeting picks up what was left open"], link: "Everything for meetings" }
-    - { pag: "pc-e-telefono", ic: "📱", t: "On PC and phone", p: "Windows and Android, import what you already have, fast even on a slow PC.", img: "telefono-en", h2: "On your PC and your phone", testo: "Record from your PC or Android phone, or import a video, audio file or transcript you already have. PC and phone stay in sync.", punti: ["Windows and Android, Mac and iPhone coming soon", "Import video, audio, links and transcripts", "Fast even on a slow PC"], link: "All about PC and phone" }
+    - { pag: "pc-e-telefono", ic: "📱", t: "On PC and phone", p: "Windows, Android and iPhone, import what you already have, fast even on a slow PC.", img: "telefono-en", h2: "On your PC and your phone", testo: "Record from your PC or phone (Android or iPhone), or import a video, audio file or transcript you already have. PC and phone stay in sync.", punti: ["Windows, Android and iPhone, Mac coming soon", "Import video, audio, links and transcripts", "Fast even on a slow PC"], link: "All about PC and phone" }
     - { pag: "la-tua-privacy", ic: "🔒", t: "Privacy", p: "Your recordings stay yours: no servers, no voiceprints.", img: "prima-di-iniziare-en", h2: "Your recordings stay yours", testo: "Transcription happens on your PC or phone: we never receive your recordings and no AI is trained on your lectures.", punti: ["No voiceprints, ever", "A ready message to tell the people you record", "Privacy explained in four lines, on first launch"], link: "All about privacy" }
 
 pagine:
@@ -110,7 +110,7 @@ fa:
     - { ic: "📂", t: "Import what you already have", p: "A video or audio file, a link (Drive, OneDrive, Dropbox, Zoom…) or a transcript in PDF or Word: you still get your notes." }
     - { ic: "⚡", t: "Ready right away", p: "It transcribes while you record, a few minutes at a time: when the lecture ends, your notes arrive in moments." }
     - { ic: "☁️", t: "Cloud copy, if you want", p: "As soon as a lecture is ready, Verba Manent puts a copy in your Google Drive or OneDrive: you find notes and transcript from your phone or another computer too." }
-    - { ic: "📱", t: "On your phone too", p: "The Android app records, transcribes on the phone and prepares the same notes as the PC." }
+    - { ic: "📱", t: "On your phone too", p: "The Android and iPhone app records, transcribes on the phone and prepares the same notes as the PC." }
     - { ic: "🚀", t: "Fast transcription, if you want", p: "Slow PC? Connect your own pay-as-you-go server: an hour of lecture in about a minute, for a few cents. It's optional." }
     - { ic: "💬", t: "Ask the lecture", p: "Missed a point? Ask your question and the answer comes from what the lecturer actually said." }
 
@@ -315,7 +315,7 @@ domande:
   voci:
     - { q: "Can I record any lecture?", a: "It depends on your university and your lecturer: many universities have rules about recording lectures. Verba Manent reminds you, but getting permission is up to you." }
     - { q: "Do I need an internet connection?", a: "Not to record and transcribe: everything happens on your computer or phone. You do to create the notes, because the text is processed by artificial intelligence." }
-    - { q: "Does it work on my phone?", a: "Yes, on Android: it records from the microphone (online lectures too, on speaker), transcribes on the phone and prepares the same notes as on the PC. Mac and iPhone versions are coming." }
+    - { q: "Does it work on my phone?", a: "Yes, on Android and iPhone: it records from the microphone (online lectures too, on speaker), transcribes on the phone and prepares the same notes as on the PC. The Mac version is coming." }
     - { q: "My PC is slow: will transcription take ages?", a: "By default it transcribes while you record, so little is left when the lecture ends. If you want even more speed you can connect your own pay-as-you-go transcription server (a few cents per hour): an hour of lecture in about a minute. It's optional, and if the server doesn't answer, transcription goes back to the PC." }
     - { q: "Where do my recordings go?", a: "Into a folder on your computer that you choose. We never see them." }
     - { q: "Does it recognise people by their voice?", a: "No. It only tells voices apart within the same recording and deletes every trace of the voice when it's done. You give the voices their names." }
@@ -347,7 +347,7 @@ unici:
 confronto:
   kicker: "Comparison"
   h2: "Verba Manent and other AI note-taking apps"
-  p: "Honest: including what they do better (syncing over the internet, iPhone and Mac already available)."
+  p: "Honest: including what they do better (syncing over the internet, Mac already available)."
   colonne: ["Verba Manent IA", "Notability", "Goodnotes", "Turbo AI", "NotebookLM"]
   legenda: "✓ = available · — = not found on their official pages · «not stated» = their site doesn't say. The system's accessibility features (screen reading, dictation) are on every device, with any app. Checked on official sites and store pages, October 2026."
   gruppi:
@@ -391,7 +391,7 @@ confronto:
       righe:
         - ["Meeting minutes with action items, who and by when", "✓", "—", "✓ action items", "—", "—"]
         - ["Sync PC and phone", "Wi-Fi and encrypted Google Drive", "✓ over the internet", "✓ over the internet", "✓ over the internet", "✓ over the internet"]
-        - ["Devices", "Windows, Android, web · iPhone and Mac coming", "iPad, iPhone, Mac, Windows, Android", "iPad, iPhone, Mac, Windows, Android, web", "web, iPhone, Android", "web, iPhone, Android"]
+        - ["Devices", "Windows, Android, iPhone, web · Mac coming", "iPad, iPhone, Mac, Windows, Android", "iPad, iPhone, Mac, Windows, Android, web", "web, iPhone, Android", "web, iPhone, Android"]
 
 prezzi:
   kicker: "Prices"
