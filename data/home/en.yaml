@@ -1,12 +1,23 @@
 menu:
-  - { pag: "per-studiare", t: "Studying" }
-  - { pag: "dsa", t: "Dyslexia" }
-  - { pag: "riunioni", t: "Meetings" }
-  - { pag: "pc-e-telefono", t: "PC and phone" }
-  - { pag: "la-tua-privacy", t: "Privacy" }
-  - { id: come, t: "How it works" }
-  - { id: confronto, t: "Comparison" }
-  - { id: domande, t: "FAQ" }
+  - gruppo: "Who it's for"
+    tit: "Who Verba Manent is for"
+    voci:
+      - { pag: "per-studiare", t: "Studying", ic: "studio", d: "Cornell notes, flashcards and day-by-day review until the exam.", dt: "Notes, flashcards and review" }
+      - { pag: "dsa", t: "Dyslexia", ic: "dsa", d: "The DSA space: reading aloud, maps, tests with 30% extra time.", dt: "The DSA space" }
+      - { pag: "riunioni", t: "Meetings", ic: "riunioni", d: "Minutes ready: who said what, decisions and action items.", dt: "Minutes ready" }
+    lato: { k: "New", t: "For parents and teachers", p: "The personalised plan (PDP) step by step and a free template to fill in and bring to school.", link: "Open the template", pag: "/guide/modello-pdp" }
+    piede: { t: "Not sure where to start?", link: "See how it works in 3 steps", id: "come" }
+  - gruppo: "How it works"
+    tit: "How it works"
+    voci:
+      - { id: "come", t: "In three steps", ic: "passi", d: "You record, it transcribes on your PC, you get the notes ready.", dt: "Record, transcribe, notes" }
+      - { pag: "pc-e-telefono", t: "PC and phone", ic: "dispositivi", d: "Windows, Android and the web: the same lectures on every device.", dt: "Lectures on every device" }
+      - { pag: "la-tua-privacy", t: "Privacy", ic: "privacy", d: "Audio stays on your PC. No voiceprints, no AI training.", dt: "Audio stays on your PC" }
+    lato: { k: "In short", t: "Recordings never go online", p: "Transcription happens on your computer. For the notes, Claude only receives text, never audio.", link: "Read about privacy", pag: "la-tua-privacy" }
+    piede: { t: "Want to compare?", link: "Verba Manent vs other apps", id: "confronto" }
+  - { id: "confronto", t: "Comparison" }
+  - { id: "domande", t: "FAQ" }
+menu_altro: "More"
 avvisami: "Notify me"
 prova: "Preview version of the site: not yet public."
 

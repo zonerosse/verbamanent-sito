@@ -1,12 +1,25 @@
+# Il menu in alto: due tendine («Per chi è», «Come funziona») e tre voci semplici. Sul telefono le stesse voci, divise per gruppo.
+# Ogni voce: pag (pagina) oppure id (pezzo della home); ic = icona (simboli mn-* in baseof); d = spiegazione nella tendina, dt = sul telefono.
 menu:
-  - { pag: "per-studiare", t: "Per studiare" }
-  - { pag: "dsa", t: "DSA" }
-  - { pag: "riunioni", t: "Riunioni" }
-  - { pag: "pc-e-telefono", t: "PC e telefono" }
-  - { pag: "la-tua-privacy", t: "Privacy" }
-  - { id: come, t: "Come funziona" }
-  - { id: confronto, t: "Confronto" }
-  - { id: domande, t: "Domande" }
+  - gruppo: "Per chi è"
+    tit: "Per chi è Verba Manent"
+    voci:
+      - { pag: "per-studiare", t: "Per studiare", ic: "studio", d: "Appunti Cornell, flashcard e ripasso giorno per giorno fino all'esame.", dt: "Appunti, flashcard e ripasso" }
+      - { pag: "dsa", t: "DSA", ic: "dsa", d: "Lo Spazio DSA: lettura ad alta voce, mappe, verifiche con il 30% di tempo in più.", dt: "Lo Spazio DSA" }
+      - { pag: "riunioni", t: "Riunioni", ic: "riunioni", d: "Il verbale pronto: chi ha detto cosa, decisioni e cose da fare.", dt: "Il verbale pronto" }
+    lato: { k: "Novità", t: "Per genitori e insegnanti", p: "La guida al PDP passo passo e il modello gratuito da compilare e portare a scuola.", link: "Apri il modello", pag: "/guide/modello-pdp" }
+    piede: { t: "Non sai da dove partire?", link: "Guarda come funziona in 3 passi", id: "come" }
+  - gruppo: "Come funziona"
+    tit: "Come funziona"
+    voci:
+      - { id: "come", t: "In tre passi", ic: "passi", d: "Registri, trascrive sul tuo PC, ti dà gli appunti pronti.", dt: "Registra, trascrive, appunti" }
+      - { pag: "pc-e-telefono", t: "PC e telefono", ic: "dispositivi", d: "Windows, Android e il web: le lezioni uguali su tutti i dispositivi.", dt: "Le lezioni su tutti i dispositivi" }
+      - { pag: "la-tua-privacy", t: "Privacy", ic: "privacy", d: "L'audio resta sul tuo PC. Nessuna impronta della voce, nessun addestramento.", dt: "L'audio resta sul tuo PC" }
+    lato: { k: "In breve", t: "Le registrazioni non vanno su internet", p: "La trascrizione avviene sul tuo computer. Per gli appunti a Claude arriva solo il testo, mai l'audio.", link: "Leggi la privacy", pag: "la-tua-privacy" }
+    piede: { t: "Vuoi vederlo a confronto?", link: "Verba Manent e le altre app", id: "confronto" }
+  - { id: "confronto", t: "Confronto" }
+  - { id: "domande", t: "Domande" }
+menu_altro: "Altro"
 avvisami: "Avvisami"
 prova: "Versione di prova del sito: non è ancora online per il pubblico."
 

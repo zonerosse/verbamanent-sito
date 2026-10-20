@@ -385,7 +385,7 @@ table.confronto{width:100%;min-width:860px;border-collapse:collapse;font-size:14
 @media (max-width:900px){.momenti,.uni-g,.prezzi{grid-template-columns:1fr}}
 .confronto td.noi.parz{color:var(--navy);font-weight:600}
 @media (max-width:1300px){nav a{font-size:14px}}
-@media (max-width:1140px){nav{display:none}}
+@media (max-width:960px){nav{display:none}}
 .prezzo .cifra small{white-space:nowrap}
 @media (max-width:700px){
   table.confronto{min-width:700px;font-size:13px}
@@ -448,7 +448,7 @@ table.confronto{width:100%;min-width:860px;border-collapse:collapse;font-size:14
 .vnd-link{display:block;color:var(--blue);font-weight:600;text-decoration:none;padding:9px 0;border-bottom:1px solid #f1f5f9}.vnd-link.r{color:#b91c1c}
 @media (max-width:860px){.vnd-piani{grid-template-columns:1fr}.vnd-row{flex-direction:column}}
 
-/* ---- menu sul telefono e sui PC con la finestra stretta (sotto i 1140 px il menu in alto non ci sta) */
+/* ---- menu sul telefono e sui PC con la finestra stretta (sotto i 960 px il menu in alto non ci sta) */
 .menu-b{display:none;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;border-radius:10px;padding:7px 11px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;flex:none}
 .menu-b .hb{display:grid;gap:3px;width:16px;height:12px;align-content:center}.menu-b .hb i{display:block;height:2px;background:#fff;border-radius:2px;transition:transform .2s,opacity .2s}
 .menu-b.aperto .hb i:nth-child(1){transform:translateY(5px) rotate(45deg)}.menu-b.aperto .hb i:nth-child(2){opacity:0}.menu-b.aperto .hb i:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
@@ -462,8 +462,8 @@ header .menu-tel .wrap{display:block;height:auto;padding-top:6px;padding-bottom:
 .menu-tel .btn{display:block!important;text-align:center;margin-top:16px;padding:13px 20px;font-size:16px}
 .menu-ombra{position:fixed;inset:0;z-index:9;background:rgba(6,30,54,.5)}
 .menu-tel[hidden],.menu-ombra[hidden]{display:none}
-@media (max-width:1140px){.menu-b{display:inline-flex}header .lang{margin-left:auto}}
-@media (min-width:1141px){.menu-tel,.menu-ombra{display:none!important}}
+@media (max-width:960px){.menu-b{display:inline-flex}header .lang{margin-left:auto}}
+@media (min-width:961px){.menu-tel,.menu-ombra{display:none!important}}
 
 /* Modello per il PDP (guida per genitori e insegnanti) */
 .pdp{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:26px;align-items:start;width:min(1120px,calc(100vw - 32px));margin:26px 0 30px;position:relative;left:50%;transform:translateX(-50%)}
@@ -514,3 +514,51 @@ header .menu-tel .wrap{display:block;height:auto;padding-top:6px;padding-bottom:
 .articolo .pdp-foglio h3{font-size:16px;margin:0 0 2px}.articolo .pdp-foglio h4{font-size:11.5px;margin:14px 0 4px}
 .articolo .pdp-form p{font-size:13px}
 .pdp fieldset{margin-top:8px}
+
+/* Menu in alto (PC): tendine «Per chi è» e «Come funziona» */
+nav.mn{gap:2px;align-items:center;height:64px}
+.mn-voce{position:relative;height:100%;display:flex;align-items:center}
+.mn-b,nav.mn .mn-a{display:flex;align-items:center;gap:6px;height:40px;padding:0 12px;border:0;background:none;border-radius:9px;color:#d6e6f5;font:inherit;font-size:14.5px;font-weight:500;cursor:pointer;text-decoration:none;white-space:nowrap;position:relative}
+.mn-b:hover,nav.mn .mn-a:hover,.mn-voce.aperta .mn-b{background:rgba(255,255,255,.07);color:#fff}
+.mn-b:focus-visible,nav.mn .mn-a:focus-visible{outline:2px solid var(--cyan);outline-offset:1px}
+.mn-b.on,nav.mn .mn-a[aria-current="page"]{color:#fff;font-weight:600}
+.mn-b.on::after,nav.mn .mn-a[aria-current="page"]::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:2px;border-radius:2px;background:var(--cyan)}
+.mn-chev{width:14px;height:14px;opacity:.75;transition:transform .18s ease}
+.mn-voce.aperta .mn-chev{transform:rotate(180deg)}
+.mn-pan{position:absolute;top:58px;left:-8px;width:640px;background:#fff;border-radius:16px;box-shadow:0 24px 60px rgba(6,30,54,.28),0 2px 6px rgba(6,30,54,.08);border:1px solid rgba(15,27,45,.06);display:grid;grid-template-columns:1fr 220px;overflow:visible;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .16s ease,transform .16s ease,visibility 0s .16s;z-index:30}
+.mn-voce.aperta .mn-pan{opacity:1;visibility:visible;transform:none;transition:opacity .16s ease,transform .16s ease}
+.mn-pan::before{content:"";position:absolute;top:-7px;left:var(--fr,40px);width:14px;height:14px;background:#fff;transform:rotate(45deg);border-left:1px solid rgba(15,27,45,.06);border-top:1px solid rgba(15,27,45,.06)}
+.mn-pan::after{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.mn-lista{padding:12px}
+.mn-tit{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);padding:6px 12px 8px}
+nav.mn .mn-it{display:flex;gap:14px;align-items:flex-start;padding:11px 12px;border-radius:12px;text-decoration:none;color:var(--txt);white-space:normal;transition:background .12s}
+nav.mn .mn-it:hover,nav.mn .mn-it:focus-visible{background:#f1f7fd;outline:none}
+.mn-ic{width:40px;height:40px;border-radius:11px;background:#eaf4fd;color:var(--blue);display:grid;place-items:center;flex:none;transition:background .12s,color .12s}
+.mn-ic svg{width:21px;height:21px}
+nav.mn .mn-it:hover .mn-ic{background:var(--blue);color:#fff}
+.mn-it b{display:flex;align-items:center;gap:6px;color:var(--ink);font-size:15px;font-weight:650}
+.mn-fr{font-style:normal;opacity:0;transform:translateX(-4px);transition:.14s;color:var(--blue)}
+.mn-it:hover .mn-fr{opacity:1;transform:none}
+.mn-it>span>span{display:block;color:var(--mut);font-size:13.5px;line-height:1.45;margin-top:2px}
+.mn-it[aria-current="page"] b{color:var(--blue)}
+.mn-lato{background:linear-gradient(180deg,#061e36,#0d4275);color:#dbeafe;padding:20px 18px;display:flex;flex-direction:column;gap:10px;border-radius:0 16px 0 0}
+.mn-k{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan)}
+.mn-lato b{color:#fff;font-size:16px;line-height:1.3}
+.mn-lato p{margin:0;font-size:13px;line-height:1.5;color:#b9d2ea}
+nav.mn .mn-lato a{margin-top:auto;color:#fff;font-weight:600;font-size:13.5px;text-decoration:none}
+nav.mn .mn-lato a:hover{color:var(--cyan)}
+.mn-piede{grid-column:1/-1;border-top:1px solid var(--line);background:#f8fafc;padding:11px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13.5px;color:var(--mut);border-radius:0 0 16px 16px}
+nav.mn .mn-piede a{color:var(--blue);font-weight:600;text-decoration:none;font-size:13.5px}
+@media (max-width:1240px){.mn-b,nav.mn .mn-a{padding:0 9px;font-size:14px}}
+
+/* Menu del telefono: gruppi con titolo, icone e una riga di spiegazione */
+.menu-tel nav.mt .mt-tit{color:#7fb2dd;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:16px 4px 2px}
+.menu-tel nav.mt .mt-tit:first-child{margin-top:6px}
+.menu-tel nav.mt a.mt-ri{display:flex;justify-content:flex-start;gap:12px;align-items:center;padding:10px 4px}
+.menu-tel nav.mt a.mt-ri::after{content:"›";margin-left:auto}
+.menu-tel nav.mt .mt-ri .mn-ic{width:36px;height:36px;background:rgba(34,211,238,.12);color:var(--cyan)}
+.menu-tel nav.mt .mt-ri .mn-ic svg{width:19px;height:19px}
+.menu-tel nav.mt .mt-ri b{display:block;font-weight:600;font-size:16px}
+.menu-tel nav.mt .mt-ri small{display:block;color:#8fb0cf;font-size:12.5px;margin-top:1px}
+.menu-tel nav.mt .mt-ri[aria-current="page"] b{color:var(--cyan)}
+nav.mn .mn-it[aria-current="page"]{font-weight:400}nav.mn .mn-it[aria-current="page"] .mn-ic{background:var(--blue);color:#fff}

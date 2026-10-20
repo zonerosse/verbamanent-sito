@@ -1,10 +1,43 @@
-{{- /* Le voci del menu: in alto sui PC larghi e nel pannello «Menu» sul telefono. Riceve dict "p" (la pagina), "t" (testi), "home". */ -}}
-{{- $p := .p }}{{ $home := .home }}
-{{- range .t.menu }}
-{{- if .pag }}{{ with site.GetPage .pag }}<a href="{{ .RelPermalink }}"{{ if eq .RelPermalink $p.RelPermalink }} aria-current="page"{{ end }}>{{ end }}{{ .t }}</a>
-{{- else }}
-<a href="{{ $home }}#{{ .id }}">{{ .t }}</a>
+{{- /* Le voci del menu. Riceve dict "p" (la pagina), "t" (testi), "home", "tel" (true nel pannello «Menu» del telefono).
+     Sul PC: due tendine («Per chi è», «Come funziona») e tre voci semplici. Sul telefono: le stesse voci divise per gruppo. */ -}}
+{{- $p := .p }}{{ $home := .home }}{{ $tel := .tel }}{{ $t := .t }}
+{{- $semplici := slice }}
+{{- range $t.menu }}{{ if not .gruppo }}{{ $semplici = $semplici | append . }}{{ end }}{{ end }}
+{{- range $t.menu }}
+{{- if .gruppo }}
+  {{- $g := . }}
+  {{- $dentro := false }}
+  {{- range .voci }}{{ with .pag }}{{ with site.GetPage . }}{{ if eq .RelPermalink $p.RelPermalink }}{{ $dentro = true }}{{ end }}{{ end }}{{ end }}{{ end }}
+  {{- if $tel }}
+  <div class="mt-tit">{{ .gruppo }}</div>
+  {{- range .voci }}
+  {{- $h := printf "%s#%s" $home .id }}{{ with .pag }}{{ with site.GetPage . }}{{ $h = .RelPermalink }}{{ end }}{{ end }}
+  <a class="mt-ri" href="{{ $h }}"{{ if eq $h $p.RelPermalink }} aria-current="page"{{ end }}><span class="mn-ic" aria-hidden="true"><svg><use href="#mn-{{ .ic }}"/></svg></span><span><b>{{ .t }}</b><small>{{ .dt }}</small></span></a>
+  {{- end }}
+  {{- else }}
+  <div class="mn-voce">
+    <button type="button" class="mn-b{{ if $dentro }} on{{ end }}" aria-expanded="false" aria-haspopup="true">{{ .gruppo }}<svg class="mn-chev" aria-hidden="true"><use href="#mn-chev"/></svg></button>
+    <div class="mn-pan">
+      <div class="mn-lista"><div class="mn-tit">{{ .tit }}</div>
+        {{- range .voci }}
+        {{- $h := printf "%s#%s" $home .id }}{{ with .pag }}{{ with site.GetPage . }}{{ $h = .RelPermalink }}{{ end }}{{ end }}
+        <a class="mn-it" href="{{ $h }}"{{ if eq $h $p.RelPermalink }} aria-current="page"{{ end }}><span class="mn-ic" aria-hidden="true"><svg><use href="#mn-{{ .ic }}"/></svg></span><span><b>{{ .t }} <i class="mn-fr" aria-hidden="true">→</i></b><span>{{ .d }}</span></span></a>
+        {{- end }}
+      </div>
+      {{- with .lato }}
+      <div class="mn-lato"><span class="mn-k">{{ .k }}</span><b>{{ .t }}</b><p>{{ .p }}</p>{{ with site.GetPage .pag }}<a href="{{ .RelPermalink }}">{{ $g.lato.link }} →</a>{{ end }}</div>
+      {{- end }}
+      {{- with .piede }}
+      <div class="mn-piede"><span>{{ .t }}</span><a href="{{ $home }}#{{ .id }}">{{ .link }} →</a></div>
+      {{- end }}
+    </div>
+  </div>
+  {{- end }}
 {{- end }}
 {{- end }}
-{{- with site.GetPage "/prezzi" }}<a href="{{ .RelPermalink }}" class="solo-vendita" hidden{{ if eq .RelPermalink $p.RelPermalink }} aria-current="page"{{ end }}>{{ .Title }}</a>{{ end }}
-{{- with site.GetPage "/guide" }}<a href="{{ .RelPermalink }}">{{ if eq site.Language.Lang "it" }}Guide{{ else }}Guides{{ end }}</a>{{ end }}
+{{- if $tel }}<div class="mt-tit">{{ $t.menu_altro }}</div>{{ end }}
+{{- range $semplici }}
+<a class="mn-a" href="{{ $home }}#{{ .id }}">{{ .t }}</a>
+{{- end }}
+{{- with site.GetPage "/prezzi" }}<a href="{{ .RelPermalink }}" class="mn-a solo-vendita" hidden{{ if eq .RelPermalink $p.RelPermalink }} aria-current="page"{{ end }}>{{ .Title }}</a>{{ end }}
+{{- with site.GetPage "/guide" }}{{ $dentro := or (eq .RelPermalink $p.RelPermalink) (and $p.Parent (eq $p.Parent.RelPermalink .RelPermalink)) }}<a class="mn-a" href="{{ .RelPermalink }}"{{ if $dentro }} aria-current="page"{{ end }}>{{ if eq site.Language.Lang "it" }}Guide{{ else }}Guides{{ end }}</a>{{ end }}
