@@ -132,7 +132,7 @@
         <thead><tr><th scope="col"></th>{{ range $i, $c := .colonne }}<th scope="col"{{ if eq $i 0 }} class="noi"{{ end }}>{{ $c }}</th>{{ end }}</tr></thead>
         {{- $n := len .colonne }}
         {{- range .gruppi }}
-        <tbody>
+        <tbody{{ with .cl }} class="{{ . }}"{{ end }}>
           <tr class="gr"><th colspan="{{ add $n 1 }}" scope="colgroup">{{ .t }}</th></tr>
           {{- range .righe }}
           <tr>{{ range $i, $c := . }}{{ if eq $i 0 }}<th scope="row">{{ $c }}</th>{{ else }}<td class="{{ if eq $i 1 }}noi {{ end }}{{ if eq $c "—" }}no{{ else if hasPrefix $c "✓" }}si{{ else }}parz{{ end }}">{{ $c }}</td>{{ end }}{{ end }}</tr>
@@ -140,6 +140,20 @@
         </tbody>
         {{- end }}
       </table>
+    </div>
+    <div class="conf-sc">
+      {{- $col := .colonne }}
+      {{- range .gruppi }}
+      <h3 class="conf-gr{{ with .cl }} {{ . }}{{ end }}">{{ .t }}</h3>
+      {{- range .righe }}{{ $r := . }}
+      <div class="conf-s">
+        <b>{{ index $r 0 }}</b>
+        {{- range $i, $c := $col }}{{ $v := index $r (add $i 1) }}
+        <div class="{{ if eq $i 0 }}noi{{ else }}alt{{ end }}"><span>{{ $c }}</span><span class="v {{ if eq $v "—" }}no{{ else if hasPrefix $v "✓" }}si{{ else }}parz{{ end }}">{{ $v }}</span></div>
+        {{- end }}
+      </div>
+      {{- end }}
+      {{- end }}
     </div>
     <p class="legenda">{{ .legenda }}</p>
   </div>

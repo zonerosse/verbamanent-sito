@@ -342,7 +342,7 @@ confronto:
   h2: "Verba Manent and other AI note-taking apps"
   p: "Honest: including what they do better (syncing over the internet, iPhone and Mac already available)."
   colonne: ["Verba Manent IA", "Notability", "Goodnotes", "Turbo AI", "NotebookLM"]
-  legenda: "✓ = available · — = not found on their official pages · «not stated» = their site doesn't say. Checked on official sites and store pages, October 2026."
+  legenda: "✓ = available · — = not found on their official pages · «not stated» = their site doesn't say. The system's accessibility features (screen reading, dictation) are on every device, with any app. Checked on official sites and store pages, October 2026."
   gruppi:
     - t: "In class"
       righe:
@@ -368,9 +368,20 @@ confronto:
         - ["Simulated and corrected oral exam", "✓", "—", "—", "—", "—"]
         - ["Textbook: the right pages for each lecture and what wasn't said", "✓", "PDF to annotate", "PDF to annotate", "PDF", "book as a source"]
         - ["Export flashcards to Anki", "✓", "—", "—", "—", "—"]
+    - t: "For dyslexia and other SpLDs"
+      cl: "dsa"
+      righe:
+        - ["Dyslexia mode ready to go: legible font, more space, soft background, and you can change it", "✓", "—", "—", "—", "—"]
+        - ["Coloured syllables and reading ruler", "✓", "—", "—", "—", "—"]
+        - ["Read to me: PDFs, photos and texts read aloud, with the sentence highlighted", "✓", "—", "—", "—", "audio summary"]
+        - ["Write by speaking: dictate and the text gets tidied up", "✓", "—", "—", "—", "—"]
+        - ["My map: change it or build it, by voice too", "✓", "—", "—", "—", "read-only map"]
+        - ["Test map on one A4 sheet", "✓", "—", "—", "—", "—"]
+        - ["Tests with questions read aloud and 30% more time", "✓", "—", "—", "—", "—"]
+        - ["Dictated written exam: spelling costs no points", "✓", "—", "—", "—", "—"]
+        - ["Learning-plan sheet with the tools, guides for parents and teachers", "✓", "—", "—", "—", "—"]
     - t: "For everyone"
       righe:
-        - ["Dyslexia tools: font, coloured syllables, ruler, test map, learning-plan sheet", "✓", "—", "—", "—", "—"]
         - ["Meeting minutes with action items, who and by when", "✓", "—", "✓ action items", "—", "—"]
         - ["Sync PC and phone", "Wi-Fi and encrypted Google Drive", "✓ over the internet", "✓ over the internet", "✓ over the internet", "✓ over the internet"]
         - ["Devices", "Windows, Android, web · iPhone and Mac coming", "iPad, iPhone, Mac, Windows, Android", "iPad, iPhone, Mac, Windows, Android, web", "web, iPhone, Android", "web, iPhone, Android"]

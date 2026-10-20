@@ -562,3 +562,24 @@ nav.mn .mn-piede a{color:var(--blue);font-weight:600;text-decoration:none;font-s
 .menu-tel nav.mt .mt-ri small{display:block;color:#8fb0cf;font-size:12.5px;margin-top:1px}
 .menu-tel nav.mt .mt-ri[aria-current="page"] b{color:var(--cyan)}
 nav.mn .mn-it[aria-current="page"]{font-weight:400}nav.mn .mn-it[aria-current="page"] .mn-ic{background:var(--blue);color:#fff}
+
+/* confronto: gruppo DSA in evidenza */
+.confronto tbody.dsa tr.gr th{background:#0f766e;color:#fff}
+.confronto tbody.dsa th[scope=row]{border-left:3px solid #0f766e}
+
+/* confronto sul telefono: una scheda per funzione */
+.conf-sc{display:none}
+@media (max-width:700px){
+  .tab-scorri{display:none}
+  .conf-sc{display:block}
+  .conf-gr{font-size:12.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--navy);background:var(--soft);border-radius:8px;padding:9px 11px;margin:18px 0 8px}
+  .conf-gr:first-child{margin-top:0}
+  .conf-gr.dsa{background:#0f766e;color:#fff}
+  .conf-s{border:1px solid var(--line);border-radius:12px;padding:11px 12px;margin-bottom:8px;background:#fff}
+  .conf-s b{display:block;font-size:15px;color:var(--ink);font-weight:600;margin-bottom:7px;line-height:1.35}
+  .conf-s .noi,.conf-s .alt{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;padding:3px 8px}
+  .conf-s .noi{background:#ecfeff;border-radius:7px;padding:5px 8px;font-weight:600;color:var(--navy);margin-bottom:3px}
+  .conf-s .alt{color:var(--mut)}
+  .conf-s .v{text-align:right}
+  .conf-s .v.si{color:var(--ok);font-weight:700}.conf-s .v.no{color:#b6c2d1}.conf-s .v.parz{color:#475569}
+}

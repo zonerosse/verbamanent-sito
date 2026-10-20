@@ -345,7 +345,7 @@ confronto:
   h2: "Verba Manent e le altre app di appunti con IA"
   p: "Onesto: c'è anche quello che fanno meglio loro (sincronizzazione via internet, iPhone e Mac già pronti)."
   colonne: ["Verba Manent IA", "Notability", "Goodnotes", "Turbo AI", "NotebookLM"]
-  legenda: "✓ = c'è · — = non trovato nelle pagine ufficiali · «non dichiarato» = il sito non lo dice. Controllato sui siti ufficiali e sulle pagine degli store, ottobre 2026."
+  legenda: "✓ = c'è · — = non trovato nelle pagine ufficiali · «non dichiarato» = il sito non lo dice. Le funzioni di accessibilità del sistema (lettura dello schermo, dettatura) ci sono su tutti i dispositivi, con qualsiasi app. Controllato sui siti ufficiali e sulle pagine degli store, ottobre 2026."
   gruppi:
     - t: "A lezione"
       righe:
@@ -371,9 +371,20 @@ confronto:
         - ["Interrogazione a voce simulata e corretta", "✓", "—", "—", "—", "—"]
         - ["Libro di testo: le pagine giuste per ogni lezione e cosa non si è detto", "✓", "PDF da annotare", "PDF da annotare", "PDF", "libro come fonte"]
         - ["Esporta le flashcard per Anki", "✓", "—", "—", "—", "—"]
+    - t: "Per chi ha un DSA"
+      cl: "dsa"
+      righe:
+        - ["Modalità DSA già pronta: carattere leggibile, più spazio, sfondo tenue, e la cambi come vuoi", "✓", "—", "—", "—", "—"]
+        - ["Sillabe colorate e righello di lettura", "✓", "—", "—", "—", "—"]
+        - ["Leggimi: PDF, foto e testi letti a voce, con la frase evidenziata", "✓", "—", "—", "—", "riassunto audio"]
+        - ["Scrivi parlando: detti e il testo viene sistemato", "✓", "—", "—", "—", "—"]
+        - ["La mia mappa: la cambi o la costruisci, anche a voce", "✓", "—", "—", "—", "mappa da leggere"]
+        - ["Mappa per la verifica su un foglio A4", "✓", "—", "—", "—", "—"]
+        - ["Test con domande lette a voce e 30% di tempo in più", "✓", "—", "—", "—", "—"]
+        - ["Scritto dettato: l'ortografia non toglie punti", "✓", "—", "—", "—", "—"]
+        - ["Foglio PDP con gli strumenti, guide per genitori e insegnanti", "✓", "—", "—", "—", "—"]
     - t: "Per tutti"
       righe:
-        - ["Strumenti DSA: carattere, sillabe colorate, righello, mappa per la verifica, foglio PDP", "✓", "—", "—", "—", "—"]
         - ["Verbale di riunione con cose da fare, chi ed entro quando", "✓", "—", "✓ azioni da fare", "—", "—"]
         - ["Sincronizza PC e telefono", "Wi-Fi e Google Drive cifrato", "✓ via internet", "✓ via internet", "✓ via internet", "✓ via internet"]
         - ["Dispositivi", "Windows, Android, web · iPhone e Mac in arrivo", "iPad, iPhone, Mac, Windows, Android", "iPad, iPhone, Mac, Windows, Android, web", "web, iPhone, Android", "web, iPhone, Android"]
