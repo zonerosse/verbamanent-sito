@@ -56,7 +56,7 @@ html.web #nav [data-p="reg"],
 html.web .web-no, html.web .solo-pc, html.web #fNuova{display:none !important}
 /* ma Andamento e Informazioni sì (sul PC sono nel menu; sul telefono da Studia e da Impostazioni), e Cose da fare */
 html.web:not(.android) #nav a.solo-pc[data-p="and"], html.web:not(.android) #nav a.solo-pc[data-p="info"]{display:flex !important}
-html.web #andAgg{display:none !important}
+html.web #andAgg, html.web #btnCercaAgg, html.web #aggBox{display:none !important}
 html.web #infoAggTel{display:block !important}
 
 /* telefono: la riga sta in alto e piccola (in basso c'e' il menu dell'app) */
