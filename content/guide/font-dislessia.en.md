@@ -54,7 +54,7 @@ Dyslexia style guides, such as the British Dyslexia Association's, agree on a fe
 | **Italics, underline, ALL CAPS** | Avoid them for whole paragraphs: use **bold** for emphasis |
 | **Alignment** | Left-aligned, not justified: uneven gaps between words are confusing |
 
-{{< vm-schermata img="come-leggo-en" didascalia="«How I read best» in Verba Manent: font (Atkinson Hyperlegible, OpenDyslexic, Lexend), size, line and letter spacing, background colour, with a live preview." >}}
+{{< vm-schermata img="come-leggo-en" didascalia="«How I read best» in Verba Manent: font (Lexend, Atkinson Hyperlegible, OpenDyslexic), size, line and letter spacing, background colour, with a live preview." >}}
 
 ## How to find your combination
 

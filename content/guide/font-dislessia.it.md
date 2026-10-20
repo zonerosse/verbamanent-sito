@@ -54,7 +54,7 @@ Le guide di stile per la dislessia, come quella della British Dyslexia Associati
 | **Corsivo, sottolineato, MAIUSCOLO** | Da evitare per interi paragrafi: usa il **grassetto** per evidenziare |
 | **Allineamento** | A sinistra, non giustificato: gli spazi irregolari tra le parole confondono |
 
-{{< vm-schermata img="come-leggo" didascalia="«Come leggo meglio» in Verba Manent: carattere (Atkinson Hyperlegible, OpenDyslexic, Lexend), grandezza, spazio tra righe e lettere, colore dello sfondo, con l'anteprima." >}}
+{{< vm-schermata img="come-leggo" didascalia="«Come leggo meglio» in Verba Manent: carattere (Lexend, Atkinson Hyperlegible, OpenDyslexic), grandezza, spazio tra righe e lettere, colore dello sfondo, con l'anteprima." >}}
 
 ## Come trovare la tua combinazione
 

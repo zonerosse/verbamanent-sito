@@ -82,7 +82,7 @@ Il consiglio più utile: **concorda le regole con il docente all'inizio dell'ann
 
 Qualunque strumento usi, ricorda il risultato delle ricerche: la mappa serve soprattutto **mentre la costruisci**. Se parti da una mappa già pronta, sistemala: togli, aggiungi, cambia le parole-legame.
 
-{{< vm-nota >}}la **mappa della lezione** è pronta a fine registrazione, e la **mappa per la verifica** raccoglie parole chiave e formule delle lezioni che scegli, su un A4 con nome e classe. Puoi togliere le parole che non vuoi prima di stamparla, come chiedono molti docenti.{{< /vm-nota >}}
+{{< vm-nota >}}la **mappa della lezione** è pronta a fine registrazione e la puoi cambiare o costruire tu, anche a voce, e la **mappa per la verifica** raccoglie parole chiave e formule delle lezioni che scegli, su un A4 con nome e classe. Puoi togliere le parole che non vuoi prima di stamparla, come chiedono molti docenti.{{< /vm-nota >}}
 
 ## Gli errori più comuni
 

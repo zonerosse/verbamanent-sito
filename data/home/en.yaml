@@ -77,7 +77,7 @@ hero:
   trust:
     - "Recordings stay on your computer"
     - "No voiceprints"
-    - "Complete dyslexia space"
+    - "Complete DSA space"
     - "In English and Italian"
   demo:
     bar: "Recording · Contract Law · 00:42:17"
@@ -132,7 +132,7 @@ dsa:
     - img: "come-leggo-en"
       t: "How I read best"
       p: "Choose the font (OpenDyslexic too), the size, the spacing between lines and letters, the background colour, coloured syllables and the reading ruler."
-      punti: ["Applies to notes, listening, karaoke, flashcards and PDFs", "Soft backgrounds: cream, blue, green, pink", "Live preview while you choose"]
+      punti: ["Applies to notes, listening, karaoke, flashcards and PDFs", "Soft backgrounds: grey, blue, green, cream, dark", "Live preview while you choose"]
       alt: "The How I read best page with the choice of font, size and background colour."
     - img: "mappa-verifica-en"
       t: "The test map"
@@ -141,7 +141,9 @@ dsa:
       alt: "The test map: a concept map on an A4 sheet with name and class."
   altri:
     - { ic: "🔊", t: "Listen to the notes", p: "Read aloud, with the sentence lighting up." }
-    - { ic: "🎙️", t: "Write by speaking", p: "Dictate and the text writes itself, test answers included." }
+    - { ic: "🎙️", t: "Write by speaking", p: "Dictate and the text writes itself; «Read it back» lets you hear it." }
+    - { ic: "🔊", t: "Read to me", p: "PDFs, photos of the book or copied text, read aloud with the sentence lighting up." }
+    - { ic: "🗺️", t: "My map", p: "The lecture map: view it, change it or build it yourself, by voice too." }
     - { ic: "🎧", t: "Simple podcast", p: "The lecture in a few minutes, in short sentences, with the lecturer's voice at the key points." }
     - { ic: "🃏", t: "Daily review", p: "A few flashcards a day, picked for you until the exam, read aloud too." }
     - { ic: "📖", t: "Course glossary", p: "The difficult words explained simply, with the slide and «Hear the lecturer» from the right moment." }
@@ -182,7 +184,7 @@ vetrina:
     - img: "mappa-mentale-en"
       t: "Mind map"
       p: "The whole lecture at a glance: the topic in the centre, the subjects around it, the concepts to remember on each branch."
-      punti: ["Created from the lecture in one tap", "Save as PDF or print", "Perfect for quick review"]
+      punti: ["Created from the lecture in one tap", "Change it or build it yourself, by voice too", "Perfect for quick review"]
       alt: "Mind map of the lecture on contracts, with six coloured branches."
     - img: "infografica-en"
       t: "One-page infographic"

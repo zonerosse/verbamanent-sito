@@ -82,7 +82,7 @@ The most useful tip: **agree on the rules with your teacher at the start of the 
 
 Whatever you use, remember what the research says: the map helps most **while you build it**. If you start from a ready-made map, make it yours: remove, add, change the linking words.
 
-{{< vm-nota >}}the **lecture map** is ready when the recording ends, and the **test map** gathers the key words and formulas of the lectures you choose on an A4 sheet with name and class. You can remove the words you don't want before printing, as many teachers require.{{< /vm-nota >}}
+{{< vm-nota >}}the **lecture map** is ready when the recording ends and you can change it or build it yourself, by voice too, and the **test map** gathers the key words and formulas of the lectures you choose on an A4 sheet with name and class. You can remove the words you don't want before printing, as many teachers require.{{< /vm-nota >}}
 
 ## The most common mistakes
 

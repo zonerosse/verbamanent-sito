@@ -135,7 +135,7 @@ dsa:
     - img: "come-leggo"
       t: "Come leggo meglio"
       p: "Scegli il carattere (anche OpenDyslexic), la grandezza, lo spazio tra righe e lettere, il colore dello sfondo, le sillabe colorate e il righello di lettura."
-      punti: ["Vale per appunti, ascolto, karaoke, flashcard e PDF", "Sfondi tenui: crema, azzurro, verde, rosa", "Anteprima mentre scegli"]
+      punti: ["Vale per appunti, ascolto, karaoke, flashcard e PDF", "Sfondi tenui: grigio, azzurro, verde, crema, scuro", "Anteprima mentre scegli"]
       alt: "La pagina Come leggo meglio con la scelta del carattere, della grandezza e del colore dello sfondo."
     - img: "mappa-verifica"
       t: "La mappa per la verifica"
@@ -144,7 +144,9 @@ dsa:
       alt: "La mappa per la verifica: una mappa concettuale su un foglio A4 con nome e classe."
   altri:
     - { ic: "🔊", t: "Ascolta gli appunti", p: "Letti ad alta voce, con la frase che si illumina." }
-    - { ic: "🎙️", t: "Scrivi parlando", p: "Detti e il testo si scrive da solo, anche nelle risposte dei test." }
+    - { ic: "🎙️", t: "Scrivi parlando", p: "Detti e il testo si scrive da solo; «Rileggimelo» te lo fa sentire." }
+    - { ic: "🔊", t: "Leggimi", p: "PDF, foto del libro o testo copiato, letti a voce con la frase che si illumina." }
+    - { ic: "🗺️", t: "La mia mappa", p: "La mappa della lezione: la guardi, la cambi o la costruisci tu, anche a voce." }
     - { ic: "🎧", t: "Podcast semplice", p: "La lezione in pochi minuti, con frasi corte e la voce del prof nei punti chiave." }
     - { ic: "🃏", t: "Ripasso del giorno", p: "Poche flashcard al giorno, scelte per te fino all'esame, lette anche a voce." }
     - { ic: "📖", t: "Glossario della materia", p: "Le parole difficili spiegate semplici, con la slide e «Senti il prof» dal punto giusto." }
@@ -185,7 +187,7 @@ vetrina:
     - img: "mappa-mentale"
       t: "Mappa mentale"
       p: "Tutta la lezione in un colpo d'occhio: il tema al centro, gli argomenti intorno, i concetti da ricordare su ogni ramo."
-      punti: ["Si crea con un tocco dalla lezione", "Da salvare in PDF o stampare", "Perfetta per il ripasso veloce"]
+      punti: ["Si crea con un tocco dalla lezione", "La cambi o la costruisci tu, anche a voce", "Perfetta per il ripasso veloce"]
       alt: "Mappa mentale della lezione sul contratto, con sei rami colorati."
     - img: "infografica"
       t: "Infografica in una pagina"
