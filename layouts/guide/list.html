@@ -1,17 +1,31 @@
 {{ define "main" }}
+{{- $it := eq site.Language.Lang "it" }}
+{{- $tutte := .Pages.ByDate.Reverse }}
+{{- /* tre gruppi: per genitori e insegnanti (gruppo: famiglie), per chi ha un DSA (vm: dsa), per studiare (le altre) */ -}}
+{{- $fam := where $tutte "Params.gruppo" "famiglie" }}
+{{- $dsa := where (where $tutte "Params.gruppo" "!=" "famiglie") "Params.vm" "dsa" }}
+{{- $altre := complement $fam $dsa $tutte }}
 <div class="pagina">
   <div class="wrap">
     <h1>{{ .Title }}</h1>
     <p class="intro">{{ .Description }}</p>
+    {{- range $g := slice
+      (dict "t" (cond $it "👪 Per genitori e insegnanti" "👪 For parents and teachers") "p" $fam)
+      (dict "t" (cond $it "⭐ Per chi ha un DSA" "⭐ For students with dyslexia and SpLDs") "p" $dsa)
+      (dict "t" (cond $it "📚 Per studiare" "📚 For studying") "p" $altre) }}
+    {{- if $g.p }}
+    <h2 class="gruppo-guide">{{ $g.t }}</h2>
     <div class="elenco">
-      {{- range .Pages.ByDate.Reverse }}
-      <a class="card art" href="{{ .RelPermalink }}">
+      {{- range $g.p }}
+      <a class="card art{{ if .Params.evidenza }} art-evid{{ end }}" href="{{ .RelPermalink }}">
         <h2>{{ .Title }}</h2>
         <p>{{ .Description }}</p>
-        <span class="leggi">{{ if eq site.Language.Lang "it" }}Leggi la guida →{{ else }}Read the guide →{{ end }}</span>
+        <span class="leggi">{{ with .Params.leggi }}{{ . }}{{ else }}{{ if $it }}Leggi la guida →{{ else }}Read the guide →{{ end }}{{ end }}</span>
       </a>
       {{- end }}
     </div>
+    {{- end }}
+    {{- end }}
   </div>
 </div>
 {{ end }}

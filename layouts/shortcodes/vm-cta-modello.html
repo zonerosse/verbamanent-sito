@@ -1,0 +1,7 @@
+{{- $it := eq site.Language.Lang "it" -}}
+{{- $p := site.GetPage "/guide/modello-pdp" -}}
+<aside class="cta-modello"><span class="cta-modello-ic" aria-hidden="true">📋</span><div>
+  <b>{{ if $it }}Arriva all'incontro con le idee chiare.{{ else }}Arrive at the meeting well prepared.{{ end }}</b>
+  {{ if $it }}Compila il modello con gli strumenti e le misure che servono a tuo figlio, stampalo e portalo al consiglio di classe. È gratis e resta sul tuo computer.{{ else }}Fill in the template with the tools and measures your child needs, print it and bring it to the class council. It is free and stays on your computer.{{ end }}
+  {{ with $p }}<a href="{{ .RelPermalink }}">{{ if $it }}Compila il modello per il PDP →{{ else }}Fill in the PDP template →{{ end }}</a>{{ end }}
+</div></aside>

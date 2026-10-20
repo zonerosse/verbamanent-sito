@@ -464,3 +464,53 @@ header .menu-tel .wrap{display:block;height:auto;padding-top:6px;padding-bottom:
 .menu-tel[hidden],.menu-ombra[hidden]{display:none}
 @media (max-width:1140px){.menu-b{display:inline-flex}header .lang{margin-left:auto}}
 @media (min-width:1141px){.menu-tel,.menu-ombra{display:none!important}}
+
+/* Modello per il PDP (guida per genitori e insegnanti) */
+.pdp{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:26px;align-items:start;width:min(1120px,calc(100vw - 32px));margin:26px 0 30px;position:relative;left:50%;transform:translateX(-50%)}
+.pdp fieldset{border:0;padding:0;margin:0}
+.pdp-l{display:block;font-weight:700;color:var(--ink);margin:16px 0 6px;font-size:15px;padding:0}
+.pdp input[type=text],.pdp textarea{width:100%;border:1.5px solid #cfe0f1;border-radius:10px;padding:9px 11px;font:inherit;font-size:15px;background:#fff;color:var(--txt)}
+.pdp textarea{resize:vertical}
+.pdp input:focus,.pdp textarea:focus{outline:2px solid var(--cyan);outline-offset:1px}
+.pdp-seg{display:inline-flex;background:#e2e8f0;border-radius:10px;padding:3px;gap:2px}
+.pdp-seg button{border:0;background:none;padding:7px 14px;border-radius:8px;font:inherit;font-weight:600;font-size:14px;color:var(--mut);cursor:pointer}
+.pdp-seg button.on{background:#fff;color:var(--navy);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.pdp-ck{display:flex;gap:9px;align-items:flex-start;padding:6px 0;font-size:14.5px;line-height:1.4;cursor:pointer}
+.pdp-ck[hidden]{display:none}
+.pdp-ck input{margin-top:3px;width:17px;height:17px;flex:none;accent-color:var(--sky)}
+.pdp-ck small{display:block;color:var(--mut);font-size:12.5px}
+.pdp-ck .pdp-vm{color:var(--blue)}
+.pdp-bt{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:18px}
+.pdp-bt .btn{cursor:pointer;border:0;font:inherit;font-weight:700}
+.pdp-lnk{border:0;background:none;color:var(--mut);text-decoration:underline;font:inherit;font-size:14px;cursor:pointer}
+.pdp-priv{font-size:13px;color:var(--mut);margin:10px 0 0}
+.pdp-foglio{background:#fff;border:1px solid #cbd5e1;box-shadow:0 10px 30px rgba(15,27,45,.12);min-height:calc(min(1120px,100vw) * .6);padding:34px 38px;font-size:12.5px;line-height:1.5;color:#1e293b;position:sticky;top:84px}
+.pdp-foglio h3{margin:0 0 2px;font-size:16px;color:#0f1b2d;line-height:1.3}
+.pdp-foglio .pdp-sub{color:#64748b;font-size:11px;margin:0 0 12px}
+.pdp-riga{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid #e2e8f0;padding:4px 0}.pdp-riga span{color:#64748b}
+.pdp-foglio h4{margin:14px 0 4px;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:#0369a1}
+.pdp-foglio ul{margin:0;padding-left:16px}.pdp-foglio li{margin:1px 0}.pdp-foglio p{margin:0}
+.pdp-vuoto{color:#94a3b8}
+.pdp-firme{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px;font-size:10.5px;color:#64748b}.pdp-firme div{border-top:1px solid #94a3b8;padding-top:4px}
+.pdp-foglio .pdp-piede{margin-top:16px;font-size:10px;color:#94a3b8}
+@media (max-width:900px){.pdp{grid-template-columns:1fr;width:100%;left:0;transform:none}.pdp-foglio{position:static;padding:22px 20px;min-height:0}}
+#pdp-copia{display:none}
+@media print{
+  html.pdp-stampa body>*:not(#pdp-copia){display:none!important}
+  html.pdp-stampa #pdp-copia{display:block;position:static;border:0;box-shadow:none;padding:0;min-height:0;font-size:11pt}
+}
+@page{size:A4;margin:16mm}
+.pdp .pdp-b2{background:#fff;color:var(--navy);border:1.5px solid #cfe0f1}
+.pagina .gruppo-guide{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin:34px 0 12px}
+.card.art-evid{border-color:#bae6fd;background:linear-gradient(180deg,#f0f9ff,#fff)}
+.cta-modello{display:flex;gap:14px;align-items:flex-start;border:1px solid #bae6fd;background:#f0f9ff;border-radius:16px;padding:16px 18px;margin:24px 0}
+.cta-modello-ic{font-size:28px;line-height:1}.cta-modello b{color:var(--ink);display:block;margin-bottom:2px}
+.cta-modello a{display:inline-block;margin-top:6px;color:var(--blue);font-weight:700;text-decoration:none}
+.articolo .spunte ul{list-style:none;padding:18px 20px;margin:20px 0;border:1px solid #bae6fd;background:#f0f9ff;border-radius:16px}
+.articolo .spunte li{padding:5px 0 5px 32px;position:relative}
+.articolo .spunte li::before{content:"☐";position:absolute;left:4px;top:3px;font-size:19px;color:var(--blue)}
+.articolo .pdp-foglio ul,.articolo .pdp-foglio li,.articolo .pdp-foglio p{font-size:12.5px;line-height:1.5;margin-top:0;margin-bottom:0}
+.articolo .pdp-foglio li{margin:1px 0}
+.articolo .pdp-foglio h3{font-size:16px;margin:0 0 2px}.articolo .pdp-foglio h4{font-size:11.5px;margin:14px 0 4px}
+.articolo .pdp-form p{font-size:13px}
+.pdp fieldset{margin-top:8px}

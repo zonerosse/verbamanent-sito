@@ -1,0 +1,4 @@
+{{- /* Il modello per il PDP: si compila nel browser (assets/js/modello-pdp.js), niente va su internet. */ -}}
+{{- $js := resources.Get "js/modello-pdp.js" | minify | fingerprint }}
+<div class="pdp" id="pdp"><noscript>{{ if eq site.Language.Lang "it" }}Per compilare il modello serve JavaScript.{{ else }}JavaScript is needed to fill in the template.{{ end }}</noscript></div>
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
