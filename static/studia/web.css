@@ -68,3 +68,9 @@ html.android body.web-on .app{margin-top:36px;height:calc(100vh - 36px);height:c
 
 /* «Inizia qui» è del programma sul PC: sul web non serve (Google e la password ci sono già) */
 html.web #iqImp, html.web #iqVelo{display:none !important}
+
+#web .wlogo-sm{display:block;margin:0 auto;object-fit:cover;background:none}
+/* Scripta Manent sul web: i colori verde petrolio di Scripta Manent */
+html.sm-web #web{--w-navy:#115e59;--w-navy-d:#0b3f3c;--w-dd:#072a28;--w-blue:#0f766e;--w-cyan:#5eead4;
+  background:radial-gradient(900px 400px at 80% -10%,#0f766e 0%,transparent 60%),linear-gradient(180deg,var(--w-dd),var(--w-navy-d))}
+html.sm-web #webBar{background:#115e59;color:#ccfbf1}

@@ -4,7 +4,14 @@
    Messaggi verso la pagina senza id: {evento: 'apri' | 'link' | 'fase' | 'ricarica', ...}. */
 'use strict';
 const V = new URL(location.href).searchParams.get('v') || '0';
-importScripts('pyodide/pyodide.js?v=' + V);
+// Scripta Manent sul web (verbamanent.app/scripta/): stesse pagine e stesso motore, edizione «scripta».
+// Le sue lezioni nel browser stanno in un posto suo (/dati_sm), cosi' non si mescolano con Verba Manent.
+const SM = new URL(location.href).searchParams.get('e') === 'scripta';
+const RIS = new URL(SM ? '../studia/' : './', location.href).href;     // Pyodide e il motore stanno in /studia/
+const DB = SM ? '/dati_sm' : '/dati';
+const CFG = SM ? 'ScriptaManent' : 'RegistraLezione';
+importScripts(RIS + 'pyodide/pyodide.js?v=' + V);
+
 
 let py = null, wm = null, token = null, scade = 0, email = '', ricorda = false, salvare = false;
 
@@ -33,18 +40,19 @@ self.vmFase = f => postMessage({evento: 'fase', f: Number(f) || 0});
 // ---------------------------------------------------------------- avvio
 async function carica(m) {
   ricorda = !!m.ricorda;
-  py = await loadPyodide({indexURL: new URL('pyodide/', location.href).href});
+  py = await loadPyodide({indexURL: RIS + 'pyodide/'});
   const pacchetti = py.loadPackage(['numpy', 'pillow', 'fonttools', 'ssl', 'hashlib', 'sqlite3', 'py/fpdf2-2.8.9-py3-none-any.whl', 'py/defusedxml-0.7.1-py2.py3-none-any.whl'].map(
-    x => x.startsWith('py/') ? new URL(x, location.href).href : x), {messageCallback: () => {}});
-  const rl = fetch('py/rl.zip?v=' + V).then(r => { if (!r.ok) throw new Error('rl.zip ' + r.status); return r.arrayBuffer(); });
-  py.FS.mkdirTree('/dati');
+    x => x.startsWith('py/') ? RIS + x : x), {messageCallback: () => {}});
+  const rl = fetch(RIS + 'py/rl.zip?v=' + V).then(r => { if (!r.ok) throw new Error('rl.zip ' + r.status); return r.arrayBuffer(); });
+  py.FS.mkdirTree(DB);
+  if (SM) py.FS.symlink(DB, '/dati');
   if (ricorda) {          // «Ricorda su questo computer»: le lezioni restano nel browser (IndexedDB) fino a «Esci»
-    py.FS.mount(py.FS.filesystems.IDBFS, {}, '/dati');
+    py.FS.mount(py.FS.filesystems.IDBFS, {}, DB);
     await new Promise(ok => py.FS.syncfs(true, () => ok()));
   }
   py.unpackArchive(await rl, 'zip', {extractDir: '/rl'});
   await pacchetti;
-  py.runPython("import sys; sys.path[:0] = ['/rl', '/rl/_vendor']");
+  py.runPython("import sys, os; sys.path[:0] = ['/rl', '/rl/_vendor']" + (SM ? "; os.environ['RL_EDIZIONE'] = 'scripta'" : ''));
   wm = py.pyimport('web_motore');
   return true;
 }
@@ -52,7 +60,7 @@ async function carica(m) {
 // la configurazione salvata (solo con «Ricorda»): password degli zip e chiave di Claude
 function salvato() {
   try {
-    const c = JSON.parse(py.FS.readFile('/dati/.config/RegistraLezione/config.json', {encoding: 'utf8'}));
+    const c = JSON.parse(py.FS.readFile('/dati/.config/' + CFG + '/config.json', {encoding: 'utf8'}));
     return {chiave: (c.nuvola || {}).chiave || '', email: (c.nuvola || {}).email || '', claude: !!c.chiave};
   } catch (e) { return {}; }
 }
@@ -87,7 +95,7 @@ const fa = {
   async avvia(m) {
     if (m.ricorda && !ricorda) {     // «Ricorda» scelto adesso: da qui in poi le lezioni restano nel browser
       ricorda = true;
-      py.FS.mount(py.FS.filesystems.IDBFS, {}, '/dati');
+      py.FS.mount(py.FS.filesystems.IDBFS, {}, DB);
       await new Promise(ok => py.FS.syncfs(true, () => ok()));
     }
     const r = wm.avvia(m.lingua, m.chiave, email, !!m.prima);
@@ -103,7 +111,7 @@ const fa = {
   },
   async salva() { await salva(); return true; },
   async esci() {
-    if (ricorda) { try { py.FS.unmount('/dati'); } catch (e) {} await new Promise(ok => { const r = indexedDB.deleteDatabase('/dati'); r.onsuccess = r.onerror = r.onblocked = () => ok(); }); }
+    if (ricorda) { try { py.FS.unmount(DB); } catch (e) {} await new Promise(ok => { const r = indexedDB.deleteDatabase(DB); r.onsuccess = r.onerror = r.onblocked = () => ok(); }); }
     return true;
   },
 };

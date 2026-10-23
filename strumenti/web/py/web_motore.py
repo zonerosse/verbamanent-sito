@@ -211,7 +211,7 @@ def avvia(lingua, chiave_zip, email_, prima_volta):
     os.environ["HOME"] = "/dati"
     lingua = "it" if str(lingua).lower().startswith("it") else "en"
     # la configurazione prima del motore: lingua, privacy (detta nella pagina di accesso), Drive collegato
-    cfg_f = Path("/dati/.config/RegistraLezione/config.json")
+    cfg_f = Path("/dati/.config") / __import__("edizione").CARTELLA_CONFIG / "config.json"   # Scripta Manent: ScriptaManent
     cfg = {}
     if cfg_f.exists():
         try:

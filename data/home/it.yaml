@@ -122,7 +122,8 @@ sm:
   kicker: "Per chi ha un DSA"
   h2: "Scripta Manent: l'app per studiare con un DSA"
   p: "Dislessia, disgrafia, disortografia, discalculia. Scripta Manent registra la lezione e te la rende facile da leggere e da ascoltare. Poi ti accompagna nei compiti, in matematica e fino alla verifica. È la sorella di Verba Manent IA, fatta apposta per gli studenti."
-  dove: ["Windows", "Android", "Dentro Verba Manent IA: «Spazio DSA»", "iPhone e Mac in arrivo"]
+  dove: ["Windows", "Android", "Web", "Dentro Verba Manent IA: «Spazio DSA»", "iPhone e Mac in arrivo"]
+  web_b: "Apri Scripta Manent sul web"
   video: { v: "sm-casa", img: "sm-casa", k: "Ogni giorno", h2: "I miei strumenti: si apre sempre qui", testo: "Quante cose hai da fare oggi, in ordine: compiti e ripasso. La verifica in arrivo con i giorni che mancano. L'ultima lezione da ascoltare, con la mappa e le flashcard. Sotto, tutti gli strumenti divisi per momento.", punti: ["Da fare oggi: inizi dal primo e vai avanti", "Verifica in arrivo: «Ripassa oggi»", "Ogni spiegazione si legge anche a voce, con la (i)"] }
   voci:
     - img: "sm-ascolta"
