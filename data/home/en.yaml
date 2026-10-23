@@ -119,7 +119,7 @@ sm:
   kicker: "For students with dyslexia"
   h2: "Scripta Manent: the study app for students with dyslexia"
   p: "Dyslexia, dysgraphia, dysorthographia, dyscalculia. Scripta Manent records the lecture and makes it easy to read and to listen to. Then it helps you with homework, maths and all the way to the test. It is the sister app of Verba Manent IA, made just for students."
-  dove: ["Windows", "Android", "Web", "Inside Verba Manent IA: «DSA space»", "iPhone and Mac coming soon"]
+  dove: ["Windows", "Android", "iPhone", "Web", "Inside Verba Manent IA: «DSA space»", "Mac coming soon"]
   web_b: "Open Scripta Manent on the web"
   video: { v: "sm-casa", img: "sm-casa-en", k: "Every day", h2: "My tools: it always opens here", testo: "How many things you have to do today, in order: homework and review. The upcoming test with the days left. The last lesson to listen to, with the map and the flashcards. Below, all the tools divided by moment.", punti: ["To do today: start from the first and go on", "Upcoming test: «Review today»", "Every explanation can also be read aloud, with the (i)"] }
   voci:
