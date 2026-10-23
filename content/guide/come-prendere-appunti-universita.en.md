@@ -106,7 +106,7 @@ A few practical tips:
 
 {{< vm-schermata img="spazio-dsa-en" didascalia="The Verba Manent DSA space: the assistive tools in order, in class, after the lecture and for the test." >}}
 
-You'll find every tool on the [Dyslexia](/en/dyslexia/) page.
+You'll find every tool on the [Scripta Manent](/en/scripta-manent/) page.
 
 ## The most common mistakes
 

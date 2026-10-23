@@ -106,7 +106,7 @@ Qualche consiglio pratico:
 
 {{< vm-schermata img="spazio-dsa" didascalia="Lo Spazio DSA di Verba Manent: gli strumenti compensativi in ordine, in aula, dopo la lezione e per la verifica." >}}
 
-Trovi tutti gli strumenti nella pagina [DSA](/dsa/).
+Trovi tutti gli strumenti nella pagina [Scripta Manent](/scripta-manent/).
 
 ## Gli errori più comuni
 

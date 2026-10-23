@@ -31,7 +31,7 @@ flussi:
     - { ic: "🗣️", t: "Chi ha detto cosa", p: "Le voci separate e con i nomi" }
     - { ic: "📋", t: "Verbale pronto", p: "Decisioni e cose da fare con chi e entro quando" }
   dsa:
-    - { ic: "🎙️", t: "Registra la lezione", p: "Con la Modalità DSA già accesa" }
+    - { ic: "🎙️", t: "Registra la lezione", p: "Con Scripta Manent, o lo Spazio DSA di Verba Manent" }
     - { ic: "🎤", t: "Riascolti e leggi", p: "Karaoke della lezione e sintesi vocale" }
     - { ic: "🗺️", t: "Mappa per la verifica", p: "Parole chiave e formule su un A4" }
     - { ic: "📋", t: "Per il docente", p: "Il foglio con gli strumenti che usi" }

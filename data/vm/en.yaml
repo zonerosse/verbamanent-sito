@@ -31,7 +31,7 @@ flussi:
     - { ic: "🗣️", t: "Who said what", p: "Voices kept apart, with names" }
     - { ic: "📋", t: "Minutes ready", p: "Decisions and action items with owners and deadlines" }
   dsa:
-    - { ic: "🎙️", t: "Record the lecture", p: "With Dyslexia mode already on" }
+    - { ic: "🎙️", t: "Record the lecture", p: "With Scripta Manent, or the DSA space in Verba Manent" }
     - { ic: "🎤", t: "Listen and read", p: "Lecture karaoke and text-to-speech" }
     - { ic: "🗺️", t: "Test map", p: "Key words and formulas on an A4 sheet" }
     - { ic: "📋", t: "For your teacher", p: "A sheet listing the tools you use" }

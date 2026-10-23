@@ -3,7 +3,7 @@ menu:
     tit: "Who Verba Manent is for"
     voci:
       - { pag: "per-studiare", t: "Studying", ic: "studio", d: "Cornell notes, flashcards and day-by-day review until the exam.", dt: "Notes, flashcards and review" }
-      - { pag: "dsa", t: "Dyslexia", ic: "dsa", d: "The DSA space: reading aloud, maps, tests with 30% extra time.", dt: "The DSA space" }
+      - { pag: "scripta-manent", t: "Scripta Manent", ic: "dsa", d: "The study app for dyslexia: lessons easy to read and hear, homework, maths, tests.", dt: "The app for dyslexia" }
       - { pag: "riunioni", t: "Meetings", ic: "riunioni", d: "Minutes ready: who said what, decisions and action items.", dt: "Minutes ready" }
     lato: { k: "New", t: "For parents and teachers", p: "The personalised plan (PDP) step by step and a free template to fill in and bring to school.", link: "Open the template", pag: "/guide/modello-pdp" }
     piede: { t: "Not sure where to start?", link: "See how it works in 3 steps", id: "come" }
@@ -32,7 +32,7 @@ schede:
   altre: "The other tiles"
   voci:
     - { pag: "per-studiare", ic: "🎓", t: "For studying", p: "Notes, flashcards, maps and exam preparation, from every lecture.", img: "cornell-en", h2: "From the lecture to exam day", testo: "Record the lecture, online or in class. When it ends you have tidy notes, flashcards, a mind map and the most likely exam questions.", punti: ["Cornell and Exam Format notes, with the lecturer's slides", "Flashcards, maps and Daily review", "Mock exams with a mark"], link: "Everything for studying" }
-    - { pag: "dsa", ic: "⭐", t: "Dyslexia", p: "The DSA space: every assistive tool, in one place.", img: "spazio-dsa-en", h2: "The DSA space: every assistive tool in one place", testo: "Turn on Dyslexia mode and find what you need in order: in class, after the lecture, for the test and for your teacher.", punti: ["Lecture karaoke with the lecturer's real voice", "How I read best: font, spacing, background", "Test map and tests with 30% extra time"], link: "All about the DSA space" }
+    - { pag: "scripta-manent", ic: "⭐", t: "Scripta Manent", p: "The study app for dyslexia: easy lessons, homework, maths and tests.", img: "sm-casa-en", h2: "Scripta Manent: the study app for dyslexia", testo: "The sister app of Verba Manent IA, made for students with dyslexia: it records the lesson, reads it to you and helps with homework until the test.", punti: ["Listen and Karaoke with the teacher's real voice", "Homework from the planner, maths in small steps", "The test plan and the week for parents"], link: "All about Scripta Manent" }
     - { pag: "riunioni", ic: "💼", t: "For meetings", p: "The minutes write themselves: decisions, action items, who and by when.", img: "verbale-en", h2: "The minutes write themselves", testo: "Meet, Teams, Zoom or in the room: when the meeting ends you have the minutes with decisions, action items with who and by when, and who said what.", punti: ["Minutes ready as a PDF, shared in one tap", "Action items gathered from every meeting", "Each meeting picks up what was left open"], link: "Everything for meetings" }
     - { pag: "pc-e-telefono", ic: "📱", t: "On PC and phone", p: "Windows, Android and iPhone, import what you already have, fast even on a slow PC.", img: "telefono-en", h2: "On your PC and your phone", testo: "Record from your PC or phone (Android or iPhone), or import a video, audio file or transcript you already have. PC and phone stay in sync.", punti: ["Windows, Android and iPhone, Mac coming soon", "Import video, audio, links and transcripts", "Fast even on a slow PC"], link: "All about PC and phone" }
     - { pag: "la-tua-privacy", ic: "🔒", t: "Privacy", p: "Your recordings stay yours: no servers, no voiceprints.", img: "prima-di-iniziare-en", h2: "Your recordings stay yours", testo: "Transcription happens on your PC or phone: we never receive your recordings and no AI is trained on your lectures.", punti: ["No voiceprints, ever", "A ready message to tell the people you record", "Privacy explained in four lines, on first launch"], link: "All about privacy" }
@@ -44,8 +44,8 @@ pagine:
       p: "Record the lecture, online or in class: Verba Manent transcribes it and gives you everything you need to study."
       schermate: [[vetrina, 0], [vetrina, 1], [vetrina, 2], [vetrina, 3], [vetrina, 4], [vetrina, 5], [vetrina, 6], [vetrina, 7], [vetrina, 12]]
       carte: [0, 1, 2, 3, 4, 5, 15]
-  dsa:
-    - { tipo: "dsa" }
+  scripta-manent:
+    - { tipo: "sm" }
   riunioni:
     - kicker: "For meetings"
       h2: "The minutes write themselves"
@@ -114,45 +114,46 @@ fa:
     - { ic: "🚀", t: "Fast transcription, if you want", p: "Slow PC? Connect your own pay-as-you-go server: an hour of lecture in about a minute, for a few cents. It's optional." }
     - { ic: "💬", t: "Ask the lecture", p: "Missed a point? Ask your question and the answer comes from what the lecturer actually said." }
 
-dsa:
-  kicker: "For students with dyslexia and other SpLDs"
-  h2: "The DSA space: every assistive tool, in one place"
-  p: "Dyslexia, dysgraphia, dysorthography, dyscalculia. Turn on Dyslexia mode and Verba Manent puts what you need first, in order: in class, after the lecture, for the test and for your teacher."
+sm:
+  kicker: "For students with dyslexia"
+  h2: "Scripta Manent: the study app for students with dyslexia"
+  p: "Dyslexia, dysgraphia, dysorthographia, dyscalculia. Scripta Manent records the lecture and makes it easy to read and to listen to. Then it helps you with homework, maths and all the way to the test. It is the sister app of Verba Manent IA, made just for students."
+  dove: ["Windows", "Android", "Inside Verba Manent IA: «DSA space»", "iPhone and Mac coming soon"]
+  video: { v: "sm-casa", img: "sm-casa-en", k: "Every day", h2: "My tools: it always opens here", testo: "How many things you have to do today, in order: homework and review. The upcoming test with the days left. The last lesson to listen to, with the map and the flashcards. Below, all the tools divided by moment.", punti: ["To do today: start from the first and go on", "Upcoming test: «Review today»", "Every explanation can also be read aloud, with the (i)"] }
   voci:
-    - img: "spazio-dsa-en"
-      t: "Everything in order, first time"
-      p: "Pick the subject and the lecture and the tools are grouped by moment. No menus to dig through: what you need now is already there."
-      punti: ["In class, after the lecture, for the test, for your teacher", "One switch turns it on", "Every other feature stays one tap away in «More»"]
-      alt: "The Verba Manent DSA space with the tools grouped into: in class, after the lecture, for the test."
-    - img: "karaoke-en"
-      t: "Lecture karaoke"
-      p: "Listen again to your lecturer's real voice while the words light up, with the slide of that moment next to it. Tap a word to start again from there."
-      punti: ["The lecturer's voice, not a synthetic one", "«One line at a time» so you never lose your place", "Speed from 0.8× to 1.5×"]
-      alt: "Lecture karaoke: the lecturer's text with the audio player and the speed options."
-    - img: "come-leggo-en"
-      t: "How I read best"
-      p: "Choose the font (OpenDyslexic too), the size, the spacing between lines and letters, the background colour, coloured syllables and the reading ruler."
-      punti: ["Applies to notes, listening, karaoke, flashcards and PDFs", "Soft backgrounds: grey, blue, green, cream, dark", "Live preview while you choose"]
-      alt: "The How I read best page with the choice of font, size and background colour."
-    - img: "mappa-verifica-en"
-      t: "The test map"
-      p: "An A4 sheet with the key words of the lectures you choose and a box of formulas and values, to print and bring to the test, with your name and class at the top."
-      punti: ["Key words only, as many teachers require", "Remove the words you don't want", "Have it signed by your teacher before the test"]
-      alt: "The test map: a concept map on an A4 sheet with name and class."
-  altri:
-    - { ic: "🔊", t: "Listen to the notes", p: "Read aloud, with the sentence lighting up." }
-    - { ic: "🎙️", t: "Write by speaking", p: "Dictate and the text writes itself; «Read it back» lets you hear it." }
-    - { ic: "🔊", t: "Read to me", p: "PDFs, photos of the book or copied text, read aloud with the sentence lighting up." }
-    - { ic: "🗺️", t: "My map", p: "The lecture map: view it, change it or build it yourself, by voice too." }
-    - { ic: "🎧", t: "Simple podcast", p: "The lecture in a few minutes, in short sentences, with the lecturer's voice at the key points." }
-    - { ic: "🃏", t: "Daily review", p: "A few flashcards a day, picked for you until the exam, read aloud too." }
-    - { ic: "📖", t: "Course glossary", p: "The difficult words explained simply, with the slide and «Hear the lecturer» from the right moment." }
-    - { ic: "⏱️", t: "Tests with 30% extra time", p: "Questions read aloud and extra time, just like the real exam." }
-    - { ic: "🎤", t: "Oral exam practice", p: "Answer by speaking, as in an oral exam, and get a mark with what is missing." }
-    - { ic: "✍️", t: "Dictated written answers", p: "Answer by voice: marking looks at content, never at spelling." }
-    - { ic: "📋", t: "Your support plan sheet", p: "«The tools I use»: a PDF listing the assistive tools you really use, for your school or university." }
+    - img: "sm-ascolta-en"
+      t: "Listen and Karaoke"
+      p: "The notes read aloud, with the sentence you hear lighting up. In Karaoke the teacher speaks, with their real voice, one line at a time."
+      punti: ["Slower or faster", "Easy notes: questions, keywords, slides", "Tap a chapter and hear the teacher from there"]
+      alt: "Scripta Manent reads the notes aloud and highlights the sentence you hear."
+    - img: "sm-compiti-en"
+      t: "Homework: take a photo of your planner"
+      p: "One photo of your planner and the homework is sorted by day. It also arrives by itself from the lessons: when the teacher sets homework, Scripta Manent finds it."
+      punti: ["Understand: what it asks, in simple words", "Do it: split into small pieces, with the time", "Remind me, Done, Move"]
+      alt: "The Homework page with the week, the day's homework and the task card split into pieces."
+    - img: "sm-mate-en"
+      t: "Maths"
+      p: "The calculator that talks and reads the calculation back, times tables aloud, the formula sheet and the problem split into small steps. Take a photo of your working and it tells you if the result is right."
+      punti: ["Formulas for shapes and those from your lessons", "Problem step by step, with «Ask about this step»", "Fractions to see, percentages, converter"]
+      alt: "Scripta Manent maths with the talking calculator."
+    - img: "sm-verifica-en"
+      t: "The test: the plan, day by day"
+      p: "Mark the test and choose what it covers: lessons and textbook pages. Scripta Manent makes the plan with the minutes a day you choose and reminds you every day of today's piece."
+      punti: ["Multiple-choice tests and spoken oral test", "The questions you get wrong come back sooner", "Take a photo of the marked test and understand the mistakes"]
+      alt: "The test plan with the minutes a day and the days of the week."
+  inpiu_t: "And everything else you need"
+  gruppi:
+    - t: "Lesson"
+      voci: [{t: "Record with «I didn't get it» and «Important»"}, {t: "Write by speaking"}, {t: "Map, flashcards and Daily review"}, {t: "Read it to me: books and PDFs aloud"}]
+    - t: "Homework"
+      voci: [{t: "One task at a time, in small steps"}, {t: "Gentle spell-checker"}, {t: "Easy languages"}, {t: "Font, spacing and background as you like"}]
+    - t: "Tests and family"
+      voci: [{t: "Tests and spoken oral test, 30% extra time"}, {t: "Test map and learning plan sheet"}, {t: "The week for parents"}, {t: "19% tax deduction (Italy)"}]
+  vs:
+    - { t: "Verba Manent IA", c: "vm", p: "is for university, work and meetings." }
+    - { t: "Scripta Manent", c: "sm", p: "is for students with dyslexia. In Verba Manent IA you find all of it in the «DSA space»." }
   legge_t: "Tools provided for by law"
-  legge_p: "In Italy, Law 170/2010 grants students with dyslexia and other SpLDs the right to assistive tools such as text-to-speech and concept maps, and the 2011 guidelines (Ministerial Decree 5669) add extra time in tests: at university usually up to 30%. Verba Manent puts them all in one program."
+  legge_p: "In Italy, law 170/2010 recognises the right to assistive tools, such as text-to-speech and concept maps. The 2011 guidelines (DM 5669) also provide extra time in tests: usually up to 30%. Scripta Manent puts them all in one program."
 
 nonfa:
   kicker: "What it won't do"
@@ -341,7 +342,7 @@ unici:
   voci:
     - { ic: "🎙", k: "The lecturer's real voice", h2: "Hear your lecturer again, not a fake voice", v: "u-podcast", img: "podcast-en", pag: "per-studiare", link: "Everything for studying", testo: "The lecture podcast, the Karaoke with words lighting up, the glossary with «▶ Hear the lecturer»: at the moments that matter it's them speaking, with their own voice, from the recording.", punti: ["Podcast with one voice, two voices or a debate", "The slide of that moment always alongside"] }
     - { ic: "🧑‍🏫", k: "Your tutor", h2: "It knows when your exam is and where you go wrong", v: "u-tutor", img: "tutor-en", pag: "per-studiare", link: "Everything for studying", testo: "Every day it tells you what to do, with the minutes: the daily review, the point of the lecture to listen to again where you went wrong, the oral exam if you haven't done one for days. And you can ask it to quiz you.", punti: ["Days to the exam and «how ready you are»", "Mistakes in tests and oral exams, with lecture and minute"] }
-    - { ic: "⭐", k: "For dyslexic students", h2: "Assistive tools, ready to use", v: "u-dsa", img: "come-leggo-en", pag: "dsa", link: "All about the DSA space", testo: "Dyslexia mode puts listening, maps and easy-to-read notes first. Font and background as you like, coloured syllables, reading ruler, the A4 test map and the sheet for your learning plan.", punti: ["OpenDyslexic, Lexend, Atkinson Hyperlegible", "Test map (Italian law 170/2010)"] }
+    - { ic: "⭐", k: "For dyslexic students", h2: "Scripta Manent, the sister app for dyslexia", v: "sm-casa", img: "sm-casa-en", pag: "scripta-manent", link: "All about Scripta Manent", testo: "Everything written large and read aloud: lessons easy to listen to, homework from the planner, maths in small steps, the test plan and the week for parents. In Verba Manent IA you find all of it in the «DSA space».", punti: ["OpenDyslexic, soft backgrounds, explanations read aloud", "Test map and learning plan sheet (Italian law 170/2010)"] }
     - { ic: "🔒", k: "Real privacy", h2: "Your lectures stay yours", v: "u-sincronizza", img: "sincronizza-en", pag: "la-tua-privacy", link: "All about privacy", testo: "Transcription happens on your device. PC and phone sync with each other over Wi-Fi, or through your Google Drive with password-locked zips: not even Google knows which lectures you have.", punti: ["No voiceprints, no AI training", "No bot joins the meeting"] }
 
 confronto:
@@ -378,7 +379,7 @@ confronto:
     - t: "For dyslexia and other SpLDs"
       cl: "dsa"
       righe:
-        - ["Dyslexia mode ready to go: legible font, more space, soft background, and you can change it", "✓", "—", "—", "—", "—"]
+        - ["An app made for dyslexia (Scripta Manent, also inside Verba Manent IA): legible font, more space, soft background", "✓", "—", "—", "—", "—"]
         - ["Coloured syllables and reading ruler", "✓", "—", "—", "—", "—"]
         - ["Read to me: PDFs, photos and texts read aloud, with the sentence highlighted", "✓", "—", "—", "—", "audio summary"]
         - ["Write by speaking: dictate and the text gets tidied up", "✓", "—", "—", "—", "—"]

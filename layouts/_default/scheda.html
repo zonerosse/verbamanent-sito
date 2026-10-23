@@ -30,6 +30,50 @@
   </div>
 </section>
 {{- end }}
+{{- else if eq $s.tipo "sm" }}{{ with $t.sm }}
+{{ partial "sm-icone.html" . }}
+<section id="scripta" class="sm-pag">
+  <div class="wrap">
+    <div class="sm-testa">
+      <img class="sm-logo" src="{{ "img/logo-scripta.png" | relURL }}" alt="Scripta Manent" width="72" height="72">
+      <div>{{ partial "titolo-sez.html" (dict "s" . "h1" $h1) }}</div>
+    </div>
+    <div class="sm-dove">{{ range .dove }}<span>{{ . }}</span>{{ end }}</div>
+    {{- with .video }}
+    <article class="uni uni-largo">
+      <div class="uni-v" role="button" tabindex="0" aria-label="▶ {{ .h2 }}">
+        <video playsinline muted preload="none" poster="{{ printf "img/schermate/%s.webp" .img | relURL }}">
+          <source src="{{ printf "video/%s-%s.webm" .v site.Language.Lang | relURL }}" type="video/webm">
+        </video>
+        <span class="uni-play" aria-hidden="true">▶</span>
+      </div>
+      <div class="uni-t">
+        <div class="kicker">{{ .k }}</div>
+        <h3>{{ .h2 }}</h3>
+        <p>{{ .testo }}</p>
+        <ul>{{ range .punti }}<li>{{ . }}</li>{{ end }}</ul>
+      </div>
+    </article>
+    {{- end }}
+    <div class="vc-griglia sm-vc">{{ range .voci }}{{ partial "vc.html" . }}{{ end }}</div>
+    <div class="sm-inpiu">
+      <h3>{{ .inpiu_t }}</h3>
+      <div class="sm-col">
+        {{- range .gruppi }}
+        <div><b>{{ .t }}</b><ul>{{ range .voci }}<li>{{ .t }}</li>{{ end }}</ul></div>
+        {{- end }}
+      </div>
+    </div>
+    <div class="sm-vs1">
+      {{- range .vs }}<p><b class="sm-vs-{{ .c }}">{{ .t }}</b> {{ .p }}</p>{{ end }}
+    </div>
+    <div class="dsa-legge">
+      <span class="big" aria-hidden="true">⚖️</span>
+      <div><b>{{ .legge_t }}</b><span>{{ .legge_p }}</span></div>
+    </div>
+  </div>
+</section>
+{{- end }}
 {{- else if eq $s.tipo "nonfa" }}{{ with $t.nonfa }}
 <section id="nonfa" class="non">
   <div class="wrap">
