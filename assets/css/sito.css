@@ -609,3 +609,4 @@ nav.mn .mn-it[aria-current="page"]{font-weight:400}nav.mn .mn-it[aria-current="p
 .sm-col ul{margin:0;padding-left:18px;color:var(--txt,#334155);font-size:15.5px;line-height:1.7}
 .sm-vs1{margin:22px 0 18px;font-size:16px;line-height:1.6}.sm-vs1 p{margin:4px 0}.sm-vs1 .sm-vs-vm{color:var(--blue)}.sm-vs1 .sm-vs-sm{color:var(--sm)}
 @media (max-width:820px){.sm-col{grid-template-columns:1fr}}
+.sm-dove .sm-web{background:var(--sm);color:#fff;border-radius:999px;padding:6px 14px;font-size:14px;font-weight:700;text-decoration:none}.sm-dove .sm-web:hover{background:var(--sm-d)}

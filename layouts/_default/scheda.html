@@ -38,7 +38,7 @@
       <img class="sm-logo" src="{{ "img/logo-scripta.png" | relURL }}" alt="Scripta Manent" width="72" height="72">
       <div>{{ partial "titolo-sez.html" (dict "s" . "h1" $h1) }}</div>
     </div>
-    <div class="sm-dove">{{ range .dove }}<span>{{ . }}</span>{{ end }}</div>
+    <div class="sm-dove">{{ range .dove }}<span>{{ . }}</span>{{ end }}{{ with .web_b }}<a class="sm-web" href="/scripta/">{{ . }} →</a>{{ end }}</div>
     {{- with .video }}
     <article class="uni uni-largo">
       <div class="uni-v" role="button" tabindex="0" aria-label="▶ {{ .h2 }}">

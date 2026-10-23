@@ -94,6 +94,15 @@ def main():
     ind = ind.replace(f'<script src="app.js?v={v}"></script>', f'<script src="web.js?v={v}"></script>\n<script src="app.js?v={v}"></script>', 1)
     assert "web.js" in ind and "web.css" in ind, "index.html del programma cambiato: aggiorna aggiorna_web.py"
     (DEST / "index.html").write_text(ind, encoding="utf-8")
+    # Scripta Manent sul web (verbamanent.app/scripta/): una copia delle pagine (circa 3 MB); Pyodide e il motore
+    # li prende da /studia/ (vedi worker.js), cosi' non si scaricano due volte
+    smd = SITO / "static" / "scripta"
+    shutil.rmtree(smd, ignore_errors=True)
+    shutil.copytree(DEST, smd, ignore=shutil.ignore_patterns("pyodide", "py", "prova"))
+    sm = re.sub(r"<title>.*?</title>", "<title>Scripta Manent sul web</title>", ind, count=1, flags=re.S)
+    sm = sm.replace(f'<script src="web.js?v={v}"></script>', f'<script>window.VM_EDIZIONE = "scripta";</script>\n<script src="web.js?v={v}"></script>', 1)
+    assert "VM_EDIZIONE" in sm
+    (smd / "index.html").write_text(sm, encoding="utf-8")
     (DEST / "versione-web.json").write_text(json.dumps({"programma": versione, "web": v, "data": time.strftime("%Y-%m-%d")}),
                                            encoding="utf-8")
     print(f"studia: programma {versione}, web {v}, rl.zip {zp.stat().st_size // 1024} KB")
