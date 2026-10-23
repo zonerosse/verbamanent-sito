@@ -144,47 +144,17 @@ sm:
       p: "Segni la verifica e scegli cosa porta: lezioni e pagine del libro. Scripta Manent fa il piano con i minuti al giorno che scegli tu e ogni giorno ti ricorda il pezzo di oggi."
       punti: ["Test a crocette e interrogazione a voce", "Le domande che sbagli tornano prima", "Fotografi la verifica corretta e capisci gli errori"]
       alt: "Il piano della verifica con i minuti al giorno e i giorni della settimana."
+  inpiu_t: "E poi, tutto quello che serve"
   gruppi:
-    - t: "In aula"
-      voci:
-        - { ic: "mic", t: "Registra la lezione", p: "In aula o online: tre scelte e via. Durante, tre tasti: «Non ho capito», «Importante», «Compito o verifica»." }
-        - { ic: "voce", t: "Scrivi parlando", p: "Parli e il testo si scrive da solo. Poi lo correggi o te lo fai leggere." }
-        - { ic: "importa", t: "Hai già la lezione?", p: "Importi il video o l'audio e hai gli stessi appunti di una lezione registrata." }
-    - t: "Dopo la lezione"
-      voci:
-        - { ic: "mappa", t: "La mappa e La mia mappa", p: "La lezione a colpo d'occhio. La mia mappa la costruisci tu, spostando i riquadri." }
-        - { ic: "carte", t: "Flashcard e Ripasso del giorno", p: "Poche carte al giorno, scelte per te e lette a voce, fino alla verifica." }
-        - { ic: "chat", t: "Chiedi alla lezione", p: "Fai una domanda: la risposta è semplice, con il minuto giusto per sentire il prof." }
-        - { ic: "cuffie", t: "Podcast semplice", p: "La lezione in pochi minuti, con frasi corte e i pezzi veri del prof." }
-        - { ic: "libro", t: "Leggimi", p: "Una foto al libro, un PDF o un testo: te lo leggo frase per frase." }
-        - { ic: "leggo", t: "Come leggo meglio", p: "Carattere (anche OpenDyslexic), grandezza, spazi e sfondo: valgono per tutto il programma." }
-    - t: "A casa"
-      voci:
-        - { ic: "diario", t: "Compiti in ordine", p: "Dal diario e dalle lezioni. Un compito alla volta, diviso in pezzi, con il timer per concentrarti." }
-        - { ic: "calc", t: "Matematica", p: "Calcolatrice che parla, tabelline, formulario, problemi a passi, controllo del risultato." }
-        - { ic: "penna", t: "Correttore gentile", p: "Corregge solo l'ortografia: le parole restano tue. Poi «Leggimelo»." }
-        - { ic: "lingue", t: "Lingue facili", p: "Inglese, francese, tedesco, spagnolo: leggi e traduci, come si dice, ripeti tu e le tue parole da ripassare." }
-    - t: "Per la verifica"
-      voci:
-        - { ic: "piano", t: "Cosa porto e il piano", p: "Lezioni e pagine del libro, divise nei giorni che mancano, con i minuti che scegli tu." }
-        - { ic: "test", t: "Test e interrogazione a voce", p: "Domande lette a voce e il 30% di tempo in più. All'interrogazione rispondi parlando." }
-        - { ic: "foto", t: "Correggi la verifica", p: "Fotografi la verifica corretta: per ogni errore la risposta giusta e il perché. Segni il voto." }
-        - { ic: "mappa", t: "Mappa per la verifica", p: "Un foglio A4 con le parole chiave, da stampare e far firmare al docente." }
-    - t: "Per il docente e la famiglia"
-      voci:
-        - { ic: "doc", t: "Il foglio per il PDP", p: "«Gli strumenti che uso»: un PDF con gli strumenti compensativi che usi davvero." }
-        - { ic: "famiglia", t: "La settimana per i genitori", p: "Lezioni, compiti fatti e da fare, verifiche in arrivo. Su WhatsApp o stampata, il venerdì." }
-        - { ic: "euro", t: "Detrazione del 19%", p: "Segni le spese per gli strumenti, anche con la foto della fattura, e hai il foglio per il CAF." }
-  altre:
-    - { img: "sm-famiglia", t: "La settimana per i genitori", alt: "La pagina con la settimana per i genitori, da mandare su WhatsApp." }
-    - { img: "sm-lingue", t: "Lingue facili", alt: "Lingue facili: un testo in inglese letto e tradotto frase per frase." }
-    - { img: "sm-leggo", t: "Come leggo meglio", alt: "La scelta del carattere, della grandezza e dello sfondo." }
-    - { img: "sm-mappa", t: "La mia mappa", alt: "La mappa della lezione con i riquadri da spostare." }
-  vs_t: "Verba Manent IA o Scripta Manent?"
+    - t: "Lezione"
+      voci: [{t: "Registra con «Non ho capito» e «Importante»"}, {t: "Scrivi parlando"}, {t: "Mappa, flashcard e Ripasso del giorno"}, {t: "Leggimi: libro e PDF letti a voce"}]
+    - t: "Compiti"
+      voci: [{t: "Un compito alla volta, a piccoli passi"}, {t: "Correttore gentile"}, {t: "Lingue facili"}, {t: "Carattere, spazi e sfondo come vuoi"}]
+    - t: "Verifica e famiglia"
+      voci: [{t: "Test e interrogazione a voce, 30% di tempo in più"}, {t: "Mappa per la verifica e foglio PDP"}, {t: "La settimana per i genitori"}, {t: "Detrazione del 19%"}]
   vs:
-    - { t: "Verba Manent IA", c: "vm", p: "Per l'università, il lavoro e le riunioni: appunti Cornell e Formato Esame, tutor fino all'esame, verbali.", punti: ["Lezioni, webinar e riunioni", "Chi ha un DSA trova tutto Scripta Manent nello «Spazio DSA»"] }
-    - { t: "Scripta Manent", c: "sm", p: "Per gli studenti con un DSA, a scuola e all'università: tutto scritto in grande, letto a voce, diviso in passi piccoli.", punti: ["Compiti, matematica, lingue, verifiche", "La famiglia segue la settimana"] }
-  vs_nota: "Le due app hanno lo stesso motore: lezioni, privacy e sincronizzazione funzionano allo stesso modo. La trascrizione resta sul tuo PC o telefono."
+    - { t: "Verba Manent IA", c: "vm", p: "è per università, lavoro e riunioni." }
+    - { t: "Scripta Manent", c: "sm", p: "è per studenti con un DSA. In Verba Manent IA la trovi intera nello «Spazio DSA»." }
   legge_t: "Strumenti previsti dalla legge"
   legge_p: "La legge 170/2010 riconosce il diritto agli strumenti compensativi, come la sintesi vocale e le mappe concettuali. Le linee guida del 2011 (DM 5669) prevedono anche tempo in più nelle prove: di solito fino al 30%. Scripta Manent li mette tutti in un programma solo."
 

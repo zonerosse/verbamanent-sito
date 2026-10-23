@@ -603,3 +603,9 @@ nav.mn .mn-it[aria-current="page"]{font-weight:400}nav.mn .mn-it[aria-current="p
 .sm-carte.sm-4{grid-template-columns:repeat(4,1fr)}
 @media (max-width:900px){.sm-carte.sm-4{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.sm-vc,.sm-carte.sm-4{grid-template-columns:1fr!important}}
+.sm-inpiu{margin-top:34px;background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:22px 26px}
+.sm-inpiu h3{margin:0 0 12px;font-size:19px}.sm-col{display:grid;grid-template-columns:repeat(3,1fr);gap:8px 28px}
+.sm-col b{display:block;color:var(--sm);font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin:6px 0 4px}
+.sm-col ul{margin:0;padding-left:18px;color:var(--txt,#334155);font-size:15.5px;line-height:1.7}
+.sm-vs1{margin:22px 0 18px;font-size:16px;line-height:1.6}.sm-vs1 p{margin:4px 0}.sm-vs1 .sm-vs-vm{color:var(--blue)}.sm-vs1 .sm-vs-sm{color:var(--sm)}
+@media (max-width:820px){.sm-col{grid-template-columns:1fr}}

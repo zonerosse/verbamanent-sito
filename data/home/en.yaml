@@ -141,47 +141,17 @@ sm:
       p: "Mark the test and choose what it covers: lessons and textbook pages. Scripta Manent makes the plan with the minutes a day you choose and reminds you every day of today's piece."
       punti: ["Multiple-choice tests and spoken oral test", "The questions you get wrong come back sooner", "Take a photo of the marked test and understand the mistakes"]
       alt: "The test plan with the minutes a day and the days of the week."
+  inpiu_t: "And everything else you need"
   gruppi:
-    - t: "In class"
-      voci:
-        - { ic: "mic", t: "Record the lesson", p: "In class or online: three choices and go. During it, three buttons: «I didn't get it», «Important», «Homework or test»." }
-        - { ic: "voce", t: "Write by speaking", p: "You speak and the text writes itself. Then you correct it or have it read to you." }
-        - { ic: "importa", t: "Already have the lesson?", p: "Import the video or audio and get the same notes as a recorded lesson." }
-    - t: "After the lesson"
-      voci:
-        - { ic: "mappa", t: "The map and My map", p: "The lesson at a glance. You build My map yourself, moving the boxes." }
-        - { ic: "carte", t: "Flashcards and Daily review", p: "A few cards a day, chosen for you and read aloud, until the test." }
-        - { ic: "chat", t: "Ask the lesson", p: "Ask a question: the answer is simple, with the right minute to hear the teacher." }
-        - { ic: "cuffie", t: "Simple podcast", p: "The lesson in a few minutes, with short sentences and the teacher's real clips." }
-        - { ic: "libro", t: "Read it to me", p: "A photo of the book, a PDF or a text: I read it sentence by sentence." }
-        - { ic: "leggo", t: "How I read best", p: "Font (OpenDyslexic too), size, spacing and background: they apply to the whole program." }
-    - t: "At home"
-      voci:
-        - { ic: "diario", t: "Homework in order", p: "From the planner and the lessons. One task at a time, split into pieces, with a focus timer." }
-        - { ic: "calc", t: "Maths", p: "Talking calculator, times tables, formula sheet, step-by-step problems, result check." }
-        - { ic: "penna", t: "Gentle spell-checker", p: "It only fixes spelling: the words stay yours. Then «Read it to me»." }
-        - { ic: "lingue", t: "Easy languages", p: "English, French, German, Spanish: read and translate, how do you say it, repeat it yourself and your words to review." }
-    - t: "For the test"
-      voci:
-        - { ic: "piano", t: "What it covers and the plan", p: "Lessons and textbook pages, divided over the days left, with the minutes you choose." }
-        - { ic: "test", t: "Tests and spoken oral test", p: "Questions read aloud and 30% extra time. In the oral test you answer by speaking." }
-        - { ic: "foto", t: "Correct the test", p: "Take a photo of the marked test: for every mistake the right answer and why. Note the mark." }
-        - { ic: "mappa", t: "Test map", p: "An A4 sheet with the keywords, to print and have signed by the teacher." }
-    - t: "For teachers and family"
-      voci:
-        - { ic: "doc", t: "The learning plan sheet", p: "«The tools I use»: a PDF with the assistive tools you really use." }
-        - { ic: "famiglia", t: "The week for parents", p: "Lessons, homework done and to do, upcoming tests. On WhatsApp or printed, on Friday." }
-        - { ic: "euro", t: "19% tax deduction (Italy)", p: "Note the expenses for the tools, even with a photo of the invoice, and get the sheet for your tax return." }
-  altre:
-    - { img: "sm-famiglia-en", t: "The week for parents", alt: "The page with the week for parents, to send on WhatsApp." }
-    - { img: "sm-lingue-en", t: "Easy languages", alt: "Easy languages: an English text read and translated sentence by sentence." }
-    - { img: "sm-leggo-en", t: "How I read best", alt: "Choosing the font, the size and the background." }
-    - { img: "sm-mappa-en", t: "My map", alt: "The lesson map with boxes to move." }
-  vs_t: "Verba Manent IA or Scripta Manent?"
+    - t: "Lesson"
+      voci: [{t: "Record with «I didn't get it» and «Important»"}, {t: "Write by speaking"}, {t: "Map, flashcards and Daily review"}, {t: "Read it to me: books and PDFs aloud"}]
+    - t: "Homework"
+      voci: [{t: "One task at a time, in small steps"}, {t: "Gentle spell-checker"}, {t: "Easy languages"}, {t: "Font, spacing and background as you like"}]
+    - t: "Tests and family"
+      voci: [{t: "Tests and spoken oral test, 30% extra time"}, {t: "Test map and learning plan sheet"}, {t: "The week for parents"}, {t: "19% tax deduction (Italy)"}]
   vs:
-    - { t: "Verba Manent IA", c: "vm", p: "For university, work and meetings: Cornell and Exam format notes, a tutor until the exam, minutes.", punti: ["Lectures, webinars and meetings", "Dyslexic students find all of Scripta Manent in the «DSA space»"] }
-    - { t: "Scripta Manent", c: "sm", p: "For students with dyslexia, at school and university: everything written large, read aloud, split into small steps.", punti: ["Homework, maths, languages, tests", "The family follows the week"] }
-  vs_nota: "The two apps share the same engine: lessons, privacy and sync work the same way. Transcription stays on your PC or phone."
+    - { t: "Verba Manent IA", c: "vm", p: "is for university, work and meetings." }
+    - { t: "Scripta Manent", c: "sm", p: "is for students with dyslexia. In Verba Manent IA you find all of it in the «DSA space»." }
   legge_t: "Tools provided for by law"
   legge_p: "In Italy, law 170/2010 recognises the right to assistive tools, such as text-to-speech and concept maps. The 2011 guidelines (DM 5669) also provide extra time in tests: usually up to 30%. Scripta Manent puts them all in one program."
 
