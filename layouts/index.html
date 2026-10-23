@@ -43,6 +43,30 @@
   </div>
 </div>
 
+<!-- LE DUE APP: Verba Manent IA e Scripta Manent -->
+{{- with $t.dueapp }}
+<section id="due-app" class="dueapp">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="kicker">{{ .kicker }}</div>
+      <h2>{{ .h2 }}</h2>
+      <p>{{ .p }}</p>
+    </div>
+    <div class="dueapp-g">
+      {{- range .voci }}
+      <a class="app-c{{ if .sm }} app-sm{{ end }}" href="{{ (site.GetPage .pag).RelPermalink }}">
+        <div class="app-h"><img src="{{ printf "img/%s" .logo | relURL }}" alt="" width="64" height="64"><div><h3>{{ .nome }}</h3><small>{{ .sott }}</small></div></div>
+        <p>{{ .p }}</p>
+        <ul>{{ range .punti }}<li>{{ . }}</li>{{ end }}</ul>
+        <div class="app-dove">{{ .dove }}</div>
+        <span class="app-link">{{ .link }} ›</span>
+      </a>
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{- end }}
+
 <!-- TRE MOMENTI: dalla lezione all'esame -->
 {{- with $t.momenti }}
 <section id="momenti">

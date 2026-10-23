@@ -1,8 +1,8 @@
 ---
 date: 2026-10-19
-title: "DSA"
-seotitolo: "App per DSA: strumenti compensativi in un posto solo"
-description: "Lo Spazio DSA di Verba Manent: karaoke della lezione, sintesi vocale, OpenDyslexic, mappa per la verifica, test con il 30% di tempo in più e foglio per il PDP (L. 170/2010)."
+title: "Scripta Manent, per i DSA"
+seotitolo: "Scripta Manent: l'app per DSA con gli strumenti compensativi"
+description: "Scripta Manent, l'app per chi ha un DSA: appunti letti a voce, mappe, compiti dal diario, matematica a passi, correttore gentile, verifiche e settimana per i genitori (L. 170/2010)."
 layout: "scheda"
 pag: "dsa"
 slug: "dsa"

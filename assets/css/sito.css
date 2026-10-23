@@ -583,3 +583,19 @@ nav.mn .mn-it[aria-current="page"]{font-weight:400}nav.mn .mn-it[aria-current="p
   .conf-s .v{text-align:right}
   .conf-s .v.si{color:var(--ok);font-weight:700}.conf-s .v.no{color:#b6c2d1}.conf-s .v.parz{color:#475569}
 }
+
+/* Le due app (home) */
+.dueapp{padding:64px 0;background:var(--soft)}
+.dueapp-g{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.app-c{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-top:5px solid var(--navy);border-radius:var(--r);padding:24px;text-decoration:none;color:var(--txt);transition:box-shadow .15s,transform .15s}
+.app-c:hover{box-shadow:0 14px 34px -16px rgba(13,66,117,.35);transform:translateY(-2px)}
+.app-sm{border-top-color:#0f766e}
+.app-h{display:flex;gap:14px;align-items:center;margin-bottom:12px}
+.app-h img{width:64px;height:64px;border-radius:16px;flex:none}
+.app-h h3{font-size:24px}.app-h small{color:var(--mut);font-size:15px}
+.app-c p{margin:0 0 10px}
+.app-c ul{margin:0 0 14px;padding-left:20px}.app-c li{margin:3px 0}
+.app-dove{font-size:14px;color:var(--mut);border-top:1px solid var(--line);padding-top:10px;margin-top:auto}
+.app-link{display:inline-block;margin-top:12px;font-weight:700;color:var(--blue)}
+.app-sm .app-link{color:#0f766e}
+@media(max-width:760px){.dueapp-g{grid-template-columns:1fr}.dueapp{padding:44px 0}}

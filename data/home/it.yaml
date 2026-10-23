@@ -5,7 +5,7 @@ menu:
     tit: "Per chi è Verba Manent"
     voci:
       - { pag: "per-studiare", t: "Per studiare", ic: "studio", d: "Appunti Cornell, flashcard e ripasso giorno per giorno fino all'esame.", dt: "Appunti, flashcard e ripasso" }
-      - { pag: "dsa", t: "DSA", ic: "dsa", d: "Lo Spazio DSA: lettura ad alta voce, mappe, verifiche con il 30% di tempo in più.", dt: "Lo Spazio DSA" }
+      - { pag: "dsa", t: "DSA · Scripta Manent", ic: "dsa", d: "Scripta Manent, l'app per chi ha un DSA: tutto letto a voce, compiti, matematica, verifiche.", dt: "L'app per chi ha un DSA" }
       - { pag: "riunioni", t: "Riunioni", ic: "riunioni", d: "Il verbale pronto: chi ha detto cosa, decisioni e cose da fare.", dt: "Il verbale pronto" }
     lato: { k: "Novità", t: "Per genitori e insegnanti", p: "La guida al PDP passo passo e il modello gratuito da compilare e portare a scuola.", link: "Apri il modello", pag: "/guide/modello-pdp" }
     piede: { t: "Non sai da dove partire?", link: "Guarda come funziona in 3 passi", id: "come" }
@@ -34,7 +34,7 @@ schede:
   altre: "Le altre schede"
   voci:
     - { pag: "per-studiare", ic: "🎓", t: "Per studiare", p: "Appunti, flashcard, mappe e preparazione all'esame, da ogni lezione.", img: "cornell", h2: "Dalla lezione al giorno dell'esame", testo: "Registri la lezione, online o in aula. A fine lezione hai gli appunti in ordine, le flashcard, la mappa e le domande più probabili dell'esame.", punti: ["Appunti Cornell e Formato Esame, con le slide del docente", "Flashcard, mappe e Ripasso del giorno", "Simulazione d'esame con il voto"], link: "Tutto per studiare" }
-    - { pag: "dsa", ic: "⭐", t: "DSA", p: "Lo Spazio DSA: tutti gli strumenti compensativi, in un posto solo.", img: "spazio-dsa", h2: "Lo Spazio DSA: tutti gli strumenti compensativi in un posto solo", testo: "Accendi la Modalità DSA e trovi in ordine quello che ti serve: in aula, dopo la lezione, per la verifica e per il docente.", punti: ["Karaoke della lezione con la voce vera del prof", "Come leggo meglio: carattere, spazi, sfondo", "Mappa per la verifica e test con il 30% di tempo in più"], link: "Tutto sullo Spazio DSA" }
+    - { pag: "dsa", ic: "⭐", t: "Scripta Manent, per i DSA", p: "L'app pensata per chi ha un DSA: tutto letto a voce, dalla lezione alla verifica.", img: "sm-casa", h2: "Scripta Manent: l'app per chi ha un DSA", testo: "Scritte grandi, tutto letto a voce, gli strumenti compensativi in ordine: in aula, dopo la lezione, a casa, per la verifica. Con compiti dal diario, matematica a passi, correttore gentile e la settimana per i genitori.", punti: ["Appunti facili, letti a voce", "Compiti, matematica, lingue, verifica", "Per la famiglia e il docente"], link: "Tutto su Scripta Manent" }
     - { pag: "riunioni", ic: "💼", t: "Per le riunioni", p: "Il verbale si scrive da solo: decisioni, cose da fare, chi e entro quando.", img: "verbale", h2: "Il verbale si scrive da solo", testo: "Meet, Teams, Zoom o in sala: a fine riunione hai il verbale con le decisioni, le cose da fare con chi e entro quando, e chi ha detto cosa.", punti: ["Verbale pronto in PDF, da mandare con un tocco", "Le cose da fare raccolte da tutti i verbali", "Ogni riunione riparte da quello che era rimasto aperto"], link: "Tutto per le riunioni" }
     - { pag: "pc-e-telefono", ic: "📱", t: "Su PC e telefono", p: "Windows, Android e iPhone, importa quello che hai già, veloce anche su un PC lento.", img: "telefono", h2: "Sul PC e sul telefono", testo: "Registri dal PC o dal telefono (Android o iPhone), oppure importi un video, un audio o una trascrizione che hai già. PC e telefono restano sincronizzati.", punti: ["Windows, Android e iPhone, Mac in arrivo", "Importa video, audio, link e trascrizioni", "Veloce anche su un PC lento"], link: "Tutto su PC e telefono" }
     - { pag: "la-tua-privacy", ic: "🔒", t: "Privacy", p: "Le registrazioni restano tue: niente server, nessuna impronta della voce.", img: "prima-di-iniziare", h2: "Le tue registrazioni restano tue", testo: "La trascrizione avviene sul tuo PC o sul telefono: noi non riceviamo le tue registrazioni e nessuna IA viene addestrata con le tue lezioni.", punti: ["Nessuna impronta della voce, mai", "Un messaggio pronto per avvisare chi registri", "La privacy spiegata in quattro righe, al primo avvio"], link: "Tutto sulla privacy" }
@@ -48,6 +48,10 @@ pagine:
       schermate: [[vetrina, 0], [vetrina, 1], [vetrina, 2], [vetrina, 3], [vetrina, 4], [vetrina, 5], [vetrina, 6], [vetrina, 7], [vetrina, 12]]
       carte: [0, 1, 2, 3, 4, 5, 15]
   dsa:
+    - kicker: "Per chi ha un DSA"
+      h2: "Scripta Manent: l'app pensata per chi ha un DSA"
+      p: "Dallo stesso motore di Verba Manent IA, un'app tutta per lo studente con dislessia, disgrafia, disortografia o discalculia: scritte grandi, ogni cosa letta a voce, gli strumenti compensativi in ordine dalla lezione alla verifica. C'è per Windows e Android, e dentro Verba Manent IA come «Spazio DSA»."
+      video: { v: "sm-casa", img: "sm-casa", ic: "⭐", k: "I miei strumenti", h2: "Apri l'app e sai cosa fare oggi", testo: "Le cose da fare oggi, la verifica in arrivo con i giorni che mancano, l'ultima lezione con Ascolta, Mappa, Flashcard e Karaoke. Sotto, tutti gli strumenti divisi per momento: in aula, dopo la lezione, a casa, per la verifica, per docente e famiglia.", punti: ["Ogni scritta ha la (i): la spiega e la legge a voce", "Carattere, sfondo e spazi come leggi meglio", "Niente scritte che fanno sentire «diverso»"] }
     - { tipo: "dsa" }
   riunioni:
     - kicker: "Per le riunioni"
@@ -118,44 +122,62 @@ fa:
     - { ic: "💬", t: "Chiedi alla lezione", p: "Non hai capito un passaggio? Fai la domanda e la risposta arriva da quello che ha detto il docente." }
 
 dsa:
-  kicker: "Per chi ha un DSA"
-  h2: "Lo Spazio DSA: tutti gli strumenti compensativi, in un posto solo"
-  p: "Dislessia, disgrafia, disortografia, discalculia. Accendi la Modalità DSA e Verba Manent mette in cima quello che ti serve, in ordine: in aula, dopo la lezione, per la verifica e per il docente."
+  kicker: "Scripta Manent · le funzioni"
+  h2: "Tutto quello che serve, dalla lezione alla verifica"
+  p: "Dislessia, disgrafia, disortografia, discalculia. Scripta Manent mette in ordine gli strumenti compensativi per momento: in aula, dopo la lezione, a casa, per la verifica, per docente e famiglia. Ogni scritta ha la (i) che la spiega e la legge a voce."
   voci:
-    - img: "spazio-dsa"
-      t: "Tutto in ordine, al primo colpo"
-      p: "Scegli materia e lezione e trovi gli strumenti divisi per momento. Niente menu da cercare: quello che ti serve adesso è già lì."
-      punti: ["In aula, dopo la lezione, per la verifica, per il docente", "Si accende con un interruttore", "Le altre funzioni restano a portata di mano in «Altro»"]
-      alt: "Lo Spazio DSA di Verba Manent con gli strumenti divisi in: in aula, dopo la lezione, per la verifica."
-    - img: "karaoke"
-      t: "Il karaoke della lezione"
-      p: "Riascolti la voce vera del prof e le parole si illuminano mentre parla, con la slide di quel momento accanto. Tocchi una parola e riparte da lì."
-      punti: ["La voce del docente, non una voce sintetica", "«Una riga alla volta» per non perdere il segno", "Velocità da 0,8× a 1,5×"]
-      alt: "Il karaoke della lezione: il testo del docente con il lettore audio e la scelta della velocità."
-    - img: "come-leggo"
-      t: "Come leggo meglio"
-      p: "Scegli il carattere (anche OpenDyslexic), la grandezza, lo spazio tra righe e lettere, il colore dello sfondo, le sillabe colorate e il righello di lettura."
-      punti: ["Vale per appunti, ascolto, karaoke, flashcard e PDF", "Sfondi tenui: grigio, azzurro, verde, crema, scuro", "Anteprima mentre scegli"]
-      alt: "La pagina Come leggo meglio con la scelta del carattere, della grandezza e del colore dello sfondo."
-    - img: "mappa-verifica"
-      t: "La mappa per la verifica"
-      p: "Un foglio A4 con le parole chiave delle lezioni che scegli e il riquadro di formule e valori, da stampare e portare alla verifica, con nome e classe in alto."
-      punti: ["Solo parole chiave, come chiedono molti docenti", "Togli le parole che non vuoi", "Da far firmare al docente prima della verifica"]
-      alt: "La mappa per la verifica: una mappa concettuale su un foglio A4 con nome e classe."
+    - img: "sm-lezione"
+      t: "Ogni lezione, gli strumenti in schede"
+      p: "Registri in aula o online e la lezione arriva con tutto pronto, diviso in schede: Appunti, Ascolta e segui, Ripassa, Chiedi, Materiali. Un gruppo alla volta, senza perdersi."
+      punti: ["Karaoke con la voce vera del prof", "Ascolta gli appunti, Podcast, Chi parla", "Si registra anche col telefono"]
+      alt: "La pagina della lezione con gli strumenti divisi in schede: Appunti, Ascolta e segui, Ripassa, Chiedi, Materiali."
+    - img: "sm-ascolta"
+      t: "Appunti facili, letti a voce"
+      p: "Gli appunti arrivano in parti corte, con domande e parole chiave in evidenza. Tocchi «Ascolta» e te li legge: la frase che senti si illumina. Con il Karaoke senti la voce vera del prof."
+      punti: ["Carattere, sfondo e spazi come leggi meglio", "OpenDyslexic, Lexend, Atkinson Hyperlegible", "Velocità della voce a scelta"]
+      alt: "Ascolta gli appunti: il testo con la frase che si sta leggendo evidenziata."
+    - img: "sm-mappa"
+      t: "La mappa della lezione, e la tua"
+      p: "La lezione a colpo d'occhio: il tema al centro, i rami con le parole chiave. Tocchi un ramo e lo senti. La puoi cambiare o costruire tu, anche a voce, e stamparla per la verifica."
+      punti: ["Mappa pronta da ogni lezione", "«Costruiscila tu», anche parlando", "Stampa o PDF con nome e classe"]
+      alt: "La mappa della lezione sulla Rivoluzione francese, con i rami e le parole chiave."
+    - img: "sm-compiti"
+      t: "Compiti: fotografa il diario"
+      p: "Fai una foto al diario o scrivi a voce: Scripta Manent mette i compiti in ordine nella settimana. Quando il prof li ha detti a lezione, c'è il pezzo da riascoltare."
+      punti: ["La settimana a colpo d'occhio", "«Un compito alla volta»: copia, fai, organizza", "Il prof l'ha detto così: con la sua voce"]
+      alt: "La pagina Compiti con la settimana, i compiti per domani e la voce del prof."
+    - img: "sm-mate"
+      t: "Matematica, a passi"
+      p: "La calcolatrice che parla, le tabelline, il formulario e i problemi spiegati passo passo. Nessun calcolo nascosto: ogni passaggio si vede e si sente."
+      punti: ["Calcolatrice con la voce", "Formulario e tabelline sempre a portata", "Problema passo passo"]
+      alt: "La pagina Matematica con la calcolatrice che parla, le tabelline e il formulario."
+    - img: "sm-correttore"
+      t: "Correttore gentile e Lingue facili"
+      p: "Scrivi o detti un testo: il correttore sistema solo l'ortografia e lascia le tue parole. Con Lingue facili un testo in inglese, francese o spagnolo diventa leggibile, e scopri come si dice quello che vuoi dire."
+      punti: ["Corregge l'ortografia, non il tuo pensiero", "Leggimelo: senti il testo corretto", "Inglese, francese, spagnolo, tedesco"]
+      alt: "Il Correttore gentile con le parole corrette evidenziate."
+    - img: "sm-verifica"
+      t: "La verifica, senza ansia"
+      p: "Dici quando è e cosa porta: lezioni, pagine del libro, fotocopie. Scripta Manent fa il piano giorno per giorno, ti ripassa con flashcard e test, e dopo ti aiuta a capire gli errori."
+      punti: ["«Fammi il piano»: pochi minuti al giorno", "Test e interrogazione a voce", "Correggi la verifica: capire dove sbagli"]
+      alt: "Il piano per la verifica: quanto tempo al giorno e in che giorni studiare."
+    - img: "sm-famiglia"
+      t: "Per la famiglia e il docente"
+      p: "La settimana per i genitori, da mandare su WhatsApp o stampare: compiti, verifiche, voti. E per il docente il foglio con gli strumenti che lo studente usa davvero, per il PDP."
+      punti: ["Settimana per i genitori, anche col promemoria del venerdì", "Detrazione del 19%: spese e documenti per il 730", "«Gli strumenti che uso» per il PDP"]
+      alt: "La settimana per i genitori: compiti, verifiche in arrivo e voti."
   altri:
-    - { ic: "🔊", t: "Ascolta gli appunti", p: "Letti ad alta voce, con la frase che si illumina." }
     - { ic: "🎙️", t: "Scrivi parlando", p: "Detti e il testo si scrive da solo; «Rileggimelo» te lo fa sentire." }
-    - { ic: "🔊", t: "Leggimi", p: "PDF, foto del libro o testo copiato, letti a voce con la frase che si illumina." }
-    - { ic: "🗺️", t: "La mia mappa", p: "La mappa della lezione: la guardi, la cambi o la costruisci tu, anche a voce." }
+    - { ic: "🔊", t: "Leggimi", p: "Un PDF, una foto della pagina del libro o un testo copiato, letti a voce con la frase che si illumina." }
+    - { ic: "🃏", t: "Flashcard e Ripasso del giorno", p: "Poche carte al giorno, scelte per te fino alla verifica, lette anche a voce." }
+    - { ic: "💬", t: "Chiedi alla lezione", p: "Non hai capito un punto? Lo chiedi e ti risponde con le parole del prof e il minuto giusto." }
     - { ic: "🎧", t: "Podcast semplice", p: "La lezione in pochi minuti, con frasi corte e la voce del prof nei punti chiave." }
-    - { ic: "🃏", t: "Ripasso del giorno", p: "Poche flashcard al giorno, scelte per te fino all'esame, lette anche a voce." }
-    - { ic: "📖", t: "Glossario della materia", p: "Le parole difficili spiegate semplici, con la slide e «Senti il prof» dal punto giusto." }
-    - { ic: "⏱️", t: "Test con il 30% di tempo in più", p: "Domande lette a voce e tempo in più, come all'esame vero." }
-    - { ic: "🎤", t: "Interrogazione a voce", p: "Rispondi parlando, come all'orale, e ricevi il voto con cosa manca." }
-    - { ic: "✍️", t: "Scritto dettato", p: "Rispondi a voce: la correzione guarda il contenuto, mai l'ortografia." }
-    - { ic: "📋", t: "Il foglio per il PDP", p: "«Gli strumenti che uso»: un PDF con gli strumenti compensativi che usi davvero, da dare alla scuola o all'università." }
+    - { ic: "📚", t: "Studia la materia, con il tutor", p: "Tutte le lezioni di una materia insieme, e un tutor che sa quando hai la verifica e dove sbagli." }
+    - { ic: "⏱️", t: "Test con il tempo in più", p: "Domande lette a voce e il 30% di tempo in più, come prevedono le linee guida." }
+    - { ic: "🧾", t: "Detrazione del 19%", p: "Le spese per gli strumenti compensativi, la foto della fattura e il foglio da portare al CAF." }
+    - { ic: "📱", t: "PC e telefono", p: "Le stesse lezioni sul PC e sul telefono, anche dal tuo Google Drive." }
   legge_t: "Strumenti previsti dalla legge"
-  legge_p: "La legge 170/2010 riconosce il diritto agli strumenti compensativi, come la sintesi vocale e le mappe concettuali. Le linee guida del 2011 (DM 5669) prevedono anche tempo in più nelle prove: all'università di solito fino al 30%. Verba Manent li mette tutti in un programma solo."
+  legge_p: "La legge 170/2010 riconosce il diritto agli strumenti compensativi, come la sintesi vocale e le mappe concettuali. Le linee guida del 2011 (DM 5669) prevedono anche tempo in più nelle prove. Scripta Manent li mette tutti in un'app sola, pensata fin dall'inizio per chi li usa."
 
 nonfa:
   kicker: "Cosa NON fa"
@@ -344,7 +366,7 @@ unici:
   voci:
     - { ic: "🎙", k: "La voce vera del prof", h2: "Riascolti il prof, non una voce finta", v: "u-podcast", img: "podcast", pag: "per-studiare", link: "Tutto per studiare", testo: "Il podcast della lezione, il Karaoke con le parole che si illuminano, il glossario con «▶ Senti il prof»: nei momenti che contano parla lui, con la sua voce, presa dalla registrazione.", punti: ["Podcast a una voce, a due voci o a dibattito", "La slide di quel momento sempre accanto"] }
     - { ic: "🧑‍🏫", k: "Il tuo tutor", h2: "Sa quando hai l'esame e dove sbagli", v: "u-tutor", img: "tutor", pag: "per-studiare", link: "Tutto per studiare", testo: "Ogni giorno ti dice cosa fare, con i minuti: il ripasso del giorno, il punto della lezione da riascoltare dove hai sbagliato, l'interrogazione se non la fai da giorni. E puoi chiedergli di interrogarti.", punti: ["Giorni all'esame e «quanto sei pronto»", "Errori di test e interrogazioni, con lezione e minuto"] }
-    - { ic: "⭐", k: "Per chi ha un DSA", h2: "Gli strumenti compensativi, già pronti", v: "u-dsa", img: "come-leggo", pag: "dsa", link: "Tutto sullo Spazio DSA", testo: "La Modalità DSA mette in cima ascolto, mappe e appunti facili da leggere. Carattere e sfondo come vuoi tu, sillabe colorate, righello di lettura, la mappa A4 per la verifica e il foglio per il PDP.", punti: ["OpenDyslexic, Lexend, Atkinson Hyperlegible", "Mappa per la verifica (L. 170/2010)"] }
+    - { ic: "⭐", k: "Per chi ha un DSA", h2: "Scripta Manent, un'app tutta per loro", v: "sm-casa", img: "sm-casa", pag: "dsa", link: "Tutto su Scripta Manent", testo: "Dallo stesso motore di Verba Manent, un'app per lo studente con DSA: ogni scritta si legge a voce, gli strumenti sono in ordine per momento, i compiti arrivano dal diario. In Verba Manent IA la trovi intera nello «Spazio DSA».", punti: ["OpenDyslexic, Lexend, Atkinson Hyperlegible", "Mappa per la verifica e foglio per il PDP (L. 170/2010)"] }
     - { ic: "🔒", k: "Privacy vera", h2: "Le tue lezioni restano tue", v: "u-sincronizza", img: "sincronizza", pag: "la-tua-privacy", link: "Tutto sulla privacy", testo: "Trascrive sul tuo dispositivo. PC e telefono si sincronizzano tra loro sul Wi-Fi, o dal tuo Google Drive con zip chiusi da una password: nemmeno Google sa quali lezioni hai.", punti: ["Nessuna impronta della voce, nessun addestramento di IA", "Nessun bot entra nella riunione"] }
 
 confronto:
@@ -381,7 +403,7 @@ confronto:
     - t: "Per chi ha un DSA"
       cl: "dsa"
       righe:
-        - ["Modalità DSA già pronta: carattere leggibile, più spazio, sfondo tenue, e la cambi come vuoi", "✓", "—", "—", "—", "—"]
+        - ["Un'app tutta per i DSA (Scripta Manent), anche dentro Verba Manent: scritte grandi, tutto letto a voce", "✓", "—", "—", "—", "—"]
         - ["Sillabe colorate e righello di lettura", "✓", "—", "—", "—", "—"]
         - ["Leggimi: PDF, foto e testi letti a voce, con la frase evidenziata", "✓", "—", "—", "—", "riassunto audio"]
         - ["Scrivi parlando: detti e il testo viene sistemato", "✓", "—", "—", "—", "—"]
@@ -402,3 +424,27 @@ prezzi:
   voci:
     - { t: "Con la tua chiave di Claude", cifra: "circa 0,20 $", piccolo: "per ora registrata", p: "Paghi solo quello che usi, direttamente ad Anthropic. Trascrizione sul dispositivo gratis." }
     - { t: "Abbonamento", cifra: "in arrivo", piccolo: "", p: "Claude e il server veloce già compresi, senza chiavi da mettere." }
+
+# Le due app (in home, subito dopo l'apertura)
+dueapp:
+  kicker: "Due app, un solo motore"
+  h2: "Verba Manent IA e Scripta Manent"
+  p: "Lo stesso modo di registrare e trascrivere, due app pensate per persone diverse. Scegli quella giusta per te."
+  voci:
+    - logo: "logo-512.png"
+      nome: "Verba Manent IA"
+      sott: "Per studiare e per lavorare"
+      p: "Registra lezioni, webinar e riunioni e ti dà appunti Cornell e Formato Esame, mappe, flashcard, tutor e simulazioni d'esame. Per le riunioni il verbale con decisioni e cose da fare."
+      punti: ["Università, corsi e riunioni di lavoro", "Il podcast con la voce vera del prof", "Dentro c'è anche lo Spazio DSA (Scripta Manent)"]
+      dove: "Windows · Android · iPhone · web"
+      pag: "per-studiare"
+      link: "Scopri Verba Manent IA"
+    - logo: "scripta-256.png"
+      nome: "Scripta Manent"
+      sott: "Per chi ha un DSA"
+      p: "L'app per lo studente con dislessia e altri DSA: scritte grandi, tutto letto a voce, gli strumenti compensativi in ordine. Compiti dal diario, matematica a passi, correttore gentile, verifiche senza ansia e la settimana per i genitori."
+      punti: ["Scuola e università", "Ogni scritta letta a voce", "Per la famiglia e il docente"]
+      dove: "Windows · Android · su iPhone dentro Verba Manent IA"
+      pag: "dsa"
+      link: "Scopri Scripta Manent"
+      sm: true
