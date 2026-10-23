@@ -12,6 +12,7 @@ const V = (document.currentScript && new URL(document.currentScript.src).searchP
 const IT = (navigator.language || 'it').toLowerCase().startsWith('it');
 const SM_WEB = window.VM_EDIZIONE === 'scripta';     // verbamanent.app/scripta/: Scripta Manent sul web
 if (SM_WEB) document.documentElement.classList.add('sm-web');
+const LK = SM_WEB ? 'sm-web-' : 'vm-web-';     // le scelte salvate nel browser: separate per Verba Manent e Scripta Manent
 const T = IT ? {
   titolo: 'Verba Manent sul web',
   intro: 'Studia le tue lezioni da qualsiasi computer. Si aprono qui, nel browser: non passano da nessun nostro server.',
@@ -160,7 +161,7 @@ function schermo(html) { ov.innerHTML = `<div class="wbox">${html}</div>`; ov.hi
 function mostraErrore(t) { const e = ov.querySelector('.werr'); if (e) e.textContent = t; else schermo(`${LOGO}<h1>${esc(T.titolo)}</h1><p class="werr">${esc(t)}</p><button class="wbtn wp" onclick="location.reload()">${esc(T.riprova)}</button>`); }
 const G_SVG = '<svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>';
 
-let ricorda = salvaLoc('vm-web-ricorda') === '1';
+let ricorda = salvaLoc(LK + 'ricorda') === '1';
 let caricato = null;            // il worker ha caricato Pyodide e il programma
 let email = '', tok = null, salvatoPrima = {};
 
@@ -258,7 +259,7 @@ async function apri(chiave, nuova) {
   try {
     const a = await chiedi('avvia', {lingua: IT ? 'it' : 'en', chiave, ricorda, prima: nuova});
     if (!a || !a.ok) throw new Error((a && a.errore) || 'motore');
-    scriviLoc('vm-web-ricorda', ricorda ? '1' : null);
+    scriviLoc(LK + 'ricorda', ricorda ? '1' : null);
     const g = await chiedi('giro');
     faseCb = null;
     if (!g.ok) {
@@ -279,7 +280,7 @@ async function apri(chiave, nuova) {
     if (!salvatoPrima.claude) { try { await chiedi('chiama', {nome: 'prova_chiave', args: ['sk-ant-verbamanent-famiglia']}); } catch (e) {} }
     return entra();
   }
-  if (!salvatoPrima.claude && salvaLoc('vm-web-claude-dopo') !== '1') return schermoClaude();
+  if (!salvatoPrima.claude && salvaLoc(LK + 'claude-dopo') !== '1') return schermoClaude();
   entra();
 }
 
@@ -311,7 +312,7 @@ function schermoClaude(err = '') {
     if (!r || r.ok === false) return schermoClaude((r && (r.msg || r.errore)) || T.cl_no);
     entra();
   };
-  ov.querySelector('#wClDopo').onclick = () => { scriviLoc('vm-web-claude-dopo', '1'); entra(); };
+  ov.querySelector('#wClDopo').onclick = () => { scriviLoc(LK + 'claude-dopo', '1'); entra(); };
 }
 
 // ---------------------------------------------------------------- dentro: le pagine del programma
@@ -408,7 +409,7 @@ async function esci() {
   if (sporco) await salvaDrive(true);
   sporco = false;
   try { await chiedi('esci'); } catch (e) {}
-  scriviLoc('vm-web-ricorda', null); scriviLoc('vm-web-claude-dopo', null);
+  scriviLoc(LK + 'ricorda', null); scriviLoc(LK + 'claude-dopo', null);
   try { if (tok && window.google) google.accounts.oauth2.revoke(tok.token, () => {}); } catch (e) {}
   location.replace(location.pathname);
 }
