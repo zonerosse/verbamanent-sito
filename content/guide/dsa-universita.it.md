@@ -87,7 +87,7 @@ Le misure agli esami aiutano, ma la differenza la fa il metodo durante il semest
 - **ripassa a intervalli**, poco ogni giorno, invece di tutto la settimana prima;
 - **allenati con il tempo dell'esame**, compreso il 30% in più: sapere quanto tempo hai per domanda toglie ansia.
 
-{{< vm-nota >}}la Modalità DSA registra la lezione e prepara appunti facili da leggere, il **Karaoke** con la voce vera del docente e la mappa della lezione. Prima dell'esame ci sono i **test a crocette con il 30% di tempo in più**, l'**interrogazione a voce** e lo **scritto dettato**, corretto sul contenuto e non sull'ortografia. Trovi tutto nella pagina [DSA](/dsa/).{{< /vm-nota >}}
+{{< vm-nota >}}Scripta Manent, l'app sorella per chi ha un DSA (anche dentro Verba Manent IA come «Spazio DSA»), registra la lezione e prepara appunti facili da leggere, il **Karaoke** con la voce vera del docente e la mappa della lezione. Prima dell'esame ci sono i **test a crocette con il 30% di tempo in più**, l'**interrogazione a voce** e lo **scritto dettato**, corretto sul contenuto e non sull'ortografia. Trovi tutto nella pagina [Scripta Manent](/scripta-manent/).{{< /vm-nota >}}
 
 ## Gli errori più comuni
 

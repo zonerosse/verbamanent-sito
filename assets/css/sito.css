@@ -583,3 +583,23 @@ nav.mn .mn-it[aria-current="page"]{font-weight:400}nav.mn .mn-it[aria-current="p
   .conf-s .v{text-align:right}
   .conf-s .v.si{color:var(--ok);font-weight:700}.conf-s .v.no{color:#b6c2d1}.conf-s .v.parz{color:#475569}
 }
+
+/* ==== pagina Scripta Manent: stesso stile del sito, accento verde petrolio ==== */
+.sm-pag{--sm:#0f766e;--sm-d:#115e59;padding:34px 0 20px}
+.sm-pag .kicker{color:var(--sm)}
+.sm-testa{display:flex;gap:18px;align-items:flex-start}.sm-logo{width:72px;height:72px;border-radius:18px;flex:none;margin-top:6px}
+.sm-dove{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 26px}.sm-dove span{border:1px solid #cfe7e4;background:#f0f9f8;color:var(--sm-d);border-radius:999px;padding:6px 12px;font-size:14px;font-weight:600}
+.sm-pag .uni-play{color:var(--sm)}
+.sm-gr{margin:38px 0 12px;font-size:13px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--sm)}
+.sm-ic{background:var(--sm)!important;color:#fff}.sm-ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sm-carte .card h3{font-size:17px}
+.sm-altre{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:38px}.sm-altre figure{margin:0}.sm-altre figcaption{font-weight:600;color:var(--ink);font-size:15px;margin-top:8px}
+.sm-vs{display:grid;grid-template-columns:1fr 1fr;gap:20px}.sm-vs .card{border-top:4px solid var(--blue)}.sm-vs .sm-vs-sm{border-top-color:var(--sm)}
+.sm-vs ul{margin:8px 0 0;padding-left:18px;color:var(--mut)}
+.sm-nota{color:var(--mut);font-size:15px;margin:12px 0 24px}
+@media (max-width:900px){.sm-altre{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.sm-vs{grid-template-columns:1fr}.sm-testa{gap:12px}.sm-logo{width:52px;height:52px;border-radius:14px}}
+.sm-vc{grid-template-columns:1fr 1fr!important}
+.sm-carte.sm-4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:900px){.sm-carte.sm-4{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.sm-vc,.sm-carte.sm-4{grid-template-columns:1fr!important}}

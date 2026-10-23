@@ -30,6 +30,59 @@
   </div>
 </section>
 {{- end }}
+{{- else if eq $s.tipo "sm" }}{{ with $t.sm }}
+{{ partial "sm-icone.html" . }}
+<section id="scripta" class="sm-pag">
+  <div class="wrap">
+    <div class="sm-testa">
+      <img class="sm-logo" src="{{ "img/logo-scripta.png" | relURL }}" alt="Scripta Manent" width="72" height="72">
+      <div>{{ partial "titolo-sez.html" (dict "s" . "h1" $h1) }}</div>
+    </div>
+    <div class="sm-dove">{{ range .dove }}<span>{{ . }}</span>{{ end }}</div>
+    {{- with .video }}
+    <article class="uni uni-largo">
+      <div class="uni-v" role="button" tabindex="0" aria-label="▶ {{ .h2 }}">
+        <video playsinline muted preload="none" poster="{{ printf "img/schermate/%s.webp" .img | relURL }}">
+          <source src="{{ printf "video/%s-%s.webm" .v site.Language.Lang | relURL }}" type="video/webm">
+        </video>
+        <span class="uni-play" aria-hidden="true">▶</span>
+      </div>
+      <div class="uni-t">
+        <div class="kicker">{{ .k }}</div>
+        <h3>{{ .h2 }}</h3>
+        <p>{{ .testo }}</p>
+        <ul>{{ range .punti }}<li>{{ . }}</li>{{ end }}</ul>
+      </div>
+    </article>
+    {{- end }}
+    <div class="vc-griglia sm-vc">{{ range .voci }}{{ partial "vc.html" . }}{{ end }}</div>
+    {{- range .gruppi }}
+    <h3 class="sm-gr">{{ .t }}</h3>
+    <div class="grid3 sm-carte{{ if eq (len .voci) 4 }} sm-4{{ end }}">
+      {{- range .voci }}
+      <div class="card"><div class="ic sm-ic" aria-hidden="true"><svg><use href="#sm-{{ .ic }}"/></svg></div><h3>{{ .t }}</h3><p>{{ .p }}</p></div>
+      {{- end }}
+    </div>
+    {{- end }}
+    <div class="sm-altre">
+      {{- range .altre }}
+      <figure><div class="vm-schermata"><div class="vm-cornice"><span></span><span></span><span></span></div><img src="{{ printf "img/schermate/%s.webp" .img | relURL }}" alt="{{ .alt }}" width="1060" height="620" loading="lazy"></div><figcaption>{{ .t }}</figcaption></figure>
+      {{- end }}
+    </div>
+    <h3 class="sm-gr">{{ .vs_t }}</h3>
+    <div class="sm-vs">
+      {{- range .vs }}
+      <div class="card sm-vs-{{ .c }}"><h3>{{ .t }}</h3><p>{{ .p }}</p><ul>{{ range .punti }}<li>{{ . }}</li>{{ end }}</ul></div>
+      {{- end }}
+    </div>
+    <p class="sm-nota">{{ .vs_nota }}</p>
+    <div class="dsa-legge">
+      <span class="big" aria-hidden="true">⚖️</span>
+      <div><b>{{ .legge_t }}</b><span>{{ .legge_p }}</span></div>
+    </div>
+  </div>
+</section>
+{{- end }}
 {{- else if eq $s.tipo "nonfa" }}{{ with $t.nonfa }}
 <section id="nonfa" class="non">
   <div class="wrap">

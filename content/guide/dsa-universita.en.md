@@ -87,7 +87,7 @@ Exam measures help, but your method during the semester makes the difference:
 - **review at intervals**, a little every day, instead of everything the week before;
 - **practise with exam timing**, including the 30% extra: knowing how much time you have per question reduces anxiety.
 
-{{< vm-nota >}}Dyslexia mode records the lecture and prepares easy-to-read notes, **karaoke** with the lecturer's real voice and the lecture map. Before the exam there are **multiple-choice tests with 30% extra time**, **oral exam practice** and **dictated written answers**, marked on content and never on spelling. You'll find it all on the [Dyslexia](/en/dyslexia/) page.{{< /vm-nota >}}
+{{< vm-nota >}}Scripta Manent, the sister app for dyslexia (also inside Verba Manent IA as the «DSA space»), records the lecture and prepares easy-to-read notes, **karaoke** with the lecturer's real voice and the lecture map. Before the exam there are **multiple-choice tests with 30% extra time**, **oral exam practice** and **dictated written answers**, marked on content and never on spelling. You'll find it all on the [Scripta Manent](/en/scripta-manent/) page.{{< /vm-nota >}}
 
 ## The most common mistakes
 
