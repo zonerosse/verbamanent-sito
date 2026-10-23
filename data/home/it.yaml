@@ -61,7 +61,7 @@ pagine:
       p: "Sul PC e sul telefono, con le lezioni che registri o con quelle che hai già."
       video: { v: "inizia-qui", img: "inizia-qui", ic: "🚀", k: "Inizia qui", h2: "Pronto in 3 passi, al primo avvio", testo: "Verba Manent ti guida: un accesso con Google per avere le stesse lezioni su PC, telefono e web, la chiave di Claude con i link e i passi giusti (con l'abbonamento non serve), e il QR per collegare il telefono.", punti: ["Un accesso solo, per tutto", "La chiave si incolla da sola", "Telefono e web collegati in un minuto"] }
       schermate: [[inpiu, 2], [inpiu, 3], [inpiu, 4]]
-      carte: [9, 10, 11, 12, 13, 14]
+      carte: [9, 10, 11, 12, 16, 14]
       piattaforme: true
   la-tua-privacy:
     - { tipo: "nonfa" }
@@ -112,10 +112,11 @@ fa:
     - { ic: "📅", t: "Calendario", p: "Collega Google o Outlook: Verba Manent sa quando inizia la lezione e ti ricorda di registrare." }
     - { ic: "📂", t: "Importa quello che hai già", p: "Un video o un audio, un link (Drive, OneDrive, Dropbox, Zoom…) o una trascrizione in PDF o Word: ottieni gli appunti lo stesso." }
     - { ic: "⚡", t: "Pronta subito", p: "Trascrive mentre registri, a pezzi di pochi minuti: a fine lezione gli appunti arrivano in un attimo." }
-    - { ic: "☁️", t: "Copia nel cloud, se vuoi", p: "Appena una lezione è pronta, Verba Manent ne mette una copia nel tuo Google Drive o OneDrive: appunti e trascrizione li ritrovi anche dal telefono o da un altro computer." }
+    - { ic: "☁️", t: "Copia nel cloud, se vuoi", p: "Appena una lezione è pronta, Verba Manent ne mette una copia nel tuo Google Drive (basta collegare l'account, senza installare niente) o in OneDrive: appunti e trascrizione li ritrovi anche dal telefono o da un altro computer." }
     - { ic: "📱", t: "Anche sul telefono", p: "L'app per Android e iPhone registra, trascrive sul telefono e prepara gli stessi appunti del PC." }
     - { ic: "🚀", t: "Trascrizione veloce, se vuoi", p: "PC lento? Collega un tuo server a consumo: un'ora di lezione in circa un minuto, per pochi centesimi. È facoltativo." }
     - { ic: "💬", t: "Chiedi alla lezione", p: "Non hai capito un passaggio? Fai la domanda e la risposta arriva da quello che ha detto il docente." }
+    - { ic: "🔎", t: "Cerca, e trovi subito", p: "Scrivi una parola in «Cerca»: trovi la funzione con il percorso per arrivarci, il capitolo della guida e le lezioni dove se ne parla." }
 
 sm:
   kicker: "Per chi ha un DSA"
@@ -267,10 +268,10 @@ inpiu:
       punti: ["Sul PC: gratis e senza internet", "Sul server: pochi centesimi l'ora, solo se lo scegli", "Se il server non risponde, si torna al PC da soli"]
       alt: "Le impostazioni «Dove trascrivo» con le scelte Sul PC e Sul server."
     - img: "telefono"
-      t: "Anche sul telefono Android"
-      p: "Le stesse funzioni del PC, in tasca: registri in aula o in riunione, avvisi i presenti, scrivi le tue note durante la lezione e ritrovi appunti, flashcard e domande d'esame in «Le mie lezioni»."
+      t: "Anche sul telefono"
+      p: "Le stesse funzioni del PC, in tasca: registri in aula o in riunione, avvisi i presenti, scrivi le tue note durante la lezione e ritrovi appunti, flashcard e domande d'esame in «Le mie lezioni». Sull'iPhone mandi a Verba Manent anche i Memo vocali, con «Condividi»."
       punti: ["Trascrizione sul telefono", "Avviso a voce per l'aula", "Appunti, ripasso e preparazione all'esame"]
-      alt: "Tre schermate dell'app Android: Registra, una registrazione in corso e Le mie lezioni."
+      alt: "Tre schermate dell'app del telefono: Registra, una registrazione in corso e Le mie lezioni."
 
 come:
   kicker: "Come funziona"

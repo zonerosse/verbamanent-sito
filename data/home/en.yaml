@@ -58,7 +58,7 @@ pagine:
       p: "On your PC and your phone, with the lectures you record or the ones you already have."
       video: { v: "inizia-qui", img: "inizia-qui-en", ic: "🚀", k: "Start here", h2: "Ready in 3 steps, at first start", testo: "Verba Manent guides you: one Google sign-in for the same lectures on PC, phone and web, the Claude key with the right links and steps (not needed with a subscription), and the QR to link your phone.", punti: ["One sign-in, for everything", "The key pastes itself", "Phone and web linked in a minute"] }
       schermate: [[inpiu, 2], [inpiu, 3], [inpiu, 4]]
-      carte: [9, 10, 11, 12, 13, 14]
+      carte: [9, 10, 11, 12, 16, 14]
       piattaforme: true
   la-tua-privacy:
     - { tipo: "nonfa" }
@@ -109,10 +109,11 @@ fa:
     - { ic: "📅", t: "Calendar", p: "Connect Google or Outlook: Verba Manent knows when class starts and reminds you to record." }
     - { ic: "📂", t: "Import what you already have", p: "A video or audio file, a link (Drive, OneDrive, Dropbox, Zoom…) or a transcript in PDF or Word: you still get your notes." }
     - { ic: "⚡", t: "Ready right away", p: "It transcribes while you record, a few minutes at a time: when the lecture ends, your notes arrive in moments." }
-    - { ic: "☁️", t: "Cloud copy, if you want", p: "As soon as a lecture is ready, Verba Manent puts a copy in your Google Drive or OneDrive: you find notes and transcript from your phone or another computer too." }
+    - { ic: "☁️", t: "Cloud copy, if you want", p: "As soon as a lecture is ready, Verba Manent puts a copy in your Google Drive (just connect your account, nothing to install) or OneDrive: you find notes and transcript from your phone or another computer too." }
     - { ic: "📱", t: "On your phone too", p: "The Android and iPhone app records, transcribes on the phone and prepares the same notes as the PC." }
     - { ic: "🚀", t: "Fast transcription, if you want", p: "Slow PC? Connect your own pay-as-you-go server: an hour of lecture in about a minute, for a few cents. It's optional." }
     - { ic: "💬", t: "Ask the lecture", p: "Missed a point? Ask your question and the answer comes from what the lecturer actually said." }
+    - { ic: "🔎", t: "Search, and find it at once", p: "Type a word in «Search»: you get the feature with the path to reach it, the guide chapter and the lectures where it was mentioned." }
 
 sm:
   kicker: "For students with dyslexia"
@@ -264,10 +265,10 @@ inpiu:
       punti: ["On the PC: free and offline", "On the server: a few cents per hour, only if you choose it", "If the server doesn't answer, it falls back to the PC by itself"]
       alt: "The «Where I transcribe» settings with the On the PC and On the server options."
     - img: "telefono-en"
-      t: "On Android phones too"
-      p: "The same features as the PC, in your pocket: record in class or in a meeting, notify the people present, write your notes during the lecture and find notes, flashcards and exam questions in «My lectures»."
+      t: "On your phone too"
+      p: "The same features as the PC, in your pocket: record in class or in a meeting, notify the people present, write your notes during the lecture and find notes, flashcards and exam questions in «My lectures». On iPhone you can also send Voice Memos to Verba Manent with «Share»."
       punti: ["Transcription on the phone", "Spoken notice for the classroom", "Notes, review and exam preparation"]
-      alt: "Three screens of the Android app: Record, a recording in progress and My lectures."
+      alt: "Three screens of the phone app: Record, a recording in progress and My lectures."
 
 come:
   kicker: "How it works"
