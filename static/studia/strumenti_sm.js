@@ -110,7 +110,7 @@ function smPrepara() {
     if (p !== 'smcomp' && !INTERNE.includes(p)) INTERNE.push(p);
   });
   const nav = $('nav'), arch = nav && nav.querySelector('a[data-p="arch"]');
-  if (arch && !nav.querySelector('a[data-p="smcomp"]')) {
+  if (arch && !nav.querySelector('a[data-p="smcomp"]') && typeof SCRIPTA !== 'undefined' && SCRIPTA) {   // in Verba Manent i compiti stanno nello Spazio DSA
     const a = document.createElement('a'); a.dataset.p = 'smcomp';
     a.innerHTML = `<svg><use href="#g-cal"/></svg><span>${esc(ts('nav.comp'))}</span><span class="cnt hidden" id="navComp"></span>`;
     arch.after(a);
@@ -121,22 +121,28 @@ function smPrepara() {
   vai = function (p, tornando = false) {
     SM_PAGINE.forEach(x => { const s = $('v-' + x); if (s) s.classList.add('hidden'); });
     const nc = document.querySelector('#nav a[data-p="smcomp"] span'); if (nc) nc.textContent = ts('nav.comp');   // la lingua puo' arrivare dopo
-    if (p !== 'smmate' && p !== 'smcorr' && p !== 'smcomp') voceFermaSm();
-    if (SM_PAGINE.includes(p)) smTitolo(p, ts({smmate: 'mate.h', smcorr: 'corr.h', smcomp: 'comp.h'}[p]), '');   // il titolo serve gia' al percorso
+    if (p !== 'smmate' && p !== 'smcorr' && p !== 'smcomp' && p !== 'smlingue') voceFermaSm();
+    if (p !== 'smlingue' && typeof smgFerma === 'function') smgFerma();
+    if (SM_PAGINE.includes(p)) smTitolo(p, ts({smmate: 'mate.h', smcorr: 'corr.h', smcomp: 'comp.h', smlingue: 'ling.h', smsett: 'sett.h', smdet: 'det.h'}[p]), '');   // il titolo serve gia' al percorso
     const da = pagina;
     vaiPrima(p, tornando);
     if (!tornando && da && da !== p) { SMS.storia.push(da); if (SMS.storia.length > 15) SMS.storia.shift(); }
     if (p === 'dsa') SMS.storia = [];
-    smPercorso(p);
+    if (SCRIPTA || VMDSA_PAGINE.includes(p)) smPercorso(p);   // in Verba Manent solo nelle pagine dello Spazio DSA
     if (p === 'smmate') smMate();
     if (p === 'smcorr') smCorr();
     if (p === 'smcomp') smComp();
+    if (p === 'smlingue' && typeof smLingue === 'function') smLingue();
+    if (p === 'smsett' && typeof smSett === 'function') smSett();
+    if (p === 'smdet' && typeof smDet === 'function') smDet();
   };
 }
 function smTitolo(p, h, sub) {
   const s = $('v-' + p);
-  s.querySelector('.hd h2').textContent = h;
-  s.querySelector('.hd p').textContent = sub;
+  if (!s) return null;
+  const t = s.querySelector('.hd h2'), d = s.querySelector('.hd p');   // le pagine nuove (Compiti) rifanno la testata
+  if (t) t.textContent = h;
+  if (d) d.textContent = sub;
   return s.querySelector('.smbox');
 }
 let SM_PARLA = false;

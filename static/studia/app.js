@@ -36,6 +36,7 @@ async function avvio() {
   while (true) {
     let r = {};
     try { r = await A.pronto(); } catch (e) { r = {}; }
+    if (r.lingua) LINGUA = r.lingua;
     if (r.edizione === 'scripta' && typeof attivaScripta === 'function') attivaScripta();     // Scripta Manent: nome e logo già nello splash
     if (r.errore) { clearInterval(anim); $('splErr').textContent = t('spl.err') + r.errore; $('splErr').classList.remove('hidden'); return; }
     if (r.pronto) break;
@@ -47,11 +48,12 @@ async function avvio() {
   R = await A.riepilogo();
   LINGUA = R.lingua || LINGUA;
   if (R.edizione === 'scripta' && typeof attivaScripta === 'function') attivaScripta();
+  else if (typeof attivaDsaVm === 'function') attivaDsaVm();            // Verba Manent: lo Spazio DSA come Scripta Manent
   traduciPagina();
   disegnaFacilitata();
   inizializza();
   disegnaHoPronto();
-  if (typeof SCRIPTA !== 'undefined' && SCRIPTA) vai('dsa');          // Scripta Manent si apre su «I miei strumenti»
+  if (typeof SCRIPTA !== 'undefined' && SCRIPTA) vai(VMAPP ? (vmLs('vm_dsa_pag') || 'dsa') : 'dsa');   // Scripta Manent (e l'app DSA di Verba Manent) si apre su «I miei strumenti»
   $('splash').classList.add('via');
   setTimeout(() => $('splash').remove(), 500);
   if (!R.lingua_scelta) benvenuto();
@@ -134,7 +136,9 @@ function titoloPagina(p) {
   const n = document.querySelector(`#nav a[data-p="${p}"]`);
   if (n) return (n.querySelector('span[data-t]') || n).textContent.trim();
   const h = $('v-' + p) && $('v-' + p).querySelector('h2');
-  return h ? h.textContent.trim() : '';
+  if (!h) return '';
+  const c = h.cloneNode(true); c.querySelectorAll('.info-i').forEach(x => x.remove());   // senza la (i) delle spiegazioni
+  return c.textContent.trim();
 }
 // La barra del percorso, uguale in tutte le pagine interne: «← Indietro» e da dove sei arrivato
 // (es. «🎓 Studia · Fisiologia › 🎯 Preparazione all'esame»); ogni parte blu riporta li'.
@@ -573,7 +577,7 @@ async function avvisoAgg() {
   if (AGG_VISTO || g.tipo !== 'trovato' || !g.avviso || S.registro || document.querySelector('.velo')) return;
   AGG_VISTO = true;
   const d = g.dato || {};
-  const nov = (typeof SCRIPTA !== 'undefined' && SCRIPTA && d.novita_sm) ? ((LINGUA === 'en' && d.novita_sm_en) ? d.novita_sm_en : d.novita_sm) : (LINGUA === 'en' && d.novita_en) ? d.novita_en : (d.novita || '');
+  const nov = (typeof SCRIPTA !== 'undefined' && SCRIPTA && !VMAPP && d.novita_sm) ? ((LINGUA === 'en' && d.novita_sm_en) ? d.novita_sm_en : d.novita_sm) : (LINGUA === 'en' && d.novita_en) ? d.novita_en : (d.novita || '');
   if (d.iphone) {            // sull'iPhone: si installa da TestFlight. L'avviso compare una volta sola per versione
     try { if (localStorage.getItem('vm_ip_agg') === d.versione) return; localStorage.setItem('vm_ip_agg', d.versione); } catch (_) {}
     const v = await dialogo({titolo: t('ag.pronta', {v: d.versione}), testo: nov, html: `<div class="hint" style="margin-top:10px">${esc(t('ag.ip.s'))}</div>`,
@@ -929,6 +933,20 @@ async function scegliVideo() {
   vai('reg');
   setTimeout(() => { $('ivNome').focus(); $('ivNome').select(); }, 50);
 }
+// iPhone: un audio o video mandato da un'altra app («Condividi › Verba Manent IA», es. dai Memo vocali)
+async function controllaCondiviso() {
+  if (typeof IPHONE === 'undefined' || !IPHONE || !A || !R || (S && (S.registro || S.occupato))) return;
+  let r; try { r = await A.condiviso(); } catch (e) { return; }
+  if (!r || !r.ok) return;
+  IV = {...r, slide: !!r.ha_video, lingua: R.lingua_lezione || LINGUA, nome: ''};
+  $('ivNome').value = r.nome_proposto || '';
+  disegnaImporta();
+  controllaNome('ivNome', 'ivNomeMsg', 'ivVai');
+  vai('reg');
+  setTimeout(() => { $('ivNome').focus(); $('ivNome').select(); }, 50);
+}
+document.addEventListener('visibilitychange', () => { if (document.visibilityState !== 'hidden') setTimeout(controllaCondiviso, 600); });
+setInterval(() => { if (document.visibilityState !== 'hidden') controllaCondiviso(); }, 3000);
 async function scegliLink() {
   const ok = await dialogo({titolo: t('il.link.t'), html: `<input class="in" placeholder="https://…"><div class="hint" style="margin-top:8px">${esc(t('il.siti'))}</div>`,
     bottoni: [{t: t('annulla'), v: false}, {t: t('il.vai'), cls: 'b-main', v: true}]});
@@ -1332,17 +1350,33 @@ async function disegnaCloud(c) {
   $('clBox').classList.toggle('hidden', c.dove === 'no');
   const trovato = c.dove === 'gdrive' ? c.gdrive : c.dove === 'onedrive' ? c.onedrive : c.cartella;
   const k = c.dove === 'gdrive' ? 'cl.gd' : c.dove === 'onedrive' ? 'cl.od' : 'cl.al';
-  $('clTrov').className = 'cltrov' + (trovato ? '' : ' no');
-  $('clTrov').textContent = t(k + (trovato || c.dove === 'altro' ? '.ok' : '.no'));
-  $('clPath').textContent = c.radice || '';
-  $('clPath').parentElement.classList.toggle('hidden', !c.radice);
+  // Google Drive senza il programma di Google: si collega l'account e si copia direttamente nel Drive
+  const api = c.dove === 'gdrive' && !c.gdrive, acc = c.gapi_acc || '';
+  $('clTrov').className = 'cltrov' + (trovato || (api && c.gapi) ? '' : api ? ' info' : ' no');
+  $('clTrov').textContent = api ? (c.gapi ? t('cl.g.ok', {e: c.gapi === '?' ? 'Google' : c.gapi}) : t('cl.g.no'))
+    : t(k + (trovato || c.dove === 'altro' ? '.ok' : '.no'));
+  $('clG').classList.toggle('hidden', !api || !c.gapi_disp);
+  if (api) {
+    $('clGs').textContent = acc === 'in_corso' ? t('cl.g.att') : acc.startsWith('errore:') ? t('cl.g.err', {m: acc.slice(7)}) : t('cl.g.perm');
+    $('clGbtn').classList.toggle('hidden', !!c.gapi);
+    $('clGbtn').disabled = acc === 'in_corso';
+    $('clGbtn').innerHTML = acc === 'in_corso' ? `<span class="spin"></span> ${esc(t('cl.g.btn'))}` : esc(t('cl.g.btn'));
+    $('clGbtn').onclick = async () => disegnaCloud(await A.cloud_google_collega());
+    $('clGvia').classList.toggle('hidden', !c.gapi); $('clGvia').textContent = t('cl.g.via');
+    $('clGvia').onclick = async () => disegnaCloud(await A.cloud_google_scollega());
+    clearTimeout(disegnaCloud.giro);
+    if (acc === 'in_corso') disegnaCloud.giro = setTimeout(() => { if ($('clG') && !$('clG').classList.contains('hidden')) disegnaCloud(); }, 2000);
+  }
+  $('clPath').textContent = c.gapi_usa ? t('cl.g.dove', {c: c.gapi_cartella}) : c.radice || '';
+  $('clPath').parentElement.classList.toggle('hidden', !c.radice && !c.gapi_usa);
+  $('clQui').classList.toggle('hidden', !c.radice && !c.gapi_usa);
   $('clApri').onclick = () => A.apri_cloud();
   const ck = {clAp: 'appunti', clTr: 'tras', clAu: 'audio'};
   Object.keys(ck).forEach(id => { $(id).checked = !!c.cosa[ck[id]]; $(id).onchange = async () => disegnaCloud(await A.cloud_imposta(null, null, {[ck[id]]: $(id).checked})); });
   $('clTutte').textContent = t('cl.tutte', {n: c.da_copiare});
-  $('clTutte').classList.toggle('hidden', !c.radice || !c.da_copiare);
-  $('clTutteS').classList.toggle('hidden', !c.radice || !c.da_copiare);
-  $('clTel').textContent = c.radice ? t(c.dove === 'gdrive' ? 'cl.tel.gd' : c.dove === 'onedrive' ? 'cl.tel.od' : 'cl.tel.al') : '';
+  $('clTutte').classList.toggle('hidden', (!c.radice && !c.gapi_usa) || !c.da_copiare);
+  $('clTutteS').classList.toggle('hidden', (!c.radice && !c.gapi_usa) || !c.da_copiare);
+  $('clTel').textContent = c.gapi_usa ? t('cl.tel.api', {c: c.gapi_cartella}) : c.radice ? t(c.dove === 'gdrive' ? 'cl.tel.gd' : c.dove === 'onedrive' ? 'cl.tel.od' : 'cl.tel.al') : '';
   $('clRiprova').classList.toggle('hidden', c.dove === 'no');
   $('clTutte').onclick = async () => { const r = await A.cloud_tutte(); $('clStato').className = 'dvstato'; $('clStato').textContent = t('cl.tutte.ok', {n: r.n}); };
   $('clStato').className = 'dvstato';
@@ -3409,8 +3443,9 @@ async function disegnaSpazioDsa() {
 async function azioneDsa(a) {
   const l = SD.l, m = SD.mat;
   if (a === 'reg') return vai('reg');
-  if (a === 'smmate' || a === 'smcorr' || a === 'smcomp') return vai(a);
-  if (a === 'smgen') return smGenitori();
+  if (a === 'smmate' || a === 'smcorr' || a === 'smcomp' || a === 'smlingue') return vai(a);
+  if (a === 'smgen') return typeof smSett === 'function' ? vai('smsett') : smGenitori();
+  if (a === 'smdet') return vai('smdet');
   if (a === 'detta') return vai('dp');
   if (a === 'leggimi') return vai('lg');
   if (a === 'giorno') return apriRipassoGiorno();
@@ -3999,7 +4034,7 @@ function cercaParole() {
 }
 function disegnaParole2(r, q) {
   const R2 = r.risultati || [], box = $('paroleRis');
-  const chips = [['', 'cp.tutte'], ['riunione', 'cp.riu'], ['lezione', 'cp.lez'], ['webinar', 'cp.web']].map(([k, n]) => `<span class="chip${CP.tipo === k ? ' on' : ''}" data-tipo="${k}">${esc(t(n))}</span>`).join('');
+  const chips = (typeof SCRIPTA !== 'undefined' && SCRIPTA) ? '' : [['', 'cp.tutte'], ['riunione', 'cp.riu'], ['lezione', 'cp.lez'], ['webinar', 'cp.web']].map(([k, n]) => `<span class="chip${CP.tipo === k ? ' on' : ''}" data-tipo="${k}">${esc(t(n))}</span>`).join('');
   const testa = `<div class="row" style="gap:6px;flex-wrap:wrap;margin-bottom:6px"><b style="color:var(--ink)">${esc(R2.length === 1 ? t('cp.detto1') : R2.length ? t('cp.detto', {n: R2.length}) : t('cp.nessuna', {q}))}</b>${R2.length ? `<span class="hint">· ${esc(t('cp.volte', {n: r.volte}))}</span>` : ''}<span class="sp"></span>${chips}</div>`;
   box.innerHTML = `<div class="card">${testa}${R2.map((x, i) => `<div class="lbl" style="margin-top:10px">${esc(x.nome)} · ${esc(x.quando)}</div>
     ${x.frasi.map((f, j) => `<div class="pris" data-i="${i}" data-j="${j}"><span class="t">${esc(f.ora)}</span><div>${f.chi ? `<b>${esc(f.chi)}:</b> ` : ''}${evidenzia(f.testo, r.parole)}</div></div>`).join('')}
@@ -4733,7 +4768,7 @@ function disegnaAgg() {
     h = `<div class="card row" style="padding:10px 12px;border-color:#bfdbfe;background:#eff6ff;text-align:left"><div class="sp"><b style="color:var(--ink);display:block">${esc(t('ag.c', {v: g.dato.versione}))}</b><span class="hint">${esc(t('ag.ip.r'))}</span></div><button class="btn b-main b-sm" id="aggOk">${esc(t('ag.ip'))}</button></div>`;
   else if (g.tipo === 'trovato') {
     const d = g.dato;
-    const nov = (typeof SCRIPTA !== 'undefined' && SCRIPTA && d.novita_sm) ? ((LINGUA === 'en' && d.novita_sm_en) ? d.novita_sm_en : d.novita_sm) : (LINGUA === 'en' && d.novita_en) ? d.novita_en : (d.novita || '');
+    const nov = (typeof SCRIPTA !== 'undefined' && SCRIPTA && !VMAPP && d.novita_sm) ? ((LINGUA === 'en' && d.novita_sm_en) ? d.novita_sm_en : d.novita_sm) : (LINGUA === 'en' && d.novita_en) ? d.novita_en : (d.novita || '');
     h = `<div class="card" style="padding:14px 16px;border-color:#bae6fd"><b style="color:var(--ink)">${esc(t('ag.c', {v: d.versione}))}</b>
       <div class="hint" style="margin:4px 0 10px">${esc(nov)}${d.completo ? '<br>' + t('ag.completo') : '<br><br>' + esc(t('ag.riapri.s'))}</div>
       <div class="row"><span class="sp"></span><button class="btn b-ghost b-sm" id="aggX">${t('ag.tardi')}</button><button class="btn b-main b-sm" id="aggOk">${d.completo ? t('ag.pagina') : t('ag.riapri')}</button></div></div>`;

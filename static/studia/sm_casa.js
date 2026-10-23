@@ -44,9 +44,27 @@ const SMC = {tab: 'aula', comp: null, rg: null};
 // Le righe di spiegazione sotto i titoli si nascondono; accanto al titolo compare (i): al tocco si legge e si ascolta.
 // Restano le informazioni brevi con i numeri (date, minuti, carte): sono dati, non spiegazioni.
 const SM_SPIEGA = '.smi-card .set .t > span:not([id]), .smi-sez .aiopt > small, .side .brand small, .tile small, .sml-gc small.sp, .smr-mom small.sp, .smx-ft small.sp, .smx-ft small:not(.dato), .pg .hd p, .smfm .sp > .hint';
+// spiegazioni scritte piccole nelle pagine che arrivano da Verba Manent: anche loro diventano (i)
+function smSpiegazioniPiccole(radice) {
+  const out = [];
+  (radice || document).querySelectorAll('small, .sp, .hint, .tx, p, span, div').forEach(el => {
+    if (el.dataset.st || el.offsetParent === null || el.closest('.velo, .dlg, .info-pop, .smi-card, .side, .chat, .msg, .bolla, svg, .stx, .karaoke, .kar, .carta, .flash, .rip-c, table')) return;
+    if ([...el.children].some(c => !['B', 'I', 'EM', 'STRONG', 'BR', 'A', 'SPAN'].includes(c.tagName))) return;   // solo testo
+    const testo = el.textContent.trim();
+    if (testo.length < 35 || !/\s/.test(testo) || parseFloat(getComputedStyle(el).fontSize) >= 15) return;
+    const pa = el.parentElement; if (!pa) return;
+    const tit = [...pa.children].find(c => c !== el && /^(B|STRONG|H3|H4)$/.test(c.tagName) && c.textContent.trim());
+    if (tit) out.push(el);
+  });
+  return out;
+}
+// Scripta Manent, oppure lo Spazio DSA di Verba Manent (che ha la stessa grafica)
+function smAttivo() { return (typeof SCRIPTA !== 'undefined' && SCRIPTA) || document.documentElement.classList.contains('vmdsa'); }
 function smInfoGiro(radice) {
-  if (typeof SCRIPTA === 'undefined' || !SCRIPTA) return;
-  (radice || document).querySelectorAll(SM_SPIEGA).forEach(el => {
+  if (!smAttivo()) return;
+  const tutti = [...(radice || document).querySelectorAll(SM_SPIEGA)];
+  try { tutti.push(...smSpiegazioniPiccole(radice)); } catch (e) {}
+  tutti.forEach(el => {
     if (el.dataset.st) return;
     el.dataset.st = 1;
     const testo = el.textContent.trim();
@@ -70,6 +88,19 @@ function smInfoGiro(radice) {
     if (tit && (tit.hasAttribute('data-t') || tit.querySelector('[data-t]'))) tit.after(i); else (tit || el.parentElement).appendChild(i);
   });
 }
+// nessuna scritta sotto i 15 px (regola di Scripta Manent): quello che resta piccolo si ingrandisce
+function smTestoGrande(radice) {
+  if (!smAttivo() || !radice) return;
+  const w = document.createTreeWalker(radice, NodeFilter.SHOW_TEXT);
+  const visti = new Set(); let n;
+  while ((n = w.nextNode())) {
+    const el = n.parentElement;
+    if (!el || visti.has(el) || !n.textContent.trim()) continue;
+    visti.add(el);
+    if (el.closest('kbd, svg, .info-i, .recdot, .lmsf, .an-graf, canvas') || el.classList.contains('st-nasc')) continue;
+    if (parseFloat(getComputedStyle(el).fontSize) < 15) el.style.fontSize = '15px';
+  }
+}
 function smInfoChiudi() { document.querySelectorAll('.info-pop').forEach(x => x.remove()); }
 document.addEventListener('click', smInfoChiudi);
 
@@ -80,6 +111,17 @@ function smCasaPrepara() {
   const sec = $('v-dsa');
   if (sec) sec.classList.add('smcasa');
   smInfoGiro(document.querySelector('.side'));
+  if (!(typeof ANDROID !== 'undefined' && ANDROID)) smTestoGrande(document.querySelector('.side'));   // sul telefono la barra in basso resta com'è
+  // le pagine si ridisegnano da sole (dati che arrivano, finestre): ogni volta si ricontrolla, con calma
+  let attesa = null;
+  new MutationObserver(() => {
+    if (attesa) return;                 // al massimo una volta al secondo (la pagina di registrazione cambia di continuo)
+    attesa = setTimeout(() => {
+      attesa = null;
+      const s = document.querySelector('#main > section.pg:not(.hidden)'); if (s) { smInfoGiro(s); smTestoGrande(s); }
+      document.querySelectorAll('.velo .dlg').forEach(smTestoGrande);
+    }, 1000);
+  }).observe(document.body, {childList: true, subtree: true});
   if (typeof smLezioniPrepara === 'function') smLezioniPrepara();
   if (typeof smRegistraAttiva === 'function') smRegistraAttiva();
   if (typeof smStudiaPrepara === 'function') smStudiaPrepara();
@@ -89,7 +131,7 @@ function smCasaPrepara() {
   const vaiPrima = vai;
   vai = function (p, tornando) {
     const r = vaiPrima.apply(this, arguments);
-    const giro = () => { const s = document.querySelector('#main > section.pg:not(.hidden)'); if (s) smInfoGiro(s); };
+    const giro = () => { const s = document.querySelector('#main > section.pg:not(.hidden)'); if (s) { smInfoGiro(s); smTestoGrande(s); } };
     setTimeout(giro, 0); setTimeout(giro, 700); setTimeout(giro, 2000);
     return r;
   };
@@ -192,11 +234,11 @@ function smCasaStrumenti() {
       R('chiedi', 'i-chat', t('tl.chiedi'), t('tl.chiedi.s'), tr), R('capitoli', 'g-cap', t('tl.cap'), t('tl.cap.s'), cap), R('infografica', 'g-img', t('tl.ig'), t('tl.ig.s'), tr),
       R('glos', 'g-libro', t('tl.gl'), t('tl.dsa.gl.s'), mt), R('leggimi', 'g-voce', t('lg.nome'), t('sd.lg.s')), R('arch', 'g-lezioni', t('sd.tutte'), t('sd.tutte.s'))]],
     ['casa', tc('t.casa'), [R('smcomp', 'g-cal', ts('comp.h'), ts('sd.comp.s'), '', 'amb'), R('smmate', 'g-calc', ts('mate.h'), ts('sd.mate.s'), '', 'ind'),
-      R('smcorr', 'g-penna', ts('corr.h'), ts('sd.corr.s'), '', 'ind'), R('giorno', 'i-cards', t('sd.rg'), t('sd.rg.s'))]],
+      R('smcorr', 'g-penna', ts('corr.h'), ts('sd.corr.s'), '', 'ind'), R('smlingue', 'g-mondo', ts('ling.h'), ts('sd.ling.s'), '', 'ind'), R('giorno', 'i-cards', t('sd.rg'), t('sd.rg.s'))]],
     ['ver', tc('t.ver'), [R('tutor', 'g-tutor', t('tl.tu'), t('tl.tu.s'), mt), R('piano', 'g-cal', t('st.piano').replace(/^📅\s*/, ''), t('sd.piano.s'), mt), R('mverif', 'i-map', t('tl.mv'), t('sd.mv.s'), mt),
       R('orale', 'i-mic', t('tl.orale'), t('sd.orale.s'), mt), R('test', 'g-test', t('tl.dsa.test'), t('sd.test.s'), mt), R('scritto', 'g-penna', t('tl.dsa.scr'), t('sd.scr.s'), mt),
       R('prob', 'g-stella', t('tl.prob'), t('tl.prob.s'), mt)]],
-    ['doc', tc('t.doc'), [R('firma', 'g-stampa', t('sd.firma'), t('sd.firma.s'), mt), R('strumenti', 'g-lista', t('sd.str'), t('sd.str.s')), R('smgen', 'g-utenti', ts('gen.t'), ts('gen.s'))]],
+    ['doc', tc('t.doc'), [R('firma', 'g-stampa', t('sd.firma'), t('sd.firma.s'), mt), R('strumenti', 'g-lista', t('sd.str'), t('sd.str.s')), R('smgen', 'g-utenti', ts('gen.t'), ts('gen.s')), R('smdet', 'g-euro', ts('det.h'), ts('sd.det.s'))]],
   ];
   if (!SCHEDE.some(s => s[0] === SMC.tab)) SMC.tab = 'aula';
   $('smcTabs').innerHTML = SCHEDE.map(([k, n, r]) => `<button class="${k === SMC.tab ? 'on' : ''}" data-k="${k}">${esc(n)}<span class="c">${r.length}</span></button>`).join('');

@@ -5,8 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Verba Manent sul web</title>
-<link rel="stylesheet" href="stile.css?v=5613bc9f00">
-<link rel="stylesheet" href="web.css?v=5613bc9f00">
+<link rel="stylesheet" href="stile.css?v=f8a763bcb5">
+<link rel="stylesheet" href="web.css?v=f8a763bcb5">
 <link rel="stylesheet" href="scripta_pro.css">
 </head>
 <body>
@@ -737,13 +737,14 @@
         <div class="clcome"><b data-t="cl.come">Come si imposta:</b><ol><li data-t="cl.come1">Scegli dove copiare (consigliato: OneDrive, c'è già su Windows).</li><li data-t="cl.come2">Spunta cosa copiare.</li><li data-t="cl.come3">Tocca «Copia anche le lezioni già fatte». Da lì in poi le nuove si copiano da sole.</li></ol></div>
         <div class="clopts" id="clOpts">
           <div class="clopt" data-d="no"><span class="ico fam-scrivi"><svg><use href="#g-no"/></svg></span><b data-t="cl.no">No</b><small data-t="cl.no.s">Non copio niente. Tutto resta solo sul PC.</small></div>
-          <div class="clopt" data-d="gdrive"><span class="ico fam-studio"><svg><use href="#g-nuvola"/></svg></span><b>Google Drive</b><small data-t="cl.gd.s">Serve «Google Drive per desktop» installato. 15 GB gratis.</small></div>
+          <div class="clopt" data-d="gdrive"><span class="ico fam-studio"><svg><use href="#g-nuvola"/></svg></span><b>Google Drive</b><small data-t="cl.gd.s">Con il programma di Google o collegando il tuo account. 15 GB gratis.</small></div>
           <div class="clopt" data-d="onedrive"><span class="ico fam-studio"><svg><use href="#g-nuvola"/></svg></span><b>OneDrive</b><small data-t="cl.od.s">C'è già su Windows. 5 GB gratis.</small></div>
           <div class="clopt" data-d="altro"><span class="ico fam-scrivi"><svg><use href="#g-cartella"/></svg></span><b data-t="cl.altro">Altra cartella…</b><small data-t="cl.al.s">Dropbox, una chiavetta, un disco esterno…</small></div>
         </div>
         <div class="clbox hidden" id="clBox">
           <div id="clTrov"></div>
-          <div class="clsub" data-t="cl.qui">Qui trovi le copie: una cartella per ogni lezione</div>
+          <div class="clg hidden" id="clG"><div class="hint" id="clGs"></div><div class="row" style="gap:8px;flex-wrap:wrap;margin-top:8px"><button class="btn b-main b-sm" id="clGbtn"></button><button class="btn b-ghost b-sm hidden" id="clGvia"></button></div></div>
+          <div class="clsub" id="clQui" data-t="cl.qui">Qui trovi le copie: una cartella per ogni lezione</div>
           <div class="clpath"><span id="clPath"></span><button class="btn b-ghost b-sm" id="clApri" data-t="im.apri">Apri</button></div>
           <div class="hint" id="clTel"></div>
           <div class="clsub" data-t="cl.cosa">Cosa copio</div>
@@ -877,22 +878,25 @@
   </main>
 </div>
 
-<script src="testi.js?v=5613bc9f00"></script>
+<script src="testi.js?v=f8a763bcb5"></script>
 <script src="scripta.js"></script>
 <script src="strumenti_sm.js"></script>
 <script src="sm_casa.js"></script>
 <script src="sm_compiti.js"></script>
+<script src="sm_lingue.js"></script>
+<script src="sm_famiglia.js"></script>
 <script src="sm_mate.js"></script>
 <script src="sm_lezioni.js"></script>
 <script src="sm_registra.js"></script>
 <script src="sm_studia.js"></script>
 <script src="sm_impostazioni.js"></script>
 <script src="schede.js"></script>
-<script src="guida.js?v=5613bc9f00"></script>
-<script src="android.js?v=5613bc9f00"></script>
-<script src="qrcode.js?v=5613bc9f00"></script>
-<script src="web.js?v=5613bc9f00"></script>
-<script src="app.js?v=5613bc9f00"></script>
+<script src="guida.js?v=f8a763bcb5"></script>
+<script src="guida_sm.js"></script>
+<script src="android.js?v=f8a763bcb5"></script>
+<script src="qrcode.js?v=f8a763bcb5"></script>
+<script src="web.js?v=f8a763bcb5"></script>
+<script src="app.js?v=f8a763bcb5"></script>
 <script src="licenza.js"></script>
 <script src="inizia.js"></script>
 <script src="cerca.js"></script>

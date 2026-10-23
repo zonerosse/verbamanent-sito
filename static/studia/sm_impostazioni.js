@@ -7,13 +7,13 @@
 const SMI_T = {
   it: {
     h: 'Impostazioni', salvate: 'Si salvano da sole',
-    's.leggo': 'Come leggo meglio', 's.voce': 'Voce', 's.rip': 'Ripasso del giorno', 's.mat': 'Materie e orario', 's.reg': 'Registrazione', 's.tras': 'Trascrizione',
+    's.iz': 'Inizia qui', 's.leggo': 'Come leggo meglio', 's.voce': 'Voce', 's.rip': 'Ripasso del giorno', 's.mat': 'Materie e orario', 's.reg': 'Registrazione', 's.tras': 'Trascrizione',
     's.ap': 'Appunti e Claude', 's.ver': 'In verifica posso usare', 's.sync': 'PC, telefono e cloud', 's.inv': 'Inviti', 's.priv': 'Privacy', 's.io': 'I miei dati e famiglia', 's.info': 'Lingua e informazioni',
     vel: 'Velocità della voce', lenta: 'Lenta', normale: 'Normale', veloce: 'Veloce', prova: 'Prova la voce', 'prova.t': 'Il trapezio ha due lati paralleli: la base maggiore e la base minore.',
     'rg.n': 'Quante carte al giorno', 'rg.n.s': 'Il ripasso di oggi non supera questo numero', 'rg.prom': 'Ricordamelo', 'rg.prom.s': 'Un avviso sul PC o sul telefono', 'rg.ora': 'A che ora',
     'rg.anki': 'Esporta per Anki', 'rg.anki.s': 'Per chi usa già Anki o AnkiDroid', esporta: 'Esporta',
     'mat.h': 'Le mie materie', 'mat.0': 'Le materie arrivano con le lezioni: quando registri, scegli la materia.', 'mat.lez': '{n} lezioni', orario: 'Orario delle lezioni', 'orario.s': 'Con l\'orario la materia giusta arriva da sola',
-    iz: 'Inizia qui', 'iz.s': 'Google, Claude, telefono e web in 3 passi', apri: 'Apri', 'r.dur': 'Durante la registrazione', 'r.audio': 'Audio', 'r.dove': 'Dove salvo', 'aula': 'Aula rumorosa, sempre', 'aula.s': 'Toglie brusio e sedie in tutte le lezioni. Spento: decide il programma',
+    iz: 'Inizia qui', 'iz.s': 'Google, Claude e telefono in 3 passi', apri: 'Apri', 'r.dur': 'Durante la registrazione', 'r.audio': 'Audio', 'r.dove': 'Dove salvo', 'aula': 'Aula rumorosa, sempre', 'aula.s': 'Toglie brusio e sedie in tutte le lezioni. Spento: decide il programma',
     'ver.nota': 'Quello che spunti qui decide cosa ti preparo da stampare e portare in verifica, e come ti alleno.',
     'v.mappe': 'Mappe', 'v.formulario': 'Formulario', 'v.calcolatrice': 'Calcolatrice', 'v.tabelline': 'Tabella delle tabelline', 'v.tempo': 'Tempo in più', 'v.orale': 'Interrogazione al posto dello scritto', 'v.lettore': 'Lettura ad alta voce del testo', 'v.meno': 'Meno esercizi',
     'p.pc': 'Le registrazioni restano sul tuo PC', 'p.pc.s': 'Audio, trascrizioni e appunti non vengono mandati a noi', 'p.voce': 'Nessuna impronta della voce', 'p.voce.s': '«Chi parla» distingue le voci solo mentre lavora, poi cancella tutto',
@@ -23,13 +23,13 @@ const SMI_T = {
   },
   en: {
     h: 'Settings', salvate: 'Saved automatically',
-    's.leggo': 'How I read best', 's.voce': 'Voice', 's.rip': 'Daily review', 's.mat': 'Subjects and timetable', 's.reg': 'Recording', 's.tras': 'Transcription',
+    's.iz': 'Start here', 's.leggo': 'How I read best', 's.voce': 'Voice', 's.rip': 'Daily review', 's.mat': 'Subjects and timetable', 's.reg': 'Recording', 's.tras': 'Transcription',
     's.ap': 'Notes and Claude', 's.ver': 'In tests I can use', 's.sync': 'PC, phone and cloud', 's.inv': 'Invitations', 's.priv': 'Privacy', 's.io': 'My details and family', 's.info': 'Language and information',
     vel: 'Voice speed', lenta: 'Slow', normale: 'Normal', veloce: 'Fast', prova: 'Try the voice', 'prova.t': 'A trapezoid has two parallel sides: the long base and the short base.',
     'rg.n': 'Cards per day', 'rg.n.s': 'Today\'s review never goes over this', 'rg.prom': 'Remind me', 'rg.prom.s': 'A notice on the PC or phone', 'rg.ora': 'At what time',
     'rg.anki': 'Export to Anki', 'rg.anki.s': 'For Anki or AnkiDroid users', esporta: 'Export',
     'mat.h': 'My subjects', 'mat.0': 'Subjects come with lessons: choose the subject when you record.', 'mat.lez': '{n} lessons', orario: 'Lesson timetable', 'orario.s': 'With the timetable the right subject arrives by itself',
-    iz: 'Start here', 'iz.s': 'Google, Claude, phone and web in 3 steps', apri: 'Open', 'r.dur': 'While recording', 'r.audio': 'Audio', 'r.dove': 'Where I save', 'aula': 'Noisy classroom, always', 'aula.s': 'Removes chatter and chairs in all lessons. Off: the program decides',
+    iz: 'Start here', 'iz.s': 'Google, Claude and phone in 3 steps', apri: 'Open', 'r.dur': 'While recording', 'r.audio': 'Audio', 'r.dove': 'Where I save', 'aula': 'Noisy classroom, always', 'aula.s': 'Removes chatter and chairs in all lessons. Off: the program decides',
     'ver.nota': 'What you tick here decides what I prepare for you to print and bring to tests, and how I train you.',
     'v.mappe': 'Maps', 'v.formulario': 'Formulas', 'v.calcolatrice': 'Calculator', 'v.tabelline': 'Times table', 'v.tempo': 'Extra time', 'v.orale': 'Oral instead of written', 'v.lettore': 'Text read aloud', 'v.meno': 'Fewer exercises',
     'p.pc': 'Recordings stay on your PC', 'p.pc.s': 'Audio, transcripts and notes are not sent to us', 'p.voce': 'No voice print', 'p.voce.s': '«Who is speaking» tells voices apart only while working, then deletes everything',
@@ -44,7 +44,7 @@ function ti(k, p) {
   return s;
 }
 const SMI = {sez: 'leggo', ver: null};
-const SMI_SEZ = [['leggo', 'g-occhiali'], ['voce', 'g-voce'], ['rip', 'i-cards'], ['mat', 'g-cal'], ['reg', 'g-reg'], ['tras', 'i-text'], ['ap', 'i-spark'], ['ver', 'g-test'],
+const SMI_SEZ = [['iz', 'g-razzo'], ['leggo', 'g-occhiali'], ['voce', 'g-voce'], ['rip', 'i-cards'], ['mat', 'g-cal'], ['reg', 'g-reg'], ['tras', 'i-text'], ['ap', 'i-spark'], ['ver', 'g-test'],
   ['sync', 'g-tel'], ['inv', 'g-regalo'], ['priv', 'g-lucchetto'], ['io', 'g-utenti'], ['info', 'i-info']];
 
 const smiRiga = (tit, sub, dx, id = '') => `<div class="smi-r"${id ? ` id="${id}"` : ''}><span class="smx-ft"><b>${esc(tit)}</b>${sub ? `<small class="${/\d/.test(sub) && sub.length < 60 ? 'dato' : 'sp'}">${esc(sub)}</small>` : ''}</span>${dx}</div>`;
@@ -71,8 +71,6 @@ function smImpPrepara() {
   // Trascrizione, Appunti e Claude, PC e telefono, Inviti, Dati
   sez('tras').append($('dvCard'));
   sez('ap').append(lblCard('im.ai'), lblCard('im.fmt'), card($('pwIn')), $('hoCard'));
-  sez('ap').insertAdjacentHTML('afterbegin', `<div class="card smi-card" style="margin-bottom:14px">${smiRiga(ti('iz'), ti('iz.s'), `<button class="btn b-main b-sm" id="smiIz">${esc(ti('apri'))} ›</button>`)}</div>`);
-  $('smiIz').onclick = () => { if (window.iniziaQui) window.iniziaQui(); };
   sez('sync').append(lblCard('sy.lbl'), $('clCard'));
   sez('inv').append($('invCard')); $('invCard').classList.remove('hidden');
   sez('io').append(lblCard('im.dati'));
@@ -83,7 +81,7 @@ function smImpPrepara() {
   if ($('calCard')) sez('mat').append($('calCard'));
   // il resto (avanzate, telefono, cose da lavoro) resta nascosto
   pg.querySelectorAll(':scope > .card, :scope > .imavz, :scope > #imAvanzate').forEach(e => e.classList.add('smi-via'));
-  $('smiFam').onclick = () => smGenitori();
+  $('smiFam').onclick = () => typeof smSett === 'function' ? vai('smsett') : smGenitori();
   $('smiOrario').onclick = () => orarioLezioni();
   $('smiAula').onclick = async () => { await A.imposta('aula_rumorosa', !R.aula_rumorosa); await rileggi(); smImpDisegna(); };
   smImpDisegna();
@@ -92,9 +90,10 @@ async function smImpDisegna() {
   const pg = $('v-imp'); if (!pg || !pg.dataset.smi) return;
   pg.querySelector('.hd h2').textContent = ti('h');
   const hd = pg.querySelector('.hd');
-  if (!hd.querySelector('.smi-ok')) hd.insertAdjacentHTML('beforeend', `<span class="smi-ok">${smIco('g-ok')} ${esc(ti('salvate'))}</span>`);
+  if (!hd.querySelector('.smi-ok')) hd.insertAdjacentHTML('beforeend', '<span class="smi-ok"></span>');
+  hd.querySelector('.smi-ok').innerHTML = `${smIco('g-ok')} ${esc(ti('salvate'))}`;   // la lingua puo' arrivare dopo
   $('smiNav').innerHTML = SMI_SEZ.map(([k, i]) => `<button class="${k === SMI.sez ? 'on' : ''}" data-s="${k}">${smIco(i)}<span>${esc(ti('s.' + k))}</span></button>`).join('');
-  $('smiNav').querySelectorAll('button').forEach(b => b.onclick = () => { SMI.sez = b.dataset.s; smImpDisegna(); });
+  $('smiNav').querySelectorAll('button').forEach(b => b.onclick = () => { if (b.dataset.s === 'iz') { if (window.iniziaQui) window.iniziaQui(); return; } SMI.sez = b.dataset.s; smImpDisegna(); });   // «Inizia qui» apre i 3 passi
   pg.querySelectorAll('.smi-sez').forEach(s => s.classList.toggle('hidden', s.dataset.sez !== SMI.sez));
   if ($('smiAula')) $('smiAula').classList.toggle('on', !!R.aula_rumorosa);
   // la pagina «Come leggo meglio»: i comandi vengono qui e tornano indietro quando esci
@@ -129,7 +128,7 @@ function smiRipasso(s) {
   $('smiRgN').querySelectorAll('span').forEach(x => x.onclick = async () => { R.rg_max = +x.dataset.v; await A.imposta('rg_max', R.rg_max); smiRipasso(s); });
   $('smiRgP').onclick = async () => { R.rg_promemoria = !R.rg_promemoria; await A.imposta('rg_promemoria', R.rg_promemoria); smiRipasso(s); };
   if ($('smiRgO')) $('smiRgO').onchange = async () => { R.rg_ora = $('smiRgO').value || '18:00'; await A.imposta('rg_ora', R.rg_ora); };
-  $('smiAnki').onclick = () => { const M = materieStudia(); esportaAnki(M.flatMap(m => m.cartelle), 'Scripta Manent', 'prima'); };
+  $('smiAnki').onclick = () => { const M = materieStudia(); esportaAnki(M.flatMap(m => m.cartelle), VMAPP ? 'Verba Manent IA' : 'Scripta Manent', 'prima'); };
 }
 function smiMaterie() {
   const el = $('smiMat'); if (!el) return;
@@ -158,11 +157,13 @@ function smiPrivacy(s) {
   $('smiPerm').onclick = () => dialogo({titolo: t('pv.r.t').replace(/^\S+\s/, ''), testo: t('pv.r')});
 }
 function smiInfo(s) {
-  s.innerHTML = `<div class="card smi-card">${smiRiga(ti('lingua'), '', smiSeg('smiLin', [['it', 'Italiano'], ['en', 'English']], LINGUA))}
-    ${smiRiga(ti('versione'), R.versione ? 'Scripta Manent ' + R.versione : '', `<button class="btn b-ghost b-sm" id="smiVer">${esc(ti('apri'))} ›</button>`)}
+  const vmEsci = VMAPP ? smiRiga(LINGUA === 'en' ? 'Back to Verba Manent' : 'Torna a Verba Manent', LINGUA === 'en' ? 'Leave the DSA Space: the app goes back to how it was' : 'Esci dallo Spazio DSA: l\'app torna com\'era', `<button class="btn b-ghost b-sm" id="smiVmEsci">${esc(LINGUA === 'en' ? 'Back' : 'Torna')} ›</button>`) : '';
+  s.innerHTML = `<div class="card smi-card">${vmEsci}${smiRiga(ti('lingua'), '', smiSeg('smiLin', [['it', 'Italiano'], ['en', 'English']], LINGUA))}
+    ${smiRiga(ti('versione'), R.versione ? (VMAPP ? 'Verba Manent IA ' : 'Scripta Manent ') + R.versione : '', `<button class="btn b-ghost b-sm" id="smiVer">${esc(ti('apri'))} ›</button>`)}
     ${smiRiga(ti('guida'), ti('guida.s'), `<button class="btn b-ghost b-sm" id="smiGuida">${esc(ti('apri'))} ›</button>`)}</div>`;
   $('smiLin').querySelectorAll('span').forEach(x => x.onclick = () => { const b = document.querySelector(`#segLingua [data-l="${x.dataset.v}"]`); if (b) b.click(); setTimeout(smImpDisegna, 600); });
   $('smiVer').onclick = () => vai('info');
+  if ($('smiVmEsci')) $('smiVmEsci').onclick = vmAppEsci;
   $('smiGuida').onclick = () => vai('guida');
 }
 function smImpAttiva() {
